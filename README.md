@@ -1,15 +1,28 @@
-# hospitalityai
+# Hospitality AI
 
-Architecture documentation for Hospitality AI — an operating system for hotels.
+An operating system for hotels. Centralizes hotel operations, starting with the booking process — one platform for all booking channels, guest interactions, and hotel operations.
 
-## Structure
+---
 
-```
-docs/
-  architecture/
-    README.md    # C4 diagrams in Mermaid
-```
+## Documentation
 
-## Viewing Diagrams
+> When you add or change anything in `docs/`, update this README at a matching level of abstraction.
 
-Diagrams are written in [Mermaid](https://mermaid.js.org/) with C4 notation and render natively on GitHub — no build step needed.
+| Section | Description |
+|---|---|
+| [Architecture](docs/architecture/README.md) | C4 diagrams — system context, containers, components |
+| [Domain](docs/domain/README.md) | Business flows and rules |
+
+---
+
+## Glossary
+
+| Term | Definition |
+|---|---|
+| **Booking Assistant** | Hotel staff who process and manage incoming bookings |
+| **Booking Agency** | External travel agent that sends booking confirmations via email |
+| **Booking Partner / Portal** | Large OTAs (e.g. booking.com) that integrate via the Channel Manager |
+| **Channel Manager** | Third-party system that manages availability and rates across booking portals |
+| **ERP System** | The hotel's core back-office system where bookings are recorded |
+| **Hotel Manager** | Oversees hotel operations and performance |
+| **Hotel Guest** | Books rooms and manages their stay |

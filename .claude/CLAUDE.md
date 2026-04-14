@@ -25,6 +25,12 @@ Booking process — integrating all incoming booking channels into one system.
 ### External systems
 - **Channel Manager** — third-party system that manages availability and rates across booking portals. Currently the only external system in production.
 
+## Documentation conventions
+
+- The **top-level `README.md` is the single entry point** for the project — it contains the doc index and glossary
+- When adding or changing anything in `docs/`, update `README.md` to reflect it at an appropriate level of abstraction
+- New terms introduced in domain or architecture docs should be added to the glossary in `README.md`
+
 ## Architecture documentation
 
 - We use **Mermaid + C4 model** for all architecture diagrams
