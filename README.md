@@ -7,14 +7,9 @@ Architecture documentation for Hospitality AI — an operating system for hotels
 ```
 docs/
   architecture/
-    c1_context.puml       # C4 Level 1 — System Context
+    README.md    # C4 diagrams in Mermaid
 ```
 
 ## Viewing Diagrams
 
-Diagrams are written in [PlantUML](https://plantuml.com/) using the [C4-PlantUML](https://github.com/plantuml-stdlib/C4-PlantUML) library.
-
-You can render them with:
-- [PlantUML VS Code extension](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml)
-- [Online renderer](https://www.plantuml.com/plantuml/uml/)
-- GitHub Actions (automated rendering)
+Diagrams are written in [Mermaid](https://mermaid.js.org/) with C4 notation and render natively on GitHub — no build step needed.

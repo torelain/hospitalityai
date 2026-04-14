@@ -1,14 +1,32 @@
 # Architecture
 
-Diagrams are written in [PlantUML](https://plantuml.com/) using the [C4-PlantUML](https://github.com/plantuml-stdlib/C4-PlantUML) library.
-SVGs are auto-generated on push via GitHub Actions — edit the `.puml` files, never the `.svg` files.
+Diagrams are written in [Mermaid](https://mermaid.js.org/) using C4 notation and render natively on GitHub.
 
 ## C1 — System Context
 
 > Shows Hospitality AI in relation to its users and external systems.
 
-![C1 Context](c1_context.svg)
+```mermaid
+C4Context
+  title System Context — Hospitality AI
 
----
+  Person(guest, "Hotel Guest", "Books rooms and manages their stay")
+  Person(assistant, "Booking Assistant", "Processes and manages incoming bookings")
+  Person(manager, "Hotel Manager", "Oversees hotel operations and performance")
 
-*Source: [c1_context.puml](c1_context.puml)*
+  System(hospitality_ai, "Hospitality AI", "Operating system for hotels. Centralizes booking management and hotel operations.")
+
+  System_Ext(website, "Hotel Website", "Direct online booking channel for guests")
+  System_Ext(channel_manager, "Channel Manager", "Manages availability and rates across booking channels")
+  System_Ext(booking_portals, "Booking Portals", "Large OTAs like booking.com with API integration (via Channel Manager)")
+  System_Ext(agencies, "Booking Agencies", "External agencies that confirm bookings via email")
+
+  Rel(guest, website, "Books rooms via")
+  Rel(guest, booking_portals, "Books rooms via")
+  Rel(website, hospitality_ai, "Sends booking requests", "API")
+  Rel(agencies, hospitality_ai, "Sends booking confirmations", "Email")
+  Rel(channel_manager, hospitality_ai, "Syncs bookings and availability", "API")
+  Rel(booking_portals, channel_manager, "Syncs bookings and availability", "API")
+  Rel(assistant, hospitality_ai, "Manages bookings")
+  Rel(manager, hospitality_ai, "Monitors operations")
+```

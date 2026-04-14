@@ -27,9 +27,9 @@ Booking process — integrating all incoming booking channels into one system.
 
 ## Architecture documentation
 
-- We use **PlantUML + C4 model** for all architecture diagrams
-- Diagrams live in `docs/architecture/` as `.puml` files
-- SVGs are auto-rendered via GitHub Actions on push — never edit `.svg` files manually
+- We use **Mermaid + C4 model** for all architecture diagrams
+- Diagrams live in `docs/architecture/README.md` as Mermaid fenced code blocks
+- They render natively on GitHub — no CI or build step needed
 - C4 levels in use: C1 (Context), C2 (Container), C3 (Component) where needed
 
 ## Repo structure (planned)
