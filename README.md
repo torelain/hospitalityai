@@ -12,6 +12,7 @@ An operating system for hotels. Centralizes hotel operations, starting with the 
 |---|---|
 | [Architecture](docs/architecture/README.md) | C4 diagrams — system context, containers, components |
 | [Domain](docs/domain/README.md) | Business flows and rules |
+| [MVP — Email Channel](docs/domain/mvp_email_channel.md) | Requirements and flows for automated email booking management |
 
 ---
 
@@ -24,5 +25,6 @@ An operating system for hotels. Centralizes hotel operations, starting with the 
 | **Booking Partner / Portal** | Large OTAs (e.g. booking.com) that integrate via the Channel Manager |
 | **Channel Manager** | Third-party system that manages availability and rates across booking portals |
 | **ERP System** | The hotel's core back-office system where bookings are recorded |
+| **PMS (Property Management System)** | The hotel's property management software — the operational layer of the ERP where reservations are created and managed day-to-day |
 | **Hotel Manager** | Oversees hotel operations and performance |
 | **Hotel Guest** | Books rooms and manages their stay |
