@@ -12,7 +12,7 @@ An operating system for hotels. Centralizes hotel operations, starting with the 
 |---|---|
 | [Architecture](docs/architecture/README.md) | C4 diagrams — system context, containers, components |
 | [Domain](docs/domain/README.md) | Business flows and rules |
-| [MVP — Email Channel](docs/domain/mvp_email_channel.md) | Requirements and flows for automated email booking management |
+| [MVP — Email Channel](docs/domain/solution/mvp_email_channel.md) | Requirements and flows for automated email booking management |
 | [ADRs](docs/adr/README.md) | Architecture Decision Records |
 
 ---

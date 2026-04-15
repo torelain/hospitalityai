@@ -131,7 +131,7 @@ sequenceDiagram
 
 ## 5. Domain — MVP Email Channel (Prior Scope Doc)
 
-> Source: `docs/domain/mvp_email_channel.md`
+> Source: `docs/domain/solution/mvp_email_channel.md`
 
 Automated processing of all inbound hotel emails related to bookings and booking modifications. The agent reads emails, classifies intent, interacts with the PMS, and drafts responses for the front desk — replacing fully manual data entry and reducing errors.
 
