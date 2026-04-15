@@ -5,3 +5,5 @@ Significant decisions are recorded here as ADRs. Each ADR captures the context, 
 | ADR | Title | Status |
 |---|---|---|
 | [0001](0001-conventional-commits.md) | Use Conventional Commits | Accepted |
+| [0002](0002-python.md) | Use Python as Primary Language | Accepted |
+| [0003](0003-hexagonal-architecture.md) | Use Hexagonal Architecture | Accepted |
