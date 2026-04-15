@@ -56,19 +56,15 @@ Hospitality AI is an operating system for hotels. It centralizes hotel operation
 > MVP scope: email channel from booking agencies only. Hotel Website, Channel Manager, Booking Portals, Hotel Guest, and Hotel Manager are out of scope for the MVP.
 
 ```mermaid
-C4Context
-  title System Context — Hospitality AI (MVP)
+flowchart TD
+    agencies["📧 **Booking Agencies**\nExternal travel agents"]
+    hai["🤖 **Hospitality AI**\nClassifies emails, extracts booking data,\ncreates bookings or routes to front desk"]
+    mews["🏨 **Mews**\nHotel PMS"]
+    assistant["👤 **Booking Assistant**\nFront desk staff"]
 
-  Person(assistant, "Booking Assistant", "Receives email notifications and handles assisted or failed bookings")
-
-  System(hospitality_ai, "Hospitality AI", "Classifies inbound booking emails, extracts booking data, and creates bookings in the PMS automatically or routes to the front desk.")
-
-  System_Ext(agencies, "Booking Agencies", "External travel agents that send booking confirmation emails to the hotel")
-  System_Ext(mews, "Mews", "Hotel PMS — where bookings are created and managed")
-
-  Rel(agencies, hospitality_ai, "Sends booking confirmation emails", "Email")
-  Rel(hospitality_ai, mews, "Creates bookings", "API")
-  Rel(hospitality_ai, assistant, "Sends notification or handoff email", "Email")
+    agencies -->|"Booking confirmation email"| hai
+    hai -->|"Create booking · API"| mews
+    hai -->|"Notification or handoff email"| assistant
 ```
 
 ---
