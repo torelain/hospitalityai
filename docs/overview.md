@@ -51,33 +51,24 @@ Hospitality AI is an operating system for hotels. It centralizes hotel operation
 
 ## 3. Architecture
 
-### C1 — System Context
+### C1 — System Context (MVP)
 
-> Shows Hospitality AI in relation to its users and external systems.
+> MVP scope: email channel from booking agencies only. Hotel Website, Channel Manager, Booking Portals, Hotel Guest, and Hotel Manager are out of scope for the MVP.
 
 ```mermaid
 C4Context
-  title System Context — Hospitality AI
+  title System Context — Hospitality AI (MVP)
 
-  Person(guest, "Hotel Guest", "Books rooms and manages their stay")
-  Person(assistant, "Booking Assistant", "Processes and manages incoming bookings")
-  Person(manager, "Hotel Manager", "Oversees hotel operations and performance")
+  Person(assistant, "Booking Assistant", "Receives email notifications and handles assisted or failed bookings")
 
-  System(hospitality_ai, "Hospitality AI", "Operating system for hotels. Centralizes booking management and hotel operations.")
+  System(hospitality_ai, "Hospitality AI", "Classifies inbound booking emails, extracts booking data, and creates bookings in the PMS automatically or routes to the front desk.")
 
-  System_Ext(website, "Hotel Website", "Direct online booking channel for guests")
-  System_Ext(channel_manager, "Channel Manager", "Manages availability and rates across booking channels")
-  System_Ext(booking_portals, "Booking Portals", "Large OTAs like booking.com with API integration (via Channel Manager)")
-  System_Ext(agencies, "Booking Agencies", "External agencies that confirm bookings via email")
+  System_Ext(agencies, "Booking Agencies", "External travel agents that send booking confirmation emails to the hotel")
+  System_Ext(mews, "Mews", "Hotel PMS — where bookings are created and managed")
 
-  Rel(guest, website, "Books rooms via")
-  Rel(guest, booking_portals, "Books rooms via")
-  Rel(website, hospitality_ai, "Sends booking requests", "API")
-  Rel(agencies, hospitality_ai, "Sends booking confirmations", "Email")
-  Rel(channel_manager, hospitality_ai, "Syncs bookings and availability", "API")
-  Rel(booking_portals, channel_manager, "Syncs bookings and availability", "API")
-  Rel(assistant, hospitality_ai, "Manages bookings")
-  Rel(manager, hospitality_ai, "Monitors operations")
+  Rel(agencies, hospitality_ai, "Sends booking confirmation emails", "Email")
+  Rel(hospitality_ai, mews, "Creates bookings", "API")
+  Rel(hospitality_ai, assistant, "Sends notification or handoff email", "Email")
 ```
 
 ---
