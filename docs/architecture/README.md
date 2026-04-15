@@ -2,6 +2,116 @@
 
 Diagrams are written in [Mermaid](https://mermaid.js.org/) using C4 notation and render natively on GitHub.
 
+## Mews Data Model
+
+Key entities in the [Mews Connector API](https://docs.mews.com/connector-api) relevant to booking integration.
+
+```mermaid
+erDiagram
+    Enterprise ||--o{ Service : "offers"
+    Enterprise ||--o{ Resource : "has"
+    Enterprise ||--o{ ResourceCategory : "defines"
+
+    Service ||--o{ Reservation : "booked via"
+    Service ||--o{ ResourceCategory : "categorizes"
+    Service ||--o{ Rate : "priced by"
+    Service ||--o{ RateGroup : "groups"
+
+    ReservationGroup ||--o{ Reservation : "contains"
+
+    Reservation }o--|| Customer : "AccountId"
+    Reservation }o--o| Resource : "AssignedResourceId"
+    Reservation }o--|| ResourceCategory : "RequestedResourceCategoryId"
+    Reservation }o--|| Rate : "RateId"
+    Reservation }o--o| Company : "TravelAgencyId / PartnerCompanyId"
+
+    ResourceCategory ||--o{ Resource : "contains"
+    Resource }o--o| Resource : "ParentResourceId"
+
+    RateGroup ||--o{ Rate : "groups"
+    Rate }o--o| Rate : "BaseRateId"
+
+    Customer }o--o| Address : "AddressId"
+    Customer }o--o| Company : "CompanyId"
+
+    Reservation {
+        string Id
+        string Number
+        enum State
+        enum Origin
+        datetime StartUtc
+        datetime EndUtc
+        string GroupId
+        string AccountId
+        string ServiceId
+        string RateId
+        string AssignedResourceId
+        string RequestedResourceCategoryId
+        string TravelAgencyId
+        string ChannelNumber
+        array PersonCounts
+        enum Purpose
+    }
+
+    Customer {
+        string Id
+        string FirstName
+        string LastName
+        string Email
+        string Phone
+        string NationalityCode
+        string LoyaltyCode
+        string AddressId
+        string CompanyId
+    }
+
+    Resource {
+        string Id
+        string Name
+        enum State
+        string ParentResourceId
+        string EnterpriseId
+        int FloorNumber
+    }
+
+    ResourceCategory {
+        string Id
+        string ServiceId
+        string EnterpriseId
+        enum Type
+        int Capacity
+        int ExtraCapacity
+    }
+
+    Rate {
+        string Id
+        string GroupId
+        string ServiceId
+        string BaseRateId
+        boolean IsBaseRate
+        boolean IsPublic
+        enum Type
+    }
+
+    RateGroup {
+        string Id
+        string ServiceId
+        string Name
+    }
+
+    Company {
+        string Id
+        string Name
+    }
+
+    Address {
+        string Id
+        string Line1
+        string City
+        string CountryCode
+    }
+```
+
 ## C1 — System Context (MVP)
 
 > MVP scope: email channel from booking agencies only. Hotel Website, Channel Manager, Booking Portals, Hotel Guest, and Hotel Manager are out of scope for the MVP.
