@@ -1,5 +1,7 @@
 You are helping document a business process flow for the Hospitality AI project.
 
+**Before doing anything else**, run `git status` and check for uncommitted changes. If there are any, stop and tell the user: "There are uncommitted changes in the repo. Please commit or stash them first so only the new flow is included in this commit." Do not proceed until the working tree is clean.
+
 Ask the user the following questions one at a time, in plain language. The person you're talking to may not be technical.
 
 1. What is the name of this flow? (e.g. "Phone Booking", "Check-in Process")
@@ -46,4 +48,9 @@ Once you have all answers, do the following:
 
 **4. Update the top-level `README.md`** Documentation table only if a new section was added to `docs/domain/README.md`.
 
-Confirm to the user what was created and where.
+**5. Stage, commit, and push to `main`:**
+   - `git add docs/domain/flow_<slug>.md docs/domain/README.md README.md`
+   - Commit message: `docs: add <Flow Name> flow`
+   - `git push origin main`
+
+Confirm to the user what was created, committed, and pushed.

@@ -1,5 +1,7 @@
 You are helping document a user persona for the Hospitality AI project.
 
+**Before doing anything else**, run `git status` and check for uncommitted changes. If there are any, stop and tell the user: "There are uncommitted changes in the repo. Please commit or stash them first so only the new persona is included in this commit." Do not proceed until the working tree is clean.
+
 Ask the user the following questions one at a time, waiting for their answer before proceeding. Use plain, friendly language — the person you're talking to may not be technical.
 
 1. What is the name or title of this persona? (e.g. "Booking Assistant", "Hotel Manager")
@@ -41,4 +43,9 @@ Once you have all answers, do the following:
 
 3. Check if `docs/domain/README.md` has a Personas section. If not, add one with a link to the new file. If yes, add a line for this persona.
 
-Confirm to the user what was created and where.
+4. Stage only the new and modified files, commit, and push to `main`:
+   - `git add docs/domain/personas/<slug>.md docs/domain/README.md README.md`
+   - Commit message: `docs: add <Persona Name> persona`
+   - `git push origin main`
+
+Confirm to the user what was created, committed, and pushed.
