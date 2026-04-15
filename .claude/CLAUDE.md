@@ -31,6 +31,24 @@ Booking process — integrating all incoming booking channels into one system.
 - When adding or changing anything in `docs/`, update `README.md` to reflect it at an appropriate level of abstraction
 - New terms introduced in domain or architecture docs should be added to the glossary in `README.md`
 
+## Domain flow documentation
+
+Domain flows live in `docs/domain/` as `flow_<name>.md` files (e.g. `flow_booking_phone.md`).
+
+Each flow uses a Mermaid `sequenceDiagram` with these conventions:
+- `actor` for humans, `participant` for systems — with short aliases and descriptive labels
+- `note over` at the top for assumptions, spanning the relevant participants
+- Each logical path wrapped in a `rect` block with a label: `Note over <first>,<last>: <Path Name>`
+- Colors cycle through: `rgb(235, 245, 255)` → `rgb(235, 255, 240)` → `rgb(255, 245, 235)` → `rgb(250, 235, 255)` → `rgb(235, 255, 255)`
+
+Use the `/new-flow` command to create a new flow — it guides you through the process and handles formatting automatically.
+
+## Personas
+
+Personas live in `docs/domain/personas/` as `<slug>.md` files.
+
+Use the `/new-persona` command to create a new persona. Completed personas should be linked from `docs/domain/README.md`.
+
 ## Architecture documentation
 
 - We use **Mermaid + C4 model** for all architecture diagrams
