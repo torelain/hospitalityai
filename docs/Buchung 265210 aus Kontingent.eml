@@ -1,0 +1,434 @@
+Delivered-To: adrianhesse111@gmail.com
+Received: by 2002:a54:3fc2:0:b0:2c8:60a2:b8ff with SMTP id k2csp1463800ecr;
+        Mon, 13 Apr 2026 10:16:39 -0700 (PDT)
+X-Forwarded-Encrypted: i=3; AFNElJ+p74yH7D1EyDU+vVcj9+R9GJML0jLSwo1Pn+vdE4n5ebfxi0tbAf9bFJsW8DL1adnRXrsljzya4WrWqJLeZQ==@gmail.com
+X-Received: by 2002:a05:6a00:bd91:b0:82c:e9cc:f616 with SMTP id d2e1a72fcca58-82f0c12fb10mr13600737b3a.5.1776100599615;
+        Mon, 13 Apr 2026 10:16:39 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1776100599; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=dUJUd+zl+s+DI0woiu0k4oJUx0RvTNbXuC4062wiqMSs59bLYRV2Eu2bvJWW+2r0Wi
+         AOudFUTUHhIK7llqstOmnfH4jHbcAuBsLdNJE+NbwjI8r7CwDf8kR/BBhz6LAzXSoYb3
+         MHmsNcFIPb38kxWDjdpaBkPqyCNmJEiTLtazcqXR40EJcznQ2/u6NUsqeBGsfN95getR
+         k2UjBvDFTeY307kCoXodf+DN+oWP11wfNWrNR568AnMfhQ+dTR0OFlhgwESDEN0xT5Pn
+         ByXGW2L1d69RTF3ZBCfv4kSE/rOyZYLA7wjRCIE1adcbhVdfeUYTQqiAE39T6dforEVr
+         t4iw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:content-language:accept-language:in-reply-to
+         :references:message-id:date:thread-index:thread-topic:subject:to
+         :from:dkim-signature;
+        bh=EtTElpLCjkwpRv5cTmARSB+OhaL7I8Wxd7egp+lNqOs=;
+        fh=Mj2JFBCWtXyDcf3+B5SNyQMyj5pOKkMFu+SrPlF5i6w=;
+        b=FUU2zOazAB0b3tKe+FkzkectaE9UaJ2mc8hJ0dDgQ1+5wffoy92vFhks0Xi3uZPKZs
+         GrPzMwOdbJiWItsc+TkuNl8RhV6JA2fodB0SKO6O1RfZcHx/EQ4Bx+OZ4E98ZiGnj2Ef
+         AJnLtxdciXmURiS2qDbuKzhAdNkjgfNRl2LEIZzMO+3xKRKj+2JYjrL1SiCU5NvnvS/G
+         hh2hglCD74E03v1QvE7TaGwtT8EPnt/SXteG5DknjugKvMyO7ztfWh20wPBc3RA+ZtbX
+         e2M9YmB6yxqM6wc+RCm3kr9Ij0JypmKYfzFwmChwvnPEWhNu3WK7RzIw6Sl9bjssw9LG
+         oX5g==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@santeroyale.onmicrosoft.com header.s=selector1-santeroyale-onmicrosoft-com header.b=i4Qwqm9u;
+       arc=pass (i=1 spf=pass spfdomain=sante-royale.com dkim=pass dkdomain=sante-royale.com dmarc=pass fromdomain=sante-royale.com);
+       spf=pass (google.com: domain of booking.ruegen@sante-royale.com designates 2a01:111:f403:c200::3 as permitted sender) smtp.mailfrom=booking.ruegen@sante-royale.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=sante-royale.com
+Return-Path: <booking.ruegen@sante-royale.com>
+Received: from DU2PR03CU002.outbound.protection.outlook.com (mail-northeuropeazlp170110003.outbound.protection.outlook.com. [2a01:111:f403:c200::3])
+        by mx.google.com with ESMTPS id d2e1a72fcca58-82f0c311374si22547572b3a.19.2026.04.13.10.16.38
+        for <adrianhesse111@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 13 Apr 2026 10:16:39 -0700 (PDT)
+Received-SPF: pass (google.com: domain of booking.ruegen@sante-royale.com designates 2a01:111:f403:c200::3 as permitted sender) client-ip=2a01:111:f403:c200::3;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@santeroyale.onmicrosoft.com header.s=selector1-santeroyale-onmicrosoft-com header.b=i4Qwqm9u;
+       arc=pass (i=1 spf=pass spfdomain=sante-royale.com dkim=pass dkdomain=sante-royale.com dmarc=pass fromdomain=sante-royale.com);
+       spf=pass (google.com: domain of booking.ruegen@sante-royale.com designates 2a01:111:f403:c200::3 as permitted sender) smtp.mailfrom=booking.ruegen@sante-royale.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=sante-royale.com
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=FVl5R6n3XbVZ30C+c1QJu1fu7/sk3u8X2hAAbvTIf0ixgG9WraDcIqbuZq5oI0Nw6woO5GiB2MI4q83Qm0Cbr15+Iz6oS7Nu5MiVEwwoAmPAKpKWGXPD4ZZE7xySMpts8+CY0m/6kazKOYNONMKwEqm5Jwkwr/wDVp78ZZlsG9KiMT/oc0vhVbQ8xPjk4IyypJilnUdUzsqKIS8OPrMfYSiUlbA8oj3q7k++NMnJ+jfyVP57j4dQc4qv94yRGRpGANJt7gWg9WQlwlfKAazrTPwS7lm3DqI4RlGnU+1FErSAmqRn2QQi6kPTy1tjxJ8ON2sZAFyd1g/pDQSxEYfuVQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=EtTElpLCjkwpRv5cTmARSB+OhaL7I8Wxd7egp+lNqOs=;
+ b=YibjPVyIACIwR93oKu6CIqx+aa2Q3F3VTP4NjDizsQ2NbUYaIyzPQYg/EbeXpBL6eMG8EhM2RHqj1rwRz1vTH0im17tDRfWnx/ilVKJGIYN0gfCrlKAdPCBCpLLcsTGzBzxf+SP3Ikl3VfyHCpT9JS4kH3+8KIBGe7U+2pLkrOIBJo1ygll78wItsy3A+rFqJHiln9PxzCXe3d/jRdvDs0pOiugO/L7+GBEt/I7Vm7ESS4OP7MgP134cotdxwHg09qssUgTxYryzY3QY+9hk82D5yYTJNkOQefwfAQ9l4aOdSa+cYZwWV9Z7H+Hz8ceiiq8W4pWNXyVzQx9es5qs/A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=sante-royale.com; dmarc=pass action=none
+ header.from=sante-royale.com; dkim=pass header.d=sante-royale.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=santeroyale.onmicrosoft.com; s=selector1-santeroyale-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=EtTElpLCjkwpRv5cTmARSB+OhaL7I8Wxd7egp+lNqOs=;
+ b=i4Qwqm9u69MF9iQCpKOIEWahx/cZGS/YsyfPQ7GJlXy/BdrOKUlCTpJyZ5saY6AJcFzgl6nKiNo5BRAR3a/zn+CtSlKN7JLHASCOzJT6pyCLW3XUcuRHpzpDh80/nElndmbyL0jMjIRsLQOMLGc+n1tpSUERFn8FAhn2t+V8gyc=
+Received: from BESP191MB2899.EURP191.PROD.OUTLOOK.COM (2603:10a6:b10:f4::24)
+ by GVXP191MB2699.EURP191.PROD.OUTLOOK.COM (2603:10a6:150:1fe::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9769.48; Mon, 13 Apr
+ 2026 17:16:35 +0000
+Received: from BESP191MB2899.EURP191.PROD.OUTLOOK.COM
+ ([fe80::ebb7:df89:e64a:8c41]) by BESP191MB2899.EURP191.PROD.OUTLOOK.COM
+ ([fe80::ebb7:df89:e64a:8c41%5]) with mapi id 15.20.9769.046; Mon, 13 Apr 2026
+ 17:16:35 +0000
+From: =?iso-8859-1?Q?Booking_Sante_Royale_R=FCgen?=
+	<booking.ruegen@sante-royale.com>
+To: Adrian Hesse <adrianhesse111@googlemail.com>
+Subject: WG: Buchung  265210 aus Kontingent
+Thread-Topic: Buchung  265210 aus Kontingent
+Thread-Index: AQHcysdlDCpdY+OEEUeRGy1Brd40DrXdPPTW
+Date: Mon, 13 Apr 2026 17:16:35 +0000
+Message-ID:
+ <BESP191MB2899F884C9F886AFB56C0C87B0242@BESP191MB2899.EURP191.PROD.OUTLOOK.COM>
+References: <5a20e83374ffaf54733307287f24bd37@pepxpress.com>
+In-Reply-To: <5a20e83374ffaf54733307287f24bd37@pepxpress.com>
+Accept-Language: en-US
+Content-Language: de-DE
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-ms-reactions: allow
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=sante-royale.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: BESP191MB2899:EE_|GVXP191MB2699:EE_
+x-ms-office365-filtering-correlation-id: 8298ea75-1eb6-49f0-893c-08de99806a3e
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|7049299003|3109299003|366016|1800799024|376014|69100299015|38070700021|8096899003|22082099003|56012099003|18002099003;
+x-microsoft-antispam-message-info:
+ yeByRD+IFV3EaAiGjFT+fdQ0jaebN/0uzMbVlSwcM2CSezMkiYZEIZ9KG1SsQ6/bmHz5Eyhl1xssnKet1yHWN5RS5qMyD9uotq+lzQBI6Y9w2fFCetsAdyyYHIz+7EqLGFl7/FlLFYEsbAJTzbBtEtrBwBnEmcgThqaxbK35fDNLoNYAr340RApqnhj+cPmMD5/BpfbeLUo68TLS0b29FGSd+5YYrdm6qm2ERtHH5iRmUC9viVnIyjq0MvNRPhgypVOjB/m0A5ynjQlrbc55aS6NXR79Z8IkEPgeWy0ISvRj+YbIqC9ARb/3onL82cAJ2xOEcWsUjvYxGdFIoSUeVHGdYMP4i49A/nH1JxYhKNkgZJvfbjupllRcTY4AwnzviLckE7SxWMBeCuoxJwOz3nH6RkO8uxxL8KB4PsMY4bXKfSpYYNENoAk2bMmpk2Stk07HWpxWVSi1OglFSDfpvlH5Cp26+IW2aT9Ik/AzcPrn7FPjwHG4fUwzyDl7Hf5CYh5oPtHp9StJ0SKSBfa9gQ7dluTmB8RwAfMrUozG54m8OaXhpsbNiOl2G2QlWPMhOqDzrWsVHnfUOHFQdgmew2hE6FOf2UniHp7JvF9KgtQVCqvngwJlm65k/lAwFT5/QuG3Q0Av5eQcKTonIXoUy659D0bEoYZQsxb1cQtHLIni9bFrh8bIfdgVRH0YOlU4VUqChznLb2GIWtLQggHY/HmoaYyUcLmJlC3ZunkjGH4=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:de;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:BESP191MB2899.EURP191.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(7049299003)(3109299003)(366016)(1800799024)(376014)(69100299015)(38070700021)(8096899003)(22082099003)(56012099003)(18002099003);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?iso-8859-1?Q?gsnhfKQ1cKXwqmZHJxtiUblZOyv+08YfjJRJfBsXEGbxNgR2MAAqLpkln5?=
+ =?iso-8859-1?Q?4/wDlG71CXDkP4+WyiL0s4LS+/hzWtbC2SJmKA+ASzSoeTYKPhJ0cEe/Qc?=
+ =?iso-8859-1?Q?ARrQ7NACpK4aJRSJM8acz3+1Thrft9x1IZQ/nASb/eMmnArF19/66UaJZF?=
+ =?iso-8859-1?Q?zxSoDUAxCp3BXIbv+qcpeYbI5BiA3ZaGi4ss2+7XsF7pVRcQszbaan2dJc?=
+ =?iso-8859-1?Q?CNA1LXERPvZEFjbocSdyIfTy2MyqAKe9dEMMYsm5fTXcTST9d6ThVa7A5p?=
+ =?iso-8859-1?Q?J1WOpYjgJXswZSYImC0YjtuC/K/+EDMaPx7JVse0SGZrtrMo/ktnej2XJp?=
+ =?iso-8859-1?Q?m6dG4S4HgwAERrPmmavBK+kqDKHlhAHUdYX1qDuOud+3vKrWjV2758qg+H?=
+ =?iso-8859-1?Q?qIDJJq60a+9V++Ae3YRYgA5gLBP+ocgd6Rtbnc1g5knJxG7BUDIbATKxcA?=
+ =?iso-8859-1?Q?JFM817VaaSULICMcDTHnyv0Bg8zO4K4WEOCDxablmTe9UKUqg4tgXEZbSQ?=
+ =?iso-8859-1?Q?wwK8/+ME5yu9aykvaFpcGeXS56IZlZyN4DQ72ODE/UTbz4QARU+DISm4+m?=
+ =?iso-8859-1?Q?fYoXa4WhIUk9H65iMj3Jw+hRN2GW8NSX8oMX+579zl81cF9Qs64261SO7Z?=
+ =?iso-8859-1?Q?Q4GGnla//Cd+GG3kF1qy5oVV3jlmjcZud1eYwLrYVo2KO+89+d7ueU251o?=
+ =?iso-8859-1?Q?cibOSUipbf44j//Oxg++fZCurnBtsTKHce02YBYRn4pq6NS6JC2Rr5gsYQ?=
+ =?iso-8859-1?Q?sRPcJCbBQTCcAwmiw2PRsB0fOFnzp354ajDs243BKulbMw5NxYSMy6alWi?=
+ =?iso-8859-1?Q?6wWNxJox6Z5Ar7beBAiNoP7PjDrKqvOTlP5hSvILgMRERYVYex0m49d2jU?=
+ =?iso-8859-1?Q?4Lom/jFO6CEJzfQ4fxLraoUMqWSIHJ8dc16IYJQcebm40ifE18krse0LxP?=
+ =?iso-8859-1?Q?zKExRGw+k7ENMIfiTnCudcS+QWtgCs8wEJn/Kl469uhXlQwZvP0eaPy2Uy?=
+ =?iso-8859-1?Q?BkF8bv66t8LqKhDsttWe8ZN8mb8Wdf2KNIN5S/g1XuHtfgPrRl9JBmIrxH?=
+ =?iso-8859-1?Q?891twNnnCRhShWKaxkoqymtd0qvvhBQ/+stSArAfyFbxifSFbv0n+qdwhh?=
+ =?iso-8859-1?Q?kkDnK3se2AOVk86VcEicblfFgyIuwgNf+sQw3pVbV6lY3rK0rFHH5fVID6?=
+ =?iso-8859-1?Q?H8YaF8KA9y9XhGr0MtIz9Uo4QabdpBOraqTEjnCmNMst5Zu2opGAt/HQlB?=
+ =?iso-8859-1?Q?IdWdoC6+BtPT4gZ2Og6+bFmiyJGugRm9rdt8ZqF4KiEoNyE1115geTG6RH?=
+ =?iso-8859-1?Q?zrYRq2qtHkptLctTTiTeZScEFqZV2ghyKXGuc0PeqyO5WjB6U3ZaAOiuGx?=
+ =?iso-8859-1?Q?7YLAOf/oLnETRGMFpvsZhJLEGS14iTmG5+yWfBM6ElNRfDyCaP7cFkmfwF?=
+ =?iso-8859-1?Q?KPjCnTardtPsKCyRBlAR1JK1+h0n6h6uTDW9KtCbzquvloMXNSLASoyfZl?=
+ =?iso-8859-1?Q?x7+bREWQ3l1BFMX6BR3u0ydtdPW6/ZIn44at76QpGfj7oTTi2gtSBVQAnw?=
+ =?iso-8859-1?Q?+nXPuojtlcb/oo46YykiLsdD4fIHFUTR1XxoqdWANrs6klZA0xCAKHPB8i?=
+ =?iso-8859-1?Q?FJLVuQFc2PPbzJ93MiI4cwCcsZDBLW/deVWaSGT+cbp2v2mWpQGg8972bB?=
+ =?iso-8859-1?Q?o2ja9Pwa5oAvqkA3PCoEJffP5p9/JJFTffdyYH0geeTsZL+3J9j+YTy8ek?=
+ =?iso-8859-1?Q?2+g26wtDt6VRejRUmBX+Zk5Nsys1jcu6N+b9MSDI1HnoCHvhq+G3dyQEh0?=
+ =?iso-8859-1?Q?6MQ15Q7vR6xe0KxprBf3dNHUf+o38fH6fe5XDp8lroWp1oIM5xf6?=
+Content-Type: multipart/alternative;
+	boundary="_000_BESP191MB2899F884C9F886AFB56C0C87B0242BESP191MB2899EURP_"
+MIME-Version: 1.0
+X-OriginatorOrg: sante-royale.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: BESP191MB2899.EURP191.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8298ea75-1eb6-49f0-893c-08de99806a3e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Apr 2026 17:16:35.0158
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 41b5a112-0e42-447e-88c8-d97486303fa3
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: yRCCy2dYlq8njqbQk6mpjVn5fRdNs3w8HxywXuS3u06uA6LcE38yxiNWnUJ441IEqQytYJrJNa/diai1zciDQf7TQfNMiGAA/QsVy6zER94=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXP191MB2699
+
+--_000_BESP191MB2899F884C9F886AFB56C0C87B0242BESP191MB2899EURP_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+Von: pepXpress Buchungsservice <info@pepxpress.com>
+Datum: Sonntag, 12. April 2026 um 23:57
+An: Booking Sante Royale R=FCgen <booking.ruegen@sante-royale.com>
+Betreff: Buchung 265210 aus Kontingent
+
+
+Liebes Reservierungsteam,
+
+Sie erhalten mit dieser E-Mail unsere Buchung f=FCr diese Reise:
+Sant=E9 Royale R=FCgen Resort 265210
+
+
+
+Eigenveranstaltung Christian Frank 2
+
+Christian Frank, 14.02.1991 (35 Jahre)
+
+Valentina Koester-Oebbecke, 14.02.1991 (35 Jahre)
+
+Kundengruppe:
+
+Datum
+09.05.2026 - 14.05.2026
+Hotel / Kategorie
+Sant=E9 Royale Ruegen Resort (4*)
+Hoteladresse
+S=FCdstrand 8, 18586 G=F6hren
+Zimmer
+1x DZ Balkon (Kurzreise) (DDB)
+Verpflegung
+Vollpension (W)
+Beschreibung
+HAM120
+Bemerkung 2
+Kurzreise, Sant=E9 Royale Hotels
+N=E4chte
+5
+
+DZ Balkon (Kurzreise)
+
+Vollpension
+
+
+Vielen Dank f=FCr Ihren Service und die Reservierung unseres gemeinsamen Ku=
+nden.
+
+Herzliche Gr=FC=DFe aus Koblenz
+
+
+
+[https://typo.pepxpress.com/fileadmin/data/newsletter-template-tripicchio/l=
+ogo.png]
+
+pepXpress
+
+Touristik & Marketing GmbH
+
+In den Wiesen 38 | 56070 Koblenz
+Fon: +49 (0) 261 134 906-0
+Fax: +49 (0) 261 134 906-129
+
+www.pepxpress.com<https://pepxpress.com>
+
+
+Gesch=E4ftsf=FChrer: Jomique de Vries
+
+HRB-Nr.: 20558, Registergericht Koblenz,
+
+USt-IdNr.: DE814784275, St.-Nr.: 22/651/04618
+
+--_000_BESP191MB2899F884C9F886AFB56C0C87B0242BESP191MB2899EURP_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+</head>
+<body>
+<div dir=3D"ltr" style=3D"font-family: Arial, Arial, Helvetica, sans-serif;=
+ font-size: 10pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div dir=3D"ltr" style=3D"font-family: Arial, Arial, Helvetica, sans-serif;=
+ font-size: 10pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div id=3D"mail-editor-reference-message-container">
+<div dir=3D"ltr" class=3D"ms-outlook-mobile-reference-message skipProofing"=
+></div>
+<div class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"te=
+xt-align: left; padding: 3pt 0in 0in; border-width: 1pt medium medium; bord=
+er-style: solid none none; border-color: rgb(181, 196, 223) currentcolor cu=
+rrentcolor; font-family: Aptos; font-size: 12pt; color: black;">
+<b>Von: </b>pepXpress Buchungsservice &lt;info@pepxpress.com&gt;<br>
+<b>Datum: </b>Sonntag, 12. April 2026 um 23:57<br>
+<b>An: </b>Booking Sante Royale R=FCgen &lt;booking.ruegen@sante-royale.com=
+&gt;<br>
+<b>Betreff: </b>Buchung 265210 aus Kontingent<br>
+<br>
+</div>
+<p class=3D"ms-outlook-mobile-reference-message skipProofing"><span style=
+=3D"font-family: carlito, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);=
+ background-color: rgb(252, 251, 252); text-transform: none;">Liebes Reserv=
+ierungsteam,</span><br>
+<br>
+<span style=3D"font-family: carlito, sans-serif; font-size: 12pt; color: rg=
+b(0, 0, 0); background-color: rgb(252, 251, 252); text-transform: none;">Si=
+e erhalten mit dieser E-Mail unsere Buchung f=FCr diese Reise:</span><br>
+<span style=3D"font-family: carlito, sans-serif; font-size: 12pt; backgroun=
+d-color: rgb(252, 251, 252);">Sant=E9 Royale R=FCgen Resort 265210</span></=
+p>
+<p class=3D"ms-outlook-mobile-reference-message skipProofing"><span style=
+=3D"font-family: carlito, sans-serif; font-size: 12pt; background-color: rg=
+b(252, 251, 252);">&nbsp;</span></p>
+<p class=3D"ms-outlook-mobile-reference-message skipProofing">Eigenveransta=
+ltung Christian Frank 2</p>
+<p class=3D"ms-outlook-mobile-reference-message skipProofing">Christian Fra=
+nk, 14.02.1991 (35 Jahre)</p>
+<p class=3D"ms-outlook-mobile-reference-message skipProofing">Valentina Koe=
+ster-Oebbecke, 14.02.1991 (35 Jahre)</p>
+<p class=3D"ms-outlook-mobile-reference-message skipProofing">Kundengruppe:=
+</p>
+<table class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"=
+border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); margin-=
+bottom: 1cm; width: 100%; box-sizing: border-box; border-collapse: collapse=
+; border-spacing: 0px;">
+<tbody>
+<tr>
+<td class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"bor=
+der-width: 1px; border-style: dotted; border-color: rgb(0, 0, 0); padding: =
+1.5mm; width: 30%;">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">Datum</div>
+</td>
+<td class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"bor=
+der-width: 1px; border-style: dotted; border-color: rgb(0, 0, 0); padding: =
+1.5mm; width: 70%;">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">09.05.2026 =
+- 14.05.2026</div>
+</td>
+</tr>
+<tr>
+<td class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"bor=
+der-width: 1px; border-style: dotted; border-color: rgb(0, 0, 0); padding: =
+1.5mm; width: 30%;">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">Hotel / Kat=
+egorie</div>
+</td>
+<td class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"bor=
+der-width: 1px; border-style: dotted; border-color: rgb(0, 0, 0); padding: =
+1.5mm; width: 70%;">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">Sant=E9 Roy=
+ale Ruegen Resort (4*)</div>
+</td>
+</tr>
+<tr>
+<td class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"bor=
+der-width: 1px; border-style: dotted; border-color: rgb(0, 0, 0); padding: =
+1.5mm; width: 30%;">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">Hoteladress=
+e</div>
+</td>
+<td class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"bor=
+der-width: 1px; border-style: dotted; border-color: rgb(0, 0, 0); padding: =
+1.5mm; width: 70%;">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">S=FCdstrand=
+ 8, 18586 G=F6hren</div>
+</td>
+</tr>
+<tr>
+<td class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"bor=
+der-width: 1px; border-style: dotted; border-color: rgb(0, 0, 0); padding: =
+1.5mm; width: 30%;">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">Zimmer</div=
+>
+</td>
+<td class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"bor=
+der-width: 1px; border-style: dotted; border-color: rgb(0, 0, 0); padding: =
+1.5mm; width: 70%;">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">1x DZ Balko=
+n (Kurzreise) (DDB)</div>
+</td>
+</tr>
+<tr>
+<td class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"bor=
+der-width: 1px; border-style: dotted; border-color: rgb(0, 0, 0); padding: =
+1.5mm; width: 30%;">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">Verpflegung=
+</div>
+</td>
+<td class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"bor=
+der-width: 1px; border-style: dotted; border-color: rgb(0, 0, 0); padding: =
+1.5mm; width: 70%;">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">Vollpension=
+ (W)</div>
+</td>
+</tr>
+<tr>
+<td class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"bor=
+der-width: 1px; border-style: dotted; border-color: rgb(0, 0, 0); padding: =
+1.5mm; width: 30%;">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">Beschreibun=
+g</div>
+</td>
+<td class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"bor=
+der-width: 1px; border-style: dotted; border-color: rgb(0, 0, 0); padding: =
+1.5mm; width: 70%;">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">HAM120</div=
+>
+</td>
+</tr>
+<tr>
+<td class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"bor=
+der-width: 1px; border-style: dotted; border-color: rgb(0, 0, 0); padding: =
+1.5mm; width: 30%;">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">Bemerkung 2=
+</div>
+</td>
+<td class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"bor=
+der-width: 1px; border-style: dotted; border-color: rgb(0, 0, 0); padding: =
+1.5mm; width: 70%;">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">Kurzreise, =
+Sant=E9 Royale Hotels</div>
+</td>
+</tr>
+<tr>
+<td class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"bor=
+der-width: 1px; border-style: dotted; border-color: rgb(0, 0, 0); padding: =
+1.5mm; width: 30%;">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">N=E4chte</d=
+iv>
+</td>
+<td class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"bor=
+der-width: 1px; border-style: dotted; border-color: rgb(0, 0, 0); padding: =
+1.5mm; width: 70%;">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">5</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"ms-outlook-mobile-reference-message skipProofing">DZ Balkon (Ku=
+rzreise)</p>
+<p class=3D"ms-outlook-mobile-reference-message skipProofing">Vollpension<b=
+r>
+<br>
+<br>
+<span style=3D"font-family: carlito, sans-serif; font-size: 12pt; color: rg=
+b(0, 0, 0); background-color: rgb(252, 251, 252); text-transform: none;">Vi=
+elen Dank f=FCr Ihren Service und die Reservierung unseres gemeinsamen Kund=
+en.</span></p>
+<p class=3D"ms-outlook-mobile-reference-message skipProofing">Herzliche Gr=
+=FC=DFe aus Koblenz</p>
+<div class=3D"pre">&nbsp;</div>
+<div class=3D"pre">&nbsp;</div>
+<div dir=3D"ltr" class=3D"pre"><img src=3D"https://typo.pepxpress.com/filea=
+dmin/data/newsletter-template-tripicchio/logo.png" alt=3D"https://typo.pepx=
+press.com/fileadmin/data/newsletter-template-tripicchio/logo.png"></div>
+<p class=3D"pre"><span style=3D"font-size: 11pt;"><b>pep</b></span><span st=
+yle=3D"font-size: 11pt; color: rgb(153, 51, 102);"><b>X</b></span><span sty=
+le=3D"font-size: 11pt;"><b>press</b></span></p>
+<p class=3D"pre"><span style=3D"font-size: 11pt;"><b>Touristik &amp; Market=
+ing GmbH</b></span></p>
+<p class=3D"pre"><span style=3D"font-size: 10pt;">In den Wiesen 38 | 56070 =
+Koblenz</span><br>
+<span style=3D"font-size: 10pt;">Fon: +49 (0) 261 134 906-0</span><br>
+<span style=3D"font-size: 10pt;">Fax: +49 (0) 261 134 906-129</span></p>
+<div class=3D"pre" style=3D"font-size: 10pt;"><span style=3D"color: rgb(0, =
+0, 0);"><a href=3D"https://pepxpress.com" style=3D"color: rgb(0, 0, 0);">ww=
+w.pepxpress.com</a></span><span style=3D"color: rgb(183, 138, 33);"><br>
+<br>
+</span></div>
+<p class=3D"pre"><span style=3D"font-size: 10pt;">Gesch=E4ftsf=FChrer: Jomi=
+que de Vries</span></p>
+<p class=3D"pre"><span style=3D"font-size: 10pt;">HRB-Nr.: 20558, Registerg=
+ericht Koblenz,</span></p>
+<p class=3D"pre"><span style=3D"font-size: 10pt;">USt-IdNr.: DE814784275, S=
+t.-Nr.: 22/651/04618</span></p>
+</div>
+</body>
+</html>
+
+--_000_BESP191MB2899F884C9F886AFB56C0C87B0242BESP191MB2899EURP_--

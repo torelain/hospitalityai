@@ -1,0 +1,543 @@
+Delivered-To: adrianhesse111@gmail.com
+Received: by 2002:a54:3fc2:0:b0:2c8:60a2:b8ff with SMTP id k2csp1464684ecr;
+        Mon, 13 Apr 2026 10:18:11 -0700 (PDT)
+X-Forwarded-Encrypted: i=3; AFNElJ8K7rUFuMrVyoLSVATdOy++wgzn2ewYabvGRDQmgOFwZf4qpE8uXmMpbvS2A3fPEMQINM7QgB7jMVk833jvlw==@gmail.com
+X-Received: by 2002:a05:6a20:9389:b0:398:7855:1596 with SMTP id adf61e73a8af0-39fe3c64b7amr14543276637.10.1776100689916;
+        Mon, 13 Apr 2026 10:18:09 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1776100689; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=E7rlhMLhSUbf0s1yDhz10v2i9YbzXZXaA/JhJnlxVmGNzvXotqM3mwR8peAYtRofA6
+         j9jsKUcyXmFLMLNbgpRGkHWzOIXfq+396sqckFdi7OVnW6Oy7owShIUW1BcDHJtBR4DG
+         HZawJY2fY3QrgW/vmvsKAn81SlReDxm4HeR/RGL0hPWVN8tvoL5CQhz4LfRehgyjupIY
+         5U2Ye/S7VC/HtSJYebZtate2Tt72Q7IhqKHw9CAlcCPu5DzKbc66cyMmWPWRrTzHv89b
+         UAmK7A+jhLdaf3sBu02toEVAHalchW96xjxacljf0qYAd2Jk/k3XIBZ54xrL/So52KHW
+         lTLw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:content-language:accept-language:in-reply-to
+         :references:message-id:date:thread-index:thread-topic:subject:to
+         :from:dkim-signature;
+        bh=fWDvlSVibgY92LWWFCW0+2UTnBeJ6+G8OY8YtGfiKyk=;
+        fh=Mj2JFBCWtXyDcf3+B5SNyQMyj5pOKkMFu+SrPlF5i6w=;
+        b=T2r9ZHRpFdsvHAIFxvKvcqrp3MbL4t5k7vj7CHozJZOdn+uRj+bPMaICTH6J8AXqFR
+         cI8Pb6OA7Y0Gn4qUdVC0mgG60BSX/xT3OFzH5yIYafRe1QzVhtii0ly1cueToi5NTyZL
+         XiQ+kZbA7mUePk25yKpdD95kb/chXVBAdCgRACE9MSifCX+hWvEXdDrPcopML4wI5WW5
+         hmPScNbGnoEAPxqPPv4diuWc3VBiZ9qi74XTjxJKHGQ73VEMe5PWEUqc8+wmOwFtOpWs
+         4iaK7SRfqNWUL4gD/ZHTqzdWfWa4azeghHiJHbxOehBdMowvRQWKssS2y9u/lsabxBwk
+         s1AQ==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@santeroyale.onmicrosoft.com header.s=selector1-santeroyale-onmicrosoft-com header.b=F2LVQwys;
+       arc=pass (i=1 spf=pass spfdomain=sante-royale.com dkim=pass dkdomain=sante-royale.com dmarc=pass fromdomain=sante-royale.com);
+       spf=pass (google.com: domain of booking.ruegen@sante-royale.com designates 2a01:111:f403:c201::6 as permitted sender) smtp.mailfrom=booking.ruegen@sante-royale.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=sante-royale.com
+Return-Path: <booking.ruegen@sante-royale.com>
+Received: from AM0PR02CU008.outbound.protection.outlook.com (mail-westeuropeazlp170130006.outbound.protection.outlook.com. [2a01:111:f403:c201::6])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-c792a0a703dsi15792986a12.318.2026.04.13.10.18.09
+        for <adrianhesse111@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 13 Apr 2026 10:18:09 -0700 (PDT)
+Received-SPF: pass (google.com: domain of booking.ruegen@sante-royale.com designates 2a01:111:f403:c201::6 as permitted sender) client-ip=2a01:111:f403:c201::6;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@santeroyale.onmicrosoft.com header.s=selector1-santeroyale-onmicrosoft-com header.b=F2LVQwys;
+       arc=pass (i=1 spf=pass spfdomain=sante-royale.com dkim=pass dkdomain=sante-royale.com dmarc=pass fromdomain=sante-royale.com);
+       spf=pass (google.com: domain of booking.ruegen@sante-royale.com designates 2a01:111:f403:c201::6 as permitted sender) smtp.mailfrom=booking.ruegen@sante-royale.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=sante-royale.com
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=CMuqXmLuglfWRQrp+20DjSRkRBwMHlZp8aY57Ya/8mj76Zb+kjVCsEvS75dTbTwRwNeU8wXgizwD9edyCxz882I8CwhBqNs+Ilrr4unMi4WXljQZsodlvAPEaCBnKahRJpgLX++Sphn5M/Cr+xLiIMHvVYGfjeReG2jrTJPLTWRwXc3tq29fNC11zqNIGF7qpfSXZD0zrG4HZgzv7eXNVse4hWEPoVZUnXlIraBoIXMu0+jHDsy8LcBWw2Fzk5swHuv0C4Yt0+iA1wfTjHrFfX9LAyonG9BAuOmKiYDx6uPbJyYd8bZ/4M9IXkWKNa8ijU9TUMTjthWeVqeIhQAukw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=fWDvlSVibgY92LWWFCW0+2UTnBeJ6+G8OY8YtGfiKyk=;
+ b=GLNpn1pHs+Dc5n/3fDfyFSCEvgBQyGR3v+GPoSTrwySq8LeDSdqwcpeIKb8U7alnKhQJnE3Mbdpqunh4St4hePNnAMV6GO8KiXP7BnV2rIqLtpPDHuvQFskd7gBz1sfTsmS3Uo57XDBh8vcBNw/j+tl89fBaABW1skCFzehBZfcRDq1sXfJltWqF0yjTHRxA3L6E6pdS02pjVz5F2OSc7I6NyCbf198BOcFUPWBRr4j/Nt4YPUvwpKSpMtpT0kjTcIz0nXzpiKEtMsDGGvsDRKMw6x6e8xurEwqy9twhIVf2Crau1JLGXaOVU1LB9NZcMl5F3ukyIJsUlffJkeRMBA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=sante-royale.com; dmarc=pass action=none
+ header.from=sante-royale.com; dkim=pass header.d=sante-royale.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=santeroyale.onmicrosoft.com; s=selector1-santeroyale-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=fWDvlSVibgY92LWWFCW0+2UTnBeJ6+G8OY8YtGfiKyk=;
+ b=F2LVQwysUzepcCpVJXc6JPSPmD+PJhDMaSeTOLi48lpK2OTaqVQzxapttsFx+liKBAsEYUcY3j9XV/Es9XTWXE/RNSp9+9goW58Ynu8WIQr10BM9tXhxHOkQsJN2GDnaObxR7FXD02PLGclkJwlEPqImCaTr/J5g3NsqdYG3yIg=
+Received: from BESP191MB2899.EURP191.PROD.OUTLOOK.COM (2603:10a6:b10:f4::24)
+ by GVXP191MB2699.EURP191.PROD.OUTLOOK.COM (2603:10a6:150:1fe::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9769.48; Mon, 13 Apr
+ 2026 17:18:07 +0000
+Received: from BESP191MB2899.EURP191.PROD.OUTLOOK.COM
+ ([fe80::ebb7:df89:e64a:8c41]) by BESP191MB2899.EURP191.PROD.OUTLOOK.COM
+ ([fe80::ebb7:df89:e64a:8c41%5]) with mapi id 15.20.9769.046; Mon, 13 Apr 2026
+ 17:18:07 +0000
+From: =?Windows-1252?Q?Booking_Sante_Royale_R=FCgen?=
+	<booking.ruegen@sante-royale.com>
+To: Adrian Hesse <adrianhesse111@googlemail.com>
+Subject: WG: DERTOUR Notification, Reference 617245237
+Thread-Topic: DERTOUR Notification, Reference 617245237
+Thread-Index: AQHcxn8Lq7WzhUPwSUat0bEAC/b3lrXdRfou
+Date: Mon, 13 Apr 2026 17:18:07 +0000
+Message-ID:
+ <BESP191MB289941D9296A6A9EAE7187C9B0242@BESP191MB2899.EURP191.PROD.OUTLOOK.COM>
+References: <DER-DOC-01tE3dK5hQ700012b7c@DER-DOC-01.DERATCOM.ATCOM>
+In-Reply-To: <DER-DOC-01tE3dK5hQ700012b7c@DER-DOC-01.DERATCOM.ATCOM>
+Accept-Language: en-US
+Content-Language: de-DE
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-ms-reactions: allow
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=sante-royale.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: BESP191MB2899:EE_|GVXP191MB2699:EE_
+x-ms-office365-filtering-correlation-id: 96295880-5ab4-4a09-8234-08de9980a13c
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|1800799024|69100299015|376014|3109299003|366016|8096899003|18002099003|22082099003|56012099003|38070700021;
+x-microsoft-antispam-message-info:
+ gzcC7GuJ4GZNFyi7qFdOEwEQI7R7MiFvUYFHOYfBmtbp+Gwtxe4ITirKgyCPFxXFc+wBs2TM1Uwer/ITTr1ebv0d95jSxs1XVSano16TwweOyKaRIbIxylRIeuPAXG2ksQ2glT9FXHRtu/t5l52wTSFzGl/CI7C+7f0YKC/DzMPveNdLao8fsE1PTO0l5+1HTC5Yglak/5LN4nItzAd+ID66FZ+MHhPqCfxOD438LWMDSJpbdoNRmhlmyM413UKMasd9xPX60vxUzADSdFw2h9o2FURtQd1Ftf40hdQSZfO6HYwRbMtVJknT6c/LevlmxJeBPs225vX3C4rZ9KE/OICR201N7+sc4oeSJeRLRMY3X610mBKnphp4W5/BGqJS5TxHBx4eBybekYWnfUhphdIeI13mikbdcGRsOQITCJFB9El0djk/gjGS6Vj8dtrRmUi/kNoD6GZF3+cIUtktyNka4pgcylCKlhU7pDkKbyYbtOSgKycts3m1P5av33QHEuWbFR+Zjrt1ODJW/7AT6puLSvrQgzO7lvLDruMol/ubA7MUOGy+JyHB6wBLBP/BhxZHi0CETicrbicHzeiFbrsg22762r+5kG0FsvLrS6R5Et2YwW5yJhGY2i6Z2CdL0gXsgBORxPqhf0mJ3g01uu9F9w+f2jYd81OwGpzdbXy+mn4wv0rOROdABeT1AnOQhKIwtMd8uDpaQVvPGgnG6xkmU1UnaD7vR/1N5loi+fRQMsqmacx0JGi5LrABeO33VnwV5tGoDfyro63Nv9pYoeI9VTElYs2h1j264tR9wkA=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:de;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:BESP191MB2899.EURP191.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(69100299015)(376014)(3109299003)(366016)(8096899003)(18002099003)(22082099003)(56012099003)(38070700021);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?Windows-1252?Q?hLG/8kbeRzjbKr0FZfW4W87cAWkn446zE18ATCQOfEgZ9NNYaN5VH2Jn?=
+ =?Windows-1252?Q?QhvqVrZFRN/DAjMUT5gyTOT5p0nIwL9X/jwRbiDHq3XX3i+gpET0aY7+?=
+ =?Windows-1252?Q?u6WboJaeByZiP62IorPF+vPZd9qn7lVwb65cwwk+4BynvJGTWgnrbgaE?=
+ =?Windows-1252?Q?4fqXL83mD1GIZKftcfHYHCKRbxLaT7CmRA7PYrC0pe5c19Z/OJ8RFiZk?=
+ =?Windows-1252?Q?xTPERkXTyvzm2sVhi25ohrjGMHW6x6I4ERsN6CqmvHncFkQJIJGeq115?=
+ =?Windows-1252?Q?N/AkvqZqBBKJS3aek5gcehcGJeApwuJbmju++xSJkolMgouAt6RiZ0Bi?=
+ =?Windows-1252?Q?vn0ibP9fiknAmFk/4bBVynIAy8t48/OHeZGarEH0Iz380L+c1K2pCPlT?=
+ =?Windows-1252?Q?ULQ2VIz/kfijFmqOS7JHAalCrjKEMleFCkeW+pwqe8TVQaYlu4OoIQzP?=
+ =?Windows-1252?Q?LsR9buXn9wiTWqch5NUuoNb6kdUEPU5FNOsqKnYxSUKvtqEKkL0Ej+rO?=
+ =?Windows-1252?Q?raBrR5+y4liUpxe6jremws0Jto7ZTcgfejIiPm8dyvYt1aMG7LPhmeul?=
+ =?Windows-1252?Q?4+e4x4OsWN530nVawo8rBy9gyQS+SnB+5YhlK5w2DQPgZNE2WRWtHVnH?=
+ =?Windows-1252?Q?gdL0y9IYww4omIRk50lXM4ZYm+Ka1v/lqzmzkVkWNS8qGosl/8RtVXwU?=
+ =?Windows-1252?Q?106PowAQkwCJ2jc5bIgICHya9/wQFZMmyP3zgHrOoDwVoysWbVdCDXhi?=
+ =?Windows-1252?Q?l0ErQOU7Ls5slyiznZdhGFtBT69esDGd3dka+E0jP+/NXCjLtMcADM7x?=
+ =?Windows-1252?Q?wqzOEdFtwQbjTtSIPaBIA3p3JJSud4s9wpxaSZln8N+PJMzajlvr42oN?=
+ =?Windows-1252?Q?ZCE35B38TksYroBuSDJnFymepwJ3voSocCcx+7tacz0ZODi+H6VzJktl?=
+ =?Windows-1252?Q?7kjI48BB9ODJP1fPzN7pRIMuQlEiWkHGcHOjfKLBiotQji86F5auPxPz?=
+ =?Windows-1252?Q?L6HqJ+WtMNgglrHTa9aE/x9zoRRyx4cACoq0H6jRWi+ZJ7jmD1PDUwl3?=
+ =?Windows-1252?Q?6RpI65GdM3NhlO3JGJ2lhJMK4gUkb7NsG+jsxiEBMhNA24xaA26/W3jc?=
+ =?Windows-1252?Q?5u8E1Hqir7R/hX0rhY4Gsty++buiufSsvl/vOUWviZg/l/JYNxaklno+?=
+ =?Windows-1252?Q?U0wrkHDRJ5x/NMtMplGFgHOWEVKAzShFIvnnnQ8HyDITae/CfhMhMSpC?=
+ =?Windows-1252?Q?P0PR0NrNbKvPSYA5jDOTf8S9EaL8kiXdV5O7C3ujBAPYHG9yjPWvY6Jm?=
+ =?Windows-1252?Q?PUT/L3AULdAzn+cQ0UuCbdEVn8yQH/n/6zCjbqiCXz7zswq8A6UaOMLy?=
+ =?Windows-1252?Q?m87dqTis8GvTsJa9fvMQJDanzYTQ8bVcqqcIac7uAE6baBu/IaHxQtm5?=
+ =?Windows-1252?Q?GCJABQchVlvIY4oQdOsvfai38VDG/KWbEve9arwjNGY8ZXrj6FHSm9I+?=
+ =?Windows-1252?Q?8RPaxezj/ZI/xAwoS+UUn1qR7QeFmFWm75F6b9tqiFBBWJDU9NkEV8qE?=
+ =?Windows-1252?Q?/heHv3ZsIIef91IQCRqT31XAoeru27RS4eMOzKFV7biacZmraAfZEyh1?=
+ =?Windows-1252?Q?kUZSTML+jauGdc+9T2/RBjBbQsDij1pB2FV5H0BrgCQFLu7HLmJyIHRx?=
+ =?Windows-1252?Q?sXShAGxeOWU7wFwtOyJVCMqSJmuCkb+JhXBADb8eliiEBtQCXN0je0F1?=
+ =?Windows-1252?Q?FN9wEoteAQ35or2jFqrYvARDwkgDhzAFxBSD8xk6h4wyQUoJye2f1cbV?=
+ =?Windows-1252?Q?r/pxfsGr75Mp7cbzz4FsUaiGIRsw9fimtEsIy44UACenT1MbqCLq7RL1?=
+ =?Windows-1252?Q?dMkRZrYOx1Nh8eQa32dniPkLUM4/bw41ID0IXnGNWXvhEUuxNHM4CqFm?=
+Content-Type: multipart/alternative;
+	boundary="_000_BESP191MB289941D9296A6A9EAE7187C9B0242BESP191MB2899EURP_"
+MIME-Version: 1.0
+X-OriginatorOrg: sante-royale.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: BESP191MB2899.EURP191.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: 96295880-5ab4-4a09-8234-08de9980a13c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Apr 2026 17:18:07.2689
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 41b5a112-0e42-447e-88c8-d97486303fa3
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: /hsbukBqGCxbApPvpOA2HTlpYUPMJzHbI15rFf5j2uSB+kfoighZ12dDLAyloLeVw9tRqaTSrh3O94GdnfKK/GZFNSila8QkRCUoyGLGlRw=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXP191MB2699
+
+--_000_BESP191MB289941D9296A6A9EAE7187C9B0242BESP191MB2899EURP_
+Content-Type: text/plain; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+Von: reservation@dertouristik.com <reservation@dertouristik.com>
+Datum: Dienstag, 7. April 2026 um 13:09
+An: Booking Sante Royale R=FCgen <booking.ruegen@sante-royale.com>
+Betreff: DERTOUR Notification, Reference 617245237
+
+[https://www.dertouristik.com/wp-content/uploads/2023/05/Logo-DERtouristik-=
+90x79-1.png]
+
+DERTOUR Booking Information
+
+From: clevertours.com GmbH
+To: Sant=E9 Royale R=FCgen Resort #A#
+Department: CLEDEP CLE Comm Center STND
+Date: 07-Apr-2026
+Time: 13:09
+
+
+________________________________
+New Booking
+
+Touroperator: REWE Reisen Component (VC2)
+Hotel Name: Sant=E9 Royale R=FCgen Resort inkl. Pr=E4ventionspaket (CLV) (R=
+LG50035)
+Booking Reference: 617245237
+Arrive: 30-Aug-2026
+Depart: 06-Sep-2026
+Duration: 7 nights
+Number of Rooms: 1
+
+Room 1: DZ Standard Balkon (DB2)
+Board Basis: Fullboard
+Booking Date: 07-Apr-2026
+
+Names:
+Age
+Nationality
+Hubert Schmitt, Mr.
+56
+Germany
+Nancy Friese, Mrs.
+56
+Germany
+
+Room Taken from Allocation for Period 30-Aug-2026 to 05-Sep-2026
+
+Additional Information
+******************** Unser Special f=FCr Anreisen vom 1.3.-22.5.26: Upgrade=
+ von Vollpension auf All Inclusive: vielseitiges Fr=FChst=FCcksbuffet, Mitt=
+agssnack mit kleinen K=F6stlichkeiten, Salat- & Suppenauswahl, nachmittags =
+Kaffee und Kuchen, abends Suppe, Vor- & Nachspeisenbuffet mit Eisbar, Haupt=
+speise zur Wahl, alkoholfreie Getr=E4nke (10-22 Uhr), Auswahl an Bier und H=
+auswein (rot/weiss, 17:30-22 Uhr) ******************** Inklusivleistungen N=
+utzung des 2.000 m=B2 gro=DFen Spa- und Medical-Wellnessbereichs Leihbadema=
+ntel f=FCr die Dauer Ihres Aufenthaltes 1 x Pr=E4ventionspaket: je 1 x Indi=
+vidualleistung (z.B. Velus-Jet) & 1 x Gruppenleistung des Kur- und Gesundhe=
+itsspektrums (z.B. Yoga), 1 x Individual- und 2 x Gruppenleistung (5 N=E4ch=
+te) bzw. 2 x Individual- und 2 x Gruppenleistung (7 N=E4chte) 1 Flasche Was=
+ser bei Anreise auf dem Zimmer WLAN Generelle Hinweise Kurtaxe saisonabh=E4=
+ngig ca. =80 3,37 pro Person/Nacht (vor Ort zu zahlen).Hotel Check-In: ab 1=
+5:00 Uhr, Check-Out: bis 11:00 Uhr
+Additional Information
+Vermarktung: REWE-Flyer M=E4rz
+Clevertours Vermarktung / Rewe Flyer Nov./Dez.
+
+________________________________
+
+
+
+--_000_BESP191MB289941D9296A6A9EAE7187C9B0242BESP191MB2899EURP_
+Content-Type: text/html; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-1=
+252">
+</head>
+<body>
+<div dir=3D"ltr" style=3D"font-family: Arial, Arial, Helvetica, sans-serif;=
+ font-size: 10pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div dir=3D"ltr" style=3D"font-family: Arial, Arial, Helvetica, sans-serif;=
+ font-size: 10pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div id=3D"mail-editor-reference-message-container">
+<div dir=3D"ltr" class=3D"ms-outlook-mobile-reference-message skipProofing"=
+>
+<meta name=3D"Service" content=3D"Atcore @com">
+<meta name=3D"Copyright" content=3D"(c) 2026 ATCORE Technology Ltd">
+<meta name=3D"Template" content=3D"HTML_Template.htm">
+<meta name=3D"Server" content=3D"DER-DOC-01">
+<meta name=3D"StateId" content=3D"">
+</div>
+<div class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"te=
+xt-align: left; padding: 3pt 0in 0in; border-width: 1pt medium medium; bord=
+er-style: solid none none; border-color: rgb(181, 196, 223) currentcolor cu=
+rrentcolor; font-family: Aptos; font-size: 12pt; color: black;">
+<b>Von: </b>reservation@dertouristik.com &lt;reservation@dertouristik.com&g=
+t;<br>
+<b>Datum: </b>Dienstag, 7. April 2026 um 13:09<br>
+<b>An: </b>Booking Sante Royale R=FCgen &lt;booking.ruegen@sante-royale.com=
+&gt;<br>
+<b>Betreff: </b>DERTOUR Notification, Reference 617245237<br>
+<br>
+</div>
+<table class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"=
+width: 900px;">
+<tbody>
+<tr>
+<td colspan=3D"6" class=3D"ms-outlook-mobile-reference-message skipProofing=
+"><img src=3D"https://www.dertouristik.com/wp-content/uploads/2023/05/Logo-=
+DERtouristik-90x79-1.png"></td>
+</tr>
+<tr>
+<td class=3D"ms-outlook-mobile-reference-message skipProofing">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">&nbsp;</div=
+>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<center><b>DERTOUR Booking Information</b></center>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"ms-outlook-mobile-reference-message skipProofing=
+">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">&nbsp;</div=
+>
+</td>
+</tr>
+<tr>
+<td colspan=3D"4" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">From: clevertours.com=
+ GmbH</div>
+</td>
+<td colspan=3D"2" class=3D"DataText"></td>
+</tr>
+<tr>
+<td colspan=3D"4" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">To: Sant=E9 Royale R=
+=FCgen Resort #A#</div>
+</td>
+<td colspan=3D"2" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Department: CLEDEP CL=
+E Comm Center STND</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"4" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Date: 07-Apr-2026</di=
+v>
+</td>
+<td colspan=3D"2" class=3D"DataText"></td>
+</tr>
+<tr>
+<td colspan=3D"4" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Time: 13:09</div>
+</td>
+<td colspan=3D"2" class=3D"DataText"></td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"ms-outlook-mobile-reference-message skipProofing=
+">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">&nbsp;</div=
+>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"ms-outlook-mobile-reference-message skipProofing=
+">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">&nbsp;</div=
+>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<hr>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<center><b>New Booking</b></center>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">&nbsp;</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Touroperator: REWE Re=
+isen Component (VC2)</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Hotel Name: Sant=E9 R=
+oyale R=FCgen Resort inkl. Pr=E4ventionspaket (CLV) (RLG50035)</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Booking Reference: 61=
+7245237</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Arrive: 30-Aug-2026</=
+div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Depart: 06-Sep-2026</=
+div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Duration: 7 nights</d=
+iv>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Number of Rooms: 1</d=
+iv>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">&nbsp;</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Room 1: DZ Standard B=
+alkon (DB2)</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Board Basis: Fullboar=
+d</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Booking Date: 07-Apr-=
+2026</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">&nbsp;</div>
+</td>
+</tr>
+<tr>
+<td class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Names:</div>
+</td>
+<td class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Age</div>
+</td>
+<td class=3D"DataText">
+<center><b>Nationality</b></center>
+</td>
+<td class=3D"DataText"></td>
+</tr>
+<tr>
+<td class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Hubert Schmitt, Mr.</=
+div>
+</td>
+<td class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">56</div>
+</td>
+<td class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Germany</div>
+</td>
+<td class=3D"DataText"></td>
+</tr>
+<tr>
+<td class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Nancy Friese, Mrs.</d=
+iv>
+</td>
+<td class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">56</div>
+</td>
+<td class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Germany</div>
+</td>
+<td class=3D"DataText"></td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">&nbsp;</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Room Taken from Alloc=
+ation for Period 30-Aug-2026 to 05-Sep-2026</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">&nbsp;</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Additional Informatio=
+n</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">******************** =
+Unser Special f=FCr Anreisen vom 1.3.-22.5.26: Upgrade von Vollpension auf =
+All Inclusive: vielseitiges Fr=FChst=FCcksbuffet, Mittagssnack mit kleinen =
+K=F6stlichkeiten, Salat- &amp; Suppenauswahl, nachmittags
+ Kaffee und Kuchen, abends Suppe, Vor- &amp; Nachspeisenbuffet mit Eisbar, =
+Hauptspeise zur Wahl, alkoholfreie Getr=E4nke (10-22 Uhr), Auswahl an Bier =
+und Hauswein (rot/weiss, 17:30-22 Uhr) ******************** Inklusivleistun=
+gen Nutzung des 2.000 m=B2 gro=DFen Spa- und
+ Medical-Wellnessbereichs Leihbademantel f=FCr die Dauer Ihres Aufenthaltes=
+ 1 x Pr=E4ventionspaket: je 1 x Individualleistung (z.B. Velus-Jet) &amp; 1=
+ x Gruppenleistung des Kur- und Gesundheitsspektrums (z.B. Yoga), 1 x Indiv=
+idual- und 2 x Gruppenleistung (5 N=E4chte)
+ bzw. 2 x Individual- und 2 x Gruppenleistung (7 N=E4chte) 1 Flasche Wasser=
+ bei Anreise auf dem Zimmer WLAN Generelle Hinweise Kurtaxe saisonabh=E4ngi=
+g ca. =80 3,37 pro Person/Nacht (vor Ort zu zahlen).Hotel Check-In: ab 15:0=
+0 Uhr, Check-Out: bis 11:00 Uhr</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Additional Informatio=
+n</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Vermarktung: REWE-Fly=
+er M=E4rz</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">Clevertours Vermarktu=
+ng / Rewe Flyer Nov./Dez.</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<div class=3D"DataText" style=3D"font-family: Arial;">&nbsp;</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"DataText">
+<hr>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"ms-outlook-mobile-reference-message skipProofing=
+">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">&nbsp;</div=
+>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6" class=3D"ms-outlook-mobile-reference-message skipProofing=
+">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">&nbsp;</div=
+>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>
+
+--_000_BESP191MB289941D9296A6A9EAE7187C9B0242BESP191MB2899EURP_--

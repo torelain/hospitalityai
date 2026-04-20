@@ -1,0 +1,400 @@
+Delivered-To: adrianhesse111@gmail.com
+Received: by 2002:a54:3fc2:0:b0:2c8:60a2:b8ff with SMTP id k2csp1464967ecr;
+        Mon, 13 Apr 2026 10:18:38 -0700 (PDT)
+X-Forwarded-Encrypted: i=3; AFNElJ8496QfZ4cQ+p6yAyphPeRBiSyMhj/yvtdyIaIChnx62D+9RXUcTGsN/IBoe4pEXvZvsPfrgKGD1CaR7/79tw==@gmail.com
+X-Received: by 2002:a05:6a21:3086:b0:398:7998:8300 with SMTP id adf61e73a8af0-39fe40cf69dmr15870887637.58.1776100718399;
+        Mon, 13 Apr 2026 10:18:38 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1776100718; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=KS5DT/YqNN6a53NZnUdGNfCkY9uKRqZlYMt5tTNXXr8HZIRV7xi9IxmBMvFt0xnF2L
+         wwzAhQsAeCg655rscbC7OnHW6a9jKRXcLJBbj2ZOzvingItUYM7PXef9SGYMMoYjujTG
+         /pTRlsuw2Nwxy3WutyLbxcd9LmNXphUVuR3Dp6sN7sirxcEN/CMS4Ceh4ZmtQp3SMG3n
+         2vnxj5Huse5g4zWTRgbHaUYQxZ+TT8gmp7rPz2DUtq2EeisdHJBhfKVrVOaEGb5rPEYT
+         SZK0BATZvwiRq7QTGowxz6FKpLspDQ/nG98ML4zXpsvaASGP69NqwOKjGSasIngQV/xQ
+         EkGA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:content-language:accept-language:in-reply-to
+         :references:message-id:date:thread-index:thread-topic:subject:to
+         :from:dkim-signature;
+        bh=c5tuZsV1P0wC0wS9IMtuVdnBEklv0zTDyiCvDTpsIv0=;
+        fh=Mj2JFBCWtXyDcf3+B5SNyQMyj5pOKkMFu+SrPlF5i6w=;
+        b=GbluYvHItmrLfwCSQaBGbhkSxMfQhm+pPSLQOXB5v6wSAdXxbS8+MDCSyr7Y8fZ1P0
+         a9I8DzJoVclkrp6Wt2WaAMf0bSltOlF+D0q7XABhtMTYzY87ED3Nm7DfGKQC0iwU/grP
+         Sc+USmZW3FN4+Dn9TaenJOKjUoEZfZEpcQ2ioU9adONZ6aGUT7AN9FEhYloK/mWiPqNG
+         oGp31IupBqMUPSeulxiJk5c2ceyckv6ApQdS2dm/PqnX1MvVPLtj/gDsORqJBqcI7rGC
+         vHC+VHLN7fmMXLX5zrwzKzx2TJvV802KEkFkkBvMONcHi8z+iyxxQn1NsdNcioKgqU4I
+         wLaw==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@santeroyale.onmicrosoft.com header.s=selector1-santeroyale-onmicrosoft-com header.b=DpEsV9B3;
+       arc=pass (i=1 spf=pass spfdomain=sante-royale.com dkim=pass dkdomain=sante-royale.com dmarc=pass fromdomain=sante-royale.com);
+       spf=pass (google.com: domain of booking.ruegen@sante-royale.com designates 2a01:111:f403:c200::5 as permitted sender) smtp.mailfrom=booking.ruegen@sante-royale.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=sante-royale.com
+Return-Path: <booking.ruegen@sante-royale.com>
+Received: from DUZPR83CU001.outbound.protection.outlook.com (mail-northeuropeazlp170120005.outbound.protection.outlook.com. [2a01:111:f403:c200::5])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-c7929f1ce83si16871844a12.42.2026.04.13.10.18.37
+        for <adrianhesse111@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 13 Apr 2026 10:18:38 -0700 (PDT)
+Received-SPF: pass (google.com: domain of booking.ruegen@sante-royale.com designates 2a01:111:f403:c200::5 as permitted sender) client-ip=2a01:111:f403:c200::5;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@santeroyale.onmicrosoft.com header.s=selector1-santeroyale-onmicrosoft-com header.b=DpEsV9B3;
+       arc=pass (i=1 spf=pass spfdomain=sante-royale.com dkim=pass dkdomain=sante-royale.com dmarc=pass fromdomain=sante-royale.com);
+       spf=pass (google.com: domain of booking.ruegen@sante-royale.com designates 2a01:111:f403:c200::5 as permitted sender) smtp.mailfrom=booking.ruegen@sante-royale.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=sante-royale.com
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=t8uX22VRQ9OslDbwEa49oHWNpjMoti8zJ6QPgMoucMhvohKF/Yjh1ptsUQOQVMerrsnaXWhjRqOOGQtlRlwAbNbxJ3zz8Bl/uWuuxm8W8VWMRr1TBbIM8FV7GCQ9+vc7s0N+IiCxsfEvRApZj4J8oXfE0El0tn00SxFXmwKbY2kyYwsv0lyPtwKVH9OrsfFlr3wM6uAtnEnmjtUuUHs3ut5hwyJsMsFL2y87qhAOh2jVLz9884VuMXl34AqhrgcyDfjjq8vmir215DE3SAvZk5NaKkZi4lOu7KauD7/4rMJHdv0EpfXl0+ZY3r+pAcEruKVZD6SQt73WUX6BnkHpKg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=c5tuZsV1P0wC0wS9IMtuVdnBEklv0zTDyiCvDTpsIv0=;
+ b=nQ+QTDzdgXJVwlEmAAim+gsNcNk8lSPmUWJQnyc8piXFmbelBHqDcOLKRqEOUArSxd7T/W014gfvTvO40UNjogr6NDYv1EzYWcUm1oTMzpvevATzKTQZtDaMSUuXyghntKo/YL1Ka6ebWkSoIBPAmPnnBeMjqLRduhJfLgi1AW/LWeH8u+U+QWfKyfmQGsj2C6j9vVJSyAQq8fJZXu5BJlQW6yB0GOz12Ti/Kb4uV2QoDpZ2PIO/stkIGdo9A8/1yD5LPsPubkf2MCs13eeIrV/yxKexwS+h4iYr5Zfs+Vc+c1AdCLN64lC1M2C8777OAunliXxYIgpqtFE4E8acBg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=sante-royale.com; dmarc=pass action=none
+ header.from=sante-royale.com; dkim=pass header.d=sante-royale.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=santeroyale.onmicrosoft.com; s=selector1-santeroyale-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=c5tuZsV1P0wC0wS9IMtuVdnBEklv0zTDyiCvDTpsIv0=;
+ b=DpEsV9B3E2sQE7FNOlStqA3pgmAJ+khUhBgmpRLB3wpZkQSSkYT67Iaz8oez5GWQ7q/cQFvJ3YMk+smFVSI1ypfWCJZYqc/RMSC3WXFfaGCSIKWkc1Q2sBkFB2kVWQtx9YFtBao82nFT72HvxBbr3wcHMzuRFTr7qph95pl+0io=
+Received: from BESP191MB2899.EURP191.PROD.OUTLOOK.COM (2603:10a6:b10:f4::24)
+ by GVXP191MB2699.EURP191.PROD.OUTLOOK.COM (2603:10a6:150:1fe::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9769.48; Mon, 13 Apr
+ 2026 17:18:35 +0000
+Received: from BESP191MB2899.EURP191.PROD.OUTLOOK.COM
+ ([fe80::ebb7:df89:e64a:8c41]) by BESP191MB2899.EURP191.PROD.OUTLOOK.COM
+ ([fe80::ebb7:df89:e64a:8c41%5]) with mapi id 15.20.9769.046; Mon, 13 Apr 2026
+ 17:18:35 +0000
+From: =?iso-8859-1?Q?Booking_Sante_Royale_R=FCgen?=
+	<booking.ruegen@sante-royale.com>
+To: Adrian Hesse <adrianhesse111@googlemail.com>
+Subject: WG: Wichtige Mitteilung zur Buchung 2475398  ZIMMER DA ZU
+Thread-Topic: Wichtige Mitteilung zur Buchung 2475398  ZIMMER DA ZU
+Thread-Index: AQHcwOIwL74ChYylm0WbdmqkyunuLrXdUVbk
+Date: Mon, 13 Apr 2026 17:18:35 +0000
+Message-ID:
+ <BESP191MB2899AC72F842EB3DFDD2A4DBB0242@BESP191MB2899.EURP191.PROD.OUTLOOK.COM>
+References: <729639170.3693.1774943057308.JavaMail.midocosys@blodger3>
+In-Reply-To: <729639170.3693.1774943057308.JavaMail.midocosys@blodger3>
+Accept-Language: en-US
+Content-Language: de-DE
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-ms-reactions: allow
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=sante-royale.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: BESP191MB2899:EE_|GVXP191MB2699:EE_
+x-ms-office365-filtering-correlation-id: 06411831-2aa2-47f1-cc87-08de9980b1fd
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|1800799024|376014|366016|8096899003|18002099003|22082099003|56012099003|38070700021|13003099007;
+x-microsoft-antispam-message-info:
+ RILpwp+H9IWIzYPMyfIa65SakunHNabmJ7E77WsVLCEHMbv471wbVur5E7NpdDTCzpmEYchEm3tOdep2Icrr8nNHyQWXIeJ5ULN3Dlz0R5xKQgmWO+uyUWiREdrWm0yg9RLbmgUxf4FEmkb4F5tJeFUMCdl0D2WNo/tljJ1xnU4i6nSvjCK6oZ2UYZ4wqxu17IwyRFJDBe4jIfwuLS3Li/F7J+QwZDlW6yok4E/S0O2Dj0bdli8H7FDQpW4zpogEB9YG845v3x1u7SjOMRp0oLdK+JG/XuAzA2IwT9cDocQRGYGC9oHt+R47FF8dYxKCKykxqrhuYiTh1qyzF5tJA+4Vq6vQZoxFUsjemmK+2HZkVY8T1Sg1lXVxlwsXjDxZpjciwjU1qgBZJmkMUzxXfKqX823c3dc91N/tcaRGqkAdYjwZjbJLuHor5xTcdbCPbILBZGN9LdDcwb5++GGitRq8L3mba5qtL+OK2ANgQ3ekz8AYysLSdF+oGaZbVQ81qawhr5TbWAmSeJpZ7EgwPO6FcK5j6jTb9lvUtRQAZbdaF4uLE/x3fuvdwA3Ce0KaZ/Qlvq0yih+20gBjACv02NLFPlUq0nXCZw2hDG7DToIEMmefhfKpvuGxBQtaDSw3svK6InbXjc/2hey3AFpbtCZGgkyYsskx4dWtv3ODWyjV9hUjNZobs8sCrd2GXUzXhb4TtFN4zKs87IqwZUE13h2nYH+cjVJPBLl6ZbNd/i4=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:de;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:BESP191MB2899.EURP191.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(366016)(8096899003)(18002099003)(22082099003)(56012099003)(38070700021)(13003099007);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?iso-8859-1?Q?ets+IxZyp+4TAIXbI/3KrfFA4wUmXWnyIIB/xFNFRLdDx4Qo1caOrwSR5Q?=
+ =?iso-8859-1?Q?oSyfZ5RnaJKFHrKdDY/gt2J/H6uTzACD4N7b7FOBkuMovl0+u1S2KxuCye?=
+ =?iso-8859-1?Q?6dw51AW5OjqFeaHb7mW9Xc6br9v7Rfp6OQU7niEGGXPrJqY3IiEqDRfTOZ?=
+ =?iso-8859-1?Q?2KmKWooiKP7vh24VffHe2CBHMn9DeqJuvhNU3qbrrvJBo5rDm9/4SThPSJ?=
+ =?iso-8859-1?Q?GPTzCTC8MIjkewcdUbi8r5y/Cro6bf4Mbeats76EtAkFhZ0ypzpzpazzM9?=
+ =?iso-8859-1?Q?wN7k9RRY3rVaf7EyUXlWuUXwKNlalr8koGiGupM9Ls+kTdiGuPEgl25+J5?=
+ =?iso-8859-1?Q?cTWdo5jlcUYvZCwwq14e/OylNvLqo1JtT9csm1xXd7rlT9M89b6+emD0is?=
+ =?iso-8859-1?Q?TRbmR5L5Q+h8Be7dErnfY3/7p+I0K5zLS9vAiRby/WdHBFZmZpOiIVUoYs?=
+ =?iso-8859-1?Q?+rwpkdcr03mEsVi4jaTJn9Qaeq+dn8Ye/hCVUUN5+J69vGg8DgSzSsC9Tl?=
+ =?iso-8859-1?Q?Pw/PzvMy5vLcHzAMSTtmnYDkTyQDs6zNE0fp0NI3Op6Zux22DfMp1qXjrk?=
+ =?iso-8859-1?Q?IHQALLA2ijDB9NZ6DK8cH57ea5pPI9IYvOBtqg46EaGS6sKO+8kEfCwOe+?=
+ =?iso-8859-1?Q?5dpiSI4YIt3Z75gWm41pEPQ8G0b7n/QQ4uFm0ZpJkTMhCvD+/zPnbApp70?=
+ =?iso-8859-1?Q?8thUBDj/MpdVajPkRDIYnmo05j54xFDaSLyBic/Fte6qpcUHe1PRBwcxDZ?=
+ =?iso-8859-1?Q?T/+KVpq9Y0nvtDMN1hcWFKGr3+fCCvNlXISTomfV9ZKFQNHj0d/XkfabGf?=
+ =?iso-8859-1?Q?5Wt2JFM5Pd1Rg84DpgVYtKmNMg+Tk5COJYHEbpV6LknloqTpDHEx7nlpy8?=
+ =?iso-8859-1?Q?jnbEQX6JyfWPWS7rs8sRwhZoc8MVuL1B23fJUigWcBNrwuiyU/1zgbYsr+?=
+ =?iso-8859-1?Q?5NYr0r9fjGD9Sps5fXrq3up5A0m06njWK5GrWtPHx94qsF0/XxALaOw6ID?=
+ =?iso-8859-1?Q?UlE1x8VjOmrH5TDaYlZXSMJ0QbVRymw6zwR3J8AoyTZdXyXpnQJYViLauU?=
+ =?iso-8859-1?Q?JwuE9Jr3UhI0yy1MDE/Rt36VakljFVMXq/gZj1b5jvPsRxsKm2nUc5LDnq?=
+ =?iso-8859-1?Q?TdKCKqAf6S2aISQk1cP71vZhdTn8ifLYQubDFpuPWMMYOTerY5/K55vI9N?=
+ =?iso-8859-1?Q?4Ue4cWlte0KnVLnAWJrSNZ/066IEbQTOtGId/78JWZL1yLI6m/lfb+jnj8?=
+ =?iso-8859-1?Q?96U7XshN1Wb38SGWcjcpnfOPIP+5M7tZPrdFILMI5URuCpjAwUgfRw/Ras?=
+ =?iso-8859-1?Q?tHzBTyDPcMEgllPA1iAasA6t+gy7tiqvzHy0UhohdCX/lERDKpsxjVPBuR?=
+ =?iso-8859-1?Q?oXWC8q1BUbyW94/r48G76Pa2tUJ+caA0GORMzyQY2rY0niL3gUYoyyTtDL?=
+ =?iso-8859-1?Q?9kNeSdVZ0HE40JTbgIqZL6WbHcm+06nNTkxvMSiE1LX6kBDGhbvKXDueao?=
+ =?iso-8859-1?Q?ESJXfxLQ0XfT6EaWWAXJLFapOBbWVnKC4lZGV3EKZ+R0MEbVG+ukzEyOK1?=
+ =?iso-8859-1?Q?Rn1nVkx9ItKPmz8Uw7P3f+duB+sEmp6GIiiX2gWB59M5OYP9UlPx2MBR5a?=
+ =?iso-8859-1?Q?GOGMRfGbRb+6xT6/KQq/T+vZQf0PEo4lKUo+8aP8nlSrIpKDPP3xirDAdQ?=
+ =?iso-8859-1?Q?xbcnoD6RZk2DDmUIWB07pE8qQqMyTsPR3n4SAa4ENVy9ehAuDaHCmVwPWP?=
+ =?iso-8859-1?Q?N4jNW3OCcWdZWNJLBRH5hhf+6s0o+UXAQ84j+9w8kf/aYkrE5wN/oLp8q5?=
+ =?iso-8859-1?Q?jPvbCDhEh7QGL5UTgWVT6o4PWhVoRA58/lpPDKEmBoiVcFiHdxM2?=
+Content-Type: multipart/alternative;
+	boundary="_000_BESP191MB2899AC72F842EB3DFDD2A4DBB0242BESP191MB2899EURP_"
+MIME-Version: 1.0
+X-OriginatorOrg: sante-royale.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: BESP191MB2899.EURP191.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: 06411831-2aa2-47f1-cc87-08de9980b1fd
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Apr 2026 17:18:35.3458
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 41b5a112-0e42-447e-88c8-d97486303fa3
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: OCvRRNMlvcjEt7XOt3Q9PJt7lWyqQW6C4WML0it0XHoQin/hYUqilJgXpvlDHNI9IEfQHYRpLPqQKXI14XPq0QbzAFEXX1CVRtTyg0jl0zQ=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXP191MB2699
+
+--_000_BESP191MB2899AC72F842EB3DFDD2A4DBB0242BESP191MB2899EURP_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+Von: GetAway Travel GmbH <kundenservice@kurz-mal-weg.de>
+Datum: Dienstag, 31. M=E4rz 2026 um 09:44
+An: Booking Sante Royale R=FCgen <booking.ruegen@sante-royale.com>
+Betreff: Wichtige Mitteilung zur Buchung 2475398 ZIMMER DA ZU
+
+94331N SANTE RUEGEN RESORT VA - Sant=E9 Royale R=FCgen Resort
+e-mail: booking.ruegen@sante-royale.com
+
+Hotel RESERVATION
+
+---------------------------------------------------------------------------=
+---------------------
+
+Unsere Buchungsnummer: 2475398
+
+Wir best=E4tigen folgende verbindliche Buchung:
+
+f=FCr folgende Reiseteilnehmer:
+DAME Marion van Schwamen- Carlberg
+DAME Claudia Ebeling
+DAME Vera Chechel
+DAME Daniela Dilling
+DAME Ute Dehning
+DAME Saskia Achenbach
+DAME D=F6rte Siedler
+DAME Sylvia  Ohrmann
+8 Personen
+
+Hotelbuchung:
+
+Ankunft:        01.Mai.26
+Abreise:        04.Mai.26
+N=E4chte:  3
+Zimmer:  1 x 4 DOPPELZIMMER / 8 Personen
+Leistung:        DIE 4 TAGE-WELLNESS-KURZREISE AUF DIE INSEL R=FCGEN
+Inklusivleistungen:
+        4 Tage / 3 N=E4chte im stilvoll eingerichteten Doppel- oder Einzelz=
+immer inkl. der schmackhaften und reichhaltigen Vollpension
+
+        t=E4glich Vollpension bestehend aus reichhaltigem Fr=FChst=FCcksbuf=
+fet mit BIO-Ecke, Vital-Lunch mit Snacks, Salat- und Suppenbuffet, Kaffee &=
+ Kuchen am Nachmittag sowie Dinner-Arrangement mit Wahlgericht als Hauptgan=
+g sowie Vor- und Nachspeise vom Buffet
+
+        Gro=DFes Pr=E4ventionspaket: 1 Individualleistung (im Velusjet oder=
+ brainLight) und 1 Gruppenleistung des Kur- und Gesundheitsspektrums des Ha=
+uses (z.B.  Nordic Walking, Yoga, ?)
+
+        Nutzung des Wellnessbereiches in der obersten Etage mit Blick aufs =
+Meer ausgestattet mit Bade- und Saunalandschaft (finnische Sauna mit Panora=
+mafenster, Heilwaldsauna, Bio-Sauna Dampfbad, Ruheraum Kamin Lounge), sowie=
+ Cardio- /Gymnastikraum
+
+        Leihbademantel leihweise w=E4hrend ihres Aufenthaltes
+
+        1 x Flasche Mineralwasser im Zimmer bei Anreise
+
+        Kaffee ? und Teeservicestation auf dem Zimmer
+
+        WLAN-Nutzung
+
+Preise            2214,08 EUR
+Reisepreis        2952,00 EUR
+
+
+Bemerkungen:
+        Gebuchte Belegung:
+Doppelzimmer mit 2 Erwachsenen
+Doppelzimmer mit 2 Erwachsenen
+Doppelzimmer mit 2 Erwachsenen
+Doppelzimmer zur Einzelnutzung mit 1 Erwachsenen
+        Die Zahlung der G=E4ste erfolgt an die GetAway Travel GmbH, denken =
+Sie bitte an die Rechnungsstellung in H=F6he des oben genannten Betrags an =
+KMW (per E-Mail an rechnung@kurz-mal-weg.de) gem=E4=DF Ihrer Vertragsbeding=
+ungen.
+        Unverbindlicher Kundenwunsch: Frau Dilling muss sich Gluten frei er=
+n=E4hren, Frau Achenbach Weizen und Lactosefrei, Frau Ebeling isst vegetari=
+sch,weitere Ern=E4hrungsweisen sind mir zur Zeit nicht bekannt. Ist ja ganz=
+ sch=F6n gruselig f=FCr einen Koch!
+
+
+
+Alle Kundendaten und Anmerkungen finden Sie noch einmal in Ihrem Anbieterbe=
+reich:
+--> http://extranet.kurz-mal-weg.de/
+
+F=FCr Fragen stehen wir Ihnen gern unter +49 (0)341 2368 0099 zur Verf=FCgu=
+ng.
+
+Mit freundlichen Gr=FC=DFen
+Ihr Team von GetAway
+
+GetAway Travel GmbH
+Hainstra=DFe 1, 04109 Leipzig
+
+Telefon: +49 (0)341 2368 0099
+
+kundenservice@kurz-mal-weg.de
+
+Vertretungsberechtigte Gesch=E4ftsf=FChrer: Stephan Kloss, Bastian Buch, Ja=
+n Seifried, Elias Russezki
+Amtsgericht Leipzig, HRB 43653
+
+--_000_BESP191MB2899AC72F842EB3DFDD2A4DBB0242BESP191MB2899EURP_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+</head>
+<body>
+<div dir=3D"ltr" style=3D"font-family: Arial, Arial, Helvetica, sans-serif;=
+ font-size: 10pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div dir=3D"ltr" style=3D"font-family: Arial, Arial, Helvetica, sans-serif;=
+ font-size: 10pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div id=3D"mail-editor-reference-message-container">
+<div class=3D"ms-outlook-mobile-reference-message skipProofing">
+<meta name=3D"Generator" content=3D"Microsoft Exchange Server">
+</div>
+<div class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"te=
+xt-align: left; padding: 3pt 0in 0in; border-width: 1pt medium medium; bord=
+er-style: solid none none; border-color: rgb(181, 196, 223) currentcolor cu=
+rrentcolor; font-family: Aptos; font-size: 12pt; color: black;">
+<b>Von: </b>GetAway Travel GmbH &lt;kundenservice@kurz-mal-weg.de&gt;<br>
+<b>Datum: </b>Dienstag, 31. M=E4rz 2026 um 09:44<br>
+<b>An: </b>Booking Sante Royale R=FCgen &lt;booking.ruegen@sante-royale.com=
+&gt;<br>
+<b>Betreff: </b>Wichtige Mitteilung zur Buchung 2475398 ZIMMER DA ZU<br>
+<br>
+</div>
+<div class=3D"PlainText" style=3D"font-size: 11pt;">94331N SANTE RUEGEN RES=
+ORT VA - Sant=E9 Royale R=FCgen Resort<br>
+e-mail: booking.ruegen@sante-royale.com<br>
+<br>
+Hotel RESERVATION<br>
+<br>
+---------------------------------------------------------------------------=
+---------------------<br>
+<br>
+Unsere Buchungsnummer: 2475398<br>
+<br>
+Wir best=E4tigen folgende verbindliche Buchung:<br>
+<br>
+f=FCr folgende Reiseteilnehmer:<br>
+DAME Marion van Schwamen- Carlberg<br>
+DAME Claudia Ebeling<br>
+DAME Vera Chechel<br>
+DAME Daniela Dilling<br>
+DAME Ute Dehning<br>
+DAME Saskia Achenbach<br>
+DAME D=F6rte Siedler<br>
+DAME Sylvia&nbsp; Ohrmann<br>
+8 Personen<br>
+<br>
+Hotelbuchung:<br>
+<br>
+Ankunft:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 01.Mai.26<br>
+Abreise:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 04.Mai.26<br>
+N=E4chte:&nbsp; 3<br>
+Zimmer:&nbsp; 1 x 4 DOPPELZIMMER / 8 Personen<br>
+Leistung:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DIE 4 TAGE-WELLNESS-KUR=
+ZREISE AUF DIE INSEL R=FCGEN<br>
+Inklusivleistungen:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4 Tage / 3 N=E4chte im stilvoll =
+eingerichteten Doppel- oder Einzelzimmer inkl. der schmackhaften und reichh=
+altigen Vollpension<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t=E4glich Vollpension bestehend =
+aus reichhaltigem Fr=FChst=FCcksbuffet mit BIO-Ecke, Vital-Lunch mit Snacks=
+, Salat- und Suppenbuffet, Kaffee &amp; Kuchen am Nachmittag sowie Dinner-A=
+rrangement mit Wahlgericht als Hauptgang sowie Vor- und Nachspeise vom Buff=
+et<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gro=DFes Pr=E4ventionspaket: 1 I=
+ndividualleistung (im Velusjet oder brainLight) und 1 Gruppenleistung des K=
+ur- und Gesundheitsspektrums des Hauses (z.B.&nbsp; Nordic Walking, Yoga, ?=
+)<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nutzung des Wellnessbereiches in=
+ der obersten Etage mit Blick aufs Meer ausgestattet mit Bade- und Saunalan=
+dschaft (finnische Sauna mit Panoramafenster, Heilwaldsauna, Bio-Sauna Damp=
+fbad, Ruheraum Kamin Lounge), sowie Cardio- /Gymnastikraum<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Leihbademantel leihweise w=E4hre=
+nd ihres Aufenthaltes<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 x Flasche Mineralwasser im Zim=
+mer bei Anreise<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kaffee ? und Teeservicestation a=
+uf dem Zimmer<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WLAN-Nutzung<br>
+<br>
+Preise&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22=
+14,08 EUR<br>
+Reisepreis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2952,00 EUR<br>
+<br>
+<br>
+Bemerkungen:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gebuchte Belegung:<br>
+Doppelzimmer mit 2 Erwachsenen<br>
+Doppelzimmer mit 2 Erwachsenen<br>
+Doppelzimmer mit 2 Erwachsenen<br>
+Doppelzimmer zur Einzelnutzung mit 1 Erwachsenen<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Die Zahlung der G=E4ste erfolgt =
+an die GetAway Travel GmbH, denken Sie bitte an die Rechnungsstellung in H=
+=F6he des oben genannten Betrags an KMW (per E-Mail an rechnung@kurz-mal-we=
+g.de) gem=E4=DF Ihrer Vertragsbedingungen.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unverbindlicher Kundenwunsch: Fr=
+au Dilling muss sich Gluten frei ern=E4hren, Frau Achenbach Weizen und Lact=
+osefrei, Frau Ebeling isst vegetarisch,weitere Ern=E4hrungsweisen sind mir =
+zur Zeit nicht bekannt. Ist ja ganz sch=F6n gruselig f=FCr einen Koch!<br>
+<br>
+<br>
+<br>
+Alle Kundendaten und Anmerkungen finden Sie noch einmal in Ihrem Anbieterbe=
+reich:<br>
+--&gt; <a href=3D"http://extranet.kurz-mal-weg.de/">http://extranet.kurz-ma=
+l-weg.de/</a><br>
+<br>
+F=FCr Fragen stehen wir Ihnen gern unter +49 (0)341 2368 0099 zur Verf=FCgu=
+ng.<br>
+<br>
+Mit freundlichen Gr=FC=DFen<br>
+Ihr Team von GetAway<br>
+<br>
+GetAway Travel GmbH<br>
+Hainstra=DFe 1, 04109 Leipzig<br>
+<br>
+Telefon: +49 (0)341 2368 0099<br>
+<br>
+kundenservice@kurz-mal-weg.de<br>
+<br>
+Vertretungsberechtigte Gesch=E4ftsf=FChrer: Stephan Kloss, Bastian Buch, Ja=
+n Seifried, Elias Russezki<br>
+Amtsgericht Leipzig, HRB 43653<br>
+</div>
+</div>
+</body>
+</html>
+
+--_000_BESP191MB2899AC72F842EB3DFDD2A4DBB0242BESP191MB2899EURP_--
