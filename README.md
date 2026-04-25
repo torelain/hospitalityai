@@ -15,6 +15,7 @@ An operating system for hotels. Centralizes hotel operations, starting with the 
 | [MVP — Email Channel](docs/domain/solution/mvp_email_channel.md) | Requirements and flows for automated email booking management |
 | [Event Storming — Email Channel](docs/domain/solution/event_storming_email_channel.md) | Domain events for the email-channel ingestion pipeline |
 | [Extraction Rules](docs/domain/solution/extraction_rules.md) | Business rules for extracting booking data from agency emails |
+| [Pain Points](docs/domain/problem/painpoints.md) | Insights aus Kundengesprächen, gegliedert nach Persona |
 | [ADRs](docs/adr/README.md) | Architecture Decision Records |
 | [Booking Emails](docs/booking-emails/) | Sample and real incoming booking emails from agencies |
 | [Promocodes Rügen](docs/hotels/ruegen/promocodes.md) | Promocode-Gruppen und zugeteilte Raten für Santé Royale Rügen Resort |
