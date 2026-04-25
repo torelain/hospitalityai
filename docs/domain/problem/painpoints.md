@@ -28,7 +28,7 @@ Mitarbeiter, der eingehende Buchungen verarbeitet und ins System einträgt.
 
 | ID | Pain Point | Kontext / Zitat | Quelle | Datum | Schweregrad |
 |---|---|---|---|---|---|
-| HM-1 | | | | | |
+| HM-1 | MEWS weist Zimmer ohne Slot-Optimierung zu — freie Einzeltage werden verschwendet | MEWS nimmt bei eingehender Buchung immer das erste verfügbare Zimmer, das die Anforderungen erfüllt, ohne benachbarte Belegungslücken zu berücksichtigen. Beispiel: Ein Gast bucht 1 Nacht — MEWS weist das Zimmer mit 5 zusammenhängend freien Wochen zu statt das Zimmer mit nur 1 freien Tag. Damit blockiert eine 1-Nacht-Buchung einen langen zusammenhängenden Block und verhindert eine potenzielle Mehrwochen-Buchung. | Rezeptionist, Santé Royale Rügen Resort (Gespräch) | 25.04.2026 | Hoch |
 
 ---
 
