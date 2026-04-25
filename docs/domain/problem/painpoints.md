@@ -48,4 +48,4 @@ Pain Points, die mehrere Personas oder das System als Ganzes betreffen.
 
 | ID | Pain Point | Betroffene Personas | Kontext / Zitat | Quelle | Datum | Schweregrad |
 |---|---|---|---|---|---|---|
-| ÜG-1 | | | | | | |
+| ÜG-1 | Stornierung ohne Rechnung führt zu nicht zuordenbarem Zahlungseingang in MEWS | Bei Stornierung löschen Mitarbeiter die Rechnungsstellung in MEWS und schicken stattdessen eine manuelle Zahlungsaufforderung. Da keine Rechnung erstellt wurde, wird auch kein Gast-Buchhaltungskonto in MEWS angelegt. Zahlt der Gast trotzdem, bucht MEWS den Eingang auf ein anonymes Konto — ohne Zuordnung zum Gast. | Maximiliane, Santé Royale Rügen Resort (Interview) | 25.04.2026 | Hoch |
