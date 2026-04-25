@@ -1,0 +1,425 @@
+Received: from DU4P191MB3024.EURP191.PROD.OUTLOOK.COM (2603:10a6:10:640::10)
+ by BESP191MB2899.EURP191.PROD.OUTLOOK.COM with HTTPS; Sat, 28 Mar 2026
+ 11:01:19 +0000
+Received: from DUZPR01CA0063.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:3c2::13) by DU4P191MB3024.EURP191.PROD.OUTLOOK.COM
+ (2603:10a6:10:640::10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9745.25; Sat, 28 Mar
+ 2026 11:01:17 +0000
+Received: from DU6PEPF0000B620.eurprd02.prod.outlook.com
+ (2603:10a6:10:3c2:cafe::c3) by DUZPR01CA0063.outlook.office365.com
+ (2603:10a6:10:3c2::13) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9745.25 via Frontend Transport; Sat,
+ 28 Mar 2026 11:01:17 +0000
+Received: from e2i632.smtp2go.com (103.2.142.120) by
+ DU6PEPF0000B620.mail.protection.outlook.com (10.167.8.136) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9745.21
+ via Frontend Transport; Sat, 28 Mar 2026 11:01:17 +0000
+Received: from [10.45.33.53] (helo=SmtpCorp) by smtpcorp.com with esmtpsa
+ (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+ (Exim 4.94.2-S2G) (envelope-from <reservation@dertouristik.com>)
+ id 1w6RPn-qt4EFw-O5
+ for booking.ruegen@sante-royale.com; Sat, 28 Mar 2026 11:01:16 +0000
+Received: from [10.112.240.158] (helo=DER-DOC-01.DERATCOM.ATCOM)
+ by smtpcorp.com with esmtpsa
+ (TLS1.2:ECDHE_X25519__RSA_SHA256__AES_256_GCM:256) (Exim 4.99.1-S2G)
+ (envelope-from <reservation@dertouristik.com>)
+ id 1w6RPm-4o5NDgrpQJn-btRW for booking.ruegen@sante-royale.com;
+ Sat, 28 Mar 2026 11:01:14 +0000
+Received: from mail pickup service by DER-DOC-01.DERATCOM.ATCOM with Microsoft
+ SMTPSVC; Sat, 28 Mar 2026 11:01:12 +0000
+From: "reservation@dertouristik.com" <reservation@dertouristik.com>
+To: =?Windows-1252?Q?Booking_Sante_Royale_R=FCgen?=
+	<booking.ruegen@sante-royale.com>
+Subject: DERTOUR Notification, Reference 611495741
+Thread-Topic: DERTOUR Notification, Reference 611495741
+Thread-Index: AQHcvqI0GofWnFQd60mf5vkkFJpQQw==
+X-MS-Exchange-MessageSentRepresentingType: 1
+Date: Sat, 28 Mar 2026 11:01:12 +0000
+Message-ID: <DER-DOC-013hRDT6Z3L000029e2@DER-DOC-01.DERATCOM.ATCOM>
+Content-Language: en-US
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Exchange-Organization-AuthSource:
+	DU6PEPF0000B620.eurprd02.prod.outlook.com
+X-MS-Has-Attach:
+X-MS-Exchange-Organization-Network-Message-Id:
+	7baca130-aac6-456e-78b3-08de8cb955f2
+X-Message-Flag: Zur Nachverfolgung
+X-MS-TNEF-Correlator:
+X-MS-Exchange-Organization-RecordReviewCfmType: 0
+x-ms-publictraffictype: Email
+received-spf: Pass (protection.outlook.com: domain of
+ em600494.dertouristik.com designates 103.2.142.120 as permitted sender)
+ receiver=protection.outlook.com; client-ip=103.2.142.120;
+ helo=e2i632.smtp2go.com; pr=C
+authentication-results: spf=pass (sender IP is 103.2.142.120)
+ smtp.mailfrom=em600494.dertouristik.com; dkim=pass (signature was verified)
+ header.d=dertouristik.com;dmarc=pass action=none
+ header.from=dertouristik.com;compauth=pass reason=100
+x-ms-office365-filtering-correlation-id: 7baca130-aac6-456e-78b3-08de8cb955f2
+x-ms-traffictypediagnostic:
+	DU6PEPF0000B620:EE_|DU4P191MB3024:EE_|BESP191MB2899:EE_
+x-microsoft-antispam:
+	BCL:0;ARA:13230040|704160411799003|3109299003|12012899012|5062899012|3072899012|2092899012|3092899012|7149299003|69100299015|4076899003|8096899003|55112099003|57112099003|16102099003|19002099003;
+x-forefront-antispam-report:
+	CIP:103.2.142.120;CTRY:NL;LANG:de;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:e2i632.smtp2go.com;PTR:e2i632.smtp2go.com;CAT:NONE;SFS:(13230040)(704160411799003)(3109299003)(12012899012)(5062899012)(3072899012)(2092899012)(3092899012)(7149299003)(69100299015)(4076899003)(8096899003)(55112099003)(57112099003)(16102099003)(19002099003);DIR:INB;
+x-ms-exchange-crosstenant-authas: Anonymous
+x-ms-exchange-crosstenant-authsource:
+	DU6PEPF0000B620.eurprd02.prod.outlook.com
+x-ms-exchange-crosstenant-network-message-id:
+	7baca130-aac6-456e-78b3-08de8cb955f2
+x-ms-exchange-crosstenant-originalarrivaltime: 28 Mar 2026 11:01:17.0493 (UTC)
+x-ms-exchange-crosstenant-fromentityheader: Internet
+x-ms-exchange-crosstenant-id: 41b5a112-0e42-447e-88c8-d97486303fa3
+x-ms-exchange-transport-crosstenantheadersstamped: DU4P191MB3024
+x-eopattributedmessage: 0
+x-eoptenantattributedmessage: 41b5a112-0e42-447e-88c8-d97486303fa3:0
+x-ms-exchange-transport-endtoendlatency: 00:00:01.9850994
+x-ms-exchange-processed-by-bccfoldering: 15.20.9745.023
+x-ms-exchange-atpmessageproperties: SA|SL
+dkim-signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dertouristik.com;
+ i=@dertouristik.com; q=dns/txt; s=s600494; t=1774695676; h=from : subject :
+ to : message-id : date; bh=r0KEYVsdSV7wuAKQVkXu0FckzS9cwlsQTZwHds4A4lA=;
+ b=jOJvW69Sc7xZyft8xwjJGBvbYqrfB++gPMJ2z2iowzXzDMgLc8ZyirNW9x26UnD/KCHnU
+ bUZRoLCDvbR9kvOit6tNR/Qh0UDRvea86oPG60FJsmCfmQl+VmJPjj0A1pZN3DxU/ZexB9A
+ +w4RRPHK0MchMqPAu/nowscE9MW1HCP+H6lbguHduUQ1Z3tsZIGA9AlXp5D1WN2bDXEei1c
+ M+fsOVwSQYpyPTaxdrxWr1O76NhsLfcvorCTuxAA3FPt3pT2KUYSHAOVS7hNaL/HBJjclCh
+ pACxnFJW1UO11S6bH4jOqwkLMD+oHpwE77jUkg6TvpK7+FFVz8RpeAQeCyuw==
+feedback-id: 600494m:600494azn-KAa:600494sUG8vNVCGh
+X-Microsoft-Antispam-Mailbox-Delivery:
+	wl:1;pcwl:1;ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(811242)(255002)(410001)(930201)(20251009189)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?Windows-1252?Q?j0lAafJMLNUvfVIFn9r8JyhEWNlyi91vxMRsx6SCRnSbMBJ/iqSfbBY6?=
+ =?Windows-1252?Q?1WgJh9ZGrOMPkcruPpHZndusI1g38fE4s86dgzEdEcO2MCeGxo6q+tc6?=
+ =?Windows-1252?Q?ndnZbthU8URGY7rRTMAlveaik3VJw39yeY7KojPlXqEl5Z71w3JbnCEc?=
+ =?Windows-1252?Q?UMUV61XXo2oZrojw6yV3gFBcVGdTyelzYlggj29cgcWkCSMLrz9fjO6X?=
+ =?Windows-1252?Q?+2f/DF1AKYE1u1gJddrphLGLl8HV8Pim6xqoC6VP0QsJ6GKIZWUPJZwf?=
+ =?Windows-1252?Q?0+ZnIp+kLqDHsBWLH4bqCk2sZqgM+G9jSXED6EsdRP3N6fj8/xoG3M3P?=
+ =?Windows-1252?Q?yLF9dHCjSgu33BgnCXs2J76+siWn8yuMA2KZtI5HchiE8z9IDSDdnsYi?=
+ =?Windows-1252?Q?UvZyVIKVsMPgHJpaguLaY48A8q1wiS3O6iyDKc7gSMpwXM5mgILHn0mw?=
+ =?Windows-1252?Q?70r7PvK43gSU46LHotjjdJmgQ4FZgGyBLt9c9UUqsLaJC9+7eLpTTeja?=
+ =?Windows-1252?Q?4M2miawtuH2XKatKgS85jMb1/81VN7PeCCme7emq2NpihBmUP579GTbw?=
+ =?Windows-1252?Q?TluWdiLrBd0DNZGq3Pw8/G+iOYgGOxRM6JEm1of4YPqif++r+sZCEE/G?=
+ =?Windows-1252?Q?fY2zypdNrLeHudVpr+qC6jm5p2T4hoPfzdOHgilAEk3zh97IxUAKXOba?=
+ =?Windows-1252?Q?11fGWsNEokksC2gV5PLsPFfuh9AeU74X19yY8BntKYRr/exinWhof1xE?=
+ =?Windows-1252?Q?XTzsQKQ4Mec56GRBWPGrxe4udB4/Kcp/26mIBsJWg2K3X7qq4o+R3MTy?=
+ =?Windows-1252?Q?yEfS6DQgInbZHk5+T/3GApqBM8WCDafKjFalp7Z+dSuOdzr2BuWBsr+6?=
+ =?Windows-1252?Q?Qx/Y6Q60YAvk6mYe5CR7vMEeVXLgvWl2Gi8PlypeOz2lPS4rmyJnvoC4?=
+ =?Windows-1252?Q?9JgSck3clqEVKwph6OQi2gGxv7apQgTTROXVlD9HDK/kTcTyZDft20r2?=
+ =?Windows-1252?Q?IZ9P21tyQM2udOYWXw2KK5VGz/Hx7ILHN3RqZItD+xeztRXkowYfhAUg?=
+ =?Windows-1252?Q?VxEYsEHLGEchK4WCd6s+cFx87SpoyclrvNawamib/sdlw+2oF6/wRnZr?=
+ =?Windows-1252?Q?SkNpRaYe+EQy/pdKNRyOxdeJ1WDZ2lsbGlzH+d3biyI6ZD3+A5+sAoE4?=
+ =?Windows-1252?Q?JNGQ68VvLo3k9yrztb5hjOVw3k9oWhG2NHd/VxkAmza/sv9j+PZVtzJJ?=
+ =?Windows-1252?Q?DM+VjV2Ktp/VuwLFq6+wozwc8V5z/fxx70Hd9krTg4s9Xxz/6Xhd2F7W?=
+ =?Windows-1252?Q?54qdhwhzCTWdHn/VWBNptPK+jOja2yzUNxVEGRGAH4fZd3mIR9eWm13h?=
+ =?Windows-1252?Q?eORC09at5ZugdXDuETmPA91JtsIEY1v1atp1EluiW8FoqFvLsFKWXF5x?=
+ =?Windows-1252?Q?2dGzoVvRQzZMjz8cc/Bj1m72BsA29O4ArjqtZsAkJqpOru3w6AM9OG3B?=
+ =?Windows-1252?Q?yLo3r3T1dvgA/D4Cn/rdphFD8fFZQnsG39YnQqRWTsPMqcbiim/Ajmkk?=
+ =?Windows-1252?Q?cypkZPcPLgJg+3c9idMllb/iQV6+3AOLA5YKJy/URmABJRRB+IC6jTH1?=
+ =?Windows-1252?Q?Oddlm3d9YEERUS5Jy8VS7TgpDjYnlWGGSOEdXE/eP9OM1Ui6tb6GJtGF?=
+ =?Windows-1252?Q?Ok15LaS4as9F++JWpcbu6eCRZTmfSORfYLmllM6AYlfpIqoD/JqbkPU9?=
+ =?Windows-1252?Q?hz6SSw/59Yt/NNzIvkR55pP5mbE5DSfGYWzxkqU/lzTmWzqcuRI1rRsi?=
+ =?Windows-1252?Q?rr+PyzNWIBShB2AIS4zuFpu0PxZjvzyuiRRitG8ztxw9Bk+dY/YVNfDo?=
+ =?Windows-1252?Q?Bti+wzV0vl6gloUpd2P/J4CPmt9pD3pupNZKVU/OvIxBJBEQCntFhH86?=
+ =?Windows-1252?Q?If6+0Wpt6SSg7g+vCV85zXEo24R1QG4fjL8kcpLO2I1kjxbn903l/nIf?=
+ =?Windows-1252?Q?J4nAE4Mp6P31AMuC9OJIpC6Xyb9VapziRql5lpW8vWoTZBijcNJKUdB4?=
+ =?Windows-1252?Q?QtmrRxUeaqwesxu5DIBXIi6EMESO4PRoz9Hj6Cy5ib00cvSVrCi6qkW6?=
+ =?Windows-1252?Q?vdV5WqR4vLRn8A3LfGy6U5QIzl3+lNimRrM0gwIrE/cjzKKthHEnYG+O?=
+ =?Windows-1252?Q?F7ZTccfCqnxs0EgqvHr5rd2C6Wu0VMPcSXWbe8PSEeTF4wCcN0FjPFV/?=
+ =?Windows-1252?Q?ysyJ52nhFqqFdLsn7oUAWWfQcZYr009rO6O4BjkkWXT6nqLP8tMJwkPt?=
+ =?Windows-1252?Q?uiPS/fWn2YXiG8v9m5mVB1n497d99UWxgFdAR9L++k0x1t7XYSImbMwm?=
+ =?Windows-1252?Q?WSYU7m6VMBlHj1iae12rgrA6a7ipTdN2NZfQ5eMaSRPWzz3399tk4Qhu?=
+ =?Windows-1252?Q?KXjQx4ed/x+vb3idoBVI8RsFv4GWZfP/biUvsYI3a5eEXkHrXYAoWlCn?=
+ =?Windows-1252?Q?TXCuUKUBMJW2VqOyXiiDOZzbswBeyRKbzxeoUFlx85rhmeWM59mrdiUn?=
+ =?Windows-1252?Q?b/qw8+EmUmS+cPjXftbHoF1Fv+OKM3qGXAvqpkQQi3YlE0XdhplRbP3B?=
+ =?Windows-1252?Q?RyENGnzZjdwYRcFeLfrubRq+kcgiRDVSmYrIqC4oy6jrYmdQocjajDP4?=
+ =?Windows-1252?Q?ryXK1Di2LRnVQp2KiDiRB8FPTCFti5TaX/tmAh+9Bmb9Mr00P+y9o/j0?=
+ =?Windows-1252?Q?52AVZC5tv21mQJ+1gstbiBK+qB+vEGJvXoAeihFJRFyTNZj7ju/dlS3y?=
+ =?Windows-1252?Q?Hpl/k7FkSqVkrH5BBo2vOh6pdBq5eB6QQJmp/MP0sPPwOXSbo08SNNqG?=
+ =?Windows-1252?Q?LO61A9krkH68hn9nAbAr3EkQ/pSyxL1qSNtU5gtKacu7kvCyaDAfEGnq?=
+ =?Windows-1252?Q?HpgxcIXe3yp2eoEj1KvOdgqbhL0AqPImbY/Gq90YZGKHQTQQkHdWrR8S?=
+ =?Windows-1252?Q?LcsP3zUg?=
+Content-Type: multipart/alternative;
+	boundary="_000_DERDOC013hRDT6Z3L000029e2DERDOC01DERATCOMATCOM_"
+MIME-Version: 1.0
+
+--_000_DERDOC013hRDT6Z3L000029e2DERDOC01DERATCOMATCOM_
+Content-Type: text/plain; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+[https://www.dertouristik.com/wp-content/uploads/2023/05/Logo-DERtouristik-=
+90x79-1.png]
+
+DERTOUR Booking Information
+
+From: clevertours.com GmbH
+To: Sant=E9 Royale R=FCgen Resort #A#       Department: CLEDEP CLE Comm Cen=
+ter STND
+Date: 28-Mar-2026
+Time: 12:00
+
+
+________________________________
+New Booking
+
+Touroperator: REWE Reisen Component (VC2)
+Hotel Name: Sant=E9 Royale R=FCgen Resort inkl. Pr=E4ventionspaket (CLV) (R=
+LG50035)
+Booking Reference: 611495741
+Arrive: 11-Aug-2026
+Depart: 18-Aug-2026
+Duration: 7 nights
+Number of Rooms: 1
+
+Room 1: DZ Standard (DB1)
+Board Basis: Fullboard
+Booking Date: 28-Mar-2026
+
+Names:  Age
+Nationality
+Christian D=F6tsch, Mr.   50      Germany
+Renate D=F6tsch, Mrs.     49      Germany
+Emilia D=F6tsch, Mr. (Chd)        14      Germany
+
+Room Taken from Allocation for Period 11-Aug-2026 to 17-Aug-2026
+
+Additional Information
+******************** Unser Special f=FCr Anreisen vom 1.3.-22.5.26: Upgrade=
+ von Vollpension auf All Inclusive: vielseitiges Fr=FChst=FCcksbuffet, Mitt=
+agssnack mit kleinen K=F6stlichkeiten, Salat- & Suppenauswahl, nachmittags =
+Kaffee und Kuchen, abends Suppe, Vor- & Nachspeisenbuffet mit Eisbar, Haupt=
+speise zur Wahl, alkoholfreie Getr=E4nke (10-22 Uhr), Auswahl an Bier und H=
+auswein (rot/weiss, 17:30-22 Uhr) ******************** Inklusivleistungen N=
+utzung des 2.000 m=B2 gro=DFen Spa- und Medical-Wellnessbereichs Leihbadema=
+ntel f=FCr die Dauer Ihres Aufenthaltes 1 x Pr=E4ventionspaket: je 1 x Indi=
+vidualleistung (z.B. Velus-Jet) & 1 x Gruppenleistung des Kur- und Gesundhe=
+itsspektrums (z.B. Yoga), 1 x Individual- und 2 x Gruppenleistung (5 N=E4ch=
+te) bzw. 2 x Individual- und 2 x Gruppenleistung (7 N=E4chte) 1 Flasche Was=
+ser bei Anreise auf dem Zimmer WLAN Generelle Hinweise Kurtaxe saisonabh=E4=
+ngig ca. =80 3,37 pro Person/Nacht (vor Ort zu zahlen).Hotel Check-In: ab 1=
+5:00 Uhr, Check-Out: bis 11:00 Uhr
+Additional Information
+Vermarktung: REWE-Flyer M=E4rz
+Clevertours Vermarktung / Rewe Flyer Nov./Dez.
+
+________________________________
+
+
+
+--_000_DERDOC013hRDT6Z3L000029e2DERDOC01DERATCOMATCOM_
+Content-Type: text/html; charset="Windows-1252"
+Content-ID: <74824F7752D2F149911B26DF720DB502@EURP191.PROD.OUTLOOK.COM>
+Content-Transfer-Encoding: quoted-printable
+
+<!-- $Id: HTML_Template.htm 274659 2023-02-07 10:18:08Z lee.angus $ -->
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-1=
+252">
+<meta name=3D"Service" content=3D"Atcore @com">
+<meta name=3D"Copyright" content=3D"(c) 2026 ATCORE Technology Ltd">
+<meta name=3D"Template" content=3D"HTML_Template.htm">
+<meta name=3D"Server" content=3D"DER-DOC-01">
+<meta name=3D"StateId" content=3D"">
+<style>
+.DataText {
+	font-family:Arial
+}
+.DataTextBorder {
+        border: 1px solid black;
+        font-family:Arial
+}
+.TableBorder {
+        border: 1px solid black;
+        font-family:Arial
+}
+</style>
+</head>
+<body>
+<table width=3D"900">
+<thead>
+<tr>
+<td colspan=3D"6"><img src=3D"https://www.dertouristik.com/wp-content/uploa=
+ds/2023/05/Logo-DERtouristik-90x79-1.png"></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">
+<center><b>DERTOUR Booking Information</b></center>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"4">From: clevertours.com GmbH</td>
+<td class=3D"DataText" colspan=3D"2"></td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"4">To: Sant=E9 Royale R=FCgen Resort #A#<=
+/td>
+<td class=3D"DataText" colspan=3D"2">Department: CLEDEP CLE Comm Center STN=
+D</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"4">Date: 28-Mar-2026</td>
+<td class=3D"DataText" colspan=3D"2"></td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"4">Time: 12:00</td>
+<td class=3D"DataText" colspan=3D"2"></td>
+</tr>
+<tr>
+<td colspan=3D"6">&nbsp;</td>
+</tr>
+<tr>
+<td colspan=3D"6">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">
+<hr>
+</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">
+<center><b>New Booking</b></center>
+</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Touroperator: REWE Reisen Component (V=
+C2)</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Hotel Name: Sant=E9 Royale R=FCgen Res=
+ort inkl. Pr=E4ventionspaket (CLV) (RLG50035)</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Booking Reference: 611495741</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Arrive: 11-Aug-2026</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Depart: 18-Aug-2026</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Duration: 7 nights</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Number of Rooms: 1</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Room 1: DZ Standard (DB1)</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Board Basis: Fullboard</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Booking Date: 28-Mar-2026</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"DataText">Names:</td>
+<td class=3D"DataText">Age</td>
+<td class=3D"DataText">
+<center><b>Nationality</b></center>
+</td>
+<td class=3D"DataText"></td>
+</tr>
+<tr>
+<td class=3D"DataText">Christian D=F6tsch, Mr. </td>
+<td class=3D"DataText">50</td>
+<td class=3D"DataText">Germany</td>
+<td class=3D"DataText"></td>
+</tr>
+<tr>
+<td class=3D"DataText">Renate D=F6tsch, Mrs. </td>
+<td class=3D"DataText">49</td>
+<td class=3D"DataText">Germany</td>
+<td class=3D"DataText"></td>
+</tr>
+<tr>
+<td class=3D"DataText">Emilia D=F6tsch, Mr. (Chd) </td>
+<td class=3D"DataText">14</td>
+<td class=3D"DataText">Germany</td>
+<td class=3D"DataText"></td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Room Taken from Allocation for Period =
+11-Aug-2026 to 17-Aug-2026</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Additional Information</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">******************** Unser Special f=
+=FCr Anreisen vom 1.3.-22.5.26: Upgrade von Vollpension auf All Inclusive: =
+vielseitiges Fr=FChst=FCcksbuffet, Mittagssnack mit kleinen K=F6stlichkeite=
+n, Salat- &amp; Suppenauswahl, nachmittags Kaffee
+ und Kuchen, abends Suppe, Vor- &amp; Nachspeisenbuffet mit Eisbar, Hauptsp=
+eise zur Wahl, alkoholfreie Getr=E4nke (10-22 Uhr), Auswahl an Bier und Hau=
+swein (rot/weiss, 17:30-22 Uhr) ******************** Inklusivleistungen Nut=
+zung des 2.000 m=B2 gro=DFen Spa- und Medical-Wellnessbereichs
+ Leihbademantel f=FCr die Dauer Ihres Aufenthaltes 1 x Pr=E4ventionspaket: =
+je 1 x Individualleistung (z.B. Velus-Jet) &amp; 1 x Gruppenleistung des Ku=
+r- und Gesundheitsspektrums (z.B. Yoga), 1 x Individual- und 2 x Gruppenlei=
+stung (5 N=E4chte) bzw. 2 x Individual- und
+ 2 x Gruppenleistung (7 N=E4chte) 1 Flasche Wasser bei Anreise auf dem Zimm=
+er WLAN Generelle Hinweise Kurtaxe saisonabh=E4ngig ca. =80 3,37 pro Person=
+/Nacht (vor Ort zu zahlen).Hotel Check-In: ab 15:00 Uhr, Check-Out: bis 11:=
+00 Uhr</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Additional Information</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Vermarktung: REWE-Flyer M=E4rz </td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Clevertours Vermarktung / Rewe Flyer N=
+ov./Dez.</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">
+<hr>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6">&nbsp;</td>
+</tr>
+<tr>
+<td colspan=3D"6">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
+
+--_000_DERDOC013hRDT6Z3L000029e2DERDOC01DERATCOMATCOM_--

@@ -1,0 +1,356 @@
+Received: from AS1P191MB2125.EURP191.PROD.OUTLOOK.COM (2603:10a6:20b:4a5::22)
+ by BESP191MB2899.EURP191.PROD.OUTLOOK.COM with HTTPS; Sat, 18 Apr 2026
+ 23:19:17 +0000
+Received: from AS4P250CA0027.EURP250.PROD.OUTLOOK.COM (2603:10a6:20b:5e3::18)
+ by AS1P191MB2125.EURP191.PROD.OUTLOOK.COM (2603:10a6:20b:4a5::22) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9818.31; Sat, 18 Apr
+ 2026 23:19:15 +0000
+Received: from AMS1EPF00000094.eurprd05.prod.outlook.com
+ (2603:10a6:20b:5e3:cafe::dc) by AS4P250CA0027.outlook.office365.com
+ (2603:10a6:20b:5e3::18) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9769.55 via Frontend Transport; Sat,
+ 18 Apr 2026 23:19:15 +0000
+Received: from e2i632.smtp2go.com (103.2.142.120) by
+ AMS1EPF00000094.mail.protection.outlook.com (10.167.242.91) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9791.48
+ via Frontend Transport; Sat, 18 Apr 2026 23:19:15 +0000
+Received: from [10.45.56.87] (helo=SmtpCorp) by smtpcorp.com with esmtpsa
+ (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+ (Exim 4.94.2-S2G) (envelope-from <reservation@dertouristik.com>)
+ id 1wEEwU-qt4EzL-KN
+ for booking.ruegen@sante-royale.com; Sat, 18 Apr 2026 23:19:14 +0000
+Received: from [10.112.240.158] (helo=DER-DOC-01.DERATCOM.ATCOM)
+ by smtpcorp.com with esmtpsa
+ (TLS1.2:ECDHE_X25519__RSA_SHA256__AES_256_GCM:256) (Exim 4.99.1-S2G)
+ (envelope-from <reservation@dertouristik.com>)
+ id 1wEEwT-FnQW0hPrz0A-d8ES for booking.ruegen@sante-royale.com;
+ Sat, 18 Apr 2026 23:19:13 +0000
+Received: from mail pickup service by DER-DOC-01.DERATCOM.ATCOM with Microsoft
+ SMTPSVC; Sun, 19 Apr 2026 00:19:11 +0100
+From: "reservation@dertouristik.com" <reservation@dertouristik.com>
+To: =?iso-8859-1?Q?Booking_Sante_Royale_R=FCgen?=
+	<booking.ruegen@sante-royale.com>
+Subject: DERTOUR Notification, Reference 622798938
+Thread-Topic: DERTOUR Notification, Reference 622798938
+Thread-Index: AQHcz4nH7Liv59w5l0SIrJpjTWhJ3A==
+X-MS-Exchange-MessageSentRepresentingType: 1
+Date: Sat, 18 Apr 2026 23:19:11 +0000
+Message-ID: <DER-DOC-01CxpAOAkK50002b3b4@DER-DOC-01.DERATCOM.ATCOM>
+Content-Language: en-US
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Exchange-Organization-AuthSource:
+	AMS1EPF00000094.eurprd05.prod.outlook.com
+X-MS-Has-Attach:
+X-MS-Exchange-Organization-Network-Message-Id:
+	a028322b-67a7-44a1-08fa-08de9da0e885
+X-Message-Flag: Zur Nachverfolgung
+X-MS-TNEF-Correlator:
+X-MS-Exchange-Organization-RecordReviewCfmType: 0
+x-ms-publictraffictype: Email
+received-spf: Pass (protection.outlook.com: domain of
+ em600494.dertouristik.com designates 103.2.142.120 as permitted sender)
+ receiver=protection.outlook.com; client-ip=103.2.142.120;
+ helo=e2i632.smtp2go.com; pr=C
+authentication-results: spf=pass (sender IP is 103.2.142.120)
+ smtp.mailfrom=em600494.dertouristik.com; dkim=pass (signature was verified)
+ header.d=dertouristik.com;dmarc=pass action=none
+ header.from=dertouristik.com;compauth=pass reason=100
+x-ms-office365-filtering-correlation-id: a028322b-67a7-44a1-08fa-08de9da0e885
+x-ms-traffictypediagnostic:
+	AMS1EPF00000094:EE_|AS1P191MB2125:EE_|BESP191MB2899:EE_
+x-microsoft-antispam:
+	BCL:0;ARA:13230040|704160411799003|7149299003|69100299015|3092899012|2092899012|3072899012|5062899012|3109299003|12012899012|16102099003|19002099003|4076899003|8096899003|57112099003|55112099003;
+x-forefront-antispam-report:
+	CIP:103.2.142.120;CTRY:NL;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:e2i632.smtp2go.com;PTR:e2i632.smtp2go.com;CAT:NONE;SFS:(13230040)(704160411799003)(7149299003)(69100299015)(3092899012)(2092899012)(3072899012)(5062899012)(3109299003)(12012899012)(16102099003)(19002099003)(4076899003)(8096899003)(57112099003)(55112099003);DIR:INB;
+x-ms-exchange-crosstenant-authas: Anonymous
+x-ms-exchange-crosstenant-authsource:
+	AMS1EPF00000094.eurprd05.prod.outlook.com
+x-ms-exchange-crosstenant-network-message-id:
+	a028322b-67a7-44a1-08fa-08de9da0e885
+x-ms-exchange-crosstenant-originalarrivaltime: 18 Apr 2026 23:19:15.3814 (UTC)
+x-ms-exchange-crosstenant-fromentityheader: Internet
+x-ms-exchange-crosstenant-id: 41b5a112-0e42-447e-88c8-d97486303fa3
+x-ms-exchange-transport-crosstenantheadersstamped: AS1P191MB2125
+x-eopattributedmessage: 0
+x-eoptenantattributedmessage: 41b5a112-0e42-447e-88c8-d97486303fa3:0
+x-ms-exchange-transport-endtoendlatency: 00:00:02.3662907
+x-ms-exchange-processed-by-bccfoldering: 15.20.9818.014
+x-ms-exchange-atpmessageproperties: SA|SL
+dkim-signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dertouristik.com;
+ i=@dertouristik.com; q=dns/txt; s=s600494; t=1776554355; h=from : subject :
+ to : message-id : date; bh=GLnYetxM9DOhfE84wK4oQRN2upNmP7IrSopESP/zA0Y=;
+ b=DTtrOlboK5qJD9go4/wyiSVSPwQwcaDQYxGe77A7F3rIZ4nYx9oKpMGDGU2J3swhqshJ7
+ 4WSJC4VzpPIHHHD2eoMSFD54gD3yazSmuEFRBCoVYY7Nc0gxmoDxXAetE2gl/BJPwMR1HYx
+ zGcPPqCUA5WaFPhahnfcaYxlP9Lml49TtcCa38fkYcwDjGgMcWR6yUrGkng2zynLSbhILFU
+ NbN7dXaClp44bM325KlNvF6OQ/mjXYz+r6xVlmmZwsEkRYShDDMUp2bWS5lrbYJuIh9YoXO
+ b1LDX21PKjiCwVsY9Em4en871C1jCySE4f3cUcPDqbBXfOFuvrWMfTPB+rEw==
+feedback-id: 600494m:600494azn-KAa:600494sKQP449fJL
+X-Microsoft-Antispam-Mailbox-Delivery:
+	wl:1;pcwl:1;ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(811242)(255002)(410001)(930201)(20251009189)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?iso-8859-1?Q?uKI4oOh/qF4PuW20Cu9f1i+1zyxI8/rCiYn+JD/5y/yZcKy/O2t06smIIb?=
+ =?iso-8859-1?Q?OFLd1RFM8FshP7PeFQOIuFnTShtstRgw8RBsyTcCPJeN3RYTgMZlV8Qgw4?=
+ =?iso-8859-1?Q?x6RyBV+81CWKTiQNVEqOLGcX8pDXhiOB9U0Riou/zk8a4Hid4BnOp9kla+?=
+ =?iso-8859-1?Q?GZeaqdfR/xptSOwwmUsyHKLNDYEtQgWyunkFoLIXtRyeOllRd3rh1vXJPP?=
+ =?iso-8859-1?Q?EhNaQkIvr3Lg36moWEBJVEAedAYCB0JFIl2diBKVvtqIEktlFX6UGHIW1s?=
+ =?iso-8859-1?Q?vx2wUdiLiSnJyupvIqAxsz974GgUgmZBDTeH81ZBimY72oxRAqUgEAOXg6?=
+ =?iso-8859-1?Q?HoSMyejg23rCkjp9iUv9sVKlBUoJn070R0cdMYMPAYQo6ZY4MPyl9uDoK3?=
+ =?iso-8859-1?Q?Lvg5hwIMg5R+4mvYZsUTMiO2UQqDE1JaxEnvn8CidOzm8v5hR8Q1ELputj?=
+ =?iso-8859-1?Q?zUIdXxaSKTNDYZcd6SlxfBjR+AIKsoIsmPcQzBmoa0MPyD4r8Kh7FVH+Z2?=
+ =?iso-8859-1?Q?cwQSwLDab/KAHTFaJY/n9Fj97zOUzJl7SJNqMf4f40xvFyhc0f1tuyDS9F?=
+ =?iso-8859-1?Q?i6LxSNY/s6twyieIUK9yHSwrUAWeaISsZiZB+vXhrpB+CIksm6HSHCXmSy?=
+ =?iso-8859-1?Q?9LwbjQgQ6rH1GaAut3UG9/fJqzD0tJOskTDSMfKIt61ViYssUGNmavV0a5?=
+ =?iso-8859-1?Q?+iQ/gtIYyEvjgO9ia1EKyeCyABhDH1sCaLUe4hodgu+IGaI0EKJv/G/ELD?=
+ =?iso-8859-1?Q?1DjztLJ7zvHkgypISTFHLpRZGf6gYr0iRzVgTILcz7VaLiV8kp7asRGRaC?=
+ =?iso-8859-1?Q?KBwH1KaHyYBTnmlgndbvxzmWaH8MS2ziVZn65BxB9jNCsKPnAM4qKgYz9/?=
+ =?iso-8859-1?Q?LRfQCWclHy0tIemNEZmA4KQi38W5ZIHY5acCykr6KkQVcGUeSFEYluvl9o?=
+ =?iso-8859-1?Q?m1FX9GhupdbySWLK0kaSS6ETKBEF+XTxravqa+7JzRtjqzhHEWAWjC7wu9?=
+ =?iso-8859-1?Q?ltyraG3tDzyN9WuOL38DpEZ2Uk1JVZHN0/+MbxdmMoE+S3+i4AT/prZf38?=
+ =?iso-8859-1?Q?KbscPsyp5E2l17I6IuSDVULfYJMiOw3Gi265RFb3CNnGFPusXILfolqheJ?=
+ =?iso-8859-1?Q?AFnsn8NPFTgcjFVhmeuDqTbskJfsWx1BfLogKcXVHKJ8safFhp05x2wUfC?=
+ =?iso-8859-1?Q?8Uic4e5QEC6zTXZqNHUCrAH6/Z/iPykMukgJaURNwH0qUWjY03fvB/GHm9?=
+ =?iso-8859-1?Q?RnY/TiXB6dh6SZQPwFAIJL2IU5eYj1NWxES3KH1QEBlsHeCWqOtMb0s/sr?=
+ =?iso-8859-1?Q?PBqt3ZccuoGRsgE9RcBLuib1M02291sKJiuktRn04gnJGIqusrgFKUcXbl?=
+ =?iso-8859-1?Q?8GO3pT0aL2v82fkvqQQAynSa0s6Q/HQQSlAsv/21UFQ4PLErZiRJw9IBXq?=
+ =?iso-8859-1?Q?JzOVp9ZJXWzVYs1Xs2QX+mLrkszOlEd/JbV7VGs3DibyHlMwNyLD6+WisI?=
+ =?iso-8859-1?Q?ueIegn1Zs20NxfHECEMLgSafn8slH7Yt0xtWKrJqF58kHrdC4OlYjynFuz?=
+ =?iso-8859-1?Q?ENMTxIeyH17Q/VyBSV976E1cU6kEXBRhROGXtY7hSBZbK+JJjvf3jnPMQE?=
+ =?iso-8859-1?Q?hgL0xH4llMj6qAa0y1SPBjeN45UVbhYvnYbgbVHX/cYjHjV1PVzicIAMp6?=
+ =?iso-8859-1?Q?91rTyxvbmud4qMHe9MMV0SyQXbQaWeiRLaLhyjEdA88KXD3lWfi9ThS72k?=
+ =?iso-8859-1?Q?wrrW3vF0n6QzpT7ZEA6ICf/C/AbMnHGLuTwk8tzpPLOHXqhfn2Ejhec6lV?=
+ =?iso-8859-1?Q?L0t87+HVjHyUqA9XoqfeZdQnPhbpx5zAamnPJurgqBcrF2gI/bw1T1Dnb0?=
+ =?iso-8859-1?Q?1BzCCy9rzrHK7NIuKxZcfa+KA2rcluFvjBtlZmV1C5m3acYjOkGTaLueob?=
+ =?iso-8859-1?Q?KtfzpuGscN/2AqZ24rZwH4SGH1jCYI4/1AgNGFWkXeMmWqiHVPzhSdsAnZ?=
+ =?iso-8859-1?Q?+EWc4zfG4uTvJh+tdhgX7RTsG2Z4648xca7V6uk6JCCIvjaN1V9NSIwLTb?=
+ =?iso-8859-1?Q?WKT2lA7oRm8Wtq7DE6xAg9vUwztZ2Sbk+64ZgTZLJQPRoemYyX3Y1Wyrei?=
+ =?iso-8859-1?Q?SaYAWwq+RBb2Vg3x2TwNE1h//XWRLlv1x72avXrtn4roVsIJdx0mvtwCo0?=
+ =?iso-8859-1?Q?z7eSeaUXObnR6YggmFn61m/PAvI+88LaApLj4RBhN2dxqKusmu9n0f/LH9?=
+ =?iso-8859-1?Q?QDBc20dEM1Rx/Vn/O0UMuF60rVnW9wy5ptFt0yeKlpZTCkXEIblIb3KCod?=
+ =?iso-8859-1?Q?fQWHpCxarognxicsPNxnI+/1FMorWHLXUmHRPCuuqRTeiTv7ixOgzFKt3X?=
+ =?iso-8859-1?Q?MsvbKKT9gGaRbDHHnh3hE0dJbtugdP0dOlKGhyCoSxgJFInJRh71Mfc5hx?=
+ =?iso-8859-1?Q?fEU5kZZPU+p372pYhYnTCbyRIfwV3E49hffqIz6sePKv2maTy4HWeAPL0X?=
+ =?iso-8859-1?Q?hGBNI77U0dvynR96S2QQXf+8Yj/i/hiKNN7y+CeScjcBXFLc1SDW3GVwm1?=
+ =?iso-8859-1?Q?ih1fdyz1tKppq08YiATHRqbWEub/6u2EMP5fJRHca6fgz8dSLl8GnznYEv?=
+ =?iso-8859-1?Q?mCgxlcrcSiUBxNVjbWzT4QptrYeZ2sxoKn8kU4iSv2abHlT7qCEpGL7/Ht?=
+ =?iso-8859-1?Q?E1Q8RRx29V6DoebwSiSCJ9H3Trvy51l6gQwC7Dm/yvtxDtwC4YI7nQvB3X?=
+ =?iso-8859-1?Q?b0BReqktgjw8xy93TcrorZ/AGY4Kw+COyin7sd3UHbh2HN+KNZTnNthQ6p?=
+ =?iso-8859-1?Q?Bc3/NdeFtHG8XqHE46A6w1WqdwiLUdgqFIOYkUBhzw=3D=3D?=
+Content-Type: multipart/alternative;
+	boundary="_000_DERDOC01CxpAOAkK50002b3b4DERDOC01DERATCOMATCOM_"
+MIME-Version: 1.0
+
+--_000_DERDOC01CxpAOAkK50002b3b4DERDOC01DERATCOMATCOM_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+[https://www.dertouristik.com/wp-content/uploads/2023/05/Logo-DERtouristik-=
+90x79-1.png]
+
+DERTOUR Booking Information
+
+From: clevertours.com GmbH
+To: Sant=E9 Royale R=FCgen Resort #A#       Department: CLEDEP CLE Comm Cen=
+ter STND
+Date: 19-Apr-2026
+Time: 01:19
+
+
+________________________________
+Cancelled Booking
+
+Touroperator: REWE Reisen Component (VC2)
+Hotel Name: Sant=E9 Royale R=FCgen Resort inkl. Pr=E4ventionspaket (CLV) (R=
+LG50035)
+Booking Reference: 622798938
+Arrive: 06-Jun-2026
+Depart: 13-Jun-2026
+Duration: 7 nights
+Number of Rooms: 1
+
+Room 1: DZ Standard (DB1)
+Board Basis: Fullboard
+Booking Date: 16-Apr-2026
+
+Names:  Age
+Nationality
+Waltraud Goldberg, Mrs.         85      Germany
+Karlheinz Goldberg, Mr.         86      Germany
+
+Room Taken from Allocation for Period 06-Jun-2026 to 12-Jun-2026
+________________________________
+
+
+
+--_000_DERDOC01CxpAOAkK50002b3b4DERDOC01DERATCOMATCOM_
+Content-Type: text/html; charset="iso-8859-1"
+Content-ID: <86B614C79896B84288450221644523C8@EURP191.PROD.OUTLOOK.COM>
+Content-Transfer-Encoding: quoted-printable
+
+<!-- $Id: HTML_Template.htm 274659 2023-02-07 10:18:08Z lee.angus $ -->
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<meta name=3D"Service" content=3D"Atcore @com">
+<meta name=3D"Copyright" content=3D"(c) 2026 ATCORE Technology Ltd">
+<meta name=3D"Template" content=3D"HTML_Template.htm">
+<meta name=3D"Server" content=3D"DER-DOC-01">
+<meta name=3D"StateId" content=3D"">
+<style>
+.DataText {
+	font-family:Arial
+}
+.DataTextBorder {
+        border: 1px solid black;
+        font-family:Arial
+}
+.TableBorder {
+        border: 1px solid black;
+        font-family:Arial
+}
+</style>
+</head>
+<body>
+<table width=3D"900">
+<thead>
+<tr>
+<td colspan=3D"6"><img src=3D"https://www.dertouristik.com/wp-content/uploa=
+ds/2023/05/Logo-DERtouristik-90x79-1.png"></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">
+<center><b>DERTOUR Booking Information</b></center>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"4">From: clevertours.com GmbH</td>
+<td class=3D"DataText" colspan=3D"2"></td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"4">To: Sant=E9 Royale R=FCgen Resort #A#<=
+/td>
+<td class=3D"DataText" colspan=3D"2">Department: CLEDEP CLE Comm Center STN=
+D</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"4">Date: 19-Apr-2026</td>
+<td class=3D"DataText" colspan=3D"2"></td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"4">Time: 01:19</td>
+<td class=3D"DataText" colspan=3D"2"></td>
+</tr>
+<tr>
+<td colspan=3D"6">&nbsp;</td>
+</tr>
+<tr>
+<td colspan=3D"6">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">
+<hr>
+</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">
+<center><b>Cancelled Booking</b></center>
+</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Touroperator: REWE Reisen Component (V=
+C2)</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Hotel Name: Sant=E9 Royale R=FCgen Res=
+ort inkl. Pr=E4ventionspaket (CLV) (RLG50035)</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Booking Reference: 622798938</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Arrive: 06-Jun-2026</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Depart: 13-Jun-2026</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Duration: 7 nights</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Number of Rooms: 1</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Room 1: DZ Standard (DB1)</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Board Basis: Fullboard</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Booking Date: 16-Apr-2026</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"DataText">Names:</td>
+<td class=3D"DataText">Age</td>
+<td class=3D"DataText">
+<center><b>Nationality</b></center>
+</td>
+<td class=3D"DataText"></td>
+</tr>
+<tr>
+<td class=3D"DataText">Waltraud Goldberg, Mrs. </td>
+<td class=3D"DataText">85</td>
+<td class=3D"DataText">Germany</td>
+<td class=3D"DataText"></td>
+</tr>
+<tr>
+<td class=3D"DataText">Karlheinz Goldberg, Mr. </td>
+<td class=3D"DataText">86</td>
+<td class=3D"DataText">Germany</td>
+<td class=3D"DataText"></td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">Room Taken from Allocation for Period =
+06-Jun-2026 to 12-Jun-2026</td>
+</tr>
+<tr>
+<td class=3D"DataText" colspan=3D"6">
+<hr>
+</td>
+</tr>
+<tr>
+<td colspan=3D"6">&nbsp;</td>
+</tr>
+<tr>
+<td colspan=3D"6">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
+
+--_000_DERDOC01CxpAOAkK50002b3b4DERDOC01DERATCOMATCOM_--

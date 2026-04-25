@@ -1,0 +1,215 @@
+Received: from FRWP191MB2740.EURP191.PROD.OUTLOOK.COM (2603:10a6:d10:19b::22)
+ by BESP191MB2899.EURP191.PROD.OUTLOOK.COM with HTTPS; Tue, 21 Apr 2026
+ 07:15:50 +0000
+Received: from AM6PR04CA0064.eurprd04.prod.outlook.com (2603:10a6:20b:f0::41)
+ by FRWP191MB2740.EURP191.PROD.OUTLOOK.COM (2603:10a6:d10:19b::22) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9818.33; Tue, 21 Apr
+ 2026 07:15:47 +0000
+Received: from AM2PEPF0001C711.eurprd05.prod.outlook.com
+ (2603:10a6:20b:f0:cafe::67) by AM6PR04CA0064.outlook.office365.com
+ (2603:10a6:20b:f0::41) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9791.48 via Frontend Transport; Tue,
+ 21 Apr 2026 07:15:47 +0000
+Received: from vwp6215.webpack.hosteurope.de (2a01:488:42:1000:b24d:50b1::) by
+ AM2PEPF0001C711.mail.protection.outlook.com (2603:10a6:20f:fff4:0:11:0:5)
+ with Microsoft SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id
+ 15.20.9791.48 via Frontend Transport; Tue, 21 Apr 2026 07:15:47 +0000
+Received: from pd95c5a8c.dip0.t-ipconnect.de ([217.92.90.140] helo=mailrelay.akon.de); authenticated
+	by vwp6215.webpack.hosteurope.de running ExIM with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+	id 1wF5Kl-0036hw-0E;
+	Tue, 21 Apr 2026 09:15:47 +0200
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPA id A8965A2664
+	for <booking.ruegen@sante-royale.com>; Tue, 21 Apr 2026 09:15:46 +0200 (CEST)
+From: "service@akon.de" <service@akon.de>
+To: =?iso-8859-1?Q?Booking_Sante_Royale_R=FCgen?=
+	<booking.ruegen@sante-royale.com>
+Subject:
+	=?iso-8859-1?Q?Ostseebad_G=F6hren_-_Sant=E9_Royale_Resort_-_Kurzfristige_?=
+ =?iso-8859-1?Q?Buchungen_/_Stornierungen_der_AKON-Teilnehmer_vom_21.04.20?=
+ =?iso-8859-1?Q?26?=
+Thread-Topic:
+	=?iso-8859-1?Q?Ostseebad_G=F6hren_-_Sant=E9_Royale_Resort_-_Kurzfristige_?=
+ =?iso-8859-1?Q?Buchungen_/_Stornierungen_der_AKON-Teilnehmer_vom_21.04.20?=
+ =?iso-8859-1?Q?26?=
+Thread-Index: AQHc0V6ueKRH7gFFQEGYBEApyN1c5g==
+X-MS-Exchange-MessageSentRepresentingType: 1
+Date: Tue, 21 Apr 2026 07:15:47 +0000
+Message-ID: <E1wF5Kl-0036hw-0E@vwp6215.webpack.hosteurope.de>
+Reply-To: "info@akon.de" <info@akon.de>
+Content-Language: en-US
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Exchange-Organization-AuthSource:
+	AM2PEPF0001C711.eurprd05.prod.outlook.com
+X-MS-Has-Attach:
+X-MS-Exchange-Organization-Network-Message-Id:
+	2037c0b4-6435-45f8-8616-08de9f75cf9f
+X-Message-Flag: Zur Nachverfolgung
+X-MS-TNEF-Correlator:
+X-MS-Exchange-Organization-RecordReviewCfmType: 0
+x-ms-publictraffictype: Email
+received-spf: Pass (protection.outlook.com: domain of akon.de designates
+ 2a01:488:42:1000:b24d:50b1:: as permitted sender)
+ receiver=protection.outlook.com; client-ip=2a01:488:42:1000:b24d:50b1::;
+ helo=vwp6215.webpack.hosteurope.de; pr=C
+authentication-results: spf=pass (sender IP is 2a01:488:42:1000:b24d:50b1::)
+ smtp.mailfrom=akon.de; dkim=fail (signature did not verify)
+ header.d=akon.de;dmarc=bestguesspass action=none
+ header.from=akon.de;compauth=pass reason=109
+x-ms-office365-filtering-correlation-id: 2037c0b4-6435-45f8-8616-08de9f75cf9f
+x-ms-traffictypediagnostic:
+	AM2PEPF0001C711:EE_|FRWP191MB2740:EE_|BESP191MB2899:EE_
+x-microsoft-antispam:
+	BCL:0;ARA:13230040|704160411799003|16102099003|19002099003|18002099003|8096899003|55112099003|57112099003;
+x-forefront-antispam-report:
+	CIP:2a01:488:42:1000:b24d:50b1::;CTRY:;LANG:de;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:vwp6215.webpack.hosteurope.de;PTR:vwp6215.webpack.hosteurope.de;CAT:NONE;SFS:(13230040)(704160411799003)(16102099003)(19002099003)(18002099003)(8096899003)(55112099003)(57112099003);DIR:INB;
+x-ms-exchange-crosstenant-authas: Anonymous
+x-ms-exchange-crosstenant-authsource:
+	AM2PEPF0001C711.eurprd05.prod.outlook.com
+x-ms-exchange-crosstenant-network-message-id:
+	2037c0b4-6435-45f8-8616-08de9f75cf9f
+x-ms-exchange-crosstenant-originalarrivaltime: 21 Apr 2026 07:15:47.4866 (UTC)
+x-ms-exchange-crosstenant-fromentityheader: Internet
+x-ms-exchange-crosstenant-id: 41b5a112-0e42-447e-88c8-d97486303fa3
+x-ms-exchange-transport-crosstenantheadersstamped: FRWP191MB2740
+x-eopattributedmessage: 0
+x-eoptenantattributedmessage: 41b5a112-0e42-447e-88c8-d97486303fa3:0
+x-ms-exchange-transport-endtoendlatency: 00:00:02.6839497
+x-ms-exchange-processed-by-bccfoldering: 15.20.9846.012
+x-ms-exchange-atpmessageproperties: SA|SL
+dkim-signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=akon.de;
+	s=he155990; h=Date:Message-Id:Reply-To:Subject:To:From:Content-type:From:
+	Sender:Reply-To:Subject:Date:Message-ID:To:Cc:MIME-Version:Content-Type:
+	Content-Transfer-Encoding:Content-ID:Content-Description:In-Reply-To:
+	References; bh=5AfNRuLu/O2jHtLyb0sNtIPhDIvE4M2cQvAo8DQkGEs=; t=1776755747;
+	x=1777187747; b=KS9s8FCFfGyP6TxXmjFN7a7sOvxrSsdrsrb7PReQTz12Zgc+cjFx4RqSN2Gk1
+	04GBPhPTeiuapfPXsmCzVthfOKFVC3WKRLvGMEi3iuub5CZ6pAT/cOoy0t1KhyUHM08VmN/VvYByM
+	e4yA9gN6yXD5xJdyTKQgoqaNjX/cKaIm27PlLqT2uj0nb670CZJn9ypHBOLtsACC+sRKoqmyxe9fh
+	huZRSc5NJt0/rvNhNypwrICVZPZxEmjTm+88puxGivc2YBkb+eKxQzztA978yU33jqIYP2KUTFCUB
+	MKK9ONopLNqQrlGRC8n17TXFi/wOWEG6aXA1OEJ7csD6xNANvQ==;
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930201)(20251009189)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?iso-8859-1?Q?RXxMOv4Rnv+3QeD7VjJDBljWH8ZeGrEaYR3xGwZsEIPEs1abeV+sPk/Tls?=
+ =?iso-8859-1?Q?GdonQ6iEiE8ce245FXgzAGLMUbfT3M8JbV07q6GBAucrQe/erRZCVuTMG/?=
+ =?iso-8859-1?Q?IllgyaGvpFf6vfq0jbBYDXYE9NkDj+cuF6pW4dik+wSFBNLQ3yJ1XgPZHl?=
+ =?iso-8859-1?Q?6He0XxSWs6E5iSFRrpMJv0fkzg7DKYM3VPZ6Hdf0u8GGdadu+sGUm5gLeb?=
+ =?iso-8859-1?Q?Z7jKeTluUku8XMzUX7rOqVd1bo/VY5fmiShPCbu9tb5obXLvP31TJGq+o7?=
+ =?iso-8859-1?Q?6rhlFqVJazG9nc4yu0evd3vTx0lf23iIPX73Lzx7ZarlbwQRN6rM8AnW3y?=
+ =?iso-8859-1?Q?oiaWI08JtPp3gdjyM0QtdoBiFNLiHUI/gECPTh1rMF5zPz6UPD5UFcu7z+?=
+ =?iso-8859-1?Q?3h1uSlHK5Sbzew6xOFal4MR7yqf0C56UkjgDu6JTyLXZZSZkJIsuIl/KJ0?=
+ =?iso-8859-1?Q?0xhrbgExnFH15UnzcS/CgVeTT8VBuZPHgGcMfgj/Q/h9X055Qj565zPh+v?=
+ =?iso-8859-1?Q?zrnW0zlJn5iVFe4oeICl2sOMsU/ZL7atlfBCOyLrwLZkBw7Uj9A4UdrCdx?=
+ =?iso-8859-1?Q?rJfRMg5Qj5OtruxMSp/v+5ZDy5dOd2cNcqx4EuaN6BJfIw22AzwlIJdZCV?=
+ =?iso-8859-1?Q?b3v98hjGalMt0pw2cCufS0THT6Uey+IWhcSOFTocHgScdgNPCUZ8l/13wK?=
+ =?iso-8859-1?Q?vCA8RZ3SB5mRgu8yXf+Bipko4KEsSfkHCLjJO/w3LcHSxfZUrSURXUo9XJ?=
+ =?iso-8859-1?Q?iNiFX2MabBNGEBDZmuHcAhOwIBNy5CirZOwSc5u1MJ0rElE5FMni/K5kdx?=
+ =?iso-8859-1?Q?32jlch4J2wPIyRq2Ql2MSP/SZIGA30a/xCMV9Mm5jKOV25ukXPMM/sT0dG?=
+ =?iso-8859-1?Q?S55J2Ecfau7Y0eFFNyUfaVuiCh7B3UdfqH6sGZvbz4ibN8L1MBm0EfxPk8?=
+ =?iso-8859-1?Q?g7qVI4z5pKaOfAqvARn3K8khHG3gUor/k7i7WaVzbu1hjaLC1i45jANIYi?=
+ =?iso-8859-1?Q?wIYk/L1LNbzDqIHE1+rhCOalNSI7XQqa8C192kBm4Ezko5eJmM1zsfwo3O?=
+ =?iso-8859-1?Q?58wMy9FKMnuncC8VRPOi03/gVeHjEpSD1X2wFR9HkiJjAteNgIml84XT3L?=
+ =?iso-8859-1?Q?vkCsIRFPvrJvJWusGPFZpFHbaSnVz7Clx2gjL6X4uPFdwhfZ/Gyohw6nX2?=
+ =?iso-8859-1?Q?ZOER4Efco5e98FZ6ts9sN+GfF2Yrf1PByqLQxGU+GDwqR/jdJxVSgh/rv8?=
+ =?iso-8859-1?Q?8T6fQMbFZzmzRFjdOGvzxvQVwVHaapPtUNvTW58Q/rY+zhK7x2MSJXCq5B?=
+ =?iso-8859-1?Q?gmQc0Dzb4K43MEb6W9KJNNcVrBU31MSPngBDed1zLDeDveYPPYX9nHFbQm?=
+ =?iso-8859-1?Q?gaRrJDEI/RfhVGMUZ3N4N2lqT7nql/w9G2SiVdqkIxeGtbCkUgAlImp4yI?=
+ =?iso-8859-1?Q?a6t+Z1z09b4cQi377gB182IraZgS59SgmcaUoO7MNb1mDHiknyHc5XyReK?=
+ =?iso-8859-1?Q?Bw+HnmqGeR4NpArbUljHDY7qXB4/vHhrwbswXDNXysuyTBMtdgylvoY4aH?=
+ =?iso-8859-1?Q?6Boir5ElV06cZNeynoFXTnHiKaNAakb4v3S5LWKWLEKVbytTK8iG+nOycr?=
+ =?iso-8859-1?Q?ZAGqHMXSnGde4UaUBxPbmKIvG9O2dvhq06V26knYDhbnvpGPyXQkAgs+XA?=
+ =?iso-8859-1?Q?jNMITSGTLaABlyCC0GtSZtsAOQGZaUJpO3/8zmKERmz51qkaVvuwlYb3vZ?=
+ =?iso-8859-1?Q?gcR/xHI+6lTx7Z3ZNp8sfCBsuFUhfLgqJynOV/IQQbYPI3TWSqzaBz1rC7?=
+ =?iso-8859-1?Q?SAZmbPw3O7fvAFm2Va5up2Y8BxgNLxb//v32Sx5IrTkJ0c9OPxiRMWDxfT?=
+ =?iso-8859-1?Q?XhSLZIOjvfTgsXk1/TAEpk+cCAxZ1RK1umX/afRsAb54w47ur31kLA3YJf?=
+ =?iso-8859-1?Q?lSZpL4gEGaAtYcZoZ8D/yddVGqPx2R6gw5pMH6qGqP5EZ7Z0Ah8rxcBbLE?=
+ =?iso-8859-1?Q?30gT3HcThiOHHpYzkUk4pZSNBTIlu921cp+4EsHkO9kkU42OAONNDSRScp?=
+ =?iso-8859-1?Q?Znjhr4InsGd16Qn5I9X4tKBmwtGvBX471vlpM26dXPjuEA0Owjdw6BPKdR?=
+ =?iso-8859-1?Q?tGL7PQBpjanGpIoZj6H7R7vETheTN+zf5P6yMu8sZTOOzJrdeSDHn+rvcu?=
+ =?iso-8859-1?Q?GtGfAQv2GHwQPoLKv/Tub9NcaCRiYtkObLpu63ms36FYoE4F3pQxKQT3HR?=
+ =?iso-8859-1?Q?JqdqZ3zdmm4DagSoLfYS5QO1HLCdkfO3t5E8yfKA5KTgk2SXRCdQbDxV7D?=
+ =?iso-8859-1?Q?On6TUur+OjoH4ahZ++Csqf4AkODF3cWf9yIpNFj9/NYP7UulHppPNTlwyx?=
+ =?iso-8859-1?Q?YSFBO3pYhFKx32estKMfUhl46ZKQDRNTJ4DGRO2riCoR0jl/HYquyXW170?=
+ =?iso-8859-1?Q?8rjO2+EBT9+bpKibhWbJ2TRMzs03BfzDdjgQ2AqnnPWw2rtE+O9zNKoyfF?=
+ =?iso-8859-1?Q?vVmWMO2/ODBeHY+bbNpyS/aHOLf3+MrbVqEiKawlRrtat9tAez35ND51XI?=
+ =?iso-8859-1?Q?X/sQGKJP8mecQ8YwKiW2998Cx3SYKtOQJl7jPVIGsvJ9794KTrmjEiUg4t?=
+ =?iso-8859-1?Q?ykddY+kJwdxHCW1poziEWRHORLsJPN2RshX7rO3jtjTbeAkvQoN4QO2dqb?=
+ =?iso-8859-1?Q?hoPVplAbGBsI+oQAzPzr9lneQoh9SQpuU9LQ4U1Jf4H1dJ4zJxV89CUufg?=
+ =?iso-8859-1?Q?2RDSOwZ83mdHG+?=
+Content-Type: multipart/alternative;
+	boundary="_000_E1wF5Kl0036hw0Evwp6215webpackhosteuropede_"
+MIME-Version: 1.0
+
+--_000_E1wF5Kl0036hw0Evwp6215webpackhosteuropede_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Sehr geehrte Damen und Herren,
+
+nachfolgend erhalten Sie per Email eine Aufstellung der kurzfristigen Neuan=
+meldungen, Umbuchungen und Stornierungen von Teilnehmern an den AKON-Pr=E4v=
+entionskursen in Ihrem Haus vom 21.04.2026.
+
+Bitte beachten Sie, dass die Daten sich aufgrund weiterer Umbuchungen oder =
+Stornierungen noch einmal =E4ndern k=F6nnen. Weitere Informationen zu den B=
+uchungen entnehmen Sie bitte dem AKON Verwaltungsprogramm.
+Fehler und Irrt=FCmer vorbehalten.
+
+Mit freundlichen Gr=FC=DFen
+
+Ihr AKON Service Team
+
+________________________________
+Neuanmeldungen
+________________________________
+ Braun, Margitta, 13627 Berlin, Goebelstrasse 19
+22.04.2026 - 26.04.2026: 5T - Krafttraining am Ger=E4tezirkel + Yoga in Ost=
+seebad G=F6hren - Sant=E9 Royale Resort
+im DZ mit Bettina Thiele
+eingebucht am 21.04.2026
+
+Thiele, Bettina, 10969 Berlin, Oranienstra=DFe 44
+22.04.2026 - 26.04.2026: 5T - Krafttraining am Ger=E4tezirkel + Yoga in Ost=
+seebad G=F6hren - Sant=E9 Royale Resort
+im DZ mit Margitta Braun
+eingebucht am 21.04.2026
+
+--_000_E1wF5Kl0036hw0Evwp6215webpackhosteuropede_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+</head>
+<body>
+<i>Sehr geehrte Damen und Herren,
+<p>nachfolgend erhalten Sie per Email eine Aufstellung der <b>kurzfristigen=
+</b> Neuanmeldungen, Umbuchungen und Stornierungen von Teilnehmern an den A=
+KON-Pr=E4ventionskursen in Ihrem Haus vom 21.04.2026.</p>
+<p>Bitte beachten Sie, dass die Daten sich aufgrund weiterer Umbuchungen od=
+er Stornierungen noch einmal =E4ndern k=F6nnen. Weitere Informationen zu de=
+n Buchungen entnehmen Sie bitte dem AKON Verwaltungsprogramm.<br>
+Fehler und Irrt=FCmer vorbehalten.</p>
+<p>Mit freundlichen Gr=FC=DFen</p>
+<p>Ihr AKON Service Team</i></p>
+<p></p>
+<hr noshade=3D"" size=3D"1">
+<b>Neuanmeldungen</b>
+<hr noshade=3D"" size=3D"1">
+ <b>Braun, Margitta</b>, 13627 Berlin, Goebelstrasse 19<br>
+22.04.2026 - 26.04.2026: 5T - Krafttraining am Ger=E4tezirkel + Yoga in Ost=
+seebad G=F6hren - Sant=E9 Royale Resort<br>
+im DZ mit Bettina Thiele<br>
+eingebucht am 21.04.2026
+<p><b>Thiele, Bettina</b>, 10969 Berlin, Oranienstra=DFe 44<br>
+22.04.2026 - 26.04.2026: 5T - Krafttraining am Ger=E4tezirkel + Yoga in Ost=
+seebad G=F6hren - Sant=E9 Royale Resort<br>
+im DZ mit Margitta Braun<br>
+eingebucht am 21.04.2026</p>
+<p></p>
+</body>
+</html>
+
+--_000_E1wF5Kl0036hw0Evwp6215webpackhosteuropede_--

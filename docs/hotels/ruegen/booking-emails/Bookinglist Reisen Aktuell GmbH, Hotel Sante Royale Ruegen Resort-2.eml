@@ -1,0 +1,251 @@
+Received: from DB8P191MB1094.EURP191.PROD.OUTLOOK.COM (2603:10a6:10:14a::19)
+ by BESP191MB2899.EURP191.PROD.OUTLOOK.COM with HTTPS; Tue, 24 Mar 2026
+ 22:17:28 +0000
+Received: from DU2PR04CA0005.eurprd04.prod.outlook.com (2603:10a6:10:3b::10)
+ by DB8P191MB1094.EURP191.PROD.OUTLOOK.COM (2603:10a6:10:14a::19) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9745.20; Tue, 24 Mar
+ 2026 22:17:25 +0000
+Received: from DB1PEPF000509FD.eurprd03.prod.outlook.com
+ (2603:10a6:10:3b:cafe::71) by DU2PR04CA0005.outlook.office365.com
+ (2603:10a6:10:3b::10) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9723.31 via Frontend Transport; Tue,
+ 24 Mar 2026 22:17:15 +0000
+Received: from AM0PR83CU005.outbound.protection.outlook.com
+ (2a01:111:f403:c201::1) by DB1PEPF000509FD.mail.protection.outlook.com
+ (2603:10a6:18:3::6d7) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9723.19 via Frontend Transport; Tue,
+ 24 Mar 2026 22:17:25 +0000
+Received: from AS4P192CA0043.EURP192.PROD.OUTLOOK.COM (2603:10a6:20b:658::9)
+ by AM7P189MB1028.EURP189.PROD.OUTLOOK.COM (2603:10a6:20b:174::18) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9745.20; Tue, 24 Mar
+ 2026 22:17:23 +0000
+Received: from AM4PEPF00027A66.eurprd04.prod.outlook.com
+ (2603:10a6:20b:658:cafe::bd) by AS4P192CA0043.outlook.office365.com
+ (2603:10a6:20b:658::9) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9723.31 via Frontend Transport; Tue,
+ 24 Mar 2026 22:17:23 +0000
+Received: from mx.volk-travelservice.com (87.129.178.34) by
+ AM4PEPF00027A66.mail.protection.outlook.com (10.167.16.91) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9723.19 via Frontend Transport; Tue, 24 Mar 2026 22:17:23 +0000
+Received: from td.reisenaktuell.com ([195.65.218.34])
+	(user=tourdata@reisenaktuell.com mech=LOGIN bits=0)
+	by mx.volk-travelservice.com  with ESMTPA id 62OMHL1Q001738-62OMHL1R001738;
+	Tue, 24 Mar 2026 23:17:21 +0100
+From: "Reisen Aktuell GmbH, Buchung E-Mail Sender"
+	<buchungen@reisenaktuell.com>
+To: =?iso-8859-1?Q?Booking_Sante_Royale_R=FCgen?=
+	<booking.ruegen@sante-royale.com>
+Subject: Bookinglist Reisen Aktuell GmbH, Hotel Sante Royale Ruegen Resort
+Thread-Topic: Bookinglist Reisen Aktuell GmbH, Hotel Sante Royale Ruegen
+ Resort
+Thread-Index: AQHcu9wAY9XzlBhzskewHfmheVwMeA==
+X-MS-Exchange-MessageSentRepresentingType: 1
+Date: Tue, 24 Mar 2026 22:17:21 +0000
+Message-ID:
+	<202603242217.62OMHL1Q001738-62OMHL1R001738@mx.volk-travelservice.com>
+Reply-To: "buchungen@reisenaktuell.com" <buchungen@reisenaktuell.com>
+Content-Language: en-US
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Exchange-Organization-AuthSource:
+	DB1PEPF000509FD.eurprd03.prod.outlook.com
+X-MS-Has-Attach: yes
+X-MS-Exchange-Organization-Network-Message-Id:
+	712c778e-9faf-470d-dad7-08de89f320fa
+X-Message-Flag: Zur Nachverfolgung
+X-MS-TNEF-Correlator:
+X-MS-Exchange-Organization-RecordReviewCfmType: 0
+x-mailer: Tourdata (v26.0400)
+x-ms-publictraffictype: Email
+received-spf: Pass (protection.outlook.com: domain of reisenaktuell.com
+ designates 87.129.178.34 as permitted sender)
+ receiver=protection.outlook.com; client-ip=87.129.178.34;
+ helo=mx.volk-travelservice.com; pr=C
+authentication-results: spf=pass (sender IP is 2a01:111:f403:c201::1)
+ smtp.mailfrom=reisenaktuell.com; dkim=pass (signature was verified)
+ header.d=reisenaktuell.com;dkim=pass (signature was verified)
+ header.d=reisenaktuell.com;dmarc=pass action=none
+ header.from=reisenaktuell.com;compauth=pass reason=100
+x-ms-office365-filtering-correlation-id: 712c778e-9faf-470d-dad7-08de89f320fa
+x-ms-traffictypediagnostic:
+	AM4PEPF00027A66:EE_|AM7P189MB1028:EE_|DB1PEPF000509FD:EE_|DB8P191MB1094:EE_|BESP191MB2899:EE_
+x-microsoft-antispam:
+	BCL:0;ARA:13230040|704160411799003|5062899012|3072899012|2092899012|12012899012|35042699022|6049299003|57112099003|19002099003|16102099003|55112099003|18002099003|4053099003;
+x-forefront-antispam-report:
+	CIP:2a01:111:f403:c201::1;CTRY:;LANG:de;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR83CU005.outbound.protection.outlook.com;PTR:mail-westeuropeazlp170100001.outbound.protection.outlook.com;CAT:NONE;SFS:(13230040)(704160411799003)(5062899012)(3072899012)(2092899012)(12012899012)(35042699022)(6049299003)(57112099003)(19002099003)(16102099003)(55112099003)(18002099003)(4053099003);DIR:INB;
+x-ms-exchange-crosstenant-authas: Anonymous
+x-ms-exchange-crosstenant-authsource:
+	DB1PEPF000509FD.eurprd03.prod.outlook.com
+x-ms-exchange-crosstenant-network-message-id:
+	712c778e-9faf-470d-dad7-08de89f320fa
+x-ms-exchange-crosstenant-originalarrivaltime: 24 Mar 2026 22:17:25.5770 (UTC)
+x-ms-exchange-crosstenant-fromentityheader: Internet
+x-ms-exchange-crosstenant-id: 41b5a112-0e42-447e-88c8-d97486303fa3
+x-ms-exchange-transport-crosstenantheadersstamped: DB8P191MB1094
+x-eopattributedmessage: 1
+x-eoptenantattributedmessage: 41b5a112-0e42-447e-88c8-d97486303fa3:0
+x-ms-exchange-transport-endtoendlatency: 00:00:03.1862891
+x-ms-exchange-processed-by-bccfoldering: 15.20.9723.025
+x-ms-exchange-atpmessageproperties: SA|SL
+dkim-signature: v=1; a=rsa-sha256; q=dns/txt; d=reisenaktuell.com; s=s1-fm;
+ c=relaxed/relaxed; h=date:from:reply-to:to:subject:mime-version:content-type;
+ bh=nJbBuIZ2bQ3+bXMFmRM+lCw4B/uveTgNLij7q6FJPHk=;
+ b=gZkZ5LPWYdjEEXOKRdOlwDB4pLT5pnbJSqC01DHgjbnpWFsYSV45WYwtxxZixY13WuznM6phep5+
+	i8mI4g4YosDtAbe4LCxiQ4Vt+8RDhvPkcEPaSEmkVOJ9pNc8ld6KmlX51a/3AAlDI7KyfPMfvjCq
+	Lf1ZkZI9R8ngBCOL6MZA/2c8JoCoupIV/4g6lsUfU8rwNxRchGkmxsRWcSLXRcosR1ugHbFzoMTZ
+	9pf5y+1LRa7AOKaaMsVFhtyH9jAxXMFj/xmx/Wpdwn5Pl+/QiKSqEEby04X91IP746eoebBAw1CX
+	1g19dmKoi95HkMQnHeLIl0NSH/4ErqM5Ibhj0w==
+arc-seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=I+kYFYVFr9Q/MrBaxNTYe5HYG56PGsOZkMfj+c3aDto/whXSjmUE5MuFnFo7/7EDnroKII6XUHG7bPD1LPITNe/LKWRgijX/LxX8LRhBnjgpdRYZtmwY32AHsZHlxAr+V7+dkJdZIttOWfeaJUiK3WUt2e/GnJ8ARGSaUuAr96UM9q+BmdTYgqCudzWEEBxsITRfj0r88vv8wIIiK3iNUpQr/wwRdWzuf/kQV0c/nVgzdStmJmU2HUXQfPB08bK129SgGk+ZkgTjivGqdFM7EXQU6XvPDM5VbnawsOH+QL+xzkn6DdLsCh1lnZbgYv5uRLYhOLRN5TLDt0p4PNmcpA==
+arc-message-signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=C78GzabcczglodQ8gjGpmGUk4EhN8zh+dqz/xHkNrqQ=;
+ b=lQ6X53Nh4Xublp835C8let+a1SlchQuLXH/GNdrz89z+lJs8aoTCHkJG6Pbp6lx1mLZh+v8nIoVg19SRMeUFhtVOaty/6lSPt/UEY7jaPcZTfqWSfrdDTRV9q3dlSS8IwQHTx1epdA3AMSFahDijZ6XCdLoIuD/aJcB6HDUo+/OQL1Cfj3STZ2muDeAklHFNUaT6o3XmK1+x7TFh1La8BHkTZbWHGP1eIeVtMMAmsVCwl49oXP4Hm2ThvAYVZFPqxPRPgzh0O4qBPbzP2aCD2hrtf+6QujqGTRnGlcplFWVd1R/0qDH/p1H9AjzGPS8l55KIsrkOaZklw/Y/hyxnnA==
+arc-authentication-results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 87.129.178.34) smtp.rcpttodomain=sante-royale.com
+ smtp.mailfrom=reisenaktuell.com; dmarc=pass (p=quarantine sp=quarantine
+ pct=5) action=none header.from=reisenaktuell.com; dkim=pass (signature was
+ verified) header.d=reisenaktuell.com; arc=none (0)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-untrusted:
+	BCL:0;ARA:13230040|82310400026|1800799024|36860700016|376014|6049299003|4053099003|56012099003|18002099003;
+x-microsoft-antispam-message-info-original:
+	WBfe80A5sDy/yWy1z2f4yCLqZN2Dy5YOpWPXkRbmFhADOTU4msWTjq2MYrl40X4uz1dGztvgaTj8JhNLxiPT9A/2RT7FHfxvXHy9h3R5SFYJERsOf8j262yprw0DG5TL066CP60JQR7OdBM+bEyhyAqiLx7txM6AV25eaaP46yd9n8QaLfKhbX2bpl6tDoolR15YtcWQy/IodJKvFrFgfAFQrSPHFCnyhyNScYhlDZtsBP828NiGECJQQb8r6LHxkm07GJ1e6aNJ7fImPi92VB+VJqQ22T+ELTv3YXS2y6iQMcr8VSO3f64anzmvZoe0Vpme2CkLACmNKmE3+Fh/hAuuEWTZ0kfNcMs1nD+yOfFXP4JWx9QKevw0scHGjrhLzgYdOn99+o0N7+s1+Jpy0icd7lfnbjbILvw15xXmgRs5PNmFdQ7Kmcs9pZ9JUJuag+AJ041cCFUSxPEPjqmazUD3OHNXBBBiv16MwV48sZ3YaDh4epQbCRHIi4R5AKFcP3zcSXMYPD5ntS0NQS10aBHcHvXCNrY3x+8ARWTA3cfTbo/Srpzuuk4Q+ndw02f4hrtDU5J+PvgqurucegZzacQ3x2YXbdrgxsm8qaRxkM3NZLNy/IVwbukxnig2SkMEpsZ+9HsML1wACG4OIoRuV2ybgaFuRx/xAPDEQlgcGcrezBjwqw/EqEjuuUd2OiecUeZpohwNbh+HRGlQHqQLjmi9H1Tecb+P94u8ZO4Zw9hi1wXZIe0kAhaSnDDe/d6dckCltm+dGE8K1pQUbB2VIg==
+x-ms-exchange-transport-crosstenantheadersstripped:
+	DB1PEPF000509FD.eurprd03.prod.outlook.com
+x-ms-exchange-transport-crosstenantheaderspromoted:
+	DB1PEPF000509FD.eurprd03.prod.outlook.com
+x-ms-office365-filtering-correlation-id-prvs:
+	fe268017-2fe4-4f36-ead8-08de89f31fa7
+x-forefront-antispam-report-untrusted:
+	CIP:87.129.178.34;CTRY:DE;LANG:de;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mx.volk-travelservice.com;PTR:mx2.volk-travelservice.com;CAT:NONE;SFS:(13230040)(82310400026)(1800799024)(36860700016)(376014)(6049299003)(4053099003)(56012099003)(18002099003);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-relay: 0
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930201)(20251009189)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?iso-8859-1?Q?zRuyJQEG9nxsM/KV5EG1XZhC7FLIxCBZ1W029PPJbGVAMr6Yj3cMonodcK?=
+ =?iso-8859-1?Q?oZpO8VKUCCSz8f2BNyyMh6OGHQg0q50vLVat3WmW7j3xs/OjVUEto0oaDd?=
+ =?iso-8859-1?Q?V2JpX6Oo9PdyZZ41w8/iN43HelGnVJHOWJNYZTAN/ZPwOdTJ0hFcueWBRX?=
+ =?iso-8859-1?Q?OSqR7cWPhkBDs6Z+CyvX4BGDrgA5Xg3V7nNKEFboLc7wZj3M1446kIU6gA?=
+ =?iso-8859-1?Q?+C0GfiP/723fefcdqXqBp2TfmoVnhX4sU+ZlHXK4Y45E8+829oU4TEiZKH?=
+ =?iso-8859-1?Q?KkdwbbKh15K8ZEVf6YVb212RyxNOmbQZcs7oMHlblkxuyZ5MV+XNlngxhc?=
+ =?iso-8859-1?Q?5D3SD1WparaOqGjas+hmKWPBmVPMdCSlomX2Z7WCB93Bdggn73F4dzu2zY?=
+ =?iso-8859-1?Q?xdEXX2PuA8wucLBqdLRSqhOKBoz7zzjuF40tN5foKJD2W0TuLyFPRh8JQ/?=
+ =?iso-8859-1?Q?lWQWdqxqbEBYWn0D1fzn5civ1sa9s/1+ks9ChAfU4sgkqlPwbFnuli4Mgi?=
+ =?iso-8859-1?Q?y0JgQKm3WGJQPl3fa5IgPWa8+ooIUaEVE/DCJahP71nAhNjeRF5U2dHse/?=
+ =?iso-8859-1?Q?WFqlFP/2nvaUfpJ1RdnBNH/EelxEO7OxNUb0OyLONEvhwgJEUCGM02j8Uo?=
+ =?iso-8859-1?Q?dtK3lZJhX5mzIYN30TsqODargUvnsYrye0FrWJrPgHi3ozna/863xLOr2h?=
+ =?iso-8859-1?Q?GEIQqPbXcd78Cccdj7JNfQBLEkY9pfmtLIEWV4YFf6trx95BFE1fQsP7ne?=
+ =?iso-8859-1?Q?HabaDM7Q8CprwfK66YE1l7j16n3ACg5Uv8njioflAUMmH4kXSwDo847XHK?=
+ =?iso-8859-1?Q?2/o7zQ6xFkZyRc11cJd6DFodVSNSZvXUK7fPpNWhsdgOhBmhFqL8xTc/Jb?=
+ =?iso-8859-1?Q?Y7RoRtBtpjbMA9kpuRjSiOPHIsntHEd34fka8XgAMvMkf0qTjc2OlbcdEx?=
+ =?iso-8859-1?Q?mrRVGO4M6HEmNKQjH80QCGv62xNHHTuBC33BNVtgOUVXRXkjeyao/vl2tY?=
+ =?iso-8859-1?Q?B1cgvK8P8H30W0kbMIjkcY81k/UgKLJL/BsOBM0ljc/VfJ7uQbmeTcsMSV?=
+ =?iso-8859-1?Q?3qyTyoXqkPb9l/iwXlx3aVdMI/SCcGOaMzVkwcQ09ekkfEX2052Q7nycKm?=
+ =?iso-8859-1?Q?tqIE874FxneMccObvXB8gtdTsiz2HNJlHQZXK8JrSAyuUfuucPiygHmPqF?=
+ =?iso-8859-1?Q?3DRtnQQpujh8V7gzwZRCenaDFxPnNDb0Bg6SVLE4teNdBxjCUCpsJp4Kea?=
+ =?iso-8859-1?Q?RuD7ILE5bgxBaeniex3VQTUenb7pV2AM+CIyaKxAEyd62NWH0p4H4hgXov?=
+ =?iso-8859-1?Q?x9Dl0iEeaQZfEicm6NWOy7TZB9fpwSHeTBJzgLxwkWTO3fC3+YcHKP/w/3?=
+ =?iso-8859-1?Q?YKpEg33n/iguifzHsee/Q9cT4PxiYqiDxea3s1nB5LW5uXy3pAq6NzZmJR?=
+ =?iso-8859-1?Q?ECYcuQSehA34SeDfSImZTzuweePDkcCMHgCLHCocqBJDIUlc7syIDtxQ/r?=
+ =?iso-8859-1?Q?aI515gRa9qfzfuFRJob9TrfkeeptcZ8fhebL+sNsrfEfAmTeicy9oxHEti?=
+ =?iso-8859-1?Q?biVarXpsCMZvAxdl1OMgiK/q4mMs49wDbro3XwWc/m/wHVqL673I0uMP/q?=
+ =?iso-8859-1?Q?d0Sm+5gVeP0m3NXUBhwxqoMuxh8v1eN1MnXO0RQTl/GOBlAbcIM2981xrW?=
+ =?iso-8859-1?Q?+/Vx28iV+mPoPcYBJVW73hBaNw5DbcF3hrnC4Zg1WL25A/bsaToEHTTJbO?=
+ =?iso-8859-1?Q?yZCjNdSXkVGiHQsb85sXvBvIGSFRHhhnq+9JAPeUNJtN/x/8KfUkwZIuk5?=
+ =?iso-8859-1?Q?q7ju8nGCv+gg7iTannaHAlSGjy+I7BwCMwwg/CNXaaii7sCoKW1jefjsxn?=
+ =?iso-8859-1?Q?/iPrzCPAx6UX6uLi0z4JLK4CzmxUBlLgS4OBv3D81FHsDDIGLEmKBWtuTc?=
+ =?iso-8859-1?Q?9uSZKzWtUfTrw0euTJfeSTx55GrcSz4TVTds8ZS1dRB902pv3Ld5QPIJkj?=
+ =?iso-8859-1?Q?eIFE2h0II1JwDNRGYO5YmMwJXTa3LbxQgPvoohibwzNLRyStvIQ2G41U77?=
+ =?iso-8859-1?Q?/PPoJLnCDk8VQcgySwu+JnaTIJxyhxUGxwZWVwUBe/XEpFrnkYnvRJaThB?=
+ =?iso-8859-1?Q?3BUBn2BupKWUoLpUCf2Euly0WmBakcrUyUj/vYvc3MUGvm5JlSRswzC3ae?=
+ =?iso-8859-1?Q?16wgBC3ve+EhAGDrnfMVXLYS9txM2MbZILukXajUkoRh4C8mpKLHniidbt?=
+ =?iso-8859-1?Q?dWsw1mi9NozGUAu2iD81pByUc+suZQShT4CoxmawN9VIBoe1iGe2B2tTvS?=
+ =?iso-8859-1?Q?NocTElFmzXlCwcZpGZTlaTCj+2qZ1G6ag6j2Bbp74rQc+jPRKghk1pHfA/?=
+ =?iso-8859-1?Q?Vd9lVYnlEshg+cYLuyOyvATQ9jM7QsfPuAtI3Drs3qWh38DMgKna9bvEgg?=
+ =?iso-8859-1?Q?nX4vI3hTqYFEJHMrqtrg5Pg1Kxq1SryUKZafMsMgwwUbIVDUoWnEtyvkPQ?=
+ =?iso-8859-1?Q?EtiyODvRUAPlWH7xHo1hh8+HNewKFqKTEQcYaeLltbeZAtUr3GEMnj9krP?=
+ =?iso-8859-1?Q?X3m6+x15BiMd2VLCbemXdvTXUAYdnyqAYzPCKqiN6QPgXllCn0Mdq1H3fU?=
+ =?iso-8859-1?Q?rxFtJFTN2oRu2kBooNWG3UQMXhuO2PuotYPZDg0MlN78/wkvmqtx0e/BVg?=
+ =?iso-8859-1?Q?3/MmZJcLxjW93nEJ07u/w3MF4x0sc2ObDK/SgsBUI3rjUb1rZLOws7olhv?=
+ =?iso-8859-1?Q?dPo+PoVj6hBZnd6ddXsKwiayLeCAr5X8bvTw=3D=3D?=
+Content-Type: multipart/mixed;
+	boundary="_002_20260324221762OMHL1Q00173862OMHL1R001738mxvolktravelser_"
+MIME-Version: 1.0
+
+--_002_20260324221762OMHL1Q00173862OMHL1R001738mxvolktravelser_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-ID: <93B767D0B6C581458322850D3FB1C476@EURP191.PROD.OUTLOOK.COM>
+Content-Transfer-Encoding: quoted-printable
+
+=3D=3D=3D=3DROOMING LIST=20
+=3D=3D=3D=3DDATE: 24.03.2026 TIME: 23:17:21
+
+FROM:	Reisen Aktuell GmbH, DE-56070 Koblenz
+
+TO:	Gesundheits-Vital-Resort R=FCgen GmbH
+	Badstra=DFe 45
+	DE-08648 Bad Brambach
+
+FOR:	Hotel Sant=E9 Royale R=FCgen Resort
+	S=FCdstrand 8
+	18586 G=F6hren (saru)
+
+---------------------------------------------------------------------------=
+-----
+NEW BOOKING NUMBER 12 881 829 Reisen Aktuell GmbH, Total: EUR 1'207.50 (2-2=
+6.0400)
+---------------------------------------------------------------------------=
+-----
+NEW:	1x Doppelzimmer Standard, 07.04.2026-14.04.2026 (7 nights)
+
+#1	Miss Zimmermann Wilma, D.o.birth: 26.12.1967, Fullboard, Upgrade to AI
+  	Mister Zimmermann Fritz, D.o.birth: 03.05.1938, Fullboard, Upgrade to AI
+---------------------------------------------------------------------------=
+-----
+
+
+---------------------------------------------------------------------------=
+-----
+NEW BOOKING NUMBER 12 881 677 Reisen Aktuell GmbH, Total: EUR 1'312.50 (2-2=
+6.0400)
+---------------------------------------------------------------------------=
+-----
+NEW:	1x Doppelzimmer Standard, 07.06.2026-14.06.2026 (7 nights)
+
+#1	Mister Wei=DFbach J=FCrgen, Fullboard
+  	Miss Wei=DFbach Elke, Fullboard
+---------------------------------------------------------------------------=
+-----
+
+
+
+END
+
+e-mail for booking stop/E-Mail f=FCr Buchungsstopp: allotment@reisenaktuell=
+.com
+
+--_002_20260324221762OMHL1Q00173862OMHL1R001738mxvolktravelser_
+Content-Type: application/x-msdownload; name="TourdataHotelBooking.csv"
+Content-Description: TourdataHotelBooking.csv
+Content-Disposition: attachment; filename="TourdataHotelBooking.csv";
+	size=905; creation-date="Tue, 24 Mar 2026 22:17:28 GMT";
+	modification-date="Wed, 25 Mar 2026 04:00:48 GMT"
+Content-ID: <DE9E03F30F08F14EAD6D1C4716B94E9B@EURP191.PROD.OUTLOOK.COM>
+Content-Transfer-Encoding: base64
+
+U1IxOzI2LjA0MDA7MS4wOzI0LjAzLjIwMjY7MjM6MTc7UmVpc2VuIEFrdHVlbGwgR21iSA0NClNS
+MjtCT09LRUQ7MTIgODgxIDgyOTsyO1NhbnTpIFJveWFsZSBS/GdlbiBSZXNvcnQgaW4gR/ZocmVu
+OzsxMjA3LjUwO0VVUg0NClNSMztEb3BwZWx6aW1tZXIgU3RhbmRhcmQ7OzA3LjA0LjIwMjY7MTQu
+MDQuMjAyNjsNDQpTUjQ7MTtNaXNzO1ppbW1lcm1hbm47V2lsbWE7OzI2LjEyLjE5Njc7O0Z1bGxi
+b2FyZCwgVXBncmFkZSB0byBBSTs7DQ0KU1I0OzI7TWlzdGVyO1ppbW1lcm1hbm47RnJpdHo7OzAz
+LjA1LjE5Mzg7O0Z1bGxib2FyZCwgVXBncmFkZSB0byBBSTs7DQ0KU1IyO0JPT0tFRDsxMiA4ODEg
+Njc3OzI7U2FudOkgUm95YWxlIFL8Z2VuIFJlc29ydCBpbiBH9mhyZW47OzEzMTIuNTA7RVVSDQ0K
+U1IzO0RvcHBlbHppbW1lciBTdGFuZGFyZDs7MDcuMDYuMjAyNjsxNC4wNi4yMDI2Ow0NClNSNDsx
+O01pc3RlcjtXZWnfYmFjaDtK/HJnZW47Ozs7RnVsbGJvYXJkOzsNDQpTUjQ7MjtNaXNzO1dlad9i
+YWNoO0Vsa2U7Ozs7RnVsbGJvYXJkOzsNDQo=
+
+--_002_20260324221762OMHL1Q00173862OMHL1R001738mxvolktravelser_--

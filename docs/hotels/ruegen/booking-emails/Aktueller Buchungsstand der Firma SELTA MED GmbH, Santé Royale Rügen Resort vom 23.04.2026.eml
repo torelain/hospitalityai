@@ -1,0 +1,366 @@
+Received: from PR3P191MB1392.EURP191.PROD.OUTLOOK.COM (2603:10a6:102:ac::10)
+ by BESP191MB2899.EURP191.PROD.OUTLOOK.COM with HTTPS; Thu, 23 Apr 2026
+ 03:14:09 +0000
+Received: from CWLP123CA0236.GBRP123.PROD.OUTLOOK.COM (2603:10a6:400:19f::18)
+ by PR3P191MB1392.EURP191.PROD.OUTLOOK.COM (2603:10a6:102:ac::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9846.21; Thu, 23 Apr
+ 2026 03:13:50 +0000
+Received: from AM3PEPF0000A79A.eurprd04.prod.outlook.com
+ (2603:10a6:400:19f:cafe::3b) by CWLP123CA0236.outlook.office365.com
+ (2603:10a6:400:19f::18) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9846.21 via Frontend Transport; Thu,
+ 23 Apr 2026 03:13:50 +0000
+Received: from server01.mybulletant.de (217.160.41.160) by
+ AM3PEPF0000A79A.mail.protection.outlook.com (10.167.16.105) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9846.18
+ via Frontend Transport; Thu, 23 Apr 2026 03:13:50 +0000
+Received: from smsrv00.seltamed.de (unknown [46.227.222.248])
+	by server01.mybulletant.de (Postfix) with ESMTPSA id 5164081BAE
+	for <booking.ruegen@sante-royale.com>; Thu, 23 Apr 2026 05:13:18 +0200 (CEST)
+Received: from localhost (smsrv00.seltamed.local [127.0.0.1])
+	by localhost (Postfix) with ESMTP id C322B1F467
+	for <booking.ruegen@sante-royale.com>; Thu, 23 Apr 2026 05:13:49 +0200 (CEST)
+Received: from SMSRV12 (unknown [10.0.1.11])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	(Authenticated sender: smtp-auth-user)
+	by smsrv00.seltamed.de (Postfix) with ESMTPSA id 6268B1F461;
+	Thu, 23 Apr 2026 05:13:48 +0200 (CEST)
+From: "buchung@seltamed.de" <buchung@seltamed.de>
+To: =?iso-8859-1?Q?Booking_Sante_Royale_R=FCgen?=
+	<booking.ruegen@sante-royale.com>
+Subject:
+	=?iso-8859-1?Q?Aktueller_Buchungsstand_der_Firma_SELTA_MED_GmbH,_Sant=E9_?=
+ =?iso-8859-1?Q?Royale_R=FCgen_Resort_vom_23.04.2026?=
+Thread-Topic:
+	=?iso-8859-1?Q?Aktueller_Buchungsstand_der_Firma_SELTA_MED_GmbH,_Sant=E9_?=
+ =?iso-8859-1?Q?Royale_R=FCgen_Resort_vom_23.04.2026?=
+Thread-Index: AQHc0s9AcBxJpveAlEy41AQArJO2/Q==
+X-MS-Exchange-MessageSentRepresentingType: 1
+Date: Thu, 23 Apr 2026 03:12:32 +0000
+Message-ID: <20260423031349.C322B1F467@smsrv00.seltamed.de>
+Content-Language: en-US
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Exchange-Organization-AuthSource:
+	AM3PEPF0000A79A.eurprd04.prod.outlook.com
+X-MS-Has-Attach: yes
+X-MS-Exchange-Organization-Network-Message-Id:
+	ba16b597-f648-4a68-fce8-08dea0e6579d
+X-Message-Flag: Zur Nachverfolgung
+X-MS-TNEF-Correlator:
+X-MS-Exchange-Organization-RecordReviewCfmType: 0
+x-ms-publictraffictype: Email
+received-spf: pass (server01.mybulletant.de: connection is authenticated)
+authentication-results: spf=pass (sender IP is 217.160.41.160)
+ smtp.mailfrom=seltamed.de; dkim=pass (signature was verified)
+ header.d=seltamed.de;dmarc=pass action=none
+ header.from=seltamed.de;compauth=pass reason=100
+x-ms-office365-filtering-correlation-id: ba16b597-f648-4a68-fce8-08dea0e6579d
+x-ms-traffictypediagnostic:
+	AM3PEPF0000A79A:EE_|PR3P191MB1392:EE_|BESP191MB2899:EE_
+x-microsoft-antispam:
+	BCL:0;ARA:13230040|6049299003|12012899012|16102099003|8096899003|55112099003|57112099003|4053099003|13003099007|19002099003;
+x-forefront-antispam-report:
+	CIP:217.160.41.160;CTRY:DE;LANG:de;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:server01.mybulletant.de;PTR:server01.mybulletant.de;CAT:NONE;SFS:(13230040)(6049299003)(12012899012)(16102099003)(8096899003)(55112099003)(57112099003)(4053099003)(13003099007)(19002099003);DIR:INB;
+x-ms-exchange-crosstenant-authas: Anonymous
+x-ms-exchange-crosstenant-authsource:
+	AM3PEPF0000A79A.eurprd04.prod.outlook.com
+x-ms-exchange-crosstenant-network-message-id:
+	ba16b597-f648-4a68-fce8-08dea0e6579d
+x-ms-exchange-crosstenant-originalarrivaltime: 23 Apr 2026 03:13:50.5314 (UTC)
+x-ms-exchange-crosstenant-fromentityheader: Internet
+x-ms-exchange-crosstenant-id: 41b5a112-0e42-447e-88c8-d97486303fa3
+x-ms-exchange-transport-crosstenantheadersstamped: PR3P191MB1392
+x-eopattributedmessage: 0
+x-eoptenantattributedmessage: 41b5a112-0e42-447e-88c8-d97486303fa3:0
+x-ms-exchange-transport-endtoendlatency: 00:00:18.8662882
+x-ms-exchange-processed-by-bccfoldering: 15.20.9846.012
+x-ms-exchange-atpmessageproperties: SA|SL
+dkim-signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seltamed.de;
+	s=default; t=1776913998;	bh=D6T54HQSxwnmZoIzyUGnmXHcCSOkCp5kl0rX7JL6oXQ=;
+	h=Received:Received:From:To:Subject;
+	b=uDlIKUYrymvf84UfCoLx6G2MieJGFPq+vk9HJOd5PDAaTAL7TZbdUZI0mIjT0T6EQ
+	 kA5JgH2X7fL1g/PwzzEBMCysWAQ0ev45j8jqo5pJCwHQP0mzFFz72o/UlWSTypn5dD
+	 GYy3jZr6FexE7jfMOygXxDMOvKXlrSZ6NbgmpR9s=
+x-ppp-message-id:
+	<177691399855.165967.3635311793212044091@server01.mybulletant.de>
+x-ppp-vhost: seltamed.de
+authentication-results-original: server01.mybulletant.de;	spf=pass (sender IP
+ is 46.227.222.248) smtp.mailfrom=buchung@seltamed.de
+ smtp.helo=smsrv00.seltamed.de
+x-virus-scanned: by Intra2net Mail Security (AVE=8.4.2.0,VDF=8.20.76.226)
+x-spam-status:
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930201)(20251009189)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?iso-8859-1?Q?uQyiRJN4ZzJ91D90U3fX0+y7Tc4Ms/FnoJTESjqtjrCH/G/GTC4riwWWFu?=
+ =?iso-8859-1?Q?lAQGOXswcMByTgVo0ZRXO1MTKlCI/O9Dbgj2qwaSba0COcsTNl3yHRYR5P?=
+ =?iso-8859-1?Q?W/skXxTGRoogsVaTeERrbFMZXuLWbHnXOMosM8tCSifaEUKKblejEcU7dA?=
+ =?iso-8859-1?Q?bqMnaGqauflhTSYz3X1mFrcgBZm7WWt/a+Iui7Aap+9RTdnoVudfc7wZ1y?=
+ =?iso-8859-1?Q?tHMuMG4aTEtm9aY872qIJd0JsnAinlUkviIUsfvuEVst1k0hmiOivAlYuP?=
+ =?iso-8859-1?Q?BtPURqAJjpv+5+3aGkFIsYG8hylJnVmkLX/t1fEaQZFL1xW9JpFH2zjefJ?=
+ =?iso-8859-1?Q?Dw3Dwf9lld6+fBTbTayWmylqz8Hy7POUXczSLl6hh5GC9SDp+jiHBaSVAm?=
+ =?iso-8859-1?Q?p3dsRhzfcDbmOenBVAYuW9XORvKPBsBvUvCHYiygwbloLnt06tyTepKF5I?=
+ =?iso-8859-1?Q?wa+Ot879tfXDASk/RL9F0jcAj8DWFQ5NGNTJoQL8YbgedXe1WzZxwWe7yN?=
+ =?iso-8859-1?Q?BiHSq/JMXHJ2IJxP5ymcftW/tKNsEJ9P1JEFv+te/ZZsgsokQHOCCica8C?=
+ =?iso-8859-1?Q?l2x0yUjhECebvfPq/7V6LwTVwx12nqcpAXUPfKdQ7u5o1cWZ+MgTCjVaoX?=
+ =?iso-8859-1?Q?z9dy4hQP2+Qein+bicbQRtdaKNmsf4MhbNdyhAWoRf16NOWbV7M8lnf72j?=
+ =?iso-8859-1?Q?3f9LTkBjAU/SyVwwqAE05yQ6yTK+BhfwrRBT8W2OTrP9WWF0Vsj85bJ6nj?=
+ =?iso-8859-1?Q?GKdmrXfyBk5D8iRFKEMG4uPgf9l+0GMSRIBFk7XjXogQa7XqDbJkXxLT0o?=
+ =?iso-8859-1?Q?H9Xh1qaWDhjdMC+gP/XMKSAiOEHFA/UzbhwFotrQuN9k2G/NWKkJK1/3L3?=
+ =?iso-8859-1?Q?hZRdWfLve6aRcD7DYh5g1UvQmky9aI746l+GKTIkvoc4aWpHsvtagYscuR?=
+ =?iso-8859-1?Q?oApK8hRIS07K4GQ15fn9HakBTbzh7ba8AMm90CXUtaJZ0rc1es8J6z5m6l?=
+ =?iso-8859-1?Q?zvvQyCe/Hl3cvyzb6J7YAtm4qDYfHKPXtmm+GREOeJ0E4YZ6U/EjaVcwRq?=
+ =?iso-8859-1?Q?WOqd25YoY/QBrsEyiCX5SqNeEUvQVidqgd1RXtN6uNX6zTUza1ZVrx3bmB?=
+ =?iso-8859-1?Q?KNsLGPzfuSieXVVJmu3MVvS90vDInOYNIOs6onnD5A2EcWvEbgxthL2b2X?=
+ =?iso-8859-1?Q?rMghDaOv9KjNp5GEH5MULTTQ0l5MQb/hKNgxyzdKA8l3WfpIGRsxHl3ILf?=
+ =?iso-8859-1?Q?JejodBsPtSBIW+QmSd90gdMv6f6gBZnXp6qxdotcnh6n+rTGpxwB2NI8Aq?=
+ =?iso-8859-1?Q?LPYlGc4pYD2uV7rbE4tI93CGK99pR6FcfwnzRaawQ69Jn2T/LOQ7EFQmoT?=
+ =?iso-8859-1?Q?LYX9I4OwInbTDwh9cFN3s7Z8TQjZnFpMR1ee6VBlS/9hpBaEOFJ7jNKgW1?=
+ =?iso-8859-1?Q?qrQDQ4YDBkRfCGs5+hfXViYkaR191kJcRmU152PYIdoSjeFi+4MXCYuUs1?=
+ =?iso-8859-1?Q?Yls8XOlreF5WrxAd5Gf22/OnsE/qi7xunsOuMSXukQOJQMywM8DyBvtDwS?=
+ =?iso-8859-1?Q?wlQQ2mEw9vnza9+Lozq3TnqmmkZLEiBgCAUBiNiGOAXVhbALg0cIcv3rdL?=
+ =?iso-8859-1?Q?Zyx6/doYXpJgHRPgiAHEiFtM6RCcJBp9UD/Azdfc1DbTdMB56GJlY2vpU2?=
+ =?iso-8859-1?Q?lh6Jt7NkzYYNB8L2Z08Wn05mi7nAYEku4BEoyw99bKM54XMhUsFae5WZcW?=
+ =?iso-8859-1?Q?lU6SfSF2uOVdFXvyDyQhyd7Wjxdkl9UTaFi9PC+hx7P3mgqViX4wIStBhO?=
+ =?iso-8859-1?Q?PkxdH9XY2u+io7hlzQauo2MTX7/w5k4yULqMqxGgsxUEPjeBD5wO0lqZk2?=
+ =?iso-8859-1?Q?QQQsm5/wLcC3Lg8fTAeSSn7kPmoO8Qsg4eBzKeS9+y86x+AIrPSw+BCEMY?=
+ =?iso-8859-1?Q?rLhcsvIcPQpn168bE36z8DO6+70Pbhy0N71zhQ2ABknmlrvEbJQeF5jyqn?=
+ =?iso-8859-1?Q?wKYY/A1nulB9Xs7MoMsg23zSmSOGK3L/dtqgzao+9qEWQy2FAZWh2LXdva?=
+ =?iso-8859-1?Q?RT7gBptEkK/UozXLbvYFR7y95VAJdZQbeaafrLrCAKuD/uBqR1AEGtDvS1?=
+ =?iso-8859-1?Q?bK83fjPsrMQO3H2MFj93d2if5Fjx7c9jAe8V8y1yOzq45uS1AjpkHvdaRR?=
+ =?iso-8859-1?Q?VkDiso/yZBpKZQWRyZG/rQQQxIxAzGsBqyz8J/J9NFWYZz5z2U+tQSu5j9?=
+ =?iso-8859-1?Q?9SI9BJMYvnlxIfAdAHQt8mVYoDEKMmMSsost3jS2VdCPJTRsy8U4aRpINb?=
+ =?iso-8859-1?Q?nucUz8Nhdnr5ItkepDpNyi8gPsO+f/yTdIMnVnIGikB7aHrD1Fco5GI9nz?=
+ =?iso-8859-1?Q?2icJx099BgFgO0nMQQcETLGvb77c1vWojk2PCd6ejRN5Feg9IXKk5iFX7u?=
+ =?iso-8859-1?Q?HoisoITy2SXrVbAQn77GM09YJTCSs86pwKNrZNjUxsUWnVb6YBjasycIoU?=
+ =?iso-8859-1?Q?hHYxFhKYxZCwys21NiD80h1oeueYynD03D7UIGkOS30SZXuA84N0fiJNQk?=
+ =?iso-8859-1?Q?2Ycm7BG/hEn/4Cuqe1beOFnbg3HxqI61yz445Xao9BVmruCmJlNZ3/1Re+?=
+ =?iso-8859-1?Q?psssFPbbiqO4IVb8lBUGRXChq1+JIgOXd4nDASSjLdlXLf1Z9/b3H8YtMp?=
+ =?iso-8859-1?Q?lbueRTt6lkzFpI3RH2XWB9NnYLmv6m3oNJYMGEwyJSsi8HELoO6WWjQbKY?=
+ =?iso-8859-1?Q?Umqc9guV8vrF3NynFxe3UzGWZCIl6hODa90yUTA6fuzxWSUjy7Moev7xzv?=
+ =?iso-8859-1?Q?MN9qzKcbjfKfWsm2mm02?=
+Content-Type: multipart/mixed;
+	boundary="_004_20260423031349C322B1F467smsrv00seltamedde_"
+MIME-Version: 1.0
+
+--_004_20260423031349C322B1F467smsrv00seltamedde_
+Content-Type: multipart/alternative;
+	boundary="_000_20260423031349C322B1F467smsrv00seltamedde_"
+
+--_000_20260423031349C322B1F467smsrv00seltamedde_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Sehr geehrte Damen und Herren,
+
+anbei =FCbersenden wir Ihnen den aktuellen, unverbindlichen Buchungsstand (=
+inklusive Festbuchungen, Anfragen und Optionen).
+
+>> Wenn wir binnen 48h von Ihnen keine R=FCckmeldung erhalten, gilt die Hot=
+elmeldung als best=E4tigt. <<
+
+Sollten auf dieser Liste keine Kunden aufgef=FChrt sein, haben wir bedauerl=
+icherweise bisher keine Buchungen get=E4tigt.
+
+Herzlichen Dank!
+
+
+Mit freundlichen Gr=FC=DFen
+
+Ihr Team von Selta Med
+SELTA MED GmbH
+http://www.seltamed.de
+
+
+
+--_000_20260423031349C322B1F467smsrv00seltamedde_
+Content-Type: text/html; charset="iso-8859-1"
+Content-ID: <4749BE7C7C32BD498A153C63D8A7F419@EURP191.PROD.OUTLOOK.COM>
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<header></header>
+</head>
+<body>
+<span style=3D"font-size: 0.0em;"></span>Sehr geehrte Damen und Herren, <br=
+>
+<br>
+anbei =FCbersenden wir Ihnen den aktuellen, unverbindlichen Buchungsstand (=
+inklusive Festbuchungen, Anfragen und Optionen).
+<br>
+<br>
+&gt;&gt; Wenn wir binnen 48h von Ihnen keine R=FCckmeldung erhalten, gilt d=
+ie Hotelmeldung als best=E4tigt. &lt;&lt;
+<br>
+<br>
+Sollten auf dieser Liste keine Kunden aufgef=FChrt sein, haben wir bedauerl=
+icherweise bisher keine Buchungen get=E4tigt.
+<br>
+<br>
+Herzlichen Dank! <br>
+<br>
+<br>
+Mit freundlichen Gr=FC=DFen <br>
+<br>
+Ihr Team von Selta Med <br>
+SELTA MED GmbH &nbsp;<br>
+http://www.seltamed.de <br>
+<br>
+<br>
+</body>
+</html>
+
+--_000_20260423031349C322B1F467smsrv00seltamedde_--
+
+--_004_20260423031349C322B1F467smsrv00seltamedde_
+Content-Type: application/octet-stream; name="hotelmeldung.pdf"
+Content-Description: hotelmeldung.pdf
+Content-Disposition: attachment; filename="hotelmeldung.pdf"; size=8069;
+	creation-date="Thu, 23 Apr 2026 03:14:09 GMT";
+	modification-date="Thu, 23 Apr 2026 03:48:11 GMT"
+Content-ID: <82ADA7363F0189459AEDADA3A0A6574E@EURP191.PROD.OUTLOOK.COM>
+Content-Transfer-Encoding: base64
+
+JVBERi0xLjQNCiXi48/TDQolDQold1BERjMgYnkgV1BDdWJlZCBHbWJIIFYzLjY1WzQwMjY1MzIx
+Nl0gNjRiaXQgIHVuaWMgDQolDQolDQoxIDAgb2JqDTw8L1R5cGUvTWV0YWRhdGEvU3VidHlwZS9Y
+TUwvTGVuZ3RoIDE1MDMgPj4NCnN0cmVhbQo8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBN
+cENlaGlIenJlU3pOVGN6a2M5ZCI/Pgo8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEv
+IiB4OnhtcHRrPSIzLjEtNzAxIj4KPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9y
+Zy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9
+IiIKIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyI+CiA8eG1wOkNyZWF0
+b3JUb29sPmNvbWJpdCYjMTc0OyBMaXN0ICZhbXA7IExhYmVsJiMxNzQ7IFJlcG9ydCBHZW5lcmF0
+b3IgKDE5LjAuMC4wKTwveG1wOkNyZWF0b3JUb29sPgogPHhtcDpDcmVhdGVEYXRlPjIwMjYtMDQt
+MjNUMDU6MTI6MzJaPC94bXA6Q3JlYXRlRGF0ZT4KIDx4bXA6TW9kaWZ5RGF0ZT4yMDI2LTA0LTIz
+VDA1OjEyOjMyWjwveG1wOk1vZGlmeURhdGU+CiA8eG1wOk1ldGFkYXRhRGF0ZT4yMDI2LTA0LTIz
+VDA1OjEyOjMyWjwveG1wOk1ldGFkYXRhRGF0ZT4KPC9yZGY6RGVzY3JpcHRpb24+CjxyZGY6RGVz
+Y3JpcHRpb24gcmRmOmFib3V0PSIiCiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1l
+bnRzLzEuMS8iPgogPGRjOmZvcm1hdD5hcHBsaWNhdGlvbi9wZGY8L2RjOmZvcm1hdD4KIDxkYzp0
+aXRsZT4KIDxyZGY6QWx0PgogIDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+TGlzdCAmYW1w
+OyBMYWJlbCBSZXBvcnQ8L3JkZjpsaT4KIDwvcmRmOkFsdD48L2RjOnRpdGxlPgogPGRjOmRlc2Ny
+aXB0aW9uPjxyZGY6QWx0PgogIDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCIvPgo8L3JkZjpB
+bHQ+PC9kYzpkZXNjcmlwdGlvbj4KIDxkYzpzdWJqZWN0PgogPHJkZjpCYWc+CiAgPHJkZjpsaS8+
+CiA8L3JkZjpCYWc+CjwvZGM6c3ViamVjdD4KIDxkYzpjcmVhdG9yPjxyZGY6U2VxPgogIDxyZGY6
+bGkgeG1sOmxhbmc9IngtZGVmYXVsdCIvPgo8L3JkZjpTZXE+PC9kYzpjcmVhdG9yPgo8L3JkZjpE
+ZXNjcmlwdGlvbj4KPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKIHhtbG5zOnhhcE1NPSJo
+dHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIj4KIDx4YXBNTTpWZXJzaW9uSUQ+MTwveGFw
+TU06VmVyc2lvbklEPgogPHhhcE1NOkRvY3VtZW50SUQ+dXVpZDo5NTU4MmUyMjJiMDNkYTQxYWQw
+ODlmMzgyYWQxOWNiZTwveGFwTU06RG9jdW1lbnRJRD4KIDx4YXBNTTpJbnN0YW5jZUlEPnV1aWQ6
+OTU1ODJlMjIyYjAzZGE0MWFkMDg5ZjM4MmFkMTljYmU8L3hhcE1NOkluc3RhbmNlSUQ+CjwvcmRm
+OkRlc2NyaXB0aW9uPgo8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogeG1sbnM6cGRmPSJo
+dHRwOi8vbnMuYWRvYmUuY29tL3BkZi8xLjMvIj4KIDxwZGY6S2V5d29yZHMvPgogPHBkZjpQcm9k
+dWNlcj53UERGMyBieSBXUEN1YmVkIEdtYkg8L3BkZjpQcm9kdWNlcj4KPC9yZGY6RGVzY3JpcHRp
+b24+CjwvcmRmOlJERj4KPC94OnhtcG1ldGE+Cjw/eHBhY2tldCBlbmQ9InciPz4KZW5kc3RyZWFt
+DQplbmRvYmoNCjIgMCBvYmoNPDwNCi9DcmVhdG9yKP/+YwBvAG0AYgBpAHQArgAgAEwAaQBzAHQA
+IAAmACAATABhAGIAZQBsAK4AIABSAGUAcABvAHIAdAAgAEcAZQBuAGUAcgBhAHQAbwByACAAXCgA
+MQA5AC4AMAAuADAALgAwAFwpACkKL0F1dGhvcigpCi9UaXRsZShMaXN0ICYgTGFiZWwgUmVwb3J0
+KQovU3ViamVjdCgpCi9LZXl3b3JkcygpCi9DcmVhdGlvbkRhdGUoRDoyMDI2MDQyMzA1MTIzMlop
+Ci9Nb2REYXRlKEQ6MjAyNjA0MjMwNTEyMzJaKQovUHJvZHVjZXIod1BERjMgYnkgV1BDdWJlZCBH
+bWJIKQ0KPj4gDWVuZG9iag0KNCAwIG9iag08PC9MZW5ndGggMjA4NgovRmlsdGVyIFsvRmxhdGVE
+ZWNvZGVdID4+DQpzdHJlYW0KeF6lWcty2zYU3ecrsExnIoYAHyC9kye20zaPxlLbmXa6UCzaVqJH
+IlHjqX+2m2z6A11l0QNcgAQJ0JEcZ0YxRF+cg/vAffAzi6NYFElaJgmL1T9ayizFokgFu1qxz4zH
+RcxGBT54oT5HWRmzbcV+Z2v25HTKuJalz+nqyfNzzpIsYdNrtd4xfN6YPbiI8dX8Kfth+uHJ2ZS9
+U7tzKe3uskgetfsoi5I8yVM2vTP7WaTJ2avpmL0+e8EuVu9fshG72NT17up2tpzv6m3E+AzfxUUm
+EvbLcrav1lhOq2V0Eicy5c95ikeSxS5fkUAFXOYxS1KutIGPh7QhAtrQewilV2jj5aaulqtqOd+v
+bxQQg2b+/Atqm0M9+O8Ceo9kxu7w+0+MkyzPc7bCzrI0iyXbQZ/vBi1SFF2LxFEuMja9YtgphQV4
+mXPFRiRRGolY5ObMsBD9gYjTnCUihYnKtPiGA4hC9OAUlNQGKuM4w3ZJrPEm1aKuGPc0nEh4WRLD
+YUapPNrfRnEEp4ZbqwNqjaUcdgLeeL2tFrvqHrDb2X7lumKq/1ADpwIfjwEGxhWUmUbQ7R22caFP
+GBMiikm9o4RHXKhfZXP2gWjCLgFliggWhTrJHwrYRWlztq7/ZZebv2fLil1+vYFDX1a7zbZm9DMZ
+X/46saY9FI7DUBYoSTisOH/Ki6zI2cV/t9tq/YxNvqpwmq3nrGjdhs6eisaMCJkjr40Rj7ALLggo
+FZq1JFKZalu+RtA8YEmNbSz5GOyuEQ0mjMjzxoitPTsODIcdZQIOl2bagRE55uSfcclK3I7u5xb3
+owiLXA9HtBdi2iGsnhJ9UWcqxOdP/1isVtXWYZjJBo5TiH2T4ZDIUQwbfhklEsPv51kdOezy49kN
+iRzDbpRGuOry1tnyDsnfqu2n66XLUzo8D7TzkMgxPOMeTdmludnezCiRmAxbtr6VHEhzSOQ4mqgW
+irIxedlxyWm1WK6r265bIgoavwTpg/xyUOYYrrjgmgumo83TCgw/IjFXazfAM5WSKMKLA2kOiBzD
+EinVsswyN34mdTeAeN6anB9o8kGZYxjGUWGzLl3XeZYi19s4H7/XudfVpBMQ+YGaHBA5hifqJ5Wg
+rTa7EfTmixvkvEjauzI9kOKQzFEc40jpUpcwpMwidY2ukp+pGE2gU6XdzyRUnipk/VwXlDGKSa6K
+SfbBlpqQU5YSPENdmcncLpZsQmVos3WOXEF5rd3aSOcZb6XVwpcWyMmqbE6FzomKl4VGslrZRZ52
+hL3s00LjUUs8DxI30oo4pTtPmogb6R5xi+0Tt9CauFn0iHuJqYXGo5a4DBI30iHiRpqIG+kecYvt
+E7fQmrjdqatxL1O1xPGoJV6KkKsYaU285ypGmogb6R5xi+0Tt9CauN2pS9zLXS1xPGqJw+tCzI24
+Yk7Z0hMn5la8R92i+9QtuKZuFj1n8XNZJ8Jc8lk6EKH6slLsKYH6Gxj6ZgM/SOm2C0YpEbBhqlf9
+E/TTnIOPR47286DfcCOvDqAzqy9v+Bv5Pn+LH+Bv8Ym/WfX5e5nTIYBnzgHCEWvTaMjz1TOtM3Kg
+cNA2eThwAkuATmB367o/tm3ylc6ozgE6gYvEFnQhJ3QH5A1/I9+3wHDwKmqOB4XD18+3zgGQVx0L
+lOEsZZKvtoBO2P4G5gRmg/4JbPYOWMASIAuYVd+HsO1QDFnKJG/xGwua5F1mNsM6fdlAt+61gXrI
+IpIcgyF4iJ6xmJkHO2FxGcVZ1Ax31ADOTe0tcKdqeKhgUGOjpmBQCy/l50kpBgoGPJKNtF74BUOJ
+SVe4YChxOlsw5EnREUYFoyeVvrCpbUiYFo4wWSDPYktZ5uLYWRdvKjdUWbrryQuamrzYfPpULe91
+O85Wi5qdzpYfN2t2v7fd+aFWjqMUzaozGNE4kicYgsLgy2W1WK/39X23QqRSRp+OCqFHnC5xKmdq
+4+3pJmdjr4v/Piw1SOsWwejJ0xZx/OOrxc1t7aDS7UOoOn0/4oQYHratFvUG9ogYf2GQ6DXXGo/K
+hUfgcdT4d4z6Ywv0ZlHNq+1NtfvyzzN2tl18nHUHTM0pKc0fgIoZbmckH5it0VElNAwfOt1f3cJ7
+dvNZvV+dGPQh9wxsXmSSYyM1f9X7yjjXI0ou8ZahewWZrK+1qLP+AccJDJgRbRnM1Srx3NUZZfbv
+8wxEncC52pYMk3F1f5jwVoPB3u1q0rGG1en00UcrOBctVDs07tzgzsV16A0OEecOVgv/Bs8Are5g
+menLsG3akDqVMHVwUmSlK+zdNv22y0BT26UXDrSV9qGp0zLQtOhDU+vjXD79tstAUw3Wh7bSPjT1
+SgaaFn1o7wbqN04GmlqfPrSV9qGpXDLQtOhDU/PhXEb93sVAm96lj23FfWxqVww2LfrYpnfR4AOt
+h0Wn1qOP3mwQ9DUHX/1hiACV/u0l4rUOFp9aBw/fygfwqVmwzk4rTwHeBeO1DpZA2OtM5Q8UP9io
+1rcEaOURcDwvXLlbfKrcPQUM+56p3C1+2PtM5U5BFy68LQEqfD0CVHgHFUCltiVAK08BVHgH5S0i
+XVe0cuSp7JMC75DxZks3DXhJ8623VU1C5ZikcYb3ODSoQ9XJsVuCMh4Jz50mOsV2B8yd0T1QbUOm
+dPljRTem4V/ieIa/OkTzzolrxcoSBSOspIeY7eND3+GPRMSlzn6qrFUbFgJFt3rriPnzfoc3Y/g5
+xxv082pXv6fyQX/3Ft+9/VQvUOmqnzGW4/X1dnZT0UtJrCf1ZrteVFu3XlWvs/8HUdoEswplbmRz
+dHJlYW0NCmVuZG9iag0KMyAwIG9iag08PA0KL1R5cGUvRW5jb2RpbmcvRGlmZmVyZW5jZXMKWzEy
+OCAvRXVyb10vQmFzZUVuY29kaW5nL1dpbkFuc2lFbmNvZGluZw0KPj4gDWVuZG9iag0KNSAwIG9i
+ag0KWyA3NTAgNzUwIDI3OCAyNzggMzU1IDU1NiA1NTYgODg5IDY2NyAxOTEgMzMzIDMzMyAzODkg
+NTg0IDI3OCAzMzMgMjc4IDI3OCA1NTYKNTU2IDU1NiA1NTYgNTU2IDU1NiA1NTYgNTU2IDU1NiA1
+NTYgMjc4IDI3OCA1ODQgNTg0IDU4NCA1NTYgMTAxNSA2NjcgNjY3IDcyMgo3MjIgNjY3IDYxMSA3
+NzggNzIyIDI3OCA1MDAgNjY3IDU1NiA4MzMgNzIyIDc3OCA2NjcgNzc4IDcyMiA2NjcgNjExIDcy
+MiA2NjcKOTQ0IDY2NyA2NjcgNjExIDI3OCAyNzggMjc4IDQ2OSA1NTYgMzMzIDU1NiA1NTYgNTAw
+IDU1NiA1NTYgMjc4IDU1NiA1NTYgMjIyCjIyMiA1MDAgMjIyIDgzMyA1NTYgNTU2IDU1NiA1NTYg
+MzMzIDUwMCAyNzggNTU2IDUwMCA3MjIgNTAwIDUwMCA1MDAgMzM0IDI2MAozMzQgNTg0IDc1MCA1
+NTYgNzUwIDIyMiA1NTYgMzMzIDEwMDAgNTU2IDU1NiAzMzMgMTAwMCA2NjcgMzMzIDEwMDAgNzUw
+IDYxMSA3NTAKNzUwIDIyMiAyMjIgMzMzIDMzMyAzNTAgNTU2IDEwMDAgMzMzIDEwMDAgNTAwIDMz
+MyA5NDQgNzUwIDUwMCA2NjcgMjc4IDMzMyA1NTYKNTU2IDU1NiA1NTYgMjYwIDU1NiAzMzMgNzM3
+IDM3MCA1NTYgNTg0IDMzMyA3MzcgNTUyIDQwMCA1NDkgMzMzIDMzMyAzMzMgNTc2CjUzNyAzMzMg
+MzMzIDMzMyAzNjUgNTU2IDgzNCA4MzQgODM0IDYxMSA2NjcgNjY3IDY2NyA2NjcgNjY3IDY2NyAx
+MDAwIDcyMiA2NjcKNjY3IDY2NyA2NjcgMjc4IDI3OCAyNzggMjc4IDcyMiA3MjIgNzc4IDc3OCA3
+NzggNzc4IDc3OCA1ODQgNzc4IDcyMiA3MjIgNzIyCjcyMiA2NjcgNjY3IDYxMSA1NTYgNTU2IDU1
+NiA1NTYgNTU2IDU1NiA4ODkgNTAwIDU1NiA1NTYgNTU2IDU1NiAyNzggMjc4IDI3OAoyNzggNTU2
+IDU1NiA1NTYgNTU2IDU1NiA1NTYgNTU2IDU0OSA2MTEgNTU2IDU1NiA1NTYgNTU2IDUwMCA1NTYg
+NTAwIF0NCmVuZG9iag0KNiAwIG9iag08PA0KL1R5cGUvRm9udERlc2NyaXB0b3IKL0ZvbnROYW1l
+L0FyaWFsCi9Bc2NlbnQgNzI4Ci9DYXBIZWlnaHQgNTAwCi9EZXNjZW50IC0yMTAKL0ZsYWdzIDMy
+Ci9Gb250TWF0cml4IFswLjAwMSAwIDAgMC4wMDEgMCAwXQovRm9udEJCb3ggWy02NjUgLTMyNSAy
+MDAwIDEwNDBdCi9JdGFsaWNBbmdsZSAwCi9TdGVtViAwCi9BdmdXaWR0aCA0NDEKL0xlYWRpbmcg
+MTUwCi9NYXhXaWR0aCAwCi9YSGVpZ2h0IDI1MA0KPj4gDWVuZG9iag0KNyAwIG9iag08PA0KL1R5
+cGUvRm9udAovU3VidHlwZS9UcnVlVHlwZQovQmFzZUZvbnQvQXJpYWwKL0VuY29kaW5nIDMgMCBS
+Ci9GaXJzdENoYXIgMzANCi9MYXN0Q2hhciAyNTUNCi9XaWR0aHMgNSAwIFINCi9Gb250RGVzY3Jp
+cHRvciA2IDAgUg0KPj4gDWVuZG9iag0KOCAwIG9iag0KWyA3NTAgNzUwIDI3OCAzMzMgNDc0IDU1
+NiA1NTYgODg5IDcyMiAyMzggMzMzIDMzMyAzODkgNTg0IDI3OCAzMzMgMjc4IDI3OCA1NTYKNTU2
+IDU1NiA1NTYgNTU2IDU1NiA1NTYgNTU2IDU1NiA1NTYgMzMzIDMzMyA1ODQgNTg0IDU4NCA2MTEg
+OTc1IDcyMiA3MjIgNzIyCjcyMiA2NjcgNjExIDc3OCA3MjIgMjc4IDU1NiA3MjIgNjExIDgzMyA3
+MjIgNzc4IDY2NyA3NzggNzIyIDY2NyA2MTEgNzIyIDY2Nwo5NDQgNjY3IDY2NyA2MTEgMzMzIDI3
+OCAzMzMgNTg0IDU1NiAzMzMgNTU2IDYxMSA1NTYgNjExIDU1NiAzMzMgNjExIDYxMSAyNzgKMjc4
+IDU1NiAyNzggODg5IDYxMSA2MTEgNjExIDYxMSAzODkgNTU2IDMzMyA2MTEgNTU2IDc3OCA1NTYg
+NTU2IDUwMCAzODkgMjgwCjM4OSA1ODQgNzUwIDU1NiA3NTAgMjc4IDU1NiA1MDAgMTAwMCA1NTYg
+NTU2IDMzMyAxMDAwIDY2NyAzMzMgMTAwMCA3NTAgNjExIDc1MAo3NTAgMjc4IDI3OCA1MDAgNTAw
+IDM1MCA1NTYgMTAwMCAzMzMgMTAwMCA1NTYgMzMzIDk0NCA3NTAgNTAwIDY2NyAyNzggMzMzIDU1
+Ngo1NTYgNTU2IDU1NiAyODAgNTU2IDMzMyA3MzcgMzcwIDU1NiA1ODQgMzMzIDczNyA1NTIgNDAw
+IDU0OSAzMzMgMzMzIDMzMyA1NzYKNTU2IDMzMyAzMzMgMzMzIDM2NSA1NTYgODM0IDgzNCA4MzQg
+NjExIDcyMiA3MjIgNzIyIDcyMiA3MjIgNzIyIDEwMDAgNzIyIDY2Nwo2NjcgNjY3IDY2NyAyNzgg
+Mjc4IDI3OCAyNzggNzIyIDcyMiA3NzggNzc4IDc3OCA3NzggNzc4IDU4NCA3NzggNzIyIDcyMiA3
+MjIKNzIyIDY2NyA2NjcgNjExIDU1NiA1NTYgNTU2IDU1NiA1NTYgNTU2IDg4OSA1NTYgNTU2IDU1
+NiA1NTYgNTU2IDI3OCAyNzggMjc4CjI3OCA2MTEgNjExIDYxMSA2MTEgNjExIDYxMSA2MTEgNTQ5
+IDYxMSA2MTEgNjExIDYxMSA2MTEgNTU2IDYxMSA1NTYgXQ0KZW5kb2JqDQo5IDAgb2JqDTw8DQov
+VHlwZS9Gb250RGVzY3JpcHRvcgovRm9udE5hbWUvQXJpYWwsQm9sZAovQXNjZW50IDcyOAovQ2Fw
+SGVpZ2h0IDUwMAovRGVzY2VudCAtMjEwCi9GbGFncyAzMgovRm9udE1hdHJpeCBbMC4wMDEgMCAw
+IDAuMDAxIDAgMF0KL0ZvbnRCQm94IFstNjI4IC0zNzYgMjAwMCAxMDU2XQovSXRhbGljQW5nbGUg
+MAovU3RlbVYgMAovQXZnV2lkdGggNDc5Ci9MZWFkaW5nIDE1MAovTWF4V2lkdGggMAovWEhlaWdo
+dCAyNTANCj4+IA1lbmRvYmoNCjEwIDAgb2JqDTw8DQovVHlwZS9Gb250Ci9TdWJ0eXBlL1RydWVU
+eXBlCi9CYXNlRm9udC9BcmlhbCxCb2xkCi9FbmNvZGluZyAzIDAgUgovRmlyc3RDaGFyIDMwDQov
+TGFzdENoYXIgMjU1DQovV2lkdGhzIDggMCBSDQovRm9udERlc2NyaXB0b3IgOSAwIFINCj4+IA1l
+bmRvYmoNCjExIDAgb2JqDTw8DQovUHJvY1NldCBbL1BERi9UZXh0L0ltYWdlQ10NCi9Gb250IDw8
+IC9GMSA3IDAgUg0KL0YyIDEwIDAgUiA+Pg0KPj4gDWVuZG9iag0KMTIgMCBvYmoNPDwNCi9UeXBl
+L1BhZ2UNCi9QYXJlbnQgMTMgMCBSDQovUmVzb3VyY2VzIDExIDAgUg0KL01lZGlhQm94IFswIDAg
+NTk1LjQ0MCA4NDEuOTIwXQ0KL0NvbnRlbnRzIDQgMCBSDQo+PiANZW5kb2JqDQoxMyAwIG9iag08
+PA0KL1R5cGUvUGFnZXMNCi9LaWRzIFsgMTIgMCBSIF0NCi9Db3VudCAxDQo+PiANZW5kb2JqDQox
+NCAwIG9iag08PA0KL1R5cGUvQ2F0YWxvZw0KL1BhZ2VzIDEzIDAgUg0KL01ldGFkYXRhIDEgMCBS
+DQovUGFnZU1vZGUvVXNlTm9uZQ0KPj4gDWVuZG9iag0KeHJlZg0KMCAxNQ0KMDAwMDAwMDAwMCA2
+NTUzNSBmDQowMDAwMDAwMDgwIDAwMDAwIG4NCjAwMDAwMDE2NjMgMDAwMDAgbg0KMDAwMDAwNDEx
+OSAwMDAwMCBuDQowMDAwMDAxOTU2IDAwMDAwIG4NCjAwMDAwMDQyMTIgMDAwMDAgbg0KMDAwMDAw
+NTE0NSAwMDAwMCBuDQowMDAwMDA1NDAwIDAwMDAwIG4NCjAwMDAwMDU1NTMgMDAwMDAgbg0KMDAw
+MDAwNjQ4NSAwMDAwMCBuDQowMDAwMDA2NzQ1IDAwMDAwIG4NCjAwMDAwMDY5MDQgMDAwMDAgbg0K
+MDAwMDAwNjk5MyAwMDAwMCBuDQowMDAwMDA3MTE1IDAwMDAwIG4NCjAwMDAwMDcxODEgMDAwMDAg
+bg0KdHJhaWxlcgo8PAovU2l6ZSAxNQ0KL1Jvb3QgMTQgMCBSDQovSURbPDk1NTgyZTIyMmIwM2Rh
+NDFhZDA4OWYzODJhZDE5Y2JlPjw5NTU4MmUyMjJiMDNkYTQxYWQwODlmMzgyYWQxOWNiZT5dDQov
+SW5mbyAyIDAgUg0KPj4NCnN0YXJ0eHJlZg0KNzI3Mg0KJSVFT0YNCg==
+
+--_004_20260423031349C322B1F467smsrv00seltamedde_--
