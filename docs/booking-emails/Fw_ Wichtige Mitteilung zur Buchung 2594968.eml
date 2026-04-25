@@ -1,0 +1,370 @@
+Delivered-To: adrian.hesse@tujur.de
+Received: by 2002:a05:6f02:cc87:b0:11c:299d:89b1 with SMTP id rf7csp874211rcb;
+        Thu, 16 Apr 2026 03:07:12 -0700 (PDT)
+X-Received: by 2002:a53:ac90:0:b0:651:be4a:94ed with SMTP id 956f58d0204a3-651be4ae35dmr16659887d50.50.1776334031844;
+        Thu, 16 Apr 2026 03:07:11 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1776334031; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=NhKav6tDZXgvHdvLIqsJNAzub35ClGK8vOLnpWutqfCGmvFGUqO7Kxx/rPaHAwH7x7
+         DwUD1dpql1qZxHtfRL9oFaZE2mXkWQk31akt2gM1Fg7jR8ZmePWUCq4WmOrdKt55ydav
+         6gkdThWj77cMyMi/qZFclgIAnRgK1rHddx3t+xYUnW7XdKX+v+cW6VZiue2OzjC66wko
+         H/LV2QrGdiJyzFzNkwj0ejG7kqZGeMvJ0R3Cf6Jz/BY5SFgfL8ZJm1tVbJ0gCDCRyMGo
+         f5tG3bcYqQgaPWNBgRrYRl/uyld8KsCcEa35H5Pi8f5UT7Ae/Cb5KOPmAbMXNkfi6cu7
+         5UMw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:content-language:accept-language:in-reply-to
+         :references:message-id:date:thread-index:thread-topic:subject:to
+         :from:dkim-signature;
+        bh=OB8ISRIIMm8IiL+hfqIY9sHZPuQmgHU486zpMhQyZZA=;
+        fh=FOyyFlXmDDxDa1sWzjWvtXJxzN85cCy/9c4GCqtiP14=;
+        b=jA+teQoLrNvDqfwCyfzU3GI1EFSfV9t/n1GvM9TrDRbKX5Q5ftczgAf0jOoKy5wGAv
+         OEDL0LXWXtkg5wPnpxMKEsIWi0y20rF1CJcjoNKQNkPAC89XCl9k2vg6JHz+ZmMrAcRl
+         Dp7eNY4l2m+4hTdNdqKyai7cq6JyhpODdMg8XtRgbfJ3w0xYeQhRhCJgJqYo3Tf8nXmj
+         /seTK0cnYpXAe8nMNDevNoGlqFS8/NclBQUYpnyVEylKjZ43NRWj99uyGBaP+MXnqRNJ
+         sFl6WBI92k4BKkNbmfG8EvAtdx9Ilqdkbgt0Uqp/D2K6D81snyrsthI8U7pAEjsnxPlM
+         odmw==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@santeroyale.onmicrosoft.com header.s=selector1-santeroyale-onmicrosoft-com header.b=NtKkCbm6;
+       arc=pass (i=1 spf=pass spfdomain=sante-royale.com dkim=pass dkdomain=sante-royale.com dmarc=pass fromdomain=sante-royale.com);
+       spf=pass (google.com: domain of booking.wolkenstein@sante-royale.com designates 2a01:111:f403:c20f::7 as permitted sender) smtp.mailfrom=booking.wolkenstein@sante-royale.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=sante-royale.com
+Return-Path: <booking.wolkenstein@sante-royale.com>
+Received: from OSPPR02CU001.outbound.protection.outlook.com (mail-norwayeastazlp170130007.outbound.protection.outlook.com. [2a01:111:f403:c20f::7])
+        by mx.google.com with ESMTPS id 956f58d0204a3-65306a95ab6si120646d50.139.2026.04.16.03.07.11
+        for <adrian.hesse@tujur.de>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 16 Apr 2026 03:07:11 -0700 (PDT)
+Received-SPF: pass (google.com: domain of booking.wolkenstein@sante-royale.com designates 2a01:111:f403:c20f::7 as permitted sender) client-ip=2a01:111:f403:c20f::7;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@santeroyale.onmicrosoft.com header.s=selector1-santeroyale-onmicrosoft-com header.b=NtKkCbm6;
+       arc=pass (i=1 spf=pass spfdomain=sante-royale.com dkim=pass dkdomain=sante-royale.com dmarc=pass fromdomain=sante-royale.com);
+       spf=pass (google.com: domain of booking.wolkenstein@sante-royale.com designates 2a01:111:f403:c20f::7 as permitted sender) smtp.mailfrom=booking.wolkenstein@sante-royale.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=sante-royale.com
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=Nmu/aQPfkogHdmnMD40FNJTAx+hLkR/wzMu6ypH8tQQ7Bto7J7T4D+kR/qmworLsGRTYHw0RP2HKc88oB+VDwHgDPE0dTEJFEoEg8HVN2mlk2eZqVEgu1uQhcoCkH5Op0Mqpo5rnqwZZoks3BfNZ5Qthz5+EBw3i7y+y0lmuCga3NFwdm1KuVF5kubkkMnafkN0pIOz+QPK0QiRkvOjNNYik8If6y+yWqqrdcCo4a1MMFB212d6227v3hKowMCDi6kqAIdNK9bsVEoA1Q5ysERHdswJvo2guqCi9cVk9CAl4ftWU6X9m2BDFOHNCn/KdToMmigmCbk7uKm6nrS5BuA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=OB8ISRIIMm8IiL+hfqIY9sHZPuQmgHU486zpMhQyZZA=;
+ b=p+mu2OXmZ4Nfx9nBuPXQChoJv6qjCMcjOvYLBDO4FLbC086OAuTXcbuLSbrrBN/LnE8KwBTSu1jRSK3r7P4Uq0W59YLo46DcXW7Y3zDAOOdB/Z5FamA0wZJ7GzdcOGYSUjQilEpjRf9EnwP6RjkEN5mvcqgZDGgfV/Rava18g8xyseHji3EU83dYvR8LJha9St/ZZvb0ehSxTqXDtb9ovbK4qVM9CKANQI2jayAip6O2BnF+kXO/kuyoT2buU1u799KyxZRX+QvSxl83QSeCzv6091X2gORhLMFkLvS7iaGW6Nm6hBWXL1sF21p4YHKFidy72Mp7387HKhZjYD50CQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=sante-royale.com; dmarc=pass action=none
+ header.from=sante-royale.com; dkim=pass header.d=sante-royale.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=santeroyale.onmicrosoft.com; s=selector1-santeroyale-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=OB8ISRIIMm8IiL+hfqIY9sHZPuQmgHU486zpMhQyZZA=;
+ b=NtKkCbm6zjzKrR1nb18BEanlIM0p1I2hKImCjKOxwDajo6gjctmlL7LjSZe1oGb/V2UW2wphFchhkO0HVRkSnuWOS6dgmtbhyqyeoThnoP3ObQJCxciGgW99S2akhhfBBog7ik4VdvwaY2B5LQwae2SlER/IZeirUZV01Q+UgJI=
+Received: from PA3P191MB2954.EURP191.PROD.OUTLOOK.COM (2603:10a6:102:4d8::9)
+ by GV1P191MB2662.EURP191.PROD.OUTLOOK.COM (2603:10a6:150:1c9::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9818.25; Thu, 16 Apr
+ 2026 10:07:08 +0000
+Received: from PA3P191MB2954.EURP191.PROD.OUTLOOK.COM
+ ([fe80::16ae:f80d:5490:83f3]) by PA3P191MB2954.EURP191.PROD.OUTLOOK.COM
+ ([fe80::16ae:f80d:5490:83f3%6]) with mapi id 15.20.9769.046; Thu, 16 Apr 2026
+ 10:07:08 +0000
+From: Booking Sante Royale Wolkenstein <booking.wolkenstein@sante-royale.com>
+To: "adrian.hesse@tujur.de" <adrian.hesse@tujur.de>
+Subject: Fw: Wichtige Mitteilung zur Buchung 2594968
+Thread-Topic: Wichtige Mitteilung zur Buchung 2594968
+Thread-Index: AQHczKl6DYOyn3TOd0WVrq8A/LgYM7XheDcW
+Date: Thu, 16 Apr 2026 10:07:08 +0000
+Message-ID:
+ <PA3P191MB29540B4D880AFB5A0A090072CF232@PA3P191MB2954.EURP191.PROD.OUTLOOK.COM>
+References: <1918869383.2536.1776238111374.JavaMail.midocosys@blodger1>
+In-Reply-To: <1918869383.2536.1776238111374.JavaMail.midocosys@blodger1>
+Accept-Language: en-US
+Content-Language: de-DE
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-ms-reactions: allow
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=sante-royale.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: PA3P191MB2954:EE_|GV1P191MB2662:EE_
+x-ms-office365-filtering-correlation-id: 58e7dda6-453f-404d-a67e-08de9b9feb5a
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|1800799024|366016|376014|38070700021|8096899003|13003099007|56012099003|22082099003|18002099003;
+x-microsoft-antispam-message-info:
+ Nkl0nPXkgr16rp1Fw1nvxT9Rr8s3B5LZc+5YGaHHAcImMG7YczkoaYN7WzWj1RCAR4bVSG1IVAHQhraNnsQsVuaCqanIAdQRBoHgN0JbMwOrujIuV7FIr3JeJ4fg4dEd7HLHTQsSMre1cjVxg3Oi31Am3wSTY11F+piNZ4onQPfqHhBe5SkGx1ZqXGv2UEt0r/H0zTndJF/Ins3K5lIqmjemlDmn9CUOO5W7uZcxlWz1bLnZ5VPy+YTPyUDrXa8cJQbhejyxSbj5wBlgSePoPNEEfbVHn3PpOxmHaSSjXyLz1YDLp4UnZ7o9G3QhpFzr5rTk7QrvDpWkhhhojBfLZFl0l+jdMwdM6hIylBqBpqxytxdvpywM9N4xCWDvCfLCtAb7YhD3tg3o5n2w/1JFFkSyY1M6S2vf13yDyFzKitCw2H/qjt3oVQEvZMBxS+EenGh83ZAxOxAdhSKN91BSA9AVjT9ywD+uIZdDfDNgBu6JOnvbX9bDkwNVTGHQhZgtfsTCqcyazd0xJxJbJIxr26TbtLEgFIICmJHJu8SzNRCUn8AEM6hKsGDkGy0QNsRX5IPYCgaiJVl6sTh9f1ufI8kIHk354Ksip8pNuZpRWIKq6dyuNZm5p44ndJE9vLBel7M105pRAPnlmwqhHn+8dc4h/iOaHd3oqcmYMPsywFe4PRQntUZ7MI/b7p6T1BH5cDKVjhB1QL+Hx+1VQ0ZnN+0BR0RCh3oM6E6XjHdjHqI=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:de;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA3P191MB2954.EURP191.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014)(38070700021)(8096899003)(13003099007)(56012099003)(22082099003)(18002099003);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 2
+x-ms-exchange-antispam-messagedata-0:
+ =?iso-8859-1?Q?Es8E6DakOHjXxGa+KIJ/fHESjxcaREBdhg2tu8usHNvCp7Eeo1xPlpomFF?=
+ =?iso-8859-1?Q?Kfstk0bBNPOC3SQlO89SL1yzDroFlA3uVCqRgX93yfPfVMPZ9C3sAn5GD3?=
+ =?iso-8859-1?Q?Kv0WU+RAYTCmwdfevktg9rZqMpc/5C3/eX7AEMkxB5ViGRdmyXt+pm382E?=
+ =?iso-8859-1?Q?LzYLWCvbDRpD7IR0upmH05ZTKwVevM+CwZvcCKziI5rCYPh8XKXSIYW/92?=
+ =?iso-8859-1?Q?EYPZN5puicG34qr3YAlRIdY64xGrwDr4zZB09bxwzdodWeUbeAYO9O/J80?=
+ =?iso-8859-1?Q?4sCPbTHv/ZLQwTYlxPtHjCSYCoYsP6lfBRpmJ+OM3J1eQlMv0XPPUBqmQm?=
+ =?iso-8859-1?Q?hmhh4qsiGGxlzgTJnBM9hpYqc0DgD/UFXx0wXIFLBfZkZYtij5Bfe0Aeac?=
+ =?iso-8859-1?Q?A628wV8NzzyNDvXFjHht4sF7qtcTuJGlry2z8mgyNbdM1GEZI6119Z1W1C?=
+ =?iso-8859-1?Q?gO7ujeEkWIjOfwpgEELiogGAouxkPB7NQCOh3bS95+5qGwkuStOjhRrWz4?=
+ =?iso-8859-1?Q?suizD2si3jaShlHnuNpsAd1Qiw0jFxXzOtTZTZ3mnOdpOJvErazujcxnRj?=
+ =?iso-8859-1?Q?2KiClgFbgVLwwUxzrkEPJEwSBTJW7Pf0Aato7/twt6Mi53qijW+0oCgRrR?=
+ =?iso-8859-1?Q?IBjCiA51+8awAYzjqreVIH0bRRUL3rllAPn0qwfObR46T2wt3GvkzVjZG1?=
+ =?iso-8859-1?Q?scCov14GXVnPgmi47hfCRLC3IqC5nKwlAMycM0aPKKNe4lpBggx1GSAtu4?=
+ =?iso-8859-1?Q?sBtwoVHXcZNwC3e3cos3rGkm8t2iHcgNEc5to/okT4FBdDgYXV0p5t7xXw?=
+ =?iso-8859-1?Q?W4+NDFBjgynLLd5zjxdB3/cjQN2m0XZY/NsiY56AhSMsF4iztJULZ1KpcK?=
+ =?iso-8859-1?Q?6CohJ1mCWuRwMj1MRlb8nHUaCa59Ly0X71KG2XeMGMb7x9Hxzk4dSCW7Q9?=
+ =?iso-8859-1?Q?VTeGLUYYTAURSWxqIdvBO27SinNcmD3iirSf+RS7NJscjbJC9v/exAfLM8?=
+ =?iso-8859-1?Q?MNexzHAlp5dierWyD9ThwuSaCCKrZ1zNLeLA/hFXIF2NFLPlzR8+qxMORF?=
+ =?iso-8859-1?Q?a0l3JflvjGozOmodhB7lhERG/AADxEfZZKb08Oz+ttoiPAY7ctYK8bDYqh?=
+ =?iso-8859-1?Q?j4lgOxuSbrgTqEHFG0XjCbPouZRHZvNiln4MFNi1tDQBglbNZpzFPhSPB/?=
+ =?iso-8859-1?Q?/I2ywec9YD3VjEGLDcqPpPoeqCxtTkbl8gPHb5ke/Z7L6LNjgxhh/MrUPl?=
+ =?iso-8859-1?Q?queOOUHCDyij1obgym9KuAlZqNZLKFZ619sOc+ZwdGMk8q35IbPef3EPes?=
+ =?iso-8859-1?Q?HtDONa6tGk0a09oTIoeNXf55evqnsuNiLwm9nZR9Xq49O/rRVRMu9xVdkB?=
+ =?iso-8859-1?Q?j6nIZdWBZAzSKTwZ7gRZcWGPPobgzHm+T32BzdY+at2McWvWE23R3w7w2z?=
+ =?iso-8859-1?Q?npot/SkMhgxFTTvjt/xfHBzuUcNOKeDbUGDJQpnfntQgWJ0tj2EDwftLpa?=
+ =?iso-8859-1?Q?bTk2uBHF/x1FN9QyybE2ty05MsDmfiua9GB9fN+t80cYxz5nVSkalAJURa?=
+ =?iso-8859-1?Q?KzlOIh9zXJEP9rT/AhVm1nKzRx0r3ck6gZeucVfI6jOMBuMU6nQX4kZLvZ?=
+ =?iso-8859-1?Q?O+bo5pIVh+k/+mnSJPgK+Wo/JEKcKhQ4GDiODYGVJAW/zldlhDB6kmIkvE?=
+ =?iso-8859-1?Q?ynA5rWIJxm8OZNI2tZ476t1gm2VvuKxzFMSWsQuCHcRcH1NqdY2X3gqzYj?=
+ =?iso-8859-1?Q?q/hQlWpNR90fNdgq7GXUmqDEEi/vMtiD1NyHnFmj+YisAwCQwcJOW+0sdJ?=
+ =?iso-8859-1?Q?WETKk5Khok4zf0DvTICv9eo+l6D7T0zXXXd4Six6B9SGz1CTUhCfDUTIpP?=
+ =?iso-8859-1?Q?L1?=
+x-ms-exchange-antispam-messagedata-1: 6jVhH+BRkO4OmA==
+Content-Type: multipart/alternative;
+	boundary="_000_PA3P191MB29540B4D880AFB5A0A090072CF232PA3P191MB2954EURP_"
+MIME-Version: 1.0
+X-OriginatorOrg: sante-royale.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: PA3P191MB2954.EURP191.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: 58e7dda6-453f-404d-a67e-08de9b9feb5a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Apr 2026 10:07:08.3258
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 41b5a112-0e42-447e-88c8-d97486303fa3
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: t+taaD1D4sjxnZUANz010eO0U7RTc/sHKmb39xe/YzMV+obucaDtxhM96hFReVahRqDrr80uiKp8CS/q1rLdgaXC0ZFtkX83srzgPvAR/vIwc/cG7nfRMkjxQvDjzV7q
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1P191MB2662
+
+--_000_PA3P191MB29540B4D880AFB5A0A090072CF232PA3P191MB2954EURP_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+Gesendet von Outlook f=FCr iOS<https://aka.ms/o0ukef>
+________________________________
+Von: GetAway Travel GmbH <kundenservice@kurz-mal-weg.de>
+Gesendet: Mittwoch, April 15, 2026 9:28 AM
+An: Booking Sante Royale Wolkenstein <booking.wolkenstein@sante-royale.com>
+Betreff: Wichtige Mitteilung zur Buchung 2594968
+
+94328N SANTE WARMBAD WOLKENST VA - Sant=E9 Royale Warmbad-Wolkenstein
+e-mail: booking.wolkenstein@sante-royale.com
+
+Hotel RESERVATION
+
+---------------------------------------------------------------------------=
+---------------------
+
+Unsere Buchungsnummer: 2594968
+
+Wir best=E4tigen folgende verbindliche Buchung:
+
+f=FCr folgende Reiseteilnehmer:
+DAME Susan Riessner
+1 Person
+
+Hotelbuchung:
+
+Ankunft:        16.Mai.26
+Abreise:        19.Mai.26
+N=E4chte:  3
+Zimmer:  1 x 1 DOPPELZIMMER ZUR EINZELNUTZUNG / 1 Person
+Leistung:        DAS KLASSISCHE ANGEBOT - 4 TAGE ENTSPANNUNG & THERME
+Inklusivleistungen:
+        4 Tage / 3 N=E4chte im stilvoll eingerichteten Doppel- oder  Einzel=
+zimmer gem=E4=DF gebuchter Kategorie
+
+        t=E4glich reichhaltiges Fr=FChst=FCcksbuffet mit BIO-Ecke
+
+        t=E4glich Dinnerarrangement am Abend: Vorspeise und Nachspeise als =
+ Buffet, Hauptgericht (wahlweise Vegan, Vegetarisch, Fisch oder Fleisch)  w=
+ird serviert
+
+        t=E4glich ganzt=E4gige Nutzung der Silber-Therme inkl. Ruhezonen un=
+d Saunalandschaft mit mehreren Saunen, u.a. der urigen Stollen-Sauna, eine =
+H=FCtten- und eine M=FChlensauna
+
+        Leihbademantel f=FCr die Zeit ihres Aufenthaltes
+
+        1 x Flasche Mineralwasser bei Anreise pro Zimmer
+
+        WLAN-Nutzung
+
+Preise            362,26 EUR
+Reisepreis        483,00 EUR
+
+
+Bemerkungen:
+        Gebuchte Belegung:
+Doppelzimmer zur Einzelnutzung mit 1 Erwachsenen
+        Die Zahlung der G=E4ste erfolgt an die GetAway Travel GmbH, denken =
+Sie bitte an die Rechnungsstellung in H=F6he des oben genannten Betrags an =
+GetAway (per E-Mail an rechnung@kurz-mal-weg.de) gem=E4=DF Ihrer Vertragsbe=
+dingungen.
+        Unverbindlicher Kundenwunsch: Sehr geehrte Damen und Herren, ich h=
+=E4tte gerne ein Zimmer in der oberen Etage mit Balkon S=FCdausrichtung, be=
+vorzugt Zimmer 501, weil ich mich dort bei meinen vergangenen Aufenthalten =
+besonders gef=FChlt habe. Es geht aber auch ein Zimmer mit Balkon auf gleic=
+her Flurseite. Vielen Dank.
+Mit freundlichen Gr=FC=DFen, Susan Riessner
+
+
+
+Alle Kundendaten und Anmerkungen finden Sie noch einmal in Ihrem Anbieterbe=
+reich:
+--> http://extranet.kurz-mal-weg.de/
+
+F=FCr Fragen stehen wir Ihnen gern unter +49 (0)341 2368 0099 zur Verf=FCgu=
+ng.
+
+Mit freundlichen Gr=FC=DFen
+Ihr Team von GetAway
+
+GetAway Travel GmbH
+Hainstra=DFe 1, 04109 Leipzig
+
+Telefon: +49 (0)341 2368 0099
+
+kundenservice@kurz-mal-weg.de
+
+Vertretungsberechtigte Gesch=E4ftsf=FChrer: Stephan Kloss, Bastian Buch, Ja=
+n Seifried, Elias Russezki
+Amtsgericht Leipzig, HRB 43653
+
+--_000_PA3P191MB29540B4D880AFB5A0A090072CF232PA3P191MB2954EURP_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+</head>
+<body>
+<div dir=3D"ltr">
+<div dir=3D"ltr"><br>
+</div>
+<div id=3D"ms-outlook-mobile-signature">
+<div dir=3D"ltr"><br>
+</div>
+Gesendet von <a href=3D"https://aka.ms/o0ukef">Outlook f=FCr iOS</a></div>
+<div id=3D"mail-editor-reference-message-container" class=3D"ms-outlook-mob=
+ile-reference-message">
+<hr style=3D"display: inline-block; width: 98%;">
+<div id=3D"divRplyFwdMsg" dir=3D"ltr"><span style=3D"font-family: Calibri, =
+sans-serif;"><b>Von:</b>&nbsp;GetAway Travel GmbH &lt;kundenservice@kurz-ma=
+l-weg.de&gt;<br>
+<b>Gesendet:</b>&nbsp;Mittwoch, April 15, 2026 9:28 AM<br>
+<b>An:</b>&nbsp;Booking Sante Royale Wolkenstein &lt;booking.wolkenstein@sa=
+nte-royale.com&gt;<br>
+<b>Betreff:</b>&nbsp;Wichtige Mitteilung zur Buchung 2594968</span>
+<div style=3D"font-family: Calibri, sans-serif;">&nbsp;</div>
+</div>
+<meta name=3D"Generator" content=3D"Microsoft Exchange Server">
+<div class=3D"PlainText" style=3D"font-size: 11pt;">94328N SANTE WARMBAD WO=
+LKENST VA - Sant=E9 Royale Warmbad-Wolkenstein<br>
+e-mail: booking.wolkenstein@sante-royale.com<br>
+<br>
+Hotel RESERVATION<br>
+<br>
+---------------------------------------------------------------------------=
+---------------------<br>
+<br>
+Unsere Buchungsnummer: 2594968<br>
+<br>
+Wir best=E4tigen folgende verbindliche Buchung:<br>
+<br>
+f=FCr folgende Reiseteilnehmer:<br>
+DAME Susan Riessner<br>
+1 Person<br>
+<br>
+Hotelbuchung:<br>
+<br>
+Ankunft:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16.Mai.26<br>
+Abreise:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 19.Mai.26<br>
+N=E4chte:&nbsp; 3<br>
+Zimmer:&nbsp; 1 x 1 DOPPELZIMMER ZUR EINZELNUTZUNG / 1 Person<br>
+Leistung:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAS KLASSISCHE ANGEBOT =
+- 4 TAGE ENTSPANNUNG &amp; THERME<br>
+Inklusivleistungen:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4 Tage / 3 N=E4chte im stilvoll =
+eingerichteten Doppel- oder&nbsp; Einzelzimmer gem=E4=DF gebuchter Kategori=
+e<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t=E4glich reichhaltiges Fr=FChst=
+=FCcksbuffet mit BIO-Ecke<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t=E4glich Dinnerarrangement am A=
+bend: Vorspeise und Nachspeise als&nbsp; Buffet, Hauptgericht (wahlweise Ve=
+gan, Vegetarisch, Fisch oder Fleisch)&nbsp; wird serviert<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t=E4glich ganzt=E4gige Nutzung d=
+er Silber-Therme inkl. Ruhezonen und Saunalandschaft mit mehreren Saunen, u=
+.a. der urigen Stollen-Sauna, eine H=FCtten- und eine M=FChlensauna<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Leihbademantel f=FCr die Zeit ih=
+res Aufenthaltes<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 x Flasche Mineralwasser bei An=
+reise pro Zimmer<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WLAN-Nutzung<br>
+<br>
+Preise&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 36=
+2,26 EUR<br>
+Reisepreis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 483,00 EUR<br>
+<br>
+<br>
+Bemerkungen:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gebuchte Belegung:<br>
+Doppelzimmer zur Einzelnutzung mit 1 Erwachsenen<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Die Zahlung der G=E4ste erfolgt =
+an die GetAway Travel GmbH, denken Sie bitte an die Rechnungsstellung in H=
+=F6he des oben genannten Betrags an GetAway (per E-Mail an rechnung@kurz-ma=
+l-weg.de) gem=E4=DF Ihrer Vertragsbedingungen.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unverbindlicher Kundenwunsch: Se=
+hr geehrte Damen und Herren, ich h=E4tte gerne ein Zimmer in der oberen Eta=
+ge mit Balkon S=FCdausrichtung, bevorzugt Zimmer 501, weil ich mich dort be=
+i meinen vergangenen Aufenthalten besonders gef=FChlt habe. Es geht aber
+ auch ein Zimmer mit Balkon auf gleicher Flurseite. Vielen Dank.<br>
+Mit freundlichen Gr=FC=DFen, Susan Riessner<br>
+<br>
+<br>
+<br>
+Alle Kundendaten und Anmerkungen finden Sie noch einmal in Ihrem Anbieterbe=
+reich:<br>
+--&gt; <a href=3D"http://extranet.kurz-mal-weg.de/">http://extranet.kurz-ma=
+l-weg.de/</a><br>
+<br>
+F=FCr Fragen stehen wir Ihnen gern unter +49 (0)341 2368 0099 zur Verf=FCgu=
+ng.<br>
+<br>
+Mit freundlichen Gr=FC=DFen<br>
+Ihr Team von GetAway<br>
+<br>
+GetAway Travel GmbH<br>
+Hainstra=DFe 1, 04109 Leipzig<br>
+<br>
+Telefon: +49 (0)341 2368 0099<br>
+<br>
+kundenservice@kurz-mal-weg.de<br>
+<br>
+Vertretungsberechtigte Gesch=E4ftsf=FChrer: Stephan Kloss, Bastian Buch, Ja=
+n Seifried, Elias Russezki<br>
+Amtsgericht Leipzig, HRB 43653<br>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+--_000_PA3P191MB29540B4D880AFB5A0A090072CF232PA3P191MB2954EURP_--

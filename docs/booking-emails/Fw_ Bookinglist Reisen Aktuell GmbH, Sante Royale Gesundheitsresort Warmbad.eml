@@ -1,0 +1,405 @@
+Delivered-To: adrian.hesse@tujur.de
+Received: by 2002:a05:6f02:cc87:b0:11c:299d:89b1 with SMTP id rf7csp873485rcb;
+        Thu, 16 Apr 2026 03:05:53 -0700 (PDT)
+X-Received: by 2002:a05:6a20:918c:b0:39b:e6af:2d8 with SMTP id adf61e73a8af0-39fe3c78f74mr27433279637.4.1776333953084;
+        Thu, 16 Apr 2026 03:05:53 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1776333953; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=S+hw9Y4Kaz5BdHJO1QplM/weXn/puhsDaiL4VFrm8Y83Ye5X8c2GS0R8KH4FuvRQo2
+         00DS0PXVP18UKeIed4D1Oh1UjfInC2GAH2PjouOEXWbmK9N034+ZlTmJfgniR90Cnipd
+         EbWykL2jTqbKywRFof6BWw+Fh+8saoSbezKb+JtE+G/WYxYDjtFW/10Ullh3I1MZB2Ja
+         GPHdZt/pL5oUJZDAki2M78NXfYr4jxTfLp5KOjJV/iXwL2unw9/ocvoeoBgKZS3HhSNC
+         aMKO0JABoWg74Xp5CHAIiqZiy+PMu0WQxNonynWkuwLE1A1zCD7smaGHp87eDZTdyB4R
+         SyRA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:content-language:accept-language:in-reply-to
+         :references:message-id:date:thread-index:thread-topic:subject:to
+         :from:dkim-signature;
+        bh=MehTEpXUSp6nTGUzahZ9F0hGCjrYOWh1MA64Kf1/ik8=;
+        fh=FOyyFlXmDDxDa1sWzjWvtXJxzN85cCy/9c4GCqtiP14=;
+        b=gPTHgo2zelLMHu7uuwU8XuQx08I/ik3Yg3Q1cqH1wmmv3/RmK1q50JJ5rcJTL8htOF
+         ExzE9vL97eyEmJ/EPxRN7nPuBvT6jG67vREnEuow/LlQ9xnnSz333gatALdUZY6U2dyd
+         +GPV6IkakAcJzw6kBZUJebKvUV3xOGQUCRhlypmoH9BUrGSnqF4F9fY2VjAId0jbucXr
+         52W0JTjVGqlz1MDpSkfXzW2ua8gB5ll7cv5zADsTy6+wnnmIYEFro4l5nAXC/JsWhS+0
+         TWLpteqqYsMuu30iq91Sz0SWzm9jBpWVDeWN3xNqOXpfaeZN/AAkjdZhX4zA/MUab6j2
+         utwQ==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@santeroyale.onmicrosoft.com header.s=selector1-santeroyale-onmicrosoft-com header.b=SBhvuCiv;
+       arc=pass (i=1 spf=pass spfdomain=sante-royale.com dkim=pass dkdomain=sante-royale.com dmarc=pass fromdomain=sante-royale.com);
+       spf=pass (google.com: domain of booking.wolkenstein@sante-royale.com designates 2a01:111:f403:c202::7 as permitted sender) smtp.mailfrom=booking.wolkenstein@sante-royale.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=sante-royale.com
+Return-Path: <booking.wolkenstein@sante-royale.com>
+Received: from GVXPR05CU001.outbound.protection.outlook.com (mail-swedencentralazlp170130007.outbound.protection.outlook.com. [2a01:111:f403:c202::7])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-c795821b546si7172965a12.179.2026.04.16.03.05.52
+        for <adrian.hesse@tujur.de>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 16 Apr 2026 03:05:52 -0700 (PDT)
+Received-SPF: pass (google.com: domain of booking.wolkenstein@sante-royale.com designates 2a01:111:f403:c202::7 as permitted sender) client-ip=2a01:111:f403:c202::7;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@santeroyale.onmicrosoft.com header.s=selector1-santeroyale-onmicrosoft-com header.b=SBhvuCiv;
+       arc=pass (i=1 spf=pass spfdomain=sante-royale.com dkim=pass dkdomain=sante-royale.com dmarc=pass fromdomain=sante-royale.com);
+       spf=pass (google.com: domain of booking.wolkenstein@sante-royale.com designates 2a01:111:f403:c202::7 as permitted sender) smtp.mailfrom=booking.wolkenstein@sante-royale.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=sante-royale.com
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=g1tKew78JCUeOyln+hCShHjxQVki7FOT2dpESD2KIy3X5BfZrB78fhoI0qSciPohM17cWSVbSvcDb03Pzt3v4eVd9IU76u63xTuMPkyPLt5bWJctj3ztMKYI/Gc+XMfPhvp6m+2xmz2XsGRktjEq1k6ifrioLqNbo+qMbcJ4C4doKBKcxKiJfN8TYd9Eb3UYK4qtWpKqonUyN5/gPuKUeidCP0mcKYTpbWDSKpBPClAr6Pn7tKfr3pH18cdLKxWGbogt2BnwAYdAVWv0/+EWH+yorA/ytK09tjQ+hw/zDi7WoTzMRIpMNivIcBLmQuracJD2iNG63wC9Gy48wzsjTQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=MehTEpXUSp6nTGUzahZ9F0hGCjrYOWh1MA64Kf1/ik8=;
+ b=hmh8pdEFb97h5r8AcBaPcrN25INRDKyH8yaL03G0YmSUtsZ+0sbH4E/QnCnAyjfkyjMdpJhuQg3kdWNBZJ34K8KZYbkXZmBKx2+B+eghfi9E/CQx8zeiqgpMgD3EKZPL/7cJeOip89eIBSSnpbLYaOFtXH6QIO3EUEbyiNSLJ6qc2hCO6TtQvrlf5s25Buw+Hhc0qRoKc9hEKcuPC9lQd2Sv+mMZxu3HBPVsA2vqDQI3ABlLAE7azj7Ncu49kozWVTbgFgYLP6wxAgqOFSO/0/sHHSiL6pBWHDyO5eJc8a43uY4A6bvwLMyx2Uqd/PQluJKgtH2lnvihx9Ryyna9CQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=sante-royale.com; dmarc=pass action=none
+ header.from=sante-royale.com; dkim=pass header.d=sante-royale.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=santeroyale.onmicrosoft.com; s=selector1-santeroyale-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=MehTEpXUSp6nTGUzahZ9F0hGCjrYOWh1MA64Kf1/ik8=;
+ b=SBhvuCivlV987xn407E99Q6JUU1kiOf0sGJdNN7yJ8q6OOYPfDm9l9g9rn+vP2Mq2FAMysVRPBRCL2oK4ntHFAyNUEfa7NkGBgRRulClwSpPncToc+WesddIeEKmEP/M+Nhrj2JVFAG3D7HiyO6vHlCwvP2CwVDrbvRpj2KvOao=
+Received: from PA3P191MB2954.EURP191.PROD.OUTLOOK.COM (2603:10a6:102:4d8::9)
+ by DB8P191MB0667.EURP191.PROD.OUTLOOK.COM (2603:10a6:10:137::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9769.48; Thu, 16 Apr
+ 2026 10:05:49 +0000
+Received: from PA3P191MB2954.EURP191.PROD.OUTLOOK.COM
+ ([fe80::16ae:f80d:5490:83f3]) by PA3P191MB2954.EURP191.PROD.OUTLOOK.COM
+ ([fe80::16ae:f80d:5490:83f3%6]) with mapi id 15.20.9769.046; Thu, 16 Apr 2026
+ 10:05:49 +0000
+From: Booking Sante Royale Wolkenstein <booking.wolkenstein@sante-royale.com>
+To: "adrian.hesse@tujur.de" <adrian.hesse@tujur.de>
+Subject: Fw: Bookinglist Reisen Aktuell GmbH, Sante Royale Gesundheitsresort
+ Warmbad
+Thread-Topic: Bookinglist Reisen Aktuell GmbH, Sante Royale Gesundheitsresort
+ Warmbad
+Thread-Index: AQHczRz4SArt0rzagEqMs5QPmKNzELXhdtr+
+Date: Thu, 16 Apr 2026 10:05:49 +0000
+Message-ID:
+ <PA3P191MB2954FEA96328FA86E674A3F6CF232@PA3P191MB2954.EURP191.PROD.OUTLOOK.COM>
+References:
+ <202604152115.63FLFC4c023801-63FLFC4d023801@mx.volk-travelservice.com>
+In-Reply-To:
+ <202604152115.63FLFC4c023801-63FLFC4d023801@mx.volk-travelservice.com>
+Accept-Language: en-US
+Content-Language: de-DE
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+x-ms-reactions: allow
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=sante-royale.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: PA3P191MB2954:EE_|DB8P191MB0667:EE_
+x-ms-office365-filtering-correlation-id: c2dd0df4-a5aa-4619-5e24-08de9b9fbc31
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|6049299003|376014|1800799024|366016|38070700021|4053099003|8096899003|18002099003|22082099003|56012099003;
+x-microsoft-antispam-message-info:
+ 2DV8Pxi8Wxtb9FA1Lz+ZX0qS+UofO0Oc5QzaUssZeiAcxUHSukAs5zWJyvCejHycL+6ImDaGuBX0rylvim5Hi44Z5mY35IjteFrhIpGUjkrLQW5s6/xXgC8ScYeEaAvuCQs+ObiYf62X9O8xky2SMTURmjo1iBccMUV8w8hjJt8FaZ8plZEj1/7ZE1xk7bToo2sJ/RB1oy9AWu3cXu2LuoRHDCbFJzIIpHeUTg0B4DmcgifdEUO+GC878IqLNpNU8yyQAOmxZuFkqwqRhsZkakH3TVjM0+h2SphmHGoZqO7DBdK0/ZFFvpLmD8rhNQs0W5oKt8zDehqKIxFWaXZfwcl1Jmx/CJYyY3hPom/wfBvb5L9f0JEUDZUvHtI2XcvIDNyAkl6qIKfqGcNeqXitvkkgiXuZ5+p2wG42TeveqKQ1pBUCyUIOJCU1R/kh32j+5SU3w+TsnfJxiKT5IkXYRXt6M/WUbwfJK6R9+GpBwz8Zy2l/mI+WL5+xzrlhh5hL1L2Vo0xjQU0GgcF7c21pcainMA/VRstiEz92/vkylHGIlgqGVUmXG4Tke+T74d3etarfcbCifaSlwXmKeC0NxInyEDwmjIOt2edYPZY8OKMUldF+uVgaHesLJoh6NQHBg976BL7QqfvgxPAjYuPXBYkKhdlsSfBmGHpwJyT+QOYUBvoGhsW+dSxvAXFQB14c0Pg+Oq5JxljF9DGoNQa8z8gek2A8T3rBE1DiKtVh1IcRUEc34ZDa7KarUUtjXrB//sWT3cr62PKc1IUSVk0y+rl0r7QEcESZfWPLcwpmm68=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:de;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA3P191MB2954.EURP191.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(6049299003)(376014)(1800799024)(366016)(38070700021)(4053099003)(8096899003)(18002099003)(22082099003)(56012099003);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 2
+x-ms-exchange-antispam-messagedata-0:
+ =?iso-8859-1?Q?zui0Ezh9U5n3ATfxfNm0YwMBJ/pUX+WOZs1BipXsGqpvOUlX/U0unijYZi?=
+ =?iso-8859-1?Q?DoZXtTl/ib1mz3uK4iklyvEpmIRnc9059BqJqFm64raJ5NzXPgvgbdilei?=
+ =?iso-8859-1?Q?Sf0vSoocixeh45G6mlnmSEPVyVEx9EpHKR/AM1EMwAhEJi23FxdvrmfLD3?=
+ =?iso-8859-1?Q?7W9SaEkNBHe4RAgNvEWCa/+sXmceBsYMBXjLM4FLeSRwbK5Br/lYuxmO//?=
+ =?iso-8859-1?Q?aDD9VWHjD/LveSRDf14lUGVe00NbIdMTuTms0SiEvo6rGWjBaVLPmvTmR9?=
+ =?iso-8859-1?Q?EVXnaZEGWMHDc1RwA2/yaWcsCR1J6c3N2RkmFozUlP0Lbmj5NSy2G9ElRC?=
+ =?iso-8859-1?Q?QHV1IIGfP/5f4kfDFUNmWJGEiVPU4MKWvaWTAZKtVQt0en/eNplfLT1Aer?=
+ =?iso-8859-1?Q?CLOo704eSPieUhsnyA8QkMfJIvBTiuMO9QjRLEVfvePK+a0V0+8vbOjbjy?=
+ =?iso-8859-1?Q?uPD+V3XZ29WJ7B73vuaDseHXaB2eccnQ0K2cbXcbeVe0WZhlUnKGV0ztMk?=
+ =?iso-8859-1?Q?8BZz9FSJQ20eQiqR9Bf4S3RlQOpD6lSVAEnUNwxMmdFZS0PHJPdUXOeaPT?=
+ =?iso-8859-1?Q?wtALgFXn+MYs4Mdofn22A3TBNO8V5wYKQFHDVeYaqCbCzW+DeQefgX8Inx?=
+ =?iso-8859-1?Q?tAf0qLSSQN/mNr/LYqRKXKbDdKoAqOK5BT2ootNdel0MtwZES6x8KlKa7o?=
+ =?iso-8859-1?Q?Baw08e1nQ1jzEzpOKs9IsoRTm0xPfN6PzVtTdY7AOyVowYHOiX4B0cRddm?=
+ =?iso-8859-1?Q?RGAHGOaRylkeIXF0EADqczU7L8g3Bzx8Z8D2bKyNg6DMvU5OaHZu9YiHvu?=
+ =?iso-8859-1?Q?jV0upxiHYgN57mx8WtwkfkY7/GOdFJUZj4WpTiNWxmculEh9nmLHvvA6ox?=
+ =?iso-8859-1?Q?0qjhic/Ykf8fvwHjxEOB4OsQg9tRKC1TeiZrRjeiD9SySfYsi2hnRB6BeF?=
+ =?iso-8859-1?Q?0pK+wYLMydxxRl76mG1HrtVQIXQ1tWCLPbLj3Vj7pPhyj80R5J4iTWIbOq?=
+ =?iso-8859-1?Q?mNQF3mb9mUMjueGUlhCQI4m19R4IOOlxYRzYm9v7snWUtEJ2WbJwhpDX7R?=
+ =?iso-8859-1?Q?6EoBQwZ4pA8NzejaAauwMDnPXKTXYg2DqTZBKr8x6iYITC+35jxBpEXtEz?=
+ =?iso-8859-1?Q?UIm5ueRiAAQScBwDcORA+xBbHE7t5pDvOpV5rglnBwdObiRHqnp1rXfOun?=
+ =?iso-8859-1?Q?X33Vipt3uuU135pNAmnkrqUFdjh5wkMiM7V9CDQPPuHfO9oxbWKJffMCd0?=
+ =?iso-8859-1?Q?Cw/M3os3emasCsKSO9ThB78LPWGVEedpHoD0jlNys4if7pSIM90ldgvQkz?=
+ =?iso-8859-1?Q?PGZpt6XaH3JAT0SJFbu5mDvEnpH8/5Qg8TSvVUT+YOt5YTDV2+2GpWmFEB?=
+ =?iso-8859-1?Q?qZKbq4QSF8B5QjHZotGrJVUmmcwITBBIYSxiOxYDU5st9PytjuFPnirBzw?=
+ =?iso-8859-1?Q?ax7bvPW8UNyIE2TPX1PAzRJiyXgYw/I63CAfMlc9l49IheRsrfRvXS1SxT?=
+ =?iso-8859-1?Q?JWs5HlW3Si2k4EQea4TFaNKgecDhKPCZEahRU89Ro8upzu3D3t67/0PN/n?=
+ =?iso-8859-1?Q?enoeAgFVmL1VM6bVO8gIK2HwZ1Do027MqMlduX8rIyCwi76i4yisMkc56f?=
+ =?iso-8859-1?Q?UMl5OdIbnreCUqTHZ9Ngo6LKy48v6WK25XuhqeZqTscuWmLO0rDn+LAQ3V?=
+ =?iso-8859-1?Q?foJSr7GE/0Jnr4pRPHzAU+NqrWbyyi+JRdb6gfPRDkPVKY004QvcQxXeVJ?=
+ =?iso-8859-1?Q?qQOBrPjVZEyZcKoFlaF2R23bQ5iDG2a6LQE62pdkc5FQqbNkxorI9gw46h?=
+ =?iso-8859-1?Q?e1b4Ji3aVtsUDW9i13ILRIqMJwvS8/Umwfpv1mWzHTn2eKVbx58SRuJPt6?=
+ =?iso-8859-1?Q?mC?=
+x-ms-exchange-antispam-messagedata-1: /n0ebh6pbqDPEg==
+Content-Type: multipart/mixed;
+	boundary="_004_PA3P191MB2954FEA96328FA86E674A3F6CF232PA3P191MB2954EURP_"
+MIME-Version: 1.0
+X-OriginatorOrg: sante-royale.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: PA3P191MB2954.EURP191.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: c2dd0df4-a5aa-4619-5e24-08de9b9fbc31
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Apr 2026 10:05:49.2342
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 41b5a112-0e42-447e-88c8-d97486303fa3
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: CiRiHErjw0HZ2ZzuKkFQcLmRjc0dpHsTDtSo1CBnM5hQihFMqOAe85Hr0+cFfYzBXxNgXXM8uJFnSTWaQU3Z4uVonbSn4Tvhp6PoB9G945mxaUGmJlTiRSB1pQH+zC0W
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8P191MB0667
+
+--_004_PA3P191MB2954FEA96328FA86E674A3F6CF232PA3P191MB2954EURP_
+Content-Type: multipart/alternative;
+	boundary="_000_PA3P191MB2954FEA96328FA86E674A3F6CF232PA3P191MB2954EURP_"
+
+--_000_PA3P191MB2954FEA96328FA86E674A3F6CF232PA3P191MB2954EURP_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+Gesendet von Outlook f=FCr iOS<https://aka.ms/o0ukef>
+________________________________
+Von: Reisen Aktuell GmbH, Buchung E-Mail Sender <buchungen@reisenaktuell.co=
+m>
+Gesendet: Wednesday, April 15, 2026 11:15:12 PM
+An: Kiefer, Maximiliane <maximiliane.kiefer@sante-royale.com>; Booking Sant=
+e Royale Wolkenstein <booking.wolkenstein@sante-royale.com>
+Betreff: Bookinglist Reisen Aktuell GmbH, Sante Royale Gesundheitsresort Wa=
+rmbad
+
+=3D=3D=3D=3DROOMING LIST
+=3D=3D=3D=3DDATE: 15.04.2026 TIME: 23:15:11
+
+FROM:   Reisen Aktuell GmbH, DE-56070 Koblenz
+
+TO:     Modama GmbH & Co. KG
+        Badstra=DFe 45
+        08648 Bad Brambach
+
+FOR:    Sant=E9 Royale Gesundheitsresort Warmbad
+        An der Silbertherme 5
+        09429 Wolkenstein OT Warmbad (sawa)
+
+---------------------------------------------------------------------------=
+-----
+NEW BOOKING NUMBER 12 897 267 Reisen Aktuell GmbH, Total: EUR 643.50 (2-26.=
+0500)
+---------------------------------------------------------------------------=
+-----
+NEW:    1x Doppelzimmer, 21.04.2026-24.04.2026 (3 nights)
+
+#1      Mister Ritter Hans-J=FCrgen, All Inclusive light
+         Miss Ritter Karla, All Inclusive light
+---------------------------------------------------------------------------=
+-----
+
+
+---------------------------------------------------------------------------=
+-----
+NEW BOOKING NUMBER 12 897 429 Reisen Aktuell GmbH, Total: EUR 400.50 (2-26.=
+0500)
+---------------------------------------------------------------------------=
+-----
+NEW:    1x Doppelzimmer Einzelbelegung, 27.04.2026-30.04.2026 (3 nights)
+
+#1      Mister Nitzsche Reiner, All Inclusive light
+---------------------------------------------------------------------------=
+-----
+
+
+---------------------------------------------------------------------------=
+-----
+NEW BOOKING NUMBER 12 897 933 Reisen Aktuell GmbH, Total: EUR 1'312.50 (2-2=
+6.0500)
+---------------------------------------------------------------------------=
+-----
+NEW:    1x Doppelzimmer, 08.07.2026-15.07.2026 (7 nights)
+
+#1      Miss Wenzel Daniela, D.o.birth: 02.07.1972, All Inclusive light
+         Mister Wenzel Ralf, D.o.birth: 14.11.1963, All Inclusive light
+---------------------------------------------------------------------------=
+-----
+
+
+---------------------------------------------------------------------------=
+-----
+NEW BOOKING NUMBER 12 897 722 Reisen Aktuell GmbH, Total: EUR 1'197.00 (2-2=
+6.0500)
+---------------------------------------------------------------------------=
+-----
+NEW:    2x Doppelzimmer, 26.07.2026-29.07.2026 (3 nights)
+
+#1      Miss Michel Silke, All Inclusive light, unverbindlicher Wunsch: Zim=
+mer mit Balkon
+         Miss Wagler B=E4rbel, All Inclusive light
+#2      Miss Aurich Kerstin, All Inclusive light
+         Miss Lambz Mandy, All Inclusive light
+---------------------------------------------------------------------------=
+-----
+
+
+
+END
+
+e-mail for booking stop/E-Mail f=FCr Buchungsstopp: allotment@reisenaktuell=
+.com
+
+--_000_PA3P191MB2954FEA96328FA86E674A3F6CF232PA3P191MB2954EURP_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+</head>
+<body>
+<div dir=3D"ltr">
+<div dir=3D"ltr"><br>
+</div>
+<div id=3D"ms-outlook-mobile-signature">
+<div dir=3D"ltr"><br>
+</div>
+Gesendet von <a href=3D"https://aka.ms/o0ukef">Outlook f=FCr iOS</a></div>
+</div>
+<hr style=3D"display:inline-block;width:98%" tabindex=3D"-1">
+<div id=3D"divRplyFwdMsg" dir=3D"ltr"><font face=3D"Calibri, sans-serif" st=
+yle=3D"font-size:11pt" color=3D"#000000"><b>Von:</b> Reisen Aktuell GmbH, B=
+uchung E-Mail Sender &lt;buchungen@reisenaktuell.com&gt;<br>
+<b>Gesendet:</b> Wednesday, April 15, 2026 11:15:12 PM<br>
+<b>An:</b> Kiefer, Maximiliane &lt;maximiliane.kiefer@sante-royale.com&gt;;=
+ Booking Sante Royale Wolkenstein &lt;booking.wolkenstein@sante-royale.com&=
+gt;<br>
+<b>Betreff:</b> Bookinglist Reisen Aktuell GmbH, Sante Royale Gesundheitsre=
+sort Warmbad</font>
+<div>&nbsp;</div>
+</div>
+<div class=3D"BodyFragment"><font size=3D"2"><span style=3D"font-size:11pt;=
+">
+<div class=3D"PlainText">=3D=3D=3D=3DROOMING LIST <br>
+=3D=3D=3D=3DDATE: 15.04.2026 TIME: 23:15:11<br>
+<br>
+FROM:&nbsp;&nbsp; Reisen Aktuell GmbH, DE-56070 Koblenz<br>
+<br>
+TO:&nbsp;&nbsp;&nbsp;&nbsp; Modama GmbH &amp; Co. KG<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Badstra=DFe 45<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 08648 Bad Brambach<br>
+<br>
+FOR:&nbsp;&nbsp;&nbsp; Sant=E9 Royale Gesundheitsresort Warmbad<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; An der Silbertherme 5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 09429 Wolkenstein OT Warmbad (sa=
+wa)<br>
+<br>
+---------------------------------------------------------------------------=
+-----<br>
+NEW BOOKING NUMBER 12 897 267 Reisen Aktuell GmbH, Total: EUR 643.50 (2-26.=
+0500)<br>
+---------------------------------------------------------------------------=
+-----<br>
+NEW:&nbsp;&nbsp;&nbsp; 1x Doppelzimmer, 21.04.2026-24.04.2026 (3 nights)<br=
+>
+<br>
+#1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mister Ritter Hans-J=FCrgen, All Inclusive=
+ light<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Miss Ritter Karla, All Inc=
+lusive light<br>
+---------------------------------------------------------------------------=
+-----<br>
+<br>
+<br>
+---------------------------------------------------------------------------=
+-----<br>
+NEW BOOKING NUMBER 12 897 429 Reisen Aktuell GmbH, Total: EUR 400.50 (2-26.=
+0500)<br>
+---------------------------------------------------------------------------=
+-----<br>
+NEW:&nbsp;&nbsp;&nbsp; 1x Doppelzimmer Einzelbelegung, 27.04.2026-30.04.202=
+6 (3 nights)<br>
+<br>
+#1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mister Nitzsche Reiner, All Inclusive ligh=
+t<br>
+---------------------------------------------------------------------------=
+-----<br>
+<br>
+<br>
+---------------------------------------------------------------------------=
+-----<br>
+NEW BOOKING NUMBER 12 897 933 Reisen Aktuell GmbH, Total: EUR 1'312.50 (2-2=
+6.0500)<br>
+---------------------------------------------------------------------------=
+-----<br>
+NEW:&nbsp;&nbsp;&nbsp; 1x Doppelzimmer, 08.07.2026-15.07.2026 (7 nights)<br=
+>
+<br>
+#1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Miss Wenzel Daniela, D.o.birth: 02.07.1972=
+, All Inclusive light<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mister Wenzel Ralf, D.o.bi=
+rth: 14.11.1963, All Inclusive light<br>
+---------------------------------------------------------------------------=
+-----<br>
+<br>
+<br>
+---------------------------------------------------------------------------=
+-----<br>
+NEW BOOKING NUMBER 12 897 722 Reisen Aktuell GmbH, Total: EUR 1'197.00 (2-2=
+6.0500)<br>
+---------------------------------------------------------------------------=
+-----<br>
+NEW:&nbsp;&nbsp;&nbsp; 2x Doppelzimmer, 26.07.2026-29.07.2026 (3 nights)<br=
+>
+<br>
+#1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Miss Michel Silke, All Inclusive light, un=
+verbindlicher Wunsch: Zimmer mit Balkon<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Miss Wagler B=E4rbel, All =
+Inclusive light<br>
+#2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Miss Aurich Kerstin, All Inclusive light<b=
+r>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Miss Lambz Mandy, All Incl=
+usive light<br>
+---------------------------------------------------------------------------=
+-----<br>
+<br>
+<br>
+<br>
+END<br>
+<br>
+e-mail for booking stop/E-Mail f=FCr Buchungsstopp: allotment@reisenaktuell=
+.com<br>
+</div>
+</span></font></div>
+</body>
+</html>
+
+--_000_PA3P191MB2954FEA96328FA86E674A3F6CF232PA3P191MB2954EURP_--
+
+--_004_PA3P191MB2954FEA96328FA86E674A3F6CF232PA3P191MB2954EURP_
+Content-Type: application/x-msdownload; name="TourdataHotelBooking.csv"
+Content-Description: TourdataHotelBooking.csv
+Content-Disposition: attachment; filename="TourdataHotelBooking.csv";
+	size=1135; creation-date="Wed, 15 Apr 2026 21:15:22 GMT";
+	modification-date="Thu, 16 Apr 2026 10:05:23 GMT"
+Content-ID: <0FE4189D2BF0AE469D6A12F404174679@EURP191.PROD.OUTLOOK.COM>
+Content-Transfer-Encoding: base64
+
+U1IxOzI2LjA1MDA7MS4wOzE1LjA0LjIwMjY7MjM6MTU7UmVpc2VuIEFrdHVlbGwgR21iSA0NClNS
+MjtCT09LRUQ7MTIgODk3IDI2NzsyO1NhbnTpIFJveWFsZSBHZXN1bmRoZWl0c3Jlc29ydCBXYXJt
+YmFkOzs2NDMuNTA7RVVSDQ0KU1IzO0RvcHBlbHppbW1lcjs7MjEuMDQuMjAyNjsyNC4wNC4yMDI2
+Ow0NClNSNDsxO01pc3RlcjtSaXR0ZXI7SGFucy1K/HJnZW47Ozs7QWxsIEluY2x1c2l2ZSBsaWdo
+dDs7DQ0KU1I0OzI7TWlzcztSaXR0ZXI7S2FybGE7Ozs7QWxsIEluY2x1c2l2ZSBsaWdodDs7DQ0K
+U1IyO0JPT0tFRDsxMiA4OTcgNDI5OzI7U2FudOkgUm95YWxlIEdlc3VuZGhlaXRzcmVzb3J0IFdh
+cm1iYWQ7OzQwMC41MDtFVVINDQpTUjM7RG9wcGVsemltbWVyIEVpbnplbGJlbGVndW5nOzsyNy4w
+NC4yMDI2OzMwLjA0LjIwMjY7DQ0KU1I0OzI7TWlzdGVyO05pdHpzY2hlO1JlaW5lcjs7OztBbGwg
+SW5jbHVzaXZlIGxpZ2h0OzsNDQpTUjI7Qk9PS0VEOzEyIDg5NyA5MzM7MjtTYW506SBSb3lhbGUg
+R2VzdW5kaGVpdHNyZXNvcnQgV2FybWJhZDs7MTMxMi41MDtFVVINDQpTUjM7RG9wcGVsemltbWVy
+OzswOC4wNy4yMDI2OzE1LjA3LjIwMjY7DQ0KU1I0OzE7TWlzcztXZW56ZWw7RGFuaWVsYTs7MDIu
+MDcuMTk3Mjs7QWxsIEluY2x1c2l2ZSBsaWdodDs7DQ0KU1I0OzI7TWlzdGVyO1dlbnplbDtSYWxm
+OzsxNC4xMS4xOTYzOztBbGwgSW5jbHVzaXZlIGxpZ2h0OzsNDQpTUjI7Qk9PS0VEOzEyIDg5NyA3
+MjI7MjtTYW506SBSb3lhbGUgR2VzdW5kaGVpdHNyZXNvcnQgV2FybWJhZDs7MTE5Ny4wMDtFVVIN
+DQpTUjM7RG9wcGVsemltbWVyOzsyNi4wNy4yMDI2OzI5LjA3LjIwMjY7DQ0KU1I0OzE0O01pc3M7
+TWljaGVsO1NpbGtlOzs7dW52ZXJiaW5kbGljaGVyIFd1bnNjaDogWmltbWVyIG1pdCBCYWxrb247
+QWxsIEluY2x1c2l2ZSBsaWdodDs7DQ0KU1I0OzI3O01pc3M7V2FnbGVyO0LkcmJlbDs7OztBbGwg
+SW5jbHVzaXZlIGxpZ2h0OzsNDQpTUjM7RG9wcGVsemltbWVyOzsyNi4wNy4yMDI2OzI5LjA3LjIw
+MjY7DQ0KU1I0OzE7TWlzcztBdXJpY2g7S2Vyc3Rpbjs7OztBbGwgSW5jbHVzaXZlIGxpZ2h0OzsN
+DQpTUjQ7OTtNaXNzO0xhbWJ6O01hbmR5Ozs7O0FsbCBJbmNsdXNpdmUgbGlnaHQ7Ow0NCg==
+
+--_004_PA3P191MB2954FEA96328FA86E674A3F6CF232PA3P191MB2954EURP_--

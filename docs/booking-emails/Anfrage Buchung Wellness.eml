@@ -1,0 +1,216 @@
+Delivered-To: adrianhesse111@gmail.com
+Received: by 2002:a54:3fc2:0:b0:2c8:60a2:b8ff with SMTP id k2csp1464279ecr;
+        Mon, 13 Apr 2026 10:17:30 -0700 (PDT)
+X-Forwarded-Encrypted: i=3; AFNElJ8UeHZa7SokMUHpChSymlYNK9IWpBF/Sv+cJYyUUTnz4v9uA2xwvbs1Ky+AGxjbtNDxhxaY05ijmHBhD7Qnbg==@gmail.com
+X-Received: by 2002:a05:690c:93:b0:7a0:17f4:e785 with SMTP id 00721157ae682-7af71e51688mr152378187b3.39.1776100649912;
+        Mon, 13 Apr 2026 10:17:29 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1776100649; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=LxF4YQDSDGc1wyzoCXs7uFVe9OTFtPGoTgt3kYEMkLBj2TWuyutoeZ8U+EIHT1xsj+
+         IWW41tluFZWexBqMZ9Z6/mMPuYpnTr3IWiIxOH3TnfK+WpVfuhqRaA7Ll+aKTR7bEnY2
+         5l5wTcotXUleyl+6eLD2LfDqnP3+h62pUQBOMVi1uMh8r+6246kpWtF1MiGfbaET00k+
+         XU4QL4YcorU1yTuVqN04x6FFd1OlpltmlqtvPtYqPAVmkADVOb/rqAnMunIIntgXb0pE
+         zAbUqQliWszrmmCuyYeBErvGvjw4ApAeK4OKSt1SnCESlHNH0rG6rSaetpmFBrEfSJA/
+         q+Tg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:content-language:accept-language:in-reply-to
+         :references:message-id:date:thread-index:thread-topic:subject:to
+         :from:dkim-signature;
+        bh=GqcksE3xhteU6Cy5+/t2I7yBUCSHH+1lmQyl4BjfxL0=;
+        fh=Mj2JFBCWtXyDcf3+B5SNyQMyj5pOKkMFu+SrPlF5i6w=;
+        b=bbi0mLPjFKhUDdLHbtKUFhopoxNYjgFDj2+M8j4pfWUWShcGgREg/VSvlDiprGsQ8W
+         AQU6HnTNiM2GXe/hlX58COXKFNAWqTYC02GmeCdnwGt2rolKQLrMybR+DRFn1muXh3iD
+         vdlalxlBdunuN7qxw6LXGK0vJ8lq2kHm5mxbud/VB5RC2TO6Q29dB2T/qxnfQdmPTwuo
+         yh9kQv7f8BdbxGall42A2AI75/g4l2FCEjiVOVye3M9bjtdxu4EL1qAdD96UbVDfxrYQ
+         Z8SfAVCOCbwI7zHWQUp6LwE5GRbh9rXZBsHiCfYiJbJ7sEkQoHTTAwCfEhbX0FhAL+tK
+         GEvg==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@santeroyale.onmicrosoft.com header.s=selector1-santeroyale-onmicrosoft-com header.b=gU3F1GqC;
+       arc=pass (i=1 spf=pass spfdomain=sante-royale.com dkim=pass dkdomain=sante-royale.com dmarc=pass fromdomain=sante-royale.com);
+       spf=pass (google.com: domain of booking.ruegen@sante-royale.com designates 2a01:111:f403:c200::3 as permitted sender) smtp.mailfrom=booking.ruegen@sante-royale.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=sante-royale.com
+Return-Path: <booking.ruegen@sante-royale.com>
+Received: from DU2PR03CU002.outbound.protection.outlook.com (mail-northeuropeazlp170110003.outbound.protection.outlook.com. [2a01:111:f403:c200::3])
+        by mx.google.com with ESMTPS id 00721157ae682-7b3768dc918si29742407b3.119.2026.04.13.10.17.29
+        for <adrianhesse111@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 13 Apr 2026 10:17:29 -0700 (PDT)
+Received-SPF: pass (google.com: domain of booking.ruegen@sante-royale.com designates 2a01:111:f403:c200::3 as permitted sender) client-ip=2a01:111:f403:c200::3;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@santeroyale.onmicrosoft.com header.s=selector1-santeroyale-onmicrosoft-com header.b=gU3F1GqC;
+       arc=pass (i=1 spf=pass spfdomain=sante-royale.com dkim=pass dkdomain=sante-royale.com dmarc=pass fromdomain=sante-royale.com);
+       spf=pass (google.com: domain of booking.ruegen@sante-royale.com designates 2a01:111:f403:c200::3 as permitted sender) smtp.mailfrom=booking.ruegen@sante-royale.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=sante-royale.com
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=nnjiD+IfhZC5YQz0bXPEOyxQ3aWHrwzn2SqugOuctva3XyArHjB2SfTfVd2DSpTdaxocP4PYG99bSBdLlihnAZVdnH8KdTzRUfLyw/YsgmBlbq9P4zqVFTD3aTFnt9JtT1GhAxFepZTusuIBp9OVdFlvwbn36jSuDmj3RFXI/KjfQJ6285/fUDchGVqnXItCeouhFS8BNvXRP0NnWXsZ+4fgqrYE6PNJkJIleAubqQ4S566lrSQbPx0DKDnfUkv9gW7aGqHBnrbsgYPdGBrLmDeMapmm9MQaTWs0Ind9qppRKxeNOa9ZBFdoF3ixllnw0BRGlIvEiBC+d4AHt/h5HA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=GqcksE3xhteU6Cy5+/t2I7yBUCSHH+1lmQyl4BjfxL0=;
+ b=OyRziSq/X6lCR8P3cArhdto3+F6WRMET8RjGd2m+/7iF65w6uj8P+xxk1GgItQIgC+5sopRGN4EUaPHAkNuEp7h0FFQs33s0zk5jUOu+jD4/OPXtkMUUbEPExGyEZ4idcmg4jB/tOxi2XxeMvRvojQNlyP9SNNscukxlwZviPXZ8x8JecpBjowiZCLOfuucxNIaNx6eJgD9iaFOkOYabvdD6AVASmVV5wLyOv5ltkn0SNEBp8nhVHvFIfTqSkbDanp0RN8txvrHuYKZUNYi3XMa/g8k0T4J6i9z5zCHUf9ZkEc18i84wYrcHoP5R4C7C63O/XkwrycSQY0x28MTh0g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=sante-royale.com; dmarc=pass action=none
+ header.from=sante-royale.com; dkim=pass header.d=sante-royale.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=santeroyale.onmicrosoft.com; s=selector1-santeroyale-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=GqcksE3xhteU6Cy5+/t2I7yBUCSHH+1lmQyl4BjfxL0=;
+ b=gU3F1GqCvCZ2IVFoI1XxS2qJpq4paCOi9uLkWyexGmlqvMkn4AF0eviURfQl1648JyVlKikV6fxkaQyuiZKwUsYkm25a61NhmqpyZPQOm1l1TDtBmOSnkOsQW8mRgcNOngw3WcaSwOUDacTFtf8LUuMCL8teq+x4aoZh2MPCIjg=
+Received: from BESP191MB2899.EURP191.PROD.OUTLOOK.COM (2603:10a6:b10:f4::24)
+ by GVXP191MB2699.EURP191.PROD.OUTLOOK.COM (2603:10a6:150:1fe::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9769.48; Mon, 13 Apr
+ 2026 17:17:28 +0000
+Received: from BESP191MB2899.EURP191.PROD.OUTLOOK.COM
+ ([fe80::ebb7:df89:e64a:8c41]) by BESP191MB2899.EURP191.PROD.OUTLOOK.COM
+ ([fe80::ebb7:df89:e64a:8c41%5]) with mapi id 15.20.9769.046; Mon, 13 Apr 2026
+ 17:17:28 +0000
+From: =?iso-8859-1?Q?Booking_Sante_Royale_R=FCgen?=
+	<booking.ruegen@sante-royale.com>
+To: Adrian Hesse <adrianhesse111@googlemail.com>
+Subject: WG: Anfrage Buchung Wellness
+Thread-Topic: Anfrage Buchung Wellness
+Thread-Index: AQHcyBA78fgwIjAO7U+0slNRby+B3bXdQqlj
+Date: Mon, 13 Apr 2026 17:17:28 +0000
+Message-ID:
+ <BESP191MB28991761275800168D5F21C2B0242@BESP191MB2899.EURP191.PROD.OUTLOOK.COM>
+References: <225aa0e3-728e-4fc2-8e4d-494d76b58956@email.android.com>
+In-Reply-To: <225aa0e3-728e-4fc2-8e4d-494d76b58956@email.android.com>
+Accept-Language: en-US
+Content-Language: de-DE
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-ms-reactions: allow
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=sante-royale.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: BESP191MB2899:EE_|GVXP191MB2699:EE_
+x-ms-office365-filtering-correlation-id: 32e6ebba-6c4b-479b-e575-08de998089ee
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|1800799024|376014|366016|8096899003|18002099003|22082099003|56012099003|38070700021;
+x-microsoft-antispam-message-info:
+ envTer6FNl9YLILFlwDPRhJ1iESTjZCU0qjvKzCX13atebshLFjhn/8EyNdXd16NEt5dbWty/CG8nhqNYm6dWqwSs2wxMm7NjruTy2egfG7nGqNUjkfNe43+r2/Rck+Ij6slPt0nwVowoGo+drFLY0tbaCodn/DTrTE0H2xLm4A0GfN0nPpCC8ysgMZvVKMTPb+y5vOJFsU0RnkGtCip/karV3pzUKTIKD0+j1cVHFLN8k2YvcOpplmBpcpDeNHojnGFMd4BZhri0vhPdui54cqvXQuVw8i78E7wxcLoq87/wuvJ5ZcepoxZ78dB7r3h8Q0zjYfKTUA+rf3TtiuH9HIVXnvr52CsVjwaSwALbC5D7TCNyqTmgiH3PGVtqP25hj3JBsbOOYv+kose+0UZFOCWmuA/3b7h+9xhPeyV4CjQ7FDqaGI5KZzRR4JJjIj/SPB79RRHdctRzavjOAhj/dLbAS9iKCETbEgsbxUExPmdcYGjYtINFBWPJK8x49RLOtfw6u4KvFuhQWzaWLHJ1oKScjVDHd2oq+9JRt+nX5OoVuVeLSwLCMQ9kxeuGIs8faurN7MXDZx0yrLeGeKd5JshdImyqJNmfJUxRBCYS3QenrUiPUee07U3uoqgw0zHMf4PpP9T/lN1SeHc+WAMTZdefhkq2SfEGh8dhH39oIup6RvMwn//HDZBIvez8BDsbiDm3KpTNLTeWOHM3cUOe/bDeaBqUIVO7tpHyC47pBI5zC7MJwgM1S0OCbQTbjrhZCAI+VdIUtOVhbc2a8r7AaGXQOrSLXwcR65+r0ONMsw=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:de;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:BESP191MB2899.EURP191.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(366016)(8096899003)(18002099003)(22082099003)(56012099003)(38070700021);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?iso-8859-1?Q?k99FRrXq6X+L+u+V3FkP/B+eymB0pDBEaaEPbhNFOH/k7UDHYXakPb8OIY?=
+ =?iso-8859-1?Q?LL1OKOYwmmu06mAWYk/2hQ61mgqwRJUpIWwr9TVDFutmvGxuImyqwlaR90?=
+ =?iso-8859-1?Q?6G9uQfUikO0aO/BaD6biQ89X7q8VHbfdPx3DJcyfzQJeCp7yI5jZPx82k8?=
+ =?iso-8859-1?Q?A1IMVjNkLqioUwuRIKWbN+0pJW4FlC4vokfnYUE4sg1mBwoY+qhjlisiMX?=
+ =?iso-8859-1?Q?Fqq0ZWZ+JNcbSt/OQk1APXIVR9BjpJRzdkhU2YTtsFdQUiaKawUDB1Nh7d?=
+ =?iso-8859-1?Q?BDjNBhttQORjBOQjSOVZTdnCPZNHmEZVmD7bS3PsEiSVadW/HjH3LkfBzx?=
+ =?iso-8859-1?Q?TULFY4/CHw0/qwSe4WiCNVfBLdtgFFWx/5dpneS8wTWer+90AjBLxgjXHr?=
+ =?iso-8859-1?Q?sAWQYgIvYUfSShuxABW7TWQ5164M4EzmCMJuw7+Ot9Z5JbHEMPNIKiIR9w?=
+ =?iso-8859-1?Q?itPX6moWXGI+7OjspAOuDeY+x6zFYa4L64R4xy1PvcNoh9QbWpz267oumB?=
+ =?iso-8859-1?Q?akJnd5eMjYHa7VxadRgxVOeVpcRW+K5B7vPLqVNdULIgeaRipk8KT+M6wB?=
+ =?iso-8859-1?Q?dihAzmekl4oxMBnqYSdkOiyTduxEprUlzZmtDXJ3sVgDnGQtrihqMPRxcf?=
+ =?iso-8859-1?Q?HUXecItIIzR33cGxCnnE2Ju0xPTH7S7ExuJ+y44EBTAMlrLodRhQdpDhE2?=
+ =?iso-8859-1?Q?KMitZAZ+kn0GCXM/kHVKgTD9Bl4+yZDfj8RldY9qz1LhqlyyaQcWxvkEXv?=
+ =?iso-8859-1?Q?9Etdcbl3xqATOhhL1pNh7RxwMh39I3cR08i7NGJj9makEycjzV6Ar4S8FT?=
+ =?iso-8859-1?Q?cU7cUImYc5ryWay0BBtjP2aE0UkFjFcklV6WWxdo7m8obCl9GknTEtk6ca?=
+ =?iso-8859-1?Q?EDmHMDmAg/IMFMYt5Nl9dVlxGpy5Fp+4zAFhX0DtMX1FSEq1m9B+RqGLpx?=
+ =?iso-8859-1?Q?VcCcrna/F2yjSE/Fub5gNsgEtCDMVySxFEU1++17S0PcaippE96HK+3FuS?=
+ =?iso-8859-1?Q?eqUo9NRwOXoolUA6zeynem8MPONSfG1hfSu5j5MyznHVjDk3tQHYachXhU?=
+ =?iso-8859-1?Q?quEGTgnnCaBw2IdxA9rH8HGm5yzwTxSKyxpP7Yi/Z3TY/onQT0hWfyN1q6?=
+ =?iso-8859-1?Q?lYuLPnksjhB8dl+Y1fVGKPOoDwIaHhudVhwgQTIAmPf/+mT1HG86aLgOaM?=
+ =?iso-8859-1?Q?RTQToYKXZB+6v0RhkJbLBjAh1OKZ7vLXtVxRlGp9eeM4NZawAORsLdSlYi?=
+ =?iso-8859-1?Q?Q+XPcnejYcpsmQYpoJT3i1nwemWmBnIPkJ4Du3L/GmhganL/rjbXTazkpK?=
+ =?iso-8859-1?Q?zD72njy494KWUcLwYCeODNLcJBpbN64smnOnvZKUDAiHb9veKw7Az+gRBO?=
+ =?iso-8859-1?Q?0TSxrZzzYcIkaBPobIJEohxsrNgrog0i+0xwaYWUIpkwzOUeTpC5YqEFZ2?=
+ =?iso-8859-1?Q?yLdzDMYpNdQnoSzFKvZybRa0Pg68roLgw6zciYZ7sgAssem5D6hTKPZp1S?=
+ =?iso-8859-1?Q?qxvMNQ0eyMlkTt9LzIP4Pi6k+mPP0VaZz2GgcW8/fINB6+w2ODYpRy+U8B?=
+ =?iso-8859-1?Q?WCieeciDsmxP+Ul4MYAZmQ6UWQPQFR65WavOeVpFKfHW++q/F+CdR3l2eC?=
+ =?iso-8859-1?Q?4Jr+YAwB1wQiiyGWzj6lZ3AZw9EItnzhzt2ke4JZMpDMoUgQv1Gaclv//m?=
+ =?iso-8859-1?Q?HCyMC/XxvGlHOOrmjNeQbmUBWObjukHmnnM+v0Vz+r4jgSp5MCt7jXA55D?=
+ =?iso-8859-1?Q?DzgAJMAUP9oC2bHSGRuMwjj28/Gqc8JbteEAJtJggobmWl4kxTzcznLq5h?=
+ =?iso-8859-1?Q?m6br+hu76DvF7EVQk9NXjJggJ4XfoZUurL9d2nt39EzyeVpjmbPZ?=
+Content-Type: multipart/alternative;
+	boundary="_000_BESP191MB28991761275800168D5F21C2B0242BESP191MB2899EURP_"
+MIME-Version: 1.0
+X-OriginatorOrg: sante-royale.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: BESP191MB2899.EURP191.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: 32e6ebba-6c4b-479b-e575-08de998089ee
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Apr 2026 17:17:28.2135
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 41b5a112-0e42-447e-88c8-d97486303fa3
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Hce1/IzkaiZWb7DTYzb+fdCNpDfbQyyERs1LVjUsiLTVbyP3enQuGKQ4KJc8yFFX3gkiYU8zfPsCp4ScBT5T/VAqGZuV9IQZMkMF5VP1c1c=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXP191MB2699
+
+--_000_BESP191MB28991761275800168D5F21C2B0242BESP191MB2899EURP_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+Von: Monique <monique.hamburg@freenet.de>
+Datum: Donnerstag, 9. April 2026 um 13:01
+An: Info Sante Royale R=FCgen <info.ruegen@sante-royale.com>
+Betreff: Anfrage Buchung Wellness
+
+Sehr geehrte Damen und Herren, ich m=F6chte gern vorab zwei Massagen buchen=
+: Aroma=F6l Ganzk=F6rper 50Min. und anschlie=DFend Fu=DFtreflexzonenmassage=
+ 20 Min.
+Gern am 13.4. oder 14.4. gegen 16 Uhr.
+Sie erreichen mich telefonisch am besten unter 0170 2977469.
+Vielen Dank.
+Mit freundlichen Gr=FC=DFen
+Monique Steinke
+
+--_000_BESP191MB28991761275800168D5F21C2B0242BESP191MB2899EURP_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+</head>
+<body>
+<div dir=3D"ltr" style=3D"font-family: Arial, Arial, Helvetica, sans-serif;=
+ font-size: 10pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div dir=3D"ltr" style=3D"font-family: Arial, Arial, Helvetica, sans-serif;=
+ font-size: 10pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div id=3D"mail-editor-reference-message-container">
+<div dir=3D"ltr" class=3D"ms-outlook-mobile-reference-message skipProofing"=
+></div>
+<div class=3D"ms-outlook-mobile-reference-message skipProofing" style=3D"te=
+xt-align: left; padding: 3pt 0in 0in; border-width: 1pt medium medium; bord=
+er-style: solid none none; border-color: rgb(181, 196, 223) currentcolor cu=
+rrentcolor; font-family: Aptos; font-size: 12pt; color: black;">
+<b>Von: </b>Monique &lt;monique.hamburg@freenet.de&gt;<br>
+<b>Datum: </b>Donnerstag, 9. April 2026 um 13:01<br>
+<b>An: </b>Info Sante Royale R=FCgen &lt;info.ruegen@sante-royale.com&gt;<b=
+r>
+<b>Betreff: </b>Anfrage Buchung Wellness<br>
+<br>
+</div>
+<div dir=3D"auto" class=3D"ms-outlook-mobile-reference-message skipProofing=
+">Sehr geehrte Damen und Herren, ich m=F6chte gern vorab zwei Massagen buch=
+en: Aroma=F6l Ganzk=F6rper 50Min. und anschlie=DFend Fu=DFtreflexzonenmassa=
+ge 20 Min.</div>
+<div dir=3D"auto" class=3D"ms-outlook-mobile-reference-message skipProofing=
+">Gern am 13.4. oder 14.4. gegen 16 Uhr.</div>
+<div dir=3D"auto" class=3D"ms-outlook-mobile-reference-message skipProofing=
+">Sie erreichen mich telefonisch am besten unter 0170 2977469.</div>
+<div dir=3D"auto" class=3D"ms-outlook-mobile-reference-message skipProofing=
+">Vielen Dank.</div>
+<div dir=3D"auto" class=3D"ms-outlook-mobile-reference-message skipProofing=
+">Mit freundlichen Gr=FC=DFen&nbsp;</div>
+<div dir=3D"auto" class=3D"ms-outlook-mobile-reference-message skipProofing=
+">Monique Steinke&nbsp;</div>
+</div>
+</body>
+</html>
+
+--_000_BESP191MB28991761275800168D5F21C2B0242BESP191MB2899EURP_--
