@@ -41,6 +41,7 @@ class BookingData:
     agency_name: Optional[str] = None
     guest_email: Optional[str] = None
     special_wishes: Optional[str] = None
+    voucher_code: Optional[str] = None
     confidence: ExtractionConfidence = ExtractionConfidence.LOW
 
 
