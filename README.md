@@ -17,6 +17,7 @@ An operating system for hotels. Centralizes hotel operations, starting with the 
 | [Extraction Rules](docs/domain/solution/extraction_rules.md) | Business rules for extracting booking data from agency emails |
 | [ADRs](docs/adr/README.md) | Architecture Decision Records |
 | [Booking Emails](docs/booking-emails/) | Sample and real incoming booking emails from agencies |
+| [Promocodes Rügen](docs/hotels/ruegen/promocodes.md) | Promocode-Gruppen und zugeteilte Raten für Santé Royale Rügen Resort |
 
 ---
 
