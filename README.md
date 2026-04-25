@@ -18,6 +18,7 @@ An operating system for hotels. Centralizes hotel operations, starting with the 
 | [ADRs](docs/adr/README.md) | Architecture Decision Records |
 | [Booking Emails](docs/booking-emails/) | Sample and real incoming booking emails from agencies |
 | [Promocodes Rügen](docs/hotels/ruegen/promocodes.md) | Promocode-Gruppen und zugeteilte Raten für Santé Royale Rügen Resort |
+| [Hackathon Buchungen Rügen](docs/hotels/ruegen/buchungen-hackathon.md) | 29 Beispielbuchungen für den Hackathon (Santé Royale Rügen Resort) |
 
 ---
 
