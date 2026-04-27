@@ -8,7 +8,7 @@ from ..models import (
     ProcessingPath,
     ProcessingResult,
 )
-from ..ports import EmailSenderPort, PMSPort
+from ..ports import BookingLedgerPort, PMSPort
 
 
 class IntentClassifier(ABC):
@@ -29,59 +29,51 @@ class ProcessEmail:
         classifier: IntentClassifier,
         extractor: BookingExtractor,
         pms: PMSPort,
-        email_sender: EmailSenderPort,
+        ledger: BookingLedgerPort,
     ):
         self._classifier = classifier
         self._extractor = extractor
         self._pms = pms
-        self._email_sender = email_sender
+        self._ledger = ledger
 
     def execute(self, email: InboundEmail) -> ProcessingResult:
         try:
-            return self._process(email)
+            result = self._process(email)
         except Exception as e:
             result = ProcessingResult(
                 path=ProcessingPath.PASS_THROUGH,
                 email=email,
                 failure_reason=str(e),
             )
-            self._email_sender.send_pass_through(result)
-            return result
+        self._ledger.persist(result)
+        return result
 
     def _process(self, email: InboundEmail) -> ProcessingResult:
         intent = self._classifier.classify(email)
 
         if intent != Intent.BOOKING_CONFIRMATION:
-            result = ProcessingResult(path=ProcessingPath.PASS_THROUGH, email=email)
-            self._email_sender.send_pass_through(result)
-            return result
+            return ProcessingResult(path=ProcessingPath.PASS_THROUGH, email=email)
 
         booking = self._extractor.extract(email)
 
         if booking.confidence == ExtractionConfidence.LOW:
-            result = ProcessingResult(
+            return ProcessingResult(
                 path=ProcessingPath.ASSISTED,
                 email=email,
                 booking_data=booking,
             )
-            self._email_sender.send_assisted_handoff(result)
-            return result
 
         if not self._pms.check_availability(booking):
-            result = ProcessingResult(
+            return ProcessingResult(
                 path=ProcessingPath.ASSISTED,
                 email=email,
                 booking_data=booking,
             )
-            self._email_sender.send_assisted_handoff(result)
-            return result
 
         reservation_id = self._pms.create_booking(booking)
-        result = ProcessingResult(
+        return ProcessingResult(
             path=ProcessingPath.AUTOMATED,
             email=email,
             booking_data=booking,
             mews_reservation_id=reservation_id,
         )
-        self._email_sender.send_auto_booking_notification(result)
-        return result

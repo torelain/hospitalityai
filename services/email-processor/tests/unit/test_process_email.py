@@ -1,15 +1,14 @@
 from datetime import date, datetime
 
-import pytest
-
 from domain.models import (
     BookingData,
     ExtractionConfidence,
     InboundEmail,
     Intent,
     ProcessingPath,
+    ProcessingResult,
 )
-from domain.ports import EmailSenderPort, PMSPort
+from domain.ports import BookingLedgerPort, PMSPort
 from domain.use_cases.process_email import (
     BookingExtractor,
     IntentClassifier,
@@ -72,38 +71,32 @@ class StubPMS(PMSPort):
         return self.reservation_id
 
 
-class StubEmailSender(EmailSenderPort):
+class StubLedger(BookingLedgerPort):
     def __init__(self):
-        self.notifications = []
+        self.persisted: list[ProcessingResult] = []
 
-    def send_auto_booking_notification(self, result):
-        self.notifications.append(("auto", result))
-
-    def send_assisted_handoff(self, result):
-        self.notifications.append(("assisted", result))
-
-    def send_pass_through(self, result):
-        self.notifications.append(("pass_through", result))
+    def persist(self, result: ProcessingResult) -> None:
+        self.persisted.append(result)
 
 
-def make_use_case(classifier, extractor, pms=None, sender=None):
+def make_use_case(classifier, extractor, pms=None, ledger=None):
     return ProcessEmail(
         classifier=classifier,
         extractor=extractor,
         pms=pms or StubPMS(),
-        email_sender=sender or StubEmailSender(),
+        ledger=ledger or StubLedger(),
     )
 
 
 class TestPath1Automated:
     def test_creates_booking_when_high_confidence_and_available(self):
         pms = StubPMS(available=True, reservation_id="res-456")
-        sender = StubEmailSender()
+        ledger = StubLedger()
         use_case = make_use_case(
             StubClassifier(Intent.BOOKING_CONFIRMATION),
             StubExtractor(make_booking(confidence=ExtractionConfidence.HIGH)),
             pms=pms,
-            sender=sender,
+            ledger=ledger,
         )
 
         result = use_case.execute(make_email())
@@ -111,51 +104,51 @@ class TestPath1Automated:
         assert result.path == ProcessingPath.AUTOMATED
         assert result.mews_reservation_id == "res-456"
         assert pms.created is True
-        assert sender.notifications[0][0] == "auto"
+        assert ledger.persisted[0].path == ProcessingPath.AUTOMATED
 
 
 class TestPath2Assisted:
     def test_routes_to_assisted_when_low_confidence(self):
-        sender = StubEmailSender()
+        ledger = StubLedger()
         use_case = make_use_case(
             StubClassifier(Intent.BOOKING_CONFIRMATION),
             StubExtractor(make_booking(confidence=ExtractionConfidence.LOW)),
-            sender=sender,
+            ledger=ledger,
         )
 
         result = use_case.execute(make_email())
 
         assert result.path == ProcessingPath.ASSISTED
-        assert sender.notifications[0][0] == "assisted"
+        assert ledger.persisted[0].path == ProcessingPath.ASSISTED
 
     def test_routes_to_assisted_when_not_available(self):
-        sender = StubEmailSender()
+        ledger = StubLedger()
         use_case = make_use_case(
             StubClassifier(Intent.BOOKING_CONFIRMATION),
             StubExtractor(make_booking(confidence=ExtractionConfidence.HIGH)),
             pms=StubPMS(available=False),
-            sender=sender,
+            ledger=ledger,
         )
 
         result = use_case.execute(make_email())
 
         assert result.path == ProcessingPath.ASSISTED
-        assert sender.notifications[0][0] == "assisted"
+        assert ledger.persisted[0].path == ProcessingPath.ASSISTED
 
 
 class TestPath3PassThrough:
     def test_routes_unknown_intent_to_pass_through(self):
-        sender = StubEmailSender()
+        ledger = StubLedger()
         use_case = make_use_case(
             StubClassifier(Intent.UNKNOWN),
             StubExtractor(make_booking()),
-            sender=sender,
+            ledger=ledger,
         )
 
         result = use_case.execute(make_email())
 
         assert result.path == ProcessingPath.PASS_THROUGH
-        assert sender.notifications[0][0] == "pass_through"
+        assert ledger.persisted[0].path == ProcessingPath.PASS_THROUGH
 
     def test_routes_to_pass_through_on_exception(self):
         class BrokenPMS(PMSPort):
@@ -165,16 +158,16 @@ class TestPath3PassThrough:
             def create_booking(self, booking):
                 raise RuntimeError("Mews down")
 
-        sender = StubEmailSender()
+        ledger = StubLedger()
         use_case = make_use_case(
             StubClassifier(Intent.BOOKING_CONFIRMATION),
             StubExtractor(make_booking(confidence=ExtractionConfidence.HIGH)),
             pms=BrokenPMS(),
-            sender=sender,
+            ledger=ledger,
         )
 
         result = use_case.execute(make_email())
 
         assert result.path == ProcessingPath.PASS_THROUGH
         assert result.failure_reason == "Mews down"
-        assert sender.notifications[0][0] == "pass_through"
+        assert ledger.persisted[0].path == ProcessingPath.PASS_THROUGH

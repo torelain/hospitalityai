@@ -1,7 +1,6 @@
 from abc import ABC, abstractmethod
-from typing import Optional
 
-from .models import BookingData, InboundEmail, ProcessingResult
+from .models import BookingData, ProcessingResult
 
 
 class PMSPort(ABC):
@@ -14,15 +13,7 @@ class PMSPort(ABC):
         """Creates a booking and returns the reservation ID."""
 
 
-class EmailSenderPort(ABC):
+class BookingLedgerPort(ABC):
     @abstractmethod
-    def send_auto_booking_notification(self, result: ProcessingResult) -> None:
-        """Notifies front desk that a booking was created automatically (Path 1)."""
-
-    @abstractmethod
-    def send_assisted_handoff(self, result: ProcessingResult) -> None:
-        """Sends summary + original email to front desk for human decision (Path 2)."""
-
-    @abstractmethod
-    def send_pass_through(self, result: ProcessingResult) -> None:
-        """Forwards original email to front desk unchanged (Path 3)."""
+    def persist(self, result: ProcessingResult) -> None:
+        """Persists the full ProcessingResult — email, extraction, path, outcome — for audit and review."""
