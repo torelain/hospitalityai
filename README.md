@@ -13,6 +13,7 @@ An operating system for hotels. Centralizes hotel operations, starting with the 
 | [Architecture](docs/architecture/README.md) | C4 diagrams — system context, containers, components |
 | [Domain](docs/domain/README.md) | Business flows and rules |
 | [MVP — Email Channel](docs/domain/solution/mvp_email_channel.md) | Requirements and flows for automated email booking management |
+| [Email Channel — Provider Strategy](docs/domain/solution/email_providers.md) | Pluggable adapter layer for Outlook / Gmail / IMAP and non-Microsoft hotels |
 | [Event Storming — Email Channel](docs/domain/solution/event_storming_email_channel.md) | Domain events for the email-channel ingestion pipeline |
 | [Extraction Rules](docs/domain/solution/extraction_rules.md) | Business rules for extracting booking data from agency emails |
 | [Pain Points](docs/domain/problem/painpoints.md) | Insights aus Kundengesprächen, gegliedert nach Persona |

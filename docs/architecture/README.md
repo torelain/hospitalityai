@@ -17,7 +17,7 @@ Diagrams are written in [Mermaid](https://mermaid.js.org/) using C4 notation and
 
 ```
 apps/           # User-facing applications (web, dashboard, api)
-services/       # Backend services (booking, channel-integration, email-parser)
+services/       # Backend services (booking, channel-integration, email-processor)
 packages/       # Shared code (types, utilities)
 ai/             # Agents, prompt templates, evaluations
 infrastructure/ # Terraform, Docker
@@ -144,6 +144,8 @@ erDiagram
 ## C1 — System Context (MVP)
 
 > MVP scope: email channel from booking agencies only. Hotel Website, Channel Manager, Booking Portals, Hotel Guest, and Hotel Manager are out of scope for the MVP.
+>
+> The diagram below shows the target system. The PoC implements a subset (read-only DB-Ledger, no Mews push, no front-desk email); the [outlook_integration.md](../domain/solution/mvp/outlook_integration.md) phase model describes how we grow into it.
 
 ```mermaid
 flowchart TD
