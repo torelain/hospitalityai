@@ -1,0 +1,21 @@
+name: Renew Graph subscriptions
+
+# Daily cron triggers the email-processor's renewal endpoint. Subscriptions on Graph
+# mail resources expire after ~70 hours; we renew well within that window. A missed
+# day is non-fatal (we still have ~2 days of buffer).
+
+on:
+  schedule:
+    - cron: "0 3 * * *"   # 03:00 UTC daily
+  workflow_dispatch:       # manual trigger for testing
+
+jobs:
+  renew:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger renewal endpoint
+        run: |
+          curl --fail --silent --show-error \
+            -X POST "${{ secrets.RENEW_SUBSCRIPTIONS_URL }}" \
+            -H "Content-Type: application/json" \
+            -d '{}'
