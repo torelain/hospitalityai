@@ -3,5 +3,10 @@ __pycache__/
 *.pyc
 *.pyo
 .pytest_cache/
-*/.env
+.env
+**/.env
+.DS_Store
 training/
+
+# Eval result snapshots — generated locally, not source of truth
+services/email-processor/tests/evals/results/
