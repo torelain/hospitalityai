@@ -18,6 +18,7 @@ DURATION_OVERRIDES: dict[str, dict[int, str]] = {
     "AKON": {4: "KURZ", 7: "LANG"},
 }
 
+
 RATE_PLANS: dict[str, list[str]] = {
     "VIP": [
         "RR-SO-DIR-VIP",
@@ -167,82 +168,23 @@ RATE_PLANS: dict[str, list[str]] = {
         "RR-VERA-MITTEL-VP",
         "RR-VERA-LANG-VP",
     ],
+    "Stammgast 2024 (VERA)": [
+        # Returning-guest discount, 3-night fixed package (Clevertours/DERTOUR).
+        "RR-ST-A24-VERA-03-VP",
+    ],
 }
-
-
-# Maps sender email domains to agency names.
-SENDER_DOMAIN_TO_AGENCY: dict[str, str] = {
-    "reisenaktuell.com": "Reisen Aktuell",
-    "sante-royale.com":  "Reisen Aktuell",  # hotel staff forwarding RA requests
-    "dertouristik.com":  "Clevertours",
-    "akon.de":           "AKON",
-    "oir.de":            "AKON",
-    "pepxpress.com":     "pepXpress",
-    "kurz-mal-weg.de":   "GetAway",
-    # Booking platforms — use DIR channel in Mews
-    "kurzurlaub.de":     "DIR",
-    "check24.de":        "DIR",
-}
-
-# Maps (agency, nights) → voucher code, derived from training data.
-# Ambiguous cases (multiple possible codes) are resolved by body keywords below.
-AGENCY_NIGHTS_TO_CODE: dict[tuple[str, int], str] = {
-    ("AKON",  3): "RR-VERA-KURZ-VP",   # reisewell 3-night wellness stays
-    ("AKON",  4): "RR-AKON-KURZ-VP",
-    ("AKON",  7): "RR-AKON-LANG-VP",
-    ("Reisen Aktuell", 10): "RR-SO-1225-VERA-10-VP-WS",  # Weihnachten/Silvester
-}
-
-# Body keywords that disambiguate when agency+nights alone isn't enough.
-# Checked in order; first match wins.
-BODY_KEYWORD_TO_CODE_SUFFIX: list[tuple[str, str]] = [
-    ("sorgenfrei",  "-AI"),    # Sorgenfrei Spezial → all-inclusive codes
-    ("preisspecial", "-AIL"),  # Preisspecial Upgrade to AI
-    ("reisewell",   "RR-VERA-{DURATION}-VP"),  # reisewell always VERA-VP
-    ("kennenlernwoche", "RR-VERA-07-VP-KW"),   # pepXpress Kuren product
-]
-
-# Maps guest-facing or agency-internal package names to canonical RATE_PLANS group keywords.
-# Used when the email contains a product/package name that differs from the Mews rate plan name.
-PACKAGE_NAME_ALIASES: dict[str, str] = {
-    # DERTOUR / clevertours.com guest-facing package names
-    "präventionspaket": "Kurzreisen",
-    "praeventionspaket": "Kurzreisen",
-    "wellness-kurzreise": "Kurzreisen",
-    "wellness kurzreise": "Kurzreisen",
-    "meer erleben": "Kurzreisen",
-    # GetAway Travel GmbH
-    "8 tage-wellness": "Kurzreisen",
-    # pepXpress internal product name
-    "kennenlernwoche": "Kuren",
-    # Reisen Aktuell system code for Santé Royale Rügen
-    "saru": "Kurzreisen",
-    # Wörlitz Buspendel — agency name leaks into rate plan field
-    "wörlitz": "Wörlitz Buspendel",
-    "woerlitz": "Wörlitz Buspendel",
-}
-
-
-def _normalize_rate_plan(keyword: str) -> str:
-    """Replace known package name aliases with their canonical RATE_PLANS group keyword."""
-    lower = keyword.lower()
-    for alias, canonical in PACKAGE_NAME_ALIASES.items():
-        if alias in lower:
-            return canonical
-    return keyword
 
 
 def resolve_voucher_code(rate_plan_keyword: str, nights: int) -> str | None:
     """
     Find the best matching voucher code for a rate plan keyword and night count.
 
-    Applies package name aliases first, then matches rate plans whose name contains
-    the keyword (case-insensitive), then picks the code matching the duration
-    (KURZ/MITTEL/LANG or numeric 07/14/21). Prefers VERA channel, then ONL, then DIR.
+    Matches rate plans whose name contains the keyword (case-insensitive), then picks
+    the code matching the duration (KURZ/MITTEL/LANG or numeric 07/14/21).
+    Prefers VERA channel, then ONL, then DIR.
     Falls back to duration-free codes (e.g. fixed packages like Wörlitz Buspendel).
     """
-    keyword = _normalize_rate_plan(rate_plan_keyword)
-    keyword_lower = keyword.lower()
+    keyword_lower = rate_plan_keyword.lower()
 
     # Sort so that the group whose name is most "covered" by the keyword comes first.
     # e.g. "AKON" should prefer the "AKON" group over "AKON (mit Begleitperson)".
@@ -295,49 +237,3 @@ def resolve_voucher_code(rate_plan_keyword: str, nights: int) -> str | None:
     return candidates[0]
 
 
-def resolve_by_context(sender_email: str, nights: int, body: str, rate_plan_keyword: str = "") -> str | None:
-    """
-    Resolve a voucher code using sender domain, night count, and body keywords.
-
-    This uses rules derived from matched training data and takes precedence over
-    the keyword-only resolve_voucher_code when a sender domain is known.
-
-    Falls back to resolve_voucher_code if no context-based rule matches.
-    """
-    import re
-    body_lower = body.lower()
-
-    # Identify agency from sender domain
-    domain_match = re.search(r'@([\w.\-]+)', sender_email)
-    domain = domain_match.group(1).lower() if domain_match else ""
-    agency = next((a for d, a in SENDER_DOMAIN_TO_AGENCY.items() if domain.endswith(d)), None)
-
-    # 1. Deterministic agency + nights rule
-    if agency:
-        direct = AGENCY_NIGHTS_TO_CODE.get((agency, nights))
-        if direct:
-            return direct
-
-    # 2. Body keyword resolves ambiguity (agency known, multiple possible codes)
-    if agency == "AKON" and "reisewell" in body_lower:
-        duration = NIGHTS_TO_DURATION.get(nights, "KURZ")
-        return f"RR-VERA-{duration}-VP"
-
-    if agency in ("Reisen Aktuell", "Clevertours", "pepXpress") and nights in NIGHTS_TO_DURATION:
-        duration = NIGHTS_TO_DURATION[nights]
-        if "kennenlernwoche" in body_lower:
-            return "RR-VERA-07-VP-KW"
-        if "sorgenfrei" in body_lower:
-            return f"RR-SO-0326-VERA-{duration}-AI"
-        if "preisspecial" in body_lower or "ail" in body_lower:
-            return f"RR-SO-0226-REAK-{duration}-AIL"
-        if agency == "Reisen Aktuell":
-            return f"RR-REAK-{duration}-VP"
-        if agency in ("Clevertours", "pepXpress"):
-            return f"RR-VERA-{duration}-VP"
-
-    # 3. Fall back to keyword-based resolver
-    if rate_plan_keyword:
-        return resolve_voucher_code(rate_plan_keyword, nights)
-
-    return None

@@ -26,5 +26,14 @@ class MewsClient:
             f"{self._base_url}/{endpoint}",
             json={**self._credentials, **payload},
         )
-        response.raise_for_status()
+        if response.is_error:
+            try:
+                detail = response.json()
+            except Exception:
+                detail = response.text
+            raise httpx.HTTPStatusError(
+                f"{response.status_code} from {endpoint}: {detail}",
+                request=response.request,
+                response=response,
+            )
         return response.json()

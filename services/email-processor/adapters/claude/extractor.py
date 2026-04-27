@@ -49,6 +49,10 @@ EXTRACT_BOOKING_TOOL: anthropic.types.ToolParam = {
                 "type": "string",
                 "description": "Name of the booking agency or OTA",
             },
+            "agency_reference": {
+                "type": "string",
+                "description": "Booking reference number assigned by the agency or OTA (e.g. DERTOUR booking number, booking.com reservation ID). Omit if not present.",
+            },
             "guest_email": {
                 "type": "string",
                 "description": "Guest email address",
@@ -112,6 +116,7 @@ class ClaudeBookingExtractor(BookingExtractor):
             room_category=data["room_category"],
             num_guests=data["num_guests"],
             agency_name=data.get("agency_name"),
+            agency_reference=data.get("agency_reference"),
             guest_email=data.get("guest_email"),
             special_wishes=data.get("special_wishes"),
             voucher_code=voucher_code,

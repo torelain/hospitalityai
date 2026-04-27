@@ -63,6 +63,7 @@ class MewsAdapter(PMSPort):
                         "RequestedCategoryId": category_id,
                         "PersonCounts": [{"Count": booking.num_guests}],
                         "Notes": booking.special_wishes,
+                        "Number": booking.agency_reference,
                     }
                 ],
             },
