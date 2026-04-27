@@ -20,83 +20,99 @@ import anthropic
 
 sys.path.insert(0, str(Path(__file__).parents[2]))
 
-from adapters.mews.rate_plans import resolve_voucher_code, resolve_by_context
+from adapters.mews.rate_plans import resolve_voucher_code
 from domain.models import InboundEmail
 
-SYSTEM_PROMPT = """You are a booking data extractor for Santé Royale Rügen Resort (Germany).
-Extract all bookings from the email — a single email may contain multiple bookings.
-For each booking, resolve the correct Mews voucher code.
+SYSTEM_PROMPT = """You are a booking data extractor for Santé Royale Rügen Resort (Göhren, Germany).
+Extract every confirmed/requested booking from the email. A single email may contain
+many bookings (rooming lists, AKON participant lists). Process each booking independently.
+
+## Output
+For each booking return: guest_name, arrival_date (YYYY-MM-DD),
+departure_date (YYYY-MM-DD), room_category, num_guests, agency_name, rate_plan_name,
+voucher_code, voucher_code_confidence, and an overall confidence.
 
 ## Date handling
-- "X Tage" means X days including arrival and departure: nights = Tage - 1.
-- When both "Tage" and "Nächte" appear, Nächte is authoritative.
-- Return dates as YYYY-MM-DD.
+- "X Tage" = X days including arrival and departure → nights = Tage − 1.
+- When both "Tage" and "Nächte" appear, "Nächte" wins.
+- Date formats vary (14.05.26, 03-Aug-2026, 5.Okt.26, "15 August 2026") — normalise to ISO.
 
-## Voucher code catalogue
-Each code encodes: channel · duration · product. Pick the best match using all signals
-in the email (sender domain, agency name, package name, keywords, night count).
+## Room category
+Map the email's free-text room description to **one of the canonical Mews categories**
+(use this exact spelling — never invent new labels):
+- Doppelzimmer
+- Doppelzimmer Komfort
+- Doppelzimmer mit Balkon
+- Doppelzimmer Komfort mit Balkon
+- Doppelzimmer mit Meerblick
+- Doppelzimmer mit Meerblick (mit Balkon)
+- Doppelzimmer mit Meerblick (ohne Balkon)
+- Suite (mit Meerblick)
+- Suite (ohne Meerblick)
+- Hundefreundliches Zimmer
+Heuristics: "EZ" / "Einzelzimmer" → Doppelzimmer (single use); "DZ Standard" →
+Doppelzimmer; "Hund" / "mit Hund" → Hundefreundliches Zimmer; "Meerblick" →
+the matching Meerblick variant (with/ohne Balkon if specified).
 
-### Code anatomy
-- Channel: VERA=travel agency, REAK=Reisen Aktuell, DIR=direct, ONL=online, AKON=AKON, WÖR=Wörlitz
-- Duration: KURZ=3n, MITTEL=5n, LANG=7n (AKON: KURZ=4n, LANG=7n); or explicit 03/05/07/10/14/21
-- Product: VP=Vollpension, AI=All Inclusive, AIL=All Inclusive Light
-- Kur suffixes: WP=Wellnesspflege, KW=Kurwoche, RK=Rehakur
+## Voucher code (Mews `Rate`)
+Voucher codes follow the structure `RR-{CHANNEL}-{DURATION}-VP[-{SUFFIX}]`, where:
+- CHANNEL identifies the booking source
+- DURATION is `KURZ` (short), `MITTEL` (mid), `LANG` (long), or a numeric night count
+- VP = Vollpension (full board), AI = All Inclusive, optional product suffix
 
-### Agency signals
-- @reisenaktuell.com / @sante-royale.com → Reisen Aktuell (REAK channel)
-- @dertouristik.com → Clevertours / DERTOUR (VERA channel)
-- @akon.de / @oir.de → AKON
-- @pepxpress.com → pepXpress (VERA channel)
-- @kurz-mal-weg.de → GetAway (VERA channel)
-- @kurzurlaub.de / @check24.de → booking platform → DIR channel (RR-DIR-{DUR}-VP)
+### Channels (derived from sender domain / agency)
+| Sender / agency | Channel | Notes |
+|---|---|---|
+| `@reisenaktuell.com` (Reisen Aktuell) | REAK | bookinglist emails, multi-booking |
+| `@kurz-mal-weg.de` / `@kurzmalweg.zohodesk.eu` (GetAway Travel) | VERA | |
+| `@pa-touristik.info` (PA Touristik / Wörlitz Tourist) | VERA | Wörlitz + Kuren focus |
+| `@dertouristik.com` (Clevertours / DERTOUR) | VERA | |
+| `@pepxpress.com` (pepXpress) | VERA | |
+| `@seltamed.de` (Selta Med) | VERA | mostly Kuren (7/14 nights) |
+| `@schauinsland-reisen.de` | VERA | |
+| `@compassmail.de` (Compass Kreuzfahrten) | VERA | |
+| `@akon.de` (AKON Aktivkonzept / reisewell.de) | AKON | KURZ=4 nights, LANG=7 nights |
+| Booking.com / OTA confirmations | OTA | code shape varies, prefer keyword fallback |
+| Direct guest email (`gmx`, `web.de`, `t-online`, `gmail`, etc.) — first-party request | DIR | phone/email request |
+| Hotel booking engine confirmation | ONL | "Buchungssystem", "Mews Booking Engine" |
 
-### All available codes
+### Duration mapping (nights → DURATION token)
+- `KURZ`: 3 nights (4 for AKON)
+- `MITTEL`: 5 nights
+- `LANG`: 7 nights (also 7 for AKON)
+- Other night counts use the numeric form, e.g. `RR-VERA-07-VP-KW`, `RR-VERA-14-VP-WP`.
 
-**Reisen Aktuell — standard Kurzreisen (Vollpension):**
-RR-REAK-KURZ-VP, RR-REAK-MITTEL-VP, RR-REAK-LANG-VP
+### Default codes by (channel, nights)
+- REAK: 3→`RR-REAK-KURZ-VP`, 5→`RR-REAK-MITTEL-VP`, 7→`RR-REAK-LANG-VP`
+- VERA: 3→`RR-VERA-KURZ-VP`, 5→`RR-VERA-MITTEL-VP`, 7→`RR-VERA-LANG-VP`
+- AKON: 4→`RR-AKON-KURZ-VP`, 7→`RR-AKON-LANG-VP`
+- DIR : 3→`RR-DIR-KURZ-VP`, 5→`RR-DIR-MITTEL-VP`, 7→`RR-DIR-LANG-VP`
+- ONL : 3→`RR-ONL-KURZ-VP`, 5→`RR-ONL-MITTEL-VP`, 7→`RR-ONL-LANG-VP`
 
-**Reisen Aktuell — Preisspecial Upgrade to AI (All Inclusive Light):**
-Signals: "Upgrade to AI", "AIL", "preisspecial" in email
-RR-SO-0226-REAK-KURZ-AIL, RR-SO-0226-REAK-MITTEL-AIL, RR-SO-0226-REAK-LANG-AIL
+### Disambiguation keywords (override the default)
+- "Wörlitz" / "Wörlitz Buspendel" + 4 nights (PA Touristik) → `RR-WÖR-VP`
+- "Kuren" / "Kur" / "Kurpaket" + 7 nights → `RR-VERA-07-VP-WP` (default Wochenpauschale).
+  Variants: "Kurwoche" → `-VP-KW`; "Rügener Kururlaub" / "Reha-Kur" → `-VP-RK`.
+  14 nights → `RR-VERA-14-VP-WP` (or `-KW` / `-RK` by same rule).
+- "Verlängerungsnacht" or a standalone 1-night stay → `RR-ST-0024-VERLÄNGERUNG-01-VP`
+- "Begleitperson" / "Begl." + AKON → append `-BP` (`RR-AKON-KURZ-VP-BP`, `RR-AKON-LANG-VP-BP`)
+- "VIP" + direct/online → `RR-SO-DIR-VIP` (direct) or `RR-SO-ONL-VIP` (booking engine)
+- "Weihnachten" / "Wintergedöns" + 10 nights in Dec/Jan → `RR-SO-1225-{CHANNEL}-10-VP-WS`
+- "Silvester" + 5 nights in Dec/Jan → `RR-SO-1225-{CHANNEL}-05-VP-SI`
+- "Sorgenfrei Spezial" / "All Inclusive" package → `RR-SO-0326-{CHANNEL}-{DUR}-AI`
+- "Preisspecial Upgrade to AI" + Reisen Aktuell → `RR-SO-0226-REAK-{DUR}-AIL`
 
-**Sorgenfrei Spezial — VERA channel (All Inclusive):**
-Signals: "Sorgenfrei", agency via VERA channel (clevertours, pepXpress, getaway, PA Touristik, etc.)
-RR-SO-0326-VERA-03-AI (3n), RR-SO-0326-VERA-KURZ-AI (3n), RR-SO-0326-VERA-05-AI (5n),
-RR-SO-0326-VERA-MITTEL-AI (5n), RR-SO-0326-VERA-07-AI (7n), RR-SO-0326-VERA-LANG-AI (7n)
+### Confidence for voucher_code
+- "high" — sender domain matched a known agency AND nights match a default duration
+  AND no ambiguous keywords. E.g. `@reisenaktuell.com` + 7 nights → `RR-REAK-LANG-VP`.
+- "low" — sender unknown, nights atypical, ambiguous keywords (e.g. "Kur" but nights
+  don't match a Kuren package), forwarded chains where the original agency is unclear,
+  or any OTA/Booking.com email (legacy code shapes, prefer human review).
+  Leave `voucher_code` blank when you have no defensible guess — never invent a code.
 
-**Sorgenfrei Spezial — Reisen Aktuell (All Inclusive):**
-Signals: "Sorgenfrei" + Reisen Aktuell sender
-RR-SO-0326-VERA-KURZ-AI, RR-SO-0326-VERA-MITTEL-AI, RR-SO-0326-VERA-LANG-AI
-
-**VERA channel — standard Kurzreisen (Vollpension):**
-Signals: clevertours/DERTOUR, pepXpress, reisewell (AKON sub-brand), PA Touristik, GetAway, Compass
-RR-VERA-KURZ-VP, RR-VERA-MITTEL-VP, RR-VERA-LANG-VP
-
-**AKON programme:**
-Signals: @akon.de, "AKON" in email; KURZ=4n, LANG=7n
-RR-AKON-KURZ-VP (4n), RR-AKON-LANG-VP (7n)
-With Begleitperson: RR-AKON-KURZ-VP-BP (4n), RR-AKON-LANG-VP-BP (7n)
-reisewell (3/5/7n wellness, not rehab) → RR-VERA-KURZ/MITTEL/LANG-VP
-
-**Kuren (long-stay rehabilitation, 7/14/21 nights):**
-Signals: "Kur", "Kennenlernwoche", "Rehabilitation", explicit 7/14/21n stay
-VERA: RR-VERA-07/14/21-VP-WP/KW/RK
-DIR:  RR-DIR-07/14/21-VP-WP/KW/RK
-
-**Wörlitz Buspendel:** Signal: "Wörlitz" → RR-WÖR-VP
-
-**Weihnachten/Silvester (10n stay around Christmas):**
-Signals: December dates, 10 nights, "Weihnachten", "Silvester"
-VERA: RR-SO-1225-VERA-10-VP-WS, RR-SO-1225-VERA-05-VP-WE, RR-SO-1225-VERA-05-VP-SI
-REAK: RR-SO-1225-VERA-10-VP-WS (Reisen Aktuell guests use VERA code for Christmas)
-
-**Direct / online bookings (no agency):**
-RR-DIR-KURZ/MITTEL/LANG-VP, RR-ONL-KURZ/MITTEL/LANG-VP
-
-**VIP:** RR-SO-DIR-VIP, RR-SO-ONL-VIP
-
-Set voucher_code_confidence to "high" when you can identify the agency from the sender domain,
-"low" when you are inferring from context only."""
+## Confidence
+Set confidence: "low" when the booking is incomplete (missing dates / guest) or when
+the email is not actually a booking notification."""
 
 BOOKING_SCHEMA = {
     "type": "object",
@@ -110,8 +126,8 @@ BOOKING_SCHEMA = {
         "agency_name": {"type": "string"},
         "guest_email": {"type": "string"},
         "special_wishes": {"type": "string"},
-        "voucher_code": {"type": "string", "description": "Mews voucher code resolved from sender domain + nights + keywords, e.g. RR-VERA-LANG-VP. Omit if not resolvable."},
-        "voucher_code_confidence": {"type": "string", "enum": ["high", "low"], "description": "high if agency identified from sender domain, low if guessed from rate plan name only."},
+        "voucher_code": {"type": "string", "description": "Mews voucher code (e.g. RR-VERA-LANG-VP). Omit if you have no defensible guess."},
+        "voucher_code_confidence": {"type": "string", "enum": ["high", "low"], "description": "high only when sender domain + nights match a default rule with no ambiguity."},
         "confidence": {"type": "string", "enum": ["high", "low"]},
     },
     "required": ["guest_name", "arrival_date", "departure_date", "room_category", "num_guests", "confidence"],
@@ -133,7 +149,7 @@ EXTRACT_BOOKING_TOOL = {
     },
 }
 
-MAIL_DIR = Path(__file__).parents[4] / "docs" / "hotels" / "ruegen" / "booking-emails"
+MAIL_DIR = Path(__file__).parents[4] / "docs" / "hotels" / "ruegen" / os.environ.get("MAIL_SUBDIR", "booking-emails")
 
 
 def parse_eml(path: Path) -> InboundEmail:
@@ -202,27 +218,22 @@ def build_row(path: Path, data: dict, eml: "InboundEmail", booking_index: int = 
 
     rate_plan = data.get("rate_plan_name")
 
-    # 1. Use Claude's resolved code if present
-    voucher = data.get("voucher_code") or None
+    voucher = (data.get("voucher_code") or "").strip() or None
+    voucher_confidence = data.get("voucher_code_confidence")
     resolve_method = "claude" if voucher else "-"
 
-    # 2. Rule-based context resolver as fallback
-    if not voucher and nights is not None:
-        try:
-            voucher = resolve_by_context(eml.from_email, nights, eml.text_body, rate_plan or "")
-            resolve_method = "rules"
-        except Exception:
-            pass
-
-    # 3. Keyword resolver as last resort
     if not voucher and rate_plan and nights is not None:
         try:
             voucher = resolve_voucher_code(rate_plan, nights)
-            resolve_method = "keyword"
+            if voucher:
+                resolve_method = "keyword"
+                voucher_confidence = "low"
         except Exception:
             pass
 
     suffix = f" [{booking_index + 1}]" if booking_index > 0 else ""
+    confidence = data.get("confidence")
+    needs_review = not voucher or confidence == "low" or voucher_confidence == "low"
     return {
         "file": path.name + suffix,
         "arrival_date": arrival,
@@ -231,21 +242,47 @@ def build_row(path: Path, data: dict, eml: "InboundEmail", booking_index: int = 
         "num_guests": data.get("num_guests"),
         "rate_plan_name": rate_plan,
         "voucher_code": voucher,
+        "voucher_code_confidence": voucher_confidence,
         "resolve_method": resolve_method,
         "room_category": data.get("room_category"),
         "guest_name": data.get("guest_name"),
         "agency_name": data.get("agency_name"),
-        "confidence": data.get("confidence"),
+        "confidence": confidence,
+        "needs_review": needs_review,
+        "review_reason": None,
+        "error": None,
+    }
+
+
+def build_review_row(path: Path, reason: str) -> dict:
+    """Synthesise a row for an .eml that produced no Claude bookings — flag for human review."""
+    return {
+        "file": path.name,
+        "arrival_date": None,
+        "departure_date": None,
+        "nights": None,
+        "num_guests": None,
+        "rate_plan_name": None,
+        "voucher_code": None,
+        "voucher_code_confidence": None,
+        "resolve_method": "-",
+        "room_category": None,
+        "guest_name": None,
+        "agency_name": None,
+        "confidence": None,
+        "needs_review": True,
+        "review_reason": reason,
         "error": None,
     }
 
 
 def print_table(rows: list[dict]) -> None:
-    col = {"file": 40, "arrival": 12, "depart": 12, "nights": 6, "guests": 6, "voucher": 32, "method": 8, "conf": 5}
+    col = {"file": 40, "arrival": 12, "depart": 12, "nights": 6, "guests": 6, "voucher": 32, "method": 8, "conf": 5, "review": 7}
     header = (
         f"{'File':<{col['file']}} {'Arrival':<{col['arrival']}} {'Depart':<{col['depart']}} "
         f"{'Nights':>{col['nights']}} {'Guests':>{col['guests']}} "
-        f"{'Voucher (resolved)':<{col['voucher']}} {'Method':<{col['method']}} {'Conf':<{col['conf']}}"
+        f"{'Voucher (resolved)':<{col['voucher']}} {'Method':<{col['method']}} "
+        f"{'Conf':<{col['conf']}} {'Review':<{col['review']}}"
     )
     print(header)
     print("-" * len(header))
@@ -253,6 +290,7 @@ def print_table(rows: list[dict]) -> None:
         if r["error"]:
             print(f"{r['file'][:col['file']]:<{col['file']}} ERROR: {r['error']}")
             continue
+        review_flag = "REVIEW" if r.get("needs_review") else "ok"
         print(
             f"{r['file'][:col['file']]:<{col['file']}} "
             f"{(r['arrival_date'] or '?'):<{col['arrival']}} "
@@ -261,7 +299,8 @@ def print_table(rows: list[dict]) -> None:
             f"{str(r['num_guests'] or '?'):>{col['guests']}} "
             f"{(r['voucher_code'] or 'no match')[:col['voucher']]:<{col['voucher']}} "
             f"{(r.get('resolve_method') or '-'):<{col['method']}} "
-            f"{(r['confidence'] or '?'):<{col['conf']}}"
+            f"{(r['confidence'] or '?'):<{col['conf']}} "
+            f"{review_flag:<{col['review']}}"
         )
 
 
@@ -273,7 +312,7 @@ def save_results(rows: list[dict], run_at: datetime) -> Path:
     json_path.write_text(json.dumps({"run_at": run_at.isoformat(), "rows": rows}, indent=2))
 
     csv_path = RESULTS_DIR / f"{slug}.csv"
-    fields = ["file", "arrival_date", "departure_date", "nights", "num_guests", "rate_plan_name", "voucher_code", "resolve_method", "room_category", "guest_name", "agency_name", "confidence", "error"]
+    fields = ["file", "arrival_date", "departure_date", "nights", "num_guests", "rate_plan_name", "voucher_code", "voucher_code_confidence", "resolve_method", "room_category", "guest_name", "agency_name", "confidence", "needs_review", "review_reason", "error"]
     with open(csv_path, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fields)
         writer.writeheader()
@@ -301,15 +340,27 @@ def main():
         eml = parse_eml(path)
         try:
             bookings = extract_raw(client, eml)
+            if not bookings:
+                rows.append(build_review_row(path, "no_bookings_extracted"))
+                continue
             for i, booking in enumerate(bookings):
                 rows.append(build_row(path, booking, eml, i))
         except Exception as e:
-            rows.append({"file": path.name, "error": str(e), **{k: None for k in ["arrival_date", "departure_date", "nights", "num_guests", "rate_plan_name", "voucher_code", "resolve_method", "room_category", "guest_name", "agency_name", "confidence"]}})
+            rows.append({
+                "file": path.name,
+                "error": str(e),
+                "needs_review": True,
+                "review_reason": "extraction_error",
+                **{k: None for k in ["arrival_date", "departure_date", "nights", "num_guests", "rate_plan_name", "voucher_code", "voucher_code_confidence", "resolve_method", "room_category", "guest_name", "agency_name", "confidence"]},
+            })
 
     print_table(rows)
 
+    review_count = sum(1 for r in rows if r.get("needs_review"))
+    print(f"\n{review_count}/{len(rows)} rows flagged for human review.")
+
     out = save_results(rows, run_at)
-    print(f"\nResults saved to {out.parent.relative_to(Path.cwd())}/ ({run_at.strftime('%Y%m%d_%H%M%S')})")
+    print(f"Results saved to {out.parent.relative_to(Path.cwd())}/ ({run_at.strftime('%Y%m%d_%H%M%S')})")
 
 
 if __name__ == "__main__":
