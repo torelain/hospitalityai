@@ -1,6 +1,6 @@
 # ADR-0004: Use Postmark Inbound Webhook for Email Ingestion
 
-**Status:** Accepted  
+**Status:** Superseded by [ADR-0008](0008-mailgun-inbound-webhook.md) (2026-04-25)
 **Date:** 2026-04-15
 
 ## Context
