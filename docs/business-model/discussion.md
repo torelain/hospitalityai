@@ -56,3 +56,12 @@ flowchart TD
 ```
 
 **Quellen:** [SiteMinder](https://www.siteminder.com/r/hotel-tech-stack/) · [Mews](https://www.mews.com/en/blog/hotel-tech-stack) · [Cloudbeds](https://www.cloudbeds.com/articles/hotel-tech-stack/) · [RoomPriceGenie](https://roompricegenie.com/essential-tech-trio-pms-channel-manager-rms/)
+
+---
+
+## Quellen — Manuelle Prozesse & Pain Points
+
+- [WebRezPro — 8 Common Front Desk Pain Points](https://webrezpro.com/common-front-desk-pain-points-and-how-to-resolve-them/)
+- [HITEC — 8 Pain Points of a Legacy PMS](https://www.hitec.org/news/4124721/8-common-pain-points-of-a-legacy-pms-and-how-to-solve-them)
+- [Prostay — Channel Manager PMS Sync](https://www.prostay.com/blog/channel-manager-pms-sync-issues-preventing-overbookings-rate-errors/)
+- [HiJiffy — Hotel Productivity Strategies](https://www.hijiffy.com/resources/articles/hotel-productivity-strategies)
