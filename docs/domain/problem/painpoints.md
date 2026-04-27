@@ -33,3 +33,12 @@ Dieses Dokument sammelt Insights aus Kundengesprächen, Beobachtungen und Worksh
 | 14 | Manuelle Zahlungsabwicklung ohne PMS-Integration — langsam und sicherheitskritisch | Legacy-PMS ohne integrierte Zahlungslösung zwingen Mitarbeiter, Kartendaten manuell zu verarbeiten. Zeitaufwendig, fehleranfällig und mit erhöhtem Sicherheitsrisiko für sensible Gästedaten verbunden. | Marktrecherche | 27.04.2026 | Mittel |
 | 15 | PMS-Einarbeitung dauert Monate — 52 % der Manager berichten von 4 Monaten bis 3 Jahren | Komplexe PMS-Systeme erfordern lange Einarbeitungszeiten. Laut Marktdaten geben 52,2 % der Manager an, dass Mitarbeiter zwischen 4 Monaten und 3 Jahren brauchen, um das PMS sicher zu bedienen. Fehler während der Einarbeitungszeit sind kostspielig. | Marktrecherche | 27.04.2026 | Hoch |
 | 16 | Überbuchungen durch manuelle Eingriffe und vergessene Channel-Manager-Synchronisation | Mitarbeiter überschreiben Verfügbarkeiten manuell im PMS, vergessen aber, die Änderungen über den Channel Manager zu pushen. Resultat: dasselbe Zimmer wird mehrfach verkauft. Hotels mit sauberer Integration reduzieren Überbuchungen laut Studien um über 90 %. | Marktrecherche | 27.04.2026 | Hoch |
+
+---
+
+## Quellen Marktrecherche
+
+- [WebRezPro — 8 Common Front Desk Pain Points](https://webrezpro.com/common-front-desk-pain-points-and-how-to-resolve-them/)
+- [HITEC — 8 Pain Points of a Legacy PMS](https://www.hitec.org/news/4124721/8-common-pain-points-of-a-legacy-pms-and-how-to-solve-them)
+- [Prostay — Channel Manager PMS Sync](https://www.prostay.com/blog/channel-manager-pms-sync-issues-preventing-overbookings-rate-errors/)
+- [HiJiffy — Hotel Productivity Strategies](https://www.hijiffy.com/resources/articles/hotel-productivity-strategies)
