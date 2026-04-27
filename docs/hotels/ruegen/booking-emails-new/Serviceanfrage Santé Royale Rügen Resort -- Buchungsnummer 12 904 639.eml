@@ -1,0 +1,747 @@
+Received: from GV1P191MB2194.EURP191.PROD.OUTLOOK.COM (2603:10a6:150:9e::7) by
+ BESP191MB2899.EURP191.PROD.OUTLOOK.COM with HTTPS; Sat, 25 Apr 2026 10:58:41
+ +0000
+Received: from DU6P191CA0025.EURP191.PROD.OUTLOOK.COM (2603:10a6:10:53f::25)
+ by GV1P191MB2194.EURP191.PROD.OUTLOOK.COM (2603:10a6:150:9e::7) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9846.23; Sat, 25 Apr
+ 2026 10:58:37 +0000
+Received: from DB5PEPF00014B93.eurprd02.prod.outlook.com
+ (2603:10a6:10:53f:cafe::6c) by DU6P191CA0025.outlook.office365.com
+ (2603:10a6:10:53f::25) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9846.24 via Frontend Transport; Sat,
+ 25 Apr 2026 10:58:37 +0000
+Received: from mx07-00a5d801.pphosted.com (143.55.144.241) by
+ DB5PEPF00014B93.mail.protection.outlook.com (10.167.8.231) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9846.18
+ via Frontend Transport; Sat, 25 Apr 2026 10:58:37 +0000
+Received: from pps.filterd (m0490303.ppops.net [127.0.0.1])
+	by mx07-00a5d801.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 63PAqaxS2704166
+	for <booking.ruegen@sante-royale.com>; Sat, 25 Apr 2026 12:58:36 +0200
+Received: from mrwpr03cu001.outbound.protection.outlook.com (mail-francesouthazon11021090.outbound.protection.outlook.com [40.107.130.90])
+	by mx07-00a5d801.pphosted.com (PPS) with ESMTPS id 4dq8yervns-1
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
+	for <booking.ruegen@sante-royale.com>; Sat, 25 Apr 2026 12:58:36 +0200 (MEST)
+Received: from AS8P189MB1622.EURP189.PROD.OUTLOOK.COM (2603:10a6:20b:39a::9)
+ by PR3P189MB1002.EURP189.PROD.OUTLOOK.COM (2603:10a6:102:41::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9846.23; Sat, 25 Apr
+ 2026 10:58:34 +0000
+Received: from AS8P189MB1622.EURP189.PROD.OUTLOOK.COM
+ ([fe80::9360:654:426e:394f]) by AS8P189MB1622.EURP189.PROD.OUTLOOK.COM
+ ([fe80::9360:654:426e:394f%4]) with mapi id 15.20.9846.023; Sat, 25 Apr 2026
+ 10:58:34 +0000
+From: Service | Reisen Aktuell <service@reisenaktuell.com>
+To: =?Windows-1252?Q?Booking_Sante_Royale_R=FCgen?=
+	<booking.ruegen@sante-royale.com>
+Subject:
+	=?Windows-1252?Q?Serviceanfrage_Sant=E9_Royale_R=FCgen_Resort_//_Buchungs?=
+ =?Windows-1252?Q?nummer_12_904_639?=
+Thread-Topic:
+	=?Windows-1252?Q?Serviceanfrage_Sant=E9_Royale_R=FCgen_Resort_//_Buchungs?=
+ =?Windows-1252?Q?nummer_12_904_639?=
+Thread-Index: AdzUonWSevzf8Ty4ShK2Rt5MyuPmJw==
+X-MS-Exchange-MessageSentRepresentingType: 1
+Date: Sat, 25 Apr 2026 10:58:34 +0000
+Message-ID:
+	<AS8P189MB16222D0DC94316F57D3F57A689282@AS8P189MB1622.EURP189.PROD.OUTLOOK.COM>
+Accept-Language: de-DE, en-US
+Content-Language: de-DE
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Exchange-Organization-AuthSource:
+	DB5PEPF00014B93.eurprd02.prod.outlook.com
+X-MS-Has-Attach: yes
+X-MS-Exchange-Organization-Network-Message-Id:
+	70712718-6fb5-4745-2430-08dea2b99a46
+X-Message-Flag: Zur Nachverfolgung
+X-MS-TNEF-Correlator:
+X-MS-Exchange-Organization-RecordReviewCfmType: 0
+x-ms-publictraffictype: Email
+received-spf: Pass (protection.outlook.com: domain of reisenaktuell.com
+ designates 143.55.144.241 as permitted sender)
+ receiver=protection.outlook.com; client-ip=143.55.144.241;
+ helo=mx07-00a5d801.pphosted.com; pr=C
+authentication-results: spf=pass (sender IP is 143.55.144.241)
+ smtp.mailfrom=reisenaktuell.com; dkim=pass (signature was verified)
+ header.d=reisenaktuell.com;dkim=pass (signature was verified)
+ header.d=reisenaktuell.com;dmarc=pass action=none
+ header.from=reisenaktuell.com;compauth=pass reason=100
+x-ms-office365-filtering-correlation-id: 70712718-6fb5-4745-2430-08dea2b99a46
+x-ms-traffictypediagnostic:
+	AS8P189MB1622:EE_|PR3P189MB1002:EE_|DB5PEPF00014B93:EE_|GV1P191MB2194:EE_|BESP191MB2899:EE_
+x-microsoft-antispam:
+	BCL:0;ARA:13230040|704162311799003|2092899012|5062899012|3072899012|1032899013|35042699022|12012899012|6049299003|7149299003|4053099003|4076899003|13003099007|8096899003|2066899003|16102099003|19002099003|55112099003|57112099003;
+x-forefront-antispam-report:
+	CIP:143.55.144.241;CTRY:DE;LANG:de;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mx07-00a5d801.pphosted.com;PTR:mx07-00a5d801.pphosted.com;CAT:NONE;SFS:(13230040)(704162311799003)(2092899012)(5062899012)(3072899012)(1032899013)(35042699022)(12012899012)(6049299003)(7149299003)(4053099003)(4076899003)(13003099007)(8096899003)(2066899003)(16102099003)(19002099003)(55112099003)(57112099003);DIR:INB;
+x-ms-exchange-crosstenant-authas: Anonymous
+x-ms-exchange-crosstenant-authsource:
+	DB5PEPF00014B93.eurprd02.prod.outlook.com
+x-ms-exchange-crosstenant-network-message-id:
+	70712718-6fb5-4745-2430-08dea2b99a46
+x-ms-exchange-crosstenant-originalarrivaltime: 25 Apr 2026 10:58:37.1607 (UTC)
+x-ms-exchange-crosstenant-fromentityheader: Internet
+x-ms-exchange-crosstenant-id: 41b5a112-0e42-447e-88c8-d97486303fa3
+x-ms-exchange-transport-crosstenantheadersstamped: GV1P191MB2194
+x-eopattributedmessage: 0
+x-eoptenantattributedmessage: 41b5a112-0e42-447e-88c8-d97486303fa3:0
+x-ms-exchange-transport-endtoendlatency: 00:00:03.9118286
+x-ms-exchange-processed-by-bccfoldering: 15.20.9846.012
+x-ms-exchange-atpmessageproperties: SA|SL
+dkim-signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=reisenaktuell.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=+vQfb3NTWGg9rK6lHFwcMSKm3HzBt9o/AeTQAiRRC70=;
+ b=NbfNjppo3Lgro8gDPwdhDr/YaQjrkT2pTe8PqowvxO6+GSZUoSYc4xIyo48fF5f8/xARVDAgO5BC2UVdR/s2mR/FWLlcB9TT08f+TYj3YsrnyzFRuKwEOlgXZBumlxasEpYkZbvaC+QyOAY3v41T+3STgqMrH8zf5J0gtC/dS6M=
+arc-seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=qFxoT/Kz/rI+H9NBWslyy8EDsK55EQWK3CF9puctLxKrTzvE8qvbt9ZscwJAcpADukB1UF7k3glnPFR3scE4yz6vbPKNgZDiTtaWE10ckI5wzHgnCDEW9yZ65acGzgwk43/FqT0oigHv9r9WVgdQinpigsEP2L17+sHKuUvnXK5AvS3ZMWqVkeUAOPCih+EwBoZiPhWepGIvZDO23Rju+IM21y4GTKW5fufCjvMU5lXpSQccgLyAtmAYVxThM7qeVkeweh/ufU3wW8f8Q+i+D8+th8STxhXJCYunDOZHT0ffNZjS3aWuOwLR4Xb2MnTp4DHoBD0FFsNOPoq0ftJWdw==
+arc-message-signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=+vQfb3NTWGg9rK6lHFwcMSKm3HzBt9o/AeTQAiRRC70=;
+ b=uA6wHhUypvO2FRzxywz675WZpopxmrchVtKMUKoGKoTeTSAujiFAI6s1/rP8vLIEfVNRCm4E1Yxf0Ree1wr2Y9zpVK/fLRoH2fkMshvT/VRvEXJF17upDzUY1VViYZvyvsGkj2tAkSfTvRqjHyEBGAf9/e6cCXo53IDEDg2FO5UQLZfPx2KhhMWMTYQMAT1ooQs8dH2iZkexZnyhSBEGkdm4k2R+8xC1xVddwRAZroZHs649ayOPwfoXGWu6XLXuY/ovAoKClY5RxOR6e+nXEDqVQnVtHocA8BZv5hic+ZdQGmVBH0FqiNpa4alPLr41o/k9V+FwbttIiSe8f0FznA==
+arc-authentication-results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=reisenaktuell.com; dmarc=pass action=none
+ header.from=reisenaktuell.com; dkim=pass header.d=reisenaktuell.com; arc=none
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-untrusted:
+	BCL:0;ARA:13230040|1800799024|376014|6049299003|366016|38070700021|13003099007|4053099003|8096899003|56012099003|18002099003;
+x-microsoft-antispam-message-info-original:
+	fOR4iEeFFMkPcs3PQsCqRZ4Fir2b9BeoAAyLeSDH4bK5XiPhrJw94hf+581gKlYeWtxk1NiYbB/yA/O27ptgx+o0b1JXloYZd+m/D9r3z9RaV7N2Oo0afLIdC6Hxl0Y/SMe9DptC8lu8Rm7zhI1tjoQc05RgJCJhrrCWc+HQOcyZ9IBpErXm73Yx+XTntChh64/c3ncqW9rmbrX0qjsg8lcrFl925uj0yM7nE5eA57jKGl8apGGh2P3TYlEGwRdKTZyq96V17YNefvyFFMFin8vf8Qo0MW580+hECc6nmK+b6jjcODmK/chQd6paGB7LfDLF4SG26PCIPBaEBFEbEPNZjWwuQ/NLQqf7fjBoBxaTW/f4aQMgNvsyJlUSqyUqO5MrFK65Yu4I6vQ39nkB8XhQ5Sv81yFqMXbkKNTQLlzQl2CDw6GPIZqkS/fcDLHJq72GOMwBn76sL9/GUH5JFrvJAvfcRpabzxZXFkdk3W9eHpmowBKpzxu34BGP9X6rv1rcNXd7WQq5ZW+8CxkCfTtGIgY47/HJI5zcxd2lJWMSTcaNnBFknxsn8bxeR8S8Mz55eKRcugs2yZv+KRD2By0vf99d9Fvk6aevOIvc1o2lUl2lLDFAY2adctD8JxlTd28ckOwYN5lnmA6vvJrwIjuC0hT1T7xZc9y1q6zooVH9KG2iUvu+ZkGph6U68uxLsyUdvGW2wsxqVWt7Qv2sAOX9CNBhbwr5FQaY9Qax+WWcISgbzd1MF4Evxyu8Z4pj
+x-ms-exchange-transport-crosstenantheadersstripped:
+	DB5PEPF00014B93.eurprd02.prod.outlook.com
+x-ms-office365-filtering-correlation-id-prvs:
+	f3bd70d2-1c46-4883-92fc-08dea2b99842
+x-forefront-antispam-report-untrusted:
+	CIP:255.255.255.255;CTRY:;LANG:de;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS8P189MB1622.EURP189.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(6049299003)(366016)(38070700021)(13003099007)(4053099003)(8096899003)(56012099003)(18002099003);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-relay: 0
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-sharedmailbox-routingagent-processed: True
+x-ms-exchange-antispam-messagedata-original-chunkcount: 1
+x-ms-exchange-antispam-messagedata-original-0:
+	=?Windows-1252?Q?DkHUQ58ITx3fG4M9Pt6l4wrj2lV17jbZYE8/QqKiak7KyZOCkNmhZAae?=
+ =?Windows-1252?Q?eVx9aSXBBgVjeF9C83Fj4QEtXExLmv0Zx7DknWAIecxohg1ys47jUF3z?=
+ =?Windows-1252?Q?c8TLxs5nYR5K5UqaWZ+d1BjhUamovl9UPo+Vrp9ZiKiyRrNMg6E+0gk7?=
+ =?Windows-1252?Q?WjOMOLcYHxpxxea/oJk+AaWMwjTWRtNf8xua9tNBMJY8G654GUjUbzL0?=
+ =?Windows-1252?Q?ntbjNpqcS87bNO1ic4yMyO2l4weQO5Zo9yn8fJ5a+WlyrThrjGSundUP?=
+ =?Windows-1252?Q?dMGnf9Um0K7V0LyWA03rf6CqH3ouweC1EA3th/BBn6qeafyz9seeajJ0?=
+ =?Windows-1252?Q?JwLlCtSceRpheVP/3+HYRGWNfoRcRzT5FND8dG3u8gD7618qFCTU5bKi?=
+ =?Windows-1252?Q?UIFTZVnMvdyeu/YN6+iQX1bO/kLG3OwsLMmN+7A3t1SWkriI9LmPR9i1?=
+ =?Windows-1252?Q?u96duO0UzDyk5oqI+cDZzyPYMOd7hGBPtzDEaigHHtveiMCWOqJ3XsrD?=
+ =?Windows-1252?Q?hEc3h8lcrIB3sZ+RhOdWsiu4NlNM97DqTMMBq+sd/mTkMwpFZvXGQz0q?=
+ =?Windows-1252?Q?yd5dcbrG4/aiyA6CetG7ik2bp5voa1sjtM3TDqeeHUGtQFGF1Lwy2WNY?=
+ =?Windows-1252?Q?eINlqWi2Dy5YiFi4DR0bf8yXeYrf1Rk6k9kK5QpiHoBROknkDkQQ7ZTZ?=
+ =?Windows-1252?Q?/Ch8FhmwrXIGam21mWoIjjQirJwTie9N69NikOwhGfMe55UMHAzS/XFp?=
+ =?Windows-1252?Q?auWM71r0QYoUhZox8DlNCfy/bqnELU4PjxSCURIL6mpGd1pW/uhNanPS?=
+ =?Windows-1252?Q?kPjRAvy284xI/AKxs6pl9G0WBSWYKn8gLbl4sBUvs2Afne3a8IKBNxtu?=
+ =?Windows-1252?Q?JRVx8G2sGVFyfUep5L1oIAbFqd3XIvmorGJ284zIiJs9SHAH+c6p/NB9?=
+ =?Windows-1252?Q?k5xQQ49I6DIZ5+uNh6Qw4D1ABd0fKHALXeWillFlixQIYcQWz92M4Hqj?=
+ =?Windows-1252?Q?BvsMmyInEyusYsiMBNymAaPCjylx7UGYWx+9JrxER8SMuAeO+F2sfnkK?=
+ =?Windows-1252?Q?QA8eXDjj2BInQ3/Q9R7CwUqz6glwLRhnughvVvmTSF6/Gd0ieM/D3Bbd?=
+ =?Windows-1252?Q?4CzJFWji6wTu5iCjk+aMTsbeIJlAh95/sEBWYJwOCLW4/MY+CFgL074y?=
+ =?Windows-1252?Q?PEpe6/RbNU5SsdXAW24hL+xYQNNOVG9WZbptK0uOEgEzBIlWGVf24Yua?=
+ =?Windows-1252?Q?TmoJzEGnoUJr9vMLD8eEr5GSgmCv6UKJz4kV57kgSi8kMHOmv0QzLgkL?=
+ =?Windows-1252?Q?w6yX2IBPSR+KUwOPTCuApgWvU2ZTftlLXW2WV27ijxiw2MyEMjrkA4D9?=
+ =?Windows-1252?Q?a4eZ4fupJShLEeojPL2x17m4cWfNrut0uS/8FDwWSgY5qQ5E5Sa7UwCI?=
+ =?Windows-1252?Q?g+HKhXXA7spVsDc3WdqeszlaeHab5KeuoLUsU78Havkc3l/Lk4zStC9e?=
+ =?Windows-1252?Q?1ApeveEZkw/v8LZ4BtRgcIbOr25WL3qDtwTY8FXH6LswQkc1Q/xjxKsm?=
+ =?Windows-1252?Q?V5ubLlHtq0p4zWMqdPKWxlonszeKKTYwKAwbXman2VjYJwdfqPSkH9wi?=
+ =?Windows-1252?Q?LGcvbhlNB1d4PxE1CBza7Gy0gJsO3alrb3zZQn1EO8qj7+jbhEq8Edqe?=
+ =?Windows-1252?Q?EFDXghJ7XPvuoq9RukuUQa5Z1bfFzM53znyr46gtzWOaUgB1qVbRuUlr?=
+ =?Windows-1252?Q?b1OaHxPXqlfAfn5kETOn71WuGQMCOgg1BU3fUaB1ilgQNoj3igDrkx7m?=
+ =?Windows-1252?Q?p7zMBMi38VJ1dTc3Q6GYQTBS9iwPDvQ703yjCBMSjE/rLGhOQElAy0NL?=
+ =?Windows-1252?Q?WpSukhEQ+isDT3DLnBKnLgeXY2UzZB5d8/o=3D?=
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930201)(20251009189)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?Windows-1252?Q?V6ffSNSGhAvjpfzKvjqHD0xwAbJhxqLNRMY8YuF+IAtjM8mzw8+mZUPx?=
+ =?Windows-1252?Q?XmUq3cq+BHlHqkz2QTmCoZ96R8HkVVTUBU5qmxWhHI94Hz74OaVNpPK2?=
+ =?Windows-1252?Q?Kf1vgYVQiaR4qlf2VExlIvnuYmNZq50du49V/MMl78KyjukZhN7DXGFR?=
+ =?Windows-1252?Q?AJDtyk27l/LGaqyiz3M/iTCAo4wqNqZpIuDTZ1XIgRC3V+6zAge4i9c7?=
+ =?Windows-1252?Q?TUz1jsDSbwiT/gEQLrJf6joTDCxH/50X7D8xTS+bcIeFt6Nnqy/TYDAi?=
+ =?Windows-1252?Q?hiLwlbVJHG54vVXUAzv745YILT2dSroWK5Y8epWtkpisoCNzBLxAEov9?=
+ =?Windows-1252?Q?z6H1P5z57c5TViqKVZsWkls/zRIYe4SNfOnUQcISRTdW3EkMp6pQ1o/4?=
+ =?Windows-1252?Q?OZVpmt1T7YdURzWZCJlCOm6dE5DqrhFx4DFZTW3nOlfDh1tG24BqEBWv?=
+ =?Windows-1252?Q?A120mCdLszRy8o74n99b1EyCba0LTyiSKs2CvuTRTbA5l46yAoVofuMr?=
+ =?Windows-1252?Q?mgCuzm6VQaDWdkAO3Q9tU/9jBP8ooRj2Rlgmh34OqxcazResW3G0qRWX?=
+ =?Windows-1252?Q?WsLAr65kkTk6dMT3EbhffNFiCcFMNqs/ibL6PzKzLg4297t5lV/RW3HE?=
+ =?Windows-1252?Q?C2rtCo/jV2RtU/WdZ1xw7tZsjJg+dpznsXVHULcW3yMnAg+PJ2t8AAyt?=
+ =?Windows-1252?Q?tTHyfzmml3rVi5A9GIK1jo2VnyNOvCFr+fsuhltXNVz8Tl4DhfZFQhRe?=
+ =?Windows-1252?Q?hqaM5Tdzvt6C6fXjjb7pcAWA90mr8hln2o0FVhi66ecWRQgMPVPfEudR?=
+ =?Windows-1252?Q?RCdD007TDRLxITT0Fvm5ICUcLRpIdlFZVV6u1egpERMl7d+yfxGEzdgI?=
+ =?Windows-1252?Q?BnWogXaWqj93FIwpsqghUd1n84Y+/inV0yiF+hpgu8kroxIULMFl/Frx?=
+ =?Windows-1252?Q?O8dbwrzNNmb/VbgasRCDC9Qd7mVPxNmBn+oNZaHHkjjg+hm2pPraXf4Q?=
+ =?Windows-1252?Q?nQlhubjUpKwfPsGJ391sWZVG9XWGEGhmRAt9A5kzFwnRLYXLfjQH8mrh?=
+ =?Windows-1252?Q?cIGM5EDQ9my0DXo1WOwtISJiNcrpEIftI6T084vco1XfJwrRO5XiCWaf?=
+ =?Windows-1252?Q?bPzjfi4a89c0zR11RqnNDp8uMUkBJXxDCWA5+DGjjl/a7DLMh/4B8Ny5?=
+ =?Windows-1252?Q?RUq6aRYDKDkvg9TnZY+Pj40hK4MNtseIYj+emR3ktH+H/xHZ6xNAoWXJ?=
+ =?Windows-1252?Q?VnXIAua4PY9n0GnCGZnMjD1HgjdVUqnW5OxYrsHRDh42+vWCd0UkAIJa?=
+ =?Windows-1252?Q?79LRG/LtKaDShhhlcXk1eZM/TNgfXhsGIzd+CRMiZw1JYRFaTuFjW7kb?=
+ =?Windows-1252?Q?GIsB4nLb4DD3S6KJNNToStNseL8Smyf9kYYmThDHlrSuAlCFmJUN8D6F?=
+ =?Windows-1252?Q?h9osr60M3DEDN82xSghztvK4ZtZ9XBpFD3eKiOcKeJ9aQx1AZain72gb?=
+ =?Windows-1252?Q?/E4mBJHLuiVUo35exEIwDZ9LQnRMmxZAhdVoNwKLDaNVKMr20DVXAXZQ?=
+ =?Windows-1252?Q?1aevP308f5gT7Kj9q/5Q4dUlBXNyVEqQxwAcB/aeHR8okWXfaRmyQzDE?=
+ =?Windows-1252?Q?jq9SxE9Ov32lbDA1p8LRVHY1w5ftAZ5bbSFzApahbMRTDqjCgPS6CXpH?=
+ =?Windows-1252?Q?dCo/TCzSv0xsVbk9CrrS/yd5Fk9MmieKrZapFOGs7VwO0/0bYCd2l3Gh?=
+ =?Windows-1252?Q?cYwO1P5U49FuhsW4dStsA+RsBwZQ7HAw6bkhH9LKatSuX+WtTTv1PY8R?=
+ =?Windows-1252?Q?1SZ334cyQezeDr/KBrazTFO/lpwQs32FF/JT/DCPk3j9j9U5djtRSrWO?=
+ =?Windows-1252?Q?0qAPd90jkPsGTwXeby+HNK80S44jGQxkGWjyyCMtkqVOG+u4uCdrzaee?=
+ =?Windows-1252?Q?iYegUZPr16x8Fg6djS/H7cseKVwNgroCS1uKQ7Y9Vaa56UqXLq+qHkq5?=
+ =?Windows-1252?Q?yVM3u9kWiSF15pkGma7JVvtsnDPUtflZlQx0Muy69kpJwM9wy6yOwCN4?=
+ =?Windows-1252?Q?p1axFa7ht4rQBqxrvQJN/bOq36lzZkRQ9eu+DpHQZtunV35WWFY/dQCl?=
+ =?Windows-1252?Q?u8OZY1DyuLjodxHE0vGUfRbgDTZSWBL1UXZDg8/vomVHMY73BFIgdDZX?=
+ =?Windows-1252?Q?Fv01/LjqRNvs0osdIrJESIku1vbLdq0RhSzh6DXfKeCLPfYBwn2dzC4o?=
+ =?Windows-1252?Q?oNjGXiyEKMRoyobX4oCWd7x9lbsTkKOxByGxXchvLNWMpdhmolSWiqxU?=
+ =?Windows-1252?Q?cOBB0YgEwJtuGJOdUI3XCCNVmm0l8FOtRm1XnAAeUE9FV1jg7VtB+wnc?=
+ =?Windows-1252?Q?ry0jdfFb3BlVWuFPBE0NIYzZ5u/1u4mkc92prNaoWTszegaOBtjCUt1D?=
+ =?Windows-1252?Q?nFpOS85UucHcEpUl9Gnlf0iBPZ4uSJVR6VlOsMDXH5cAjTGlLl8JPCv5?=
+ =?Windows-1252?Q?sGd968m9hFNI2Q+bCglIzSiE4y7EQfIuv/EBIVxhQweSXMRuMeQwP3gU?=
+ =?Windows-1252?Q?8EnqkpdUwqYY+8V8Nlxlf/HbBzrkZmHH3HfjajJtoZ9z22i999PAQT2S?=
+ =?Windows-1252?Q?9m55aX/yUZCvZDMGMj++uWTDPfMwk15y7R8hUaXRRDqivQFww5qqns5l?=
+ =?Windows-1252?Q?F5G17jvMVRsOUihs675TA1Kmx2EKxviBHflfr05+ba/stlL38oCOa7ND?=
+ =?Windows-1252?Q?Yrsu21gdYrut2tvOJEOcFkRjYMiyvgcbEyIShBQPmXlyYpr6Y4KWjGwl?=
+ =?Windows-1252?Q?gQg/Xw=3D=3D?=
+Content-Type: multipart/related;
+	boundary="_004_AS8P189MB16222D0DC94316F57D3F57A689282AS8P189MB1622EURP_";
+	type="multipart/alternative"
+MIME-Version: 1.0
+
+--_004_AS8P189MB16222D0DC94316F57D3F57A689282AS8P189MB1622EURP_
+Content-Type: multipart/alternative;
+	boundary="_000_AS8P189MB16222D0DC94316F57D3F57A689282AS8P189MB1622EURP_"
+
+--_000_AS8P189MB16222D0DC94316F57D3F57A689282AS8P189MB1622EURP_
+Content-Type: text/plain; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+Liebe Kolleginnen und Kollegen,
+
+das Zimmer haben wir noch in unserem Kontingent. Die komplette Buchung wird=
+ Ihnen aber erst nach Best=E4tigung folgender Zusatzanfrage =FCbermittelt:
+
+Hotel
+Vorgangsnummer
+Kunde
+Zimmerkategorie
+Reisedatum
+Bemerkung
+Sant=E9 Royale R=FCgen Resort
+12 904 639
+Krahnen
+DZ Standard
+23.12.2026 =96 02.01.2027
+2 Hunde m=F6glich? (1x 10Kg, 1x 20Kg)
+
+Wir bitte um R=FCckbest=E4tigung der Zusatzanfrage.
+Sollte dies im genannten Zeitraum nicht m=F6glich sein, w=E4ren wir Ihnen d=
+ankbar, wenn Sie uns m=F6gliche Alternativtermine nennen k=F6nnten.
+
+Vielen Dank im Voraus f=FCr Ihre R=FCckmeldung.
+
+F=FCr R=FCckfragen stehen wir Ihnen gerne zur Verf=FCgung.
+
+Mit freundlichen Gr=FC=DFen
+
+Yannick Renz
+Service-Team | Kundencenter
+
+[cid:image001.png@01DCD4B3.1CA56C70]
+
+Reisen Aktuell GmbH
+In den Weniken 1
+56070 Koblenz
+
+Telefon: +49(0)261 - 293519 - 39
+Fax: +49(0)261 - 293519 - 102
+
+E-Mail: service@reisenaktuell.com<../../../../../nina.wiebe-ra/AppData/Loca=
+l/Microsoft/Windows/INetCache/Content.Outlook/98S2FRDK/service@reisenaktuel=
+l.com>
+Web: www.reisenaktuell.com<http://www.reisenaktuell.com/>
+
+Gesch=E4ftsf=FChrer: Christian Volk
+HR Koblenz: HRB 5761
+St.-Nr. 22/651/06894
+
+[X]<http://www.reisenaktuell.com/newsletter-anmeldung?utm_source=3Demail-si=
+gnature&utm_medium=3Demail&utm_term=3Dmail-signature-footer&utm_campaign=3D=
+Newsletter%20Neuanmeldungen>
+
+Nie wieder die Chance auf einen g=FCnstigen Urlaub verpassen!
+Melden Sie sich bei unserem Newsletter an und Sie erhalten mehrmals die Woc=
+he unsere Top-Angebote.
+Hier geht es zur kostenlosen Anmeldung!<http://www.reisenaktuell.com/newsle=
+tter-anmeldung?utm_source=3Demail-signature&utm_medium=3Demail&utm_term=3Dm=
+ail-signature-footer&utm_campaign=3DNewsletter%20Neuanmeldungen>
+
+
+
+--_000_AS8P189MB16222D0DC94316F57D3F57A689282AS8P189MB1622EURP_
+Content-Type: text/html; charset="Windows-1252"
+Content-ID: <6AE2FB15D76D5D4683C16DCA080C5720@EURP191.PROD.OUTLOOK.COM>
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-1=
+252">
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<!--[if !mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]--><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;
+	mso-ligatures:standardcontextual;
+	mso-fareast-language:EN-US;}
+span.E-MailFormatvorlage17
+	{mso-style-type:personal-compose;
+	font-family:"Calibri",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-fareast-language:EN-US;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:70.85pt 70.85pt 2.0cm 70.85pt;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"DE" link=3D"#467886" vlink=3D"#96607D" style=3D"word-wrap:bre=
+ak-word">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><a name=3D"x__MailAutoSig"><span style=3D"font-size:=
+11.0pt;font-family:&quot;Calibri&quot;,sans-serif;mso-ligatures:none">Liebe=
+ Kolleginnen und Kollegen,<o:p></o:p></span></a></p>
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><span st=
+yle=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;mso-liga=
+tures:none"><o:p>&nbsp;</o:p></span></span></p>
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><span st=
+yle=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;mso-liga=
+tures:none">das Zimmer haben wir noch in unserem Kontingent. Die komplette =
+Buchung wird Ihnen aber erst nach Best=E4tigung folgender
+ Zusatzanfrage =FCbermittelt: <o:p></o:p></span></span></p>
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><span st=
+yle=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;mso-liga=
+tures:none"><o:p>&nbsp;</o:p></span></span></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" style=3D"border-collapse:collapse">
+<tbody>
+<tr style=3D"height:15.55pt">
+<td width=3D"160" valign=3D"top" style=3D"width:120.1pt;border:solid window=
+text 1.0pt;background:#156082;padding:0cm 5.4pt 0cm 5.4pt;height:15.55pt">
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><span st=
+yle=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;color:bl=
+ack;mso-ligatures:none">Hotel</span></span><span style=3D"mso-bookmark:x__M=
+ailAutoSig"><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;=
+,sans-serif;mso-ligatures:none"><o:p></o:p></span></span></p>
+</td>
+<span style=3D"mso-bookmark:x__MailAutoSig"></span>
+<td width=3D"120" valign=3D"top" style=3D"width:90.1pt;border:solid windowt=
+ext 1.0pt;border-left:none;background:#156082;padding:0cm 5.4pt 0cm 5.4pt;h=
+eight:15.55pt">
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><span st=
+yle=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;color:bl=
+ack;mso-ligatures:none">Vorgangsnummer</span></span><span style=3D"mso-book=
+mark:x__MailAutoSig"><span style=3D"font-size:11.0pt;font-family:&quot;Cali=
+bri&quot;,sans-serif;mso-ligatures:none"><o:p></o:p></span></span></p>
+</td>
+<span style=3D"mso-bookmark:x__MailAutoSig"></span>
+<td width=3D"144" valign=3D"top" style=3D"width:108.35pt;border:solid windo=
+wtext 1.0pt;border-left:none;background:#156082;padding:0cm 5.4pt 0cm 5.4pt=
+;height:15.55pt">
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><span st=
+yle=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;color:bl=
+ack;mso-ligatures:none">Kunde</span></span><span style=3D"mso-bookmark:x__M=
+ailAutoSig"><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;=
+,sans-serif;mso-ligatures:none"><o:p></o:p></span></span></p>
+</td>
+<span style=3D"mso-bookmark:x__MailAutoSig"></span>
+<td width=3D"161" valign=3D"top" style=3D"width:120.5pt;border:solid window=
+text 1.0pt;border-left:none;background:#156082;padding:0cm 5.4pt 0cm 5.4pt;=
+height:15.55pt">
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><span st=
+yle=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;color:bl=
+ack;mso-ligatures:none">Zimmerkategorie</span></span><span style=3D"mso-boo=
+kmark:x__MailAutoSig"><span style=3D"font-size:11.0pt;font-family:&quot;Cal=
+ibri&quot;,sans-serif;mso-ligatures:none"><o:p></o:p></span></span></p>
+</td>
+<span style=3D"mso-bookmark:x__MailAutoSig"></span>
+<td width=3D"161" valign=3D"top" style=3D"width:120.5pt;border:solid window=
+text 1.0pt;border-left:none;background:#156082;padding:0cm 5.4pt 0cm 5.4pt;=
+height:15.55pt">
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><span st=
+yle=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;color:bl=
+ack;mso-ligatures:none">Reisedatum</span></span><span style=3D"mso-bookmark=
+:x__MailAutoSig"><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&=
+quot;,sans-serif;mso-ligatures:none"><o:p></o:p></span></span></p>
+</td>
+<span style=3D"mso-bookmark:x__MailAutoSig"></span>
+<td width=3D"208" valign=3D"top" style=3D"width:155.9pt;border:solid window=
+text 1.0pt;border-left:none;background:#156082;padding:0cm 5.4pt 0cm 5.4pt;=
+height:15.55pt">
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><span st=
+yle=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;color:bl=
+ack;mso-ligatures:none">Bemerkung</span></span><span style=3D"mso-bookmark:=
+x__MailAutoSig"><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&q=
+uot;,sans-serif;mso-ligatures:none"><o:p></o:p></span></span></p>
+</td>
+<span style=3D"mso-bookmark:x__MailAutoSig"></span>
+</tr>
+<tr style=3D"height:28.15pt">
+<td width=3D"160" valign=3D"top" style=3D"width:120.1pt;border:solid window=
+text 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:28.15pt">
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><span st=
+yle=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;mso-liga=
+tures:none">Sant=E9 Royale R=FCgen Resort<o:p></o:p></span></span></p>
+</td>
+<span style=3D"mso-bookmark:x__MailAutoSig"></span>
+<td width=3D"120" valign=3D"top" style=3D"width:90.1pt;border-top:none;bord=
+er-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid window=
+text 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:28.15pt">
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><span st=
+yle=3D"font-size:10.0pt;mso-ligatures:none">12 904 639<o:p></o:p></span></s=
+pan></p>
+</td>
+<span style=3D"mso-bookmark:x__MailAutoSig"></span>
+<td width=3D"144" valign=3D"top" style=3D"width:108.35pt;border-top:none;bo=
+rder-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid wind=
+owtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:28.15pt">
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><span st=
+yle=3D"font-size:10.0pt;mso-ligatures:none">Krahnen<o:p></o:p></span></span=
+></p>
+</td>
+<span style=3D"mso-bookmark:x__MailAutoSig"></span>
+<td width=3D"161" valign=3D"top" style=3D"width:120.5pt;border-top:none;bor=
+der-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windo=
+wtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:28.15pt">
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><span st=
+yle=3D"font-size:10.0pt;mso-ligatures:none">DZ Standard<o:p></o:p></span></=
+span></p>
+</td>
+<span style=3D"mso-bookmark:x__MailAutoSig"></span>
+<td width=3D"161" valign=3D"top" style=3D"width:120.5pt;border-top:none;bor=
+der-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windo=
+wtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:28.15pt">
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><span st=
+yle=3D"font-size:10.0pt;mso-ligatures:none">23.12.2026 =96 02.01.2027<o:p><=
+/o:p></span></span></p>
+</td>
+<span style=3D"mso-bookmark:x__MailAutoSig"></span>
+<td width=3D"208" valign=3D"top" style=3D"width:155.9pt;border-top:none;bor=
+der-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windo=
+wtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:28.15pt">
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><b><span=
+ style=3D"font-size:10.0pt;mso-ligatures:none">2 Hunde m=F6glich?</span>
+</b></span><span style=3D"mso-bookmark:x__MailAutoSig"><b><span style=3D"fo=
+nt-size:10.0pt;mso-ligatures:none">(1x 10Kg, 1x 20Kg)<o:p></o:p></span></b>=
+</span></p>
+</td>
+<span style=3D"mso-bookmark:x__MailAutoSig"></span>
+</tr>
+</tbody>
+</table>
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><span st=
+yle=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;mso-liga=
+tures:none"><br>
+Wir bitte um R=FCckbest=E4tigung der Zusatzanfrage.<o:p></o:p></span></span=
+></p>
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><span st=
+yle=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;mso-liga=
+tures:none">Sollte dies im genannten Zeitraum nicht m=F6glich sein, w=E4ren=
+ wir Ihnen dankbar, wenn Sie uns m=F6gliche Alternativtermine
+ nennen k=F6nnten.<br>
+<br>
+Vielen Dank im Voraus f=FCr Ihre R=FCckmeldung.<o:p></o:p></span></span></p=
+>
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><span st=
+yle=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p>&n=
+bsp;</o:p></span></span></p>
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><span st=
+yle=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;mso-liga=
+tures:none">F=FCr R=FCckfragen stehen wir Ihnen gerne zur Verf=FCgung.</spa=
+n></span><span style=3D"mso-bookmark:x__MailAutoSig"><span style=3D"mso-lig=
+atures:none"><o:p></o:p></span></span></p>
+<p class=3D"MsoNormal"><span style=3D"mso-bookmark:x__MailAutoSig"><span st=
+yle=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p>&n=
+bsp;</o:p></span></span></p>
+<span style=3D"mso-bookmark:x__MailAutoSig"></span>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;mso-ligatures:none;mso-fareast-language:DE">Mit freu=
+ndlichen Gr=FC=DFen</span><span style=3D"mso-ligatures:none;mso-fareast-lan=
+guage:DE"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;mso-ligatures:none;mso-fareast-language:DE">&nbsp;</=
+span><span style=3D"mso-ligatures:none;mso-fareast-language:DE"><o:p></o:p>=
+</span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,sans-serif;color:#002060;mso-ligatures:none;mso-fareast-lang=
+uage:DE">Yannick Renz</span></b><span style=3D"mso-ligatures:none;mso-farea=
+st-language:DE"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;mso-ligatures:none;mso-fareast-language:DE">Service-=
+Team | Kundencenter</span><span style=3D"mso-ligatures:none;mso-fareast-lan=
+guage:DE"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;mso-ligatures:none;mso-fareast-language:DE">&nbsp;</=
+span><span style=3D"mso-ligatures:none;mso-fareast-language:DE"><o:p></o:p>=
+</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;mso-fareast-language:DE"><img width=3D"187" height=
+=3D"39" style=3D"width:1.9479in;height:.4062in" id=3D"Bild_x0020_1" src=3D"=
+cid:image001.png@01DCD4B3.1CA56C70"></span><span style=3D"mso-ligatures:non=
+e;mso-fareast-language:DE"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;mso-ligatures:none;mso-fareast-language:DE">&nbsp;</=
+span><span style=3D"mso-ligatures:none;mso-fareast-language:DE"><o:p></o:p>=
+</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;mso-ligatures:none;mso-fareast-language:DE">Reisen A=
+ktuell GmbH</span><span style=3D"mso-ligatures:none;mso-fareast-language:DE=
+"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;mso-ligatures:none;mso-fareast-language:DE">In den W=
+eniken 1</span><span style=3D"mso-ligatures:none;mso-fareast-language:DE"><=
+o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;mso-ligatures:none;mso-fareast-language:DE">56070 Ko=
+blenz<br>
+<br>
+Telefon: +49(0)261 - 293519 - 39</span><span style=3D"mso-ligatures:none;ms=
+o-fareast-language:DE"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;mso-ligatures:none;mso-fareast-language:DE">Fax: +49=
+(0)261 - 293519 - 102</span><span style=3D"mso-ligatures:none;mso-fareast-l=
+anguage:DE"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;mso-ligatures:none;mso-fareast-language:DE">&nbsp;</=
+span><span style=3D"mso-ligatures:none;mso-fareast-language:DE"><o:p></o:p>=
+</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;mso-ligatures:none;mso-fareast-language:DE">E-Mail:
+</span><span style=3D"mso-ligatures:none;mso-fareast-language:DE"><a href=
+=3D"../../../../../nina.wiebe-ra/AppData/Local/Microsoft/Windows/INetCache/=
+Content.Outlook/98S2FRDK/service@reisenaktuell.com"><span style=3D"font-siz=
+e:10.0pt;font-family:&quot;Calibri&quot;,sans-serif;color:#0563C1">service@=
+reisenaktuell.com</span></a><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:10.0pt;font-=
+family:&quot;Calibri&quot;,sans-serif;mso-ligatures:none;mso-fareast-langua=
+ge:DE">Web:
+</span><span style=3D"mso-ligatures:none;mso-fareast-language:DE"><a href=
+=3D"http://www.reisenaktuell.com/"><span lang=3D"EN-US" style=3D"font-size:=
+10.0pt;font-family:&quot;Calibri&quot;,sans-serif;color:#0563C1">www.reisen=
+aktuell.com</span></a></span><span lang=3D"EN-US" style=3D"mso-ligatures:no=
+ne;mso-fareast-language:DE"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"mso-ligatures:none;mso=
+-fareast-language:DE">&nbsp;<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:10.0pt;font-=
+family:&quot;Calibri&quot;,sans-serif;mso-ligatures:none;mso-fareast-langua=
+ge:DE">Gesch=E4ftsf=FChrer: Christian Volk</span><span lang=3D"EN-US" style=
+=3D"mso-ligatures:none;mso-fareast-language:DE"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;mso-ligatures:none;mso-fareast-language:DE">HR Koble=
+nz: HRB 5761</span><span style=3D"mso-ligatures:none;mso-fareast-language:D=
+E"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;mso-ligatures:none;mso-fareast-language:DE">St.-Nr. =
+22/651/06894</span><span style=3D"mso-ligatures:none;mso-fareast-language:D=
+E"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;mso-ligatures:none;mso-fareast-language:DE">&nbsp;</=
+span><span style=3D"mso-ligatures:none;mso-fareast-language:DE"><o:p></o:p>=
+</span></p>
+<p class=3D"MsoNormal"><a href=3D"http://www.reisenaktuell.com/newsletter-a=
+nmeldung?utm_source=3Demail-signature&amp;utm_medium=3Demail&amp;utm_term=
+=3Dmail-signature-footer&amp;utm_campaign=3DNewsletter%20Neuanmeldungen" ti=
+tle=3D"&quot;Hier geht es zur kostenlosen Newsletteranmeldung.&quot;"><b><s=
+pan style=3D"font-size:10.0pt;font-family:&quot;Calibri&quot;,sans-serif;co=
+lor:#0563C1;mso-fareast-language:DE;text-decoration:none"><img border=3D"0"=
+ width=3D"599" height=3D"97" style=3D"width:6.2395in;height:1.0104in" id=3D=
+"_x0000_i1025" src=3D"file:///C:/Users/yannick.renz/AppData/Roaming/Microso=
+ft/Signatures/Service%20(yannick.renz@reisenaktuell.com)-Dateien/image001.j=
+pg"></span></b></a><b><span style=3D"font-size:10.0pt;font-family:&quot;Cal=
+ibri&quot;,sans-serif;mso-ligatures:none;mso-fareast-language:DE"><br>
+<br>
+Nie wieder die Chance auf einen g=FCnstigen Urlaub verpassen!<br>
+</span></b><span style=3D"font-size:10.0pt;font-family:&quot;Calibri&quot;,=
+sans-serif;mso-ligatures:none;mso-fareast-language:DE">Melden Sie sich bei =
+unserem Newsletter an und Sie erhalten mehrmals die Woche unsere Top-Angebo=
+te.<br>
+</span><span style=3D"mso-ligatures:none;mso-fareast-language:DE"><a href=
+=3D"http://www.reisenaktuell.com/newsletter-anmeldung?utm_source=3Demail-si=
+gnature&amp;utm_medium=3Demail&amp;utm_term=3Dmail-signature-footer&amp;utm=
+_campaign=3DNewsletter%20Neuanmeldungen" title=3D"Hier geht es zur kostenlo=
+sen Newsletteranmeldung."><span style=3D"font-size:10.0pt;font-family:&quot=
+;Calibri&quot;,sans-serif;color:black">Hier
+ geht es zur kostenlosen Anmeldung!</span></a><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"mso-ligatures:none;mso-fareast-langua=
+ge:DE">&nbsp;<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><span style=3D"mso-ligatures:none;mso-fareast-langua=
+ge:DE">&nbsp;</span><o:p></o:p></p>
+</div>
+</body>
+</html>
+
+--_000_AS8P189MB16222D0DC94316F57D3F57A689282AS8P189MB1622EURP_--
+
+--_004_AS8P189MB16222D0DC94316F57D3F57A689282AS8P189MB1622EURP_
+Content-Type: image/png; name="image001.png"
+Content-Description: image001.png
+Content-Disposition: inline; filename="image001.png"; size=7360;
+	creation-date="Sat, 25 Apr 2026 10:57:45 GMT";
+	modification-date="Sat, 25 Apr 2026 12:33:40 GMT"
+Content-ID: <image001.png@01DCD4B3.1CA56C70>
+Content-Transfer-Encoding: base64
+
+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
+
+--_004_AS8P189MB16222D0DC94316F57D3F57A689282AS8P189MB1622EURP_--
