@@ -15,10 +15,10 @@ and resolves Mews voucher codes. It uses a hybrid approach:
    resort based on rate plan name alone
 
 The system prompt lives in:
-`services/email-processor/tests/evals/run_extraction.py` — `SYSTEM_PROMPT`
+`services/tujur/tests/evals/run_extraction.py` — `SYSTEM_PROMPT`
 
 The voucher code catalogue lives in:
-`services/email-processor/adapters/mews/rate_plans.py` — `RATE_PLANS`
+`services/tujur/adapters/mews/rate_plans.py` — `RATE_PLANS`
 
 The ground truth for rules is derived by matching incoming emails to Mews booking exports.
 The matching script and matched output live in:
@@ -66,7 +66,7 @@ Key questions:
 ### Step 4 — Re-run the eval and verify
 
 ```bash
-cd services/email-processor
+cd services/tujur
 ANTHROPIC_API_KEY=... python3 -m tests.evals.run_extraction
 ```
 

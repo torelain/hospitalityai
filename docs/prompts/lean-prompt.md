@@ -9,7 +9,7 @@ and assign the correct Mews voucher code automatically.
 
 ## Current state
 
-The extractor (`services/email-processor/tests/evals/run_extraction.py`) currently:
+The extractor (`services/tujur/tests/evals/run_extraction.py`) currently:
 - Uses Claude to extract booking fields (guest, dates, room, agency) from emails
 - Supports multiple bookings per email (list emails like Reisen Aktuell Bookinglist)
 - Has **no learned rules** — all agency/domain/keyword rules have been stripped out
@@ -38,7 +38,7 @@ Load `training/matched_emails_mews.csv` and the `.eml` files. For each matched p
 
 ### Step 2 — Encode rules in the system prompt
 
-Edit the `SYSTEM_PROMPT` in `services/email-processor/tests/evals/run_extraction.py`.
+Edit the `SYSTEM_PROMPT` in `services/tujur/tests/evals/run_extraction.py`.
 
 The prompt should give Claude:
 - A compact explanation of the voucher code structure (channel · duration · product)
@@ -55,7 +55,7 @@ Update `build_row` to use Claude's `voucher_code` as the primary resolution, fal
 
 | File | Purpose |
 |---|---|
-| `services/email-processor/tests/evals/run_extraction.py` | Eval script + system prompt |
+| `services/tujur/tests/evals/run_extraction.py` | Eval script + system prompt |
 | `docs/hotels/ruegen/booking-emails/` | 24 Rügen emails (eval input) |
 | `training/matched_emails_mews.csv` | 102 matched training pairs |
 | `training/Buchungsmails 01.03.-25.04.26/` | Full 415-email training set |

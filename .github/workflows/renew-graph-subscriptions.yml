@@ -1,6 +1,6 @@
 name: Renew Graph subscriptions
 
-# Daily cron triggers the email-processor's renewal endpoint. Subscriptions on Graph
+# Daily cron triggers the tujur service's renewal endpoint. Subscriptions on Graph
 # mail resources expire after ~70 hours; we renew well within that window. A missed
 # day is non-fatal (we still have ~2 days of buffer).
 

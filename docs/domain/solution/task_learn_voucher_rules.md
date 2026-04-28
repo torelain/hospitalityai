@@ -9,14 +9,14 @@ and assign the correct Mews voucher code automatically.
 
 ## Current state
 
-The extractor (`services/email-processor/tests/evals/run_extraction.py`) currently:
+The extractor (`services/tujur/tests/evals/run_extraction.py`) currently:
 - Uses Claude to extract booking fields (guest, dates, room, agency) from emails
 - Supports multiple bookings per email (list emails like Reisen Aktuell Bookinglist)
 - Has a basic `SYSTEM_PROMPT` with date handling only — no learned rules
 - Falls back to `resolve_voucher_code` (keyword matcher) only when Claude returns nothing
 
 The voucher code catalogue (all valid codes and their groupings) is in:
-`services/email-processor/adapters/mews/rate_plans.py` — `RATE_PLANS` dict.
+`services/tujur/adapters/mews/rate_plans.py` — `RATE_PLANS` dict.
 **Do not remove this.** It is the source of truth for valid codes and powers the fallback
 keyword resolver. Only the learned rules (domain mappings, keyword signals) belong in the
 system prompt.
@@ -40,7 +40,7 @@ expected voucher code (`Paket` column).
 
 Run the eval:
 ```bash
-cd services/email-processor
+cd services/tujur
 ANTHROPIC_API_KEY=... python3 -m tests.evals.run_extraction
 ```
 
@@ -67,7 +67,7 @@ Load `training/matched_emails_mews.csv` and the `.eml` files. For each matched p
 
 ### Step 2 — Encode learnings in the system prompt only
 
-Edit `SYSTEM_PROMPT` in `services/email-processor/tests/evals/run_extraction.py`.
+Edit `SYSTEM_PROMPT` in `services/tujur/tests/evals/run_extraction.py`.
 
 **Approach: briefing, not rules.** Give Claude the knowledge as context so it can reason —
 do not write if/else logic or decision trees. Claude should be able to handle deviations,
@@ -101,8 +101,8 @@ can maintain the prompt without rediscovering patterns from scratch.
 
 | File | Purpose |
 |---|---|
-| `services/email-processor/tests/evals/run_extraction.py` | Eval script + system prompt |
-| `services/email-processor/adapters/mews/rate_plans.py` | Code catalogue + keyword fallback — do not strip |
+| `services/tujur/tests/evals/run_extraction.py` | Eval script + system prompt |
+| `services/tujur/adapters/mews/rate_plans.py` | Code catalogue + keyword fallback — do not strip |
 | `docs/hotels/ruegen/booking-emails/` | Rügen emails (eval input) |
 | `docs/hotels/ruegen/buchungen-hackathon.csv` | Ground truth for eval |
 | `training/matched_emails_mews.csv` | 102 matched training pairs |

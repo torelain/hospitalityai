@@ -17,7 +17,7 @@ Diagrams are written in [Mermaid](https://mermaid.js.org/) using C4 notation and
 
 ```
 apps/           # User-facing applications (web, dashboard, api)
-services/       # Backend services (booking, channel-integration, email-processor)
+services/       # Backend services (booking, channel-integration, tujur)
 packages/       # Shared code (types, utilities)
 ai/             # Agents, prompt templates, evaluations
 infrastructure/ # Terraform, Docker
