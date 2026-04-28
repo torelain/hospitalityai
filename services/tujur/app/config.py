@@ -27,6 +27,7 @@ class Config:
     hotel_mailbox: str = ""
     graph_webhook_url: str = ""
     graph_webhook_client_state: str = ""
+    cron_token: str = ""
 
 
 def load() -> Config:
@@ -45,4 +46,5 @@ def load() -> Config:
         hotel_mailbox=os.environ.get("HOTEL_MAILBOX", ""),
         graph_webhook_url=os.environ.get("GRAPH_WEBHOOK_URL", ""),
         graph_webhook_client_state=os.environ.get("GRAPH_WEBHOOK_CLIENT_STATE", ""),
+        cron_token=os.environ.get("CRON_TOKEN", ""),
     )

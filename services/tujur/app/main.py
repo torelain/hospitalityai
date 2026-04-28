@@ -1,23 +1,27 @@
 import logging
 import os
 from contextlib import asynccontextmanager
+from dataclasses import asdict
 from datetime import datetime, timedelta, timezone
 
 import httpx
 from dotenv import load_dotenv
-from fastapi import BackgroundTasks, FastAPI, HTTPException, Request, Response
+from fastapi import BackgroundTasks, Depends, FastAPI, Request, Response
 
 from adapters.claude.classifier import ClaudeIntentClassifier
 from adapters.claude.extractor import ClaudeBookingExtractor
+from adapters.db.bookings_export import BookingExportRepo
 from adapters.db.connection import make_pool
 from adapters.db.ledger import DBBookingLedger
 from adapters.db.migrations import run as run_migrations
 from adapters.db.pms import FakePMS
+from adapters.db.subscriptions import GraphSubscriptionRepo
 from adapters.graph.auth import GraphTokenCache
 from adapters.graph.inbound import GraphInboundClient, parse_notification
-from domain.models import Intent
+from domain.models import InboundEmail, Intent
 from domain.use_cases.process_email import ProcessEmail
 from .config import load as load_config
+from .security import require_cron_token
 
 load_dotenv()
 
@@ -25,7 +29,6 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name
 logger = logging.getLogger(__name__)
 
 
-# Q: What does this lifespan function do?
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     config = load_config()
@@ -44,6 +47,7 @@ async def lifespan(app: FastAPI):
     app.state.graph = graph
     app.state.hotel_mailbox = config.hotel_mailbox
     app.state.expected_client_state = config.graph_webhook_client_state
+    app.state.cron_token = config.cron_token
 
     try:
         yield
@@ -52,15 +56,6 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="Hospitality AI — Email Processor", lifespan=lifespan)
-
-# Q: Is this still used anywhere. Please make sure to remove dead private methods/variables anywhere in the project. 
-def _build_use_case(request: Request) -> ProcessEmail:
-    return ProcessEmail(
-        classifier=ClaudeIntentClassifier(api_key=os.environ["ANTHROPIC_API_KEY"]),
-        extractor=ClaudeBookingExtractor(api_key=os.environ["ANTHROPIC_API_KEY"]),
-        pms=FakePMS(),
-        ledger=DBBookingLedger(pool=request.app.state.pool, hotel_mailbox=request.app.state.hotel_mailbox),
-    )
 
 
 def _process_inbound(request_app, message_id: str) -> None:
@@ -110,9 +105,6 @@ async def outlook_notification(request: Request, background_tasks: BackgroundTas
 async def extract(request: Request):
     """Offline classify + extract for testing. Expects JSON {subject, text_body, from_email?, from_name?}."""
     payload = await request.json()
-    from datetime import datetime as _dt
-
-    from domain.models import InboundEmail
 
     email = InboundEmail(
         message_id=payload.get("message_id", "test"),
@@ -121,7 +113,7 @@ async def extract(request: Request):
         to_email=payload.get("to_email", ""),
         subject=payload.get("subject", ""),
         text_body=payload.get("text_body", ""),
-        received_at=_dt.now(timezone.utc),
+        received_at=datetime.now(timezone.utc),
     )
 
     classifier = ClaudeIntentClassifier(api_key=os.environ["ANTHROPIC_API_KEY"])
@@ -130,71 +122,65 @@ async def extract(request: Request):
         return {"intent": intent.value, "booking": None}
 
     booking = ClaudeBookingExtractor(api_key=os.environ["ANTHROPIC_API_KEY"]).extract(email)
-    # Q: where is this returned to. Why is it no domain object?
-    return {
-        "intent": intent.value,
-        "booking": {
-            "guest_name": booking.guest_name,
-            "arrival_date": booking.arrival_date.isoformat(),
-            "departure_date": booking.departure_date.isoformat(),
-            "room_category": booking.room_category,
-            "num_guests": booking.num_guests,
-            "agency_name": booking.agency_name,
-            "guest_email": booking.guest_email,
-            "special_wishes": booking.special_wishes,
-            "voucher_code": booking.voucher_code,
-            "confidence": booking.confidence.value,
-        },
-    }
+    return {"intent": intent.value, "booking": _booking_to_jsonable(booking)}
 
-# Q: lets not use select statements here
-@app.post("/cron/renew-subscriptions")
+
+def _booking_to_jsonable(booking) -> dict:
+    data = asdict(booking)
+    for key, value in list(data.items()):
+        if hasattr(value, "isoformat"):
+            data[key] = value.isoformat()
+        elif hasattr(value, "value"):
+            data[key] = value.value
+    return data
+
+
+@app.post("/cron/renew-subscriptions", dependencies=[Depends(require_cron_token)])
 def renew_subscriptions(request: Request):
     """Daily-cron target. Renews any subscription expiring within 36 hours.
     On 404 (Graph forgot it) — recreate from scratch."""
-    pool = request.app.state.pool
+    repo = GraphSubscriptionRepo(pool=request.app.state.pool)
     graph: GraphInboundClient = request.app.state.graph
     cutoff = datetime.now(timezone.utc) + timedelta(hours=36)
 
     renewed: list[str] = []
     recreated: list[str] = []
 
-    with pool.connection() as conn, conn.cursor() as cur:
-        cur.execute(
-            "SELECT subscription_id, hotel_mailbox, client_state FROM graph_subscriptions WHERE expires_at < %s",
-            (cutoff,),
-        )
-        rows = cur.fetchall()
-
-    for sub_id, mailbox, client_state in rows:
+    for sub in repo.find_expiring_before(cutoff):
         try:
-            response = graph.renew_subscription(sub_id)
-            new_expires = _parse_iso(response["expirationDateTime"])
-            with pool.connection() as conn, conn.cursor() as cur:
-                cur.execute(
-                    "UPDATE graph_subscriptions SET expires_at = %s WHERE subscription_id = %s",
-                    (new_expires, sub_id),
-                )
-            renewed.append(sub_id)
+            response = graph.renew_subscription(sub.subscription_id)
+            repo.update_expiry(sub.subscription_id, _parse_iso(response["expirationDateTime"]))
+            renewed.append(sub.subscription_id)
         except httpx.HTTPStatusError as e:
             if e.response.status_code != 404:
                 raise
             webhook_url = os.environ["GRAPH_WEBHOOK_URL"]
-            new_sub = graph.create_subscription(mailbox, webhook_url, client_state)
-            new_expires = _parse_iso(new_sub["expirationDateTime"])
-            with pool.connection() as conn, conn.cursor() as cur:
-                cur.execute(
-                    "DELETE FROM graph_subscriptions WHERE subscription_id = %s",
-                    (sub_id,),
-                )
-                cur.execute(
-                    "INSERT INTO graph_subscriptions (subscription_id, hotel_mailbox, client_state, expires_at) "
-                    "VALUES (%s, %s, %s, %s)",
-                    (new_sub["id"], mailbox, client_state, new_expires),
-                )
+            new_sub = graph.create_subscription(sub.hotel_mailbox, webhook_url, sub.client_state)
+            repo.replace(
+                old_id=sub.subscription_id,
+                new_id=new_sub["id"],
+                mailbox=sub.hotel_mailbox,
+                client_state=sub.client_state,
+                expires_at=_parse_iso(new_sub["expirationDateTime"]),
+            )
             recreated.append(new_sub["id"])
 
     return {"renewed": renewed, "recreated": recreated}
+
+
+@app.post("/cron/export-matchings", dependencies=[Depends(require_cron_token)])
+def export_matchings(request: Request, days: int = 7):
+    """Returns processed bookings from the last `days` days as JSON.
+    Triggered weekly by GitHub Actions; downstream consumers commit the snapshot
+    or pipe it to QA tooling."""
+    repo = BookingExportRepo(pool=request.app.state.pool)
+    since = datetime.now(timezone.utc) - timedelta(days=days)
+    bookings = repo.fetch_since(since)
+    return {
+        "since": since.isoformat(),
+        "count": len(bookings),
+        "bookings": bookings,
+    }
 
 
 @app.get("/health")

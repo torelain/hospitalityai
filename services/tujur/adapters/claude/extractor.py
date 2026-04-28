@@ -78,8 +78,6 @@ EXTRACT_BOOKING_TOOL: anthropic.types.ToolParam = {
     },
 }
 
-# Q: One thing to keep in mind is that we sometimes get mails that contain PDFs that 
-# hold the relevant booking information
 class ClaudeBookingExtractor(BookingExtractor):
     def __init__(self, api_key: str, model: str = "claude-sonnet-4-6"):
         self._client = anthropic.Anthropic(api_key=api_key)

@@ -1,0 +1,30 @@
+name: Export weekly matchings
+
+# Pulls the last 7 days of processed bookings from the tujur service and
+# uploads the JSON snapshot as a workflow artifact for QA / extraction-quality review.
+
+on:
+  schedule:
+    - cron: "0 4 * * 1"   # 04:00 UTC every Monday
+  workflow_dispatch:
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch matchings snapshot
+        run: |
+          curl --fail --silent --show-error \
+            -X POST "${{ secrets.EXPORT_MATCHINGS_URL }}" \
+            -H "Content-Type: application/json" \
+            -H "X-Cron-Token: ${{ secrets.CRON_TOKEN }}" \
+            -d '{}' \
+            -o matchings.json
+          echo "Snapshot size: $(wc -c < matchings.json) bytes"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: matchings-${{ github.run_id }}
+          path: matchings.json
+          retention-days: 90

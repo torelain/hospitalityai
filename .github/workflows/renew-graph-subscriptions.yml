@@ -18,4 +18,5 @@ jobs:
           curl --fail --silent --show-error \
             -X POST "${{ secrets.RENEW_SUBSCRIPTIONS_URL }}" \
             -H "Content-Type: application/json" \
+            -H "X-Cron-Token: ${{ secrets.CRON_TOKEN }}" \
             -d '{}'

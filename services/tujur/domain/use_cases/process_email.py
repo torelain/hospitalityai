@@ -72,7 +72,6 @@ class ProcessEmail:
                 booking_data=booking,
             )
 
-        # Q: Do we already create a booking here in the PMS?
         reservation_id = self._pms.create_booking(booking)
         return ProcessingResult(
             path=ProcessingPath.AUTOMATED,
